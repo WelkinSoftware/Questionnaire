@@ -1,0 +1,63 @@
+	<head>
+		<title> PAMF breast health screening questionnaire - Page 3a</title>
+	</head>
+{% include 'screener/header.html' %}
+<div>
+    <p><i>
+        Please answer all of the following questions about your breast cancer:
+    </i></p>
+	{% if form.errors %}
+		<p style="color: red;">
+			Please correct the error{{ form.errors|pluralize }} below.
+		</p>
+	{% endif %}
+<table frame='border' rules='all' border='2px'>
+  	<form action="" method="post">{% csrf_token %}
+		<div class="field">
+            {{ form.pHxBrCALE50Years.errors }}
+            <label for="id_pHxBrCALE50Years">Were you under 51 years old when your breast cancer was first diagnosed?</label>
+            {{ form.pHxBrCALE50Years }}
+        </div>
+		<div class="field">
+            {{ form.pHxBrCA3Neg.errors }}
+            <label for="id_pHxBrCA3Neg">Was your cancer "triple negative", <i>without</i> receptors for estrogen, progesterone and HER2?</label>
+            {{ form.pHxBrCA3Neg }}
+        </div>
+		<div class="field">
+            {{ form.pHxBrCAGT1PrimarySame.errors }}
+            <label for="id_pHxBrCAGT1PrimarySame">Was your cancer found in more than one location in the same breast?</label>
+            {{ form.pHxBrCAGT1PrimarySame }}
+        </div>
+		<div class="field">
+            {{ form.pHxBrCAGT1PrimaryBoth.errors }}
+            <label for="id_pHxBrCAGT1PrimaryBoth">Have you had cancer in both breasts?</label>
+            {{ form.pHxBrCAGT1PrimaryBoth }}
+        </div>
+		<div class="field">
+            {{ form.pHxBrCADermMan.errors }}
+            <label for="id_pHxBrCADermMan">Did your <a title="Tap here for more information about breast cancer involving skin overlying the breast" href="{{urlprefix}}scrn/explanations/skininbreastca">breast cancer involved the skin overlying the breast</a>?</label>
+            {{ form.pHxBrCADermMan }}
+        </div>
+			<a href="{{urlprefix}}scrn/{{back_to}}">Back</a>
+			<input type="submit" value="Next">
+	</form>
+     </table>
+    <br /><br />
+    {% include 'screener/footer.html' %}
+</div>
+
+<!--
+Copyright 2011 Health Records for Everyone
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->

@@ -1,0 +1,501 @@
+Last login: Tue Mar 18 12:23:11 on ttys002
+cclserver:~ cl$ cd /Users/cl/Downloads/Imaging-1.1.7 
+clserver:Imaging-1.1.7 cl$ python selftest.py
+Traceback (most recent call last):
+  File "selftest.py", line 11, in <module>
+    from PIL import ImageMath
+  File "./PIL/ImageMath.py", line 19, in <module>
+    import _imagingmath
+ImportError: No module named _imagingmath
+clserver:Imaging-1.1.7 cl$ python setup.py build_ext -i
+running build_ext
+--- using frameworks at /System/Library/Frameworks
+building '_imaging' extension
+cc -fno-strict-aliasing -fno-common -dynamic -arch x86_64 -arch i386 -g -Os -pipe -fno-common -fno-strict-aliasing -fwrapv -mno-fused-madd -DENABLE_DTRACE -DMACOSX -DNDEBUG -Wall -Wstrict-prototypes -Wshorten-64-to-32 -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -DENABLE_DTRACE -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imaging.c -o build/temp.macosx-10.9-intel-2.7/_imaging.o
+clang: error: unknown argument: '-mno-fused-madd' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+error: command 'cc' failed with exit status 1
+clserver:Imaging-1.1.7 cl$ 
+clserver:Imaging-1.1.7 cl$ 
+clserver:Imaging-1.1.7 cl$ cc -fno-strict-aliasing -fno-common -dynamic -arch x86_64 -arch i386 -g -Os -pipe -fno-common -fno-strict-aliasing -fwrapv -DENABLE_DTRACE -DMACOSX -DNDEBUG -Wall -Wstrict-prototypes -Wshorten-64-to-32 -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -DENABLE_DTRACE -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imaging.c -o build/temp.macosx-10.9-intel-2.7/_imaging.o
+_imaging.c:379:9: warning: implicit conversion loses integer precision:
+      'Py_ssize_t' (aka 'long') to 'int' [-Wshorten-64-to-32]
+    n = PyObject_Length(arg);
+      ~ ^~~~~~~~~~~~~~~~~~~~
+/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/abstract.h:434:25: note: 
+      expanded from macro 'PyObject_Length'
+#define PyObject_Length PyObject_Size
+                        ^
+_imaging.c:394:28: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+                int temp = PyInt_AsLong(op);
+                    ~~~~   ^~~~~~~~~~~~~~~~
+_imaging.c:400:28: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+                int temp = PyInt_AsLong(op);
+                    ~~~~   ^~~~~~~~~~~~~~~~
+_imaging.c:410:28: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+                int temp = PyInt_AsLong(op);
+                    ~~~~   ^~~~~~~~~~~~~~~~
+_imaging.c:416:28: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+                int temp = PyInt_AsLong(op);
+                    ~~~~   ^~~~~~~~~~~~~~~~
+_imaging.c:523:17: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+            r = PyInt_AsLong(color);
+              ~ ^~~~~~~~~~~~~~~~~~~
+_imaging.c:531:21: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+                r = PyInt_AS_LONG(color);
+                  ~ ^~~~~~~~~~~~~~~~~~~~
+/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/intobject.h:52:51: note: 
+      expanded from macro 'PyInt_AS_LONG'
+#define PyInt_AS_LONG(op) (((PyIntObject *)(op))->ob_ival)
+                           ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+_imaging.c:555:13: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+        r = PyInt_AsLong(color);
+          ~ ^~~~~~~~~~~~~~~~~~~
+_imaging.c:569:17: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+            r = PyInt_AsLong(color);
+              ~ ^~~~~~~~~~~~~~~~~~~
+_imaging.c:923:14: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+        *x = PyInt_AS_LONG(value);
+           ~ ^~~~~~~~~~~~~~~~~~~~
+/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/intobject.h:52:51: note: 
+      expanded from macro 'PyInt_AS_LONG'
+#define PyInt_AS_LONG(op) (((PyIntObject *)(op))->ob_ival)
+                           ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+_imaging.c:931:14: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+        *y = PyInt_AS_LONG(value);
+           ~ ^~~~~~~~~~~~~~~~~~~~
+/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/intobject.h:52:51: note: 
+      expanded from macro 'PyInt_AS_LONG'
+#define PyInt_AS_LONG(op) (((PyIntObject *)(op))->ob_ival)
+                           ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+_imaging.c:1221:9: warning: implicit conversion loses integer precision:
+      'Py_ssize_t' (aka 'long') to 'int' [-Wshorten-64-to-32]
+    n = PyObject_Length(data);
+      ~ ^~~~~~~~~~~~~~~~~~~~~
+/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/abstract.h:434:25: note: 
+      expanded from macro 'PyObject_Length'
+#define PyObject_Length PyObject_Size
+                        ^
+_imaging.c:3009:15: warning: implicit conversion loses integer precision: 'long'
+      to 'int' [-Wshorten-64-to-32]
+        y = i / im->xsize;
+          ~ ~~^~~~~~~~~~~
+_imaging.c:3017:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) image_length, /*sq_length*/
+    ^~~~~~~~~~~~~~~~~~~~~~
+_imaging.c:3077:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) NULL, /*mp_length*/
+    ^~~~~~~~~~~~~~
+15 warnings generated.
+_imaging.c:3017:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) image_length, /*sq_length*/
+    ^~~~~~~~~~~~~~~~~~~~~~
+_imaging.c:3077:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) NULL, /*mp_length*/
+    ^~~~~~~~~~~~~~
+2 warnings generated.
+clserver:Imaging-1.1.7 cl$ export CFLAGS=-Qunused-arguments
+clserver:Imaging-1.1.7 cl$ export CPPFLAGS=-Qunused-arguments
+clserver:Imaging-1.1.7 cl$ python setup.py build_ext -i
+running build_ext
+--- using frameworks at /System/Library/Frameworks
+building '_imaging' extension
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imaging.c -o build/temp.macosx-10.9-intel-2.7/_imaging.o
+_imaging.c:3017:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) image_length, /*sq_length*/
+    ^~~~~~~~~~~~~~~~~~~~~~
+_imaging.c:3077:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) NULL, /*mp_length*/
+    ^~~~~~~~~~~~~~
+2 warnings generated.
+_imaging.c:3017:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) image_length, /*sq_length*/
+    ^~~~~~~~~~~~~~~~~~~~~~
+_imaging.c:3077:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) NULL, /*mp_length*/
+    ^~~~~~~~~~~~~~
+2 warnings generated.
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c decode.c -o build/temp.macosx-10.9-intel-2.7/decode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c encode.c -o build/temp.macosx-10.9-intel-2.7/encode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c map.c -o build/temp.macosx-10.9-intel-2.7/map.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c display.c -o build/temp.macosx-10.9-intel-2.7/display.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c outline.c -o build/temp.macosx-10.9-intel-2.7/outline.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c path.c -o build/temp.macosx-10.9-intel-2.7/path.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Access.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Access.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Antialias.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Antialias.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Bands.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Bands.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/BitDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/BitDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Blend.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Blend.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Chops.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Chops.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Convert.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Convert.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/ConvertYCbCr.c -o build/temp.macosx-10.9-intel-2.7/libImaging/ConvertYCbCr.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Copy.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Copy.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Crc32.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Crc32.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Crop.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Crop.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Dib.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Dib.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Draw.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Draw.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Effects.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Effects.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/EpsEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/EpsEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/File.c -o build/temp.macosx-10.9-intel-2.7/libImaging/File.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Fill.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Fill.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Filter.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Filter.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/FliDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/FliDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Geometry.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Geometry.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/GetBBox.c -o build/temp.macosx-10.9-intel-2.7/libImaging/GetBBox.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/GifDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/GifDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/GifEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/GifEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/HexDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/HexDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Histo.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Histo.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/JpegDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/JpegDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/JpegEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/JpegEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/LzwDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/LzwDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Matrix.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Matrix.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/ModeFilter.c -o build/temp.macosx-10.9-intel-2.7/libImaging/ModeFilter.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/MspDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/MspDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Negative.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Negative.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Offset.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Offset.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Pack.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Pack.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/PackDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/PackDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Palette.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Palette.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Paste.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Paste.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Quant.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Quant.o
+libImaging/Quant.c:154:10: warning: cast to 'void *' from smaller integer type
+      'int' [-Wint-to-void-pointer-cast]
+   *valp=(void *)((*(int *)valp)+(*(int *)&newval));
+         ^
+1 warning generated.
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/QuantHash.c -o build/temp.macosx-10.9-intel-2.7/libImaging/QuantHash.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/QuantHeap.c -o build/temp.macosx-10.9-intel-2.7/libImaging/QuantHeap.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/PcdDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/PcdDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/PcxDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/PcxDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/PcxEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/PcxEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Point.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Point.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/RankFilter.c -o build/temp.macosx-10.9-intel-2.7/libImaging/RankFilter.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/RawDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/RawDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/RawEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/RawEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Storage.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Storage.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/SunRleDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/SunRleDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/TgaRleDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/TgaRleDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Unpack.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Unpack.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/UnpackYCC.c -o build/temp.macosx-10.9-intel-2.7/libImaging/UnpackYCC.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/UnsharpMask.c -o build/temp.macosx-10.9-intel-2.7/libImaging/UnsharpMask.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/XbmDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/XbmDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/XbmEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/XbmEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/ZipDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/ZipDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/ZipEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/ZipEncode.o
+cc -bundle -undefined dynamic_lookup -arch x86_64 -arch i386 -Wl,-F. -Qunused-arguments -Qunused-arguments build/temp.macosx-10.9-intel-2.7/_imaging.o build/temp.macosx-10.9-intel-2.7/decode.o build/temp.macosx-10.9-intel-2.7/encode.o build/temp.macosx-10.9-intel-2.7/map.o build/temp.macosx-10.9-intel-2.7/display.o build/temp.macosx-10.9-intel-2.7/outline.o build/temp.macosx-10.9-intel-2.7/path.o build/temp.macosx-10.9-intel-2.7/libImaging/Access.o build/temp.macosx-10.9-intel-2.7/libImaging/Antialias.o build/temp.macosx-10.9-intel-2.7/libImaging/Bands.o build/temp.macosx-10.9-intel-2.7/libImaging/BitDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Blend.o build/temp.macosx-10.9-intel-2.7/libImaging/Chops.o build/temp.macosx-10.9-intel-2.7/libImaging/Convert.o build/temp.macosx-10.9-intel-2.7/libImaging/ConvertYCbCr.o build/temp.macosx-10.9-intel-2.7/libImaging/Copy.o build/temp.macosx-10.9-intel-2.7/libImaging/Crc32.o build/temp.macosx-10.9-intel-2.7/libImaging/Crop.o build/temp.macosx-10.9-intel-2.7/libImaging/Dib.o build/temp.macosx-10.9-intel-2.7/libImaging/Draw.o build/temp.macosx-10.9-intel-2.7/libImaging/Effects.o build/temp.macosx-10.9-intel-2.7/libImaging/EpsEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/File.o build/temp.macosx-10.9-intel-2.7/libImaging/Fill.o build/temp.macosx-10.9-intel-2.7/libImaging/Filter.o build/temp.macosx-10.9-intel-2.7/libImaging/FliDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Geometry.o build/temp.macosx-10.9-intel-2.7/libImaging/GetBBox.o build/temp.macosx-10.9-intel-2.7/libImaging/GifDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/GifEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/HexDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Histo.o build/temp.macosx-10.9-intel-2.7/libImaging/JpegDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/JpegEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/LzwDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Matrix.o build/temp.macosx-10.9-intel-2.7/libImaging/ModeFilter.o build/temp.macosx-10.9-intel-2.7/libImaging/MspDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Negative.o build/temp.macosx-10.9-intel-2.7/libImaging/Offset.o build/temp.macosx-10.9-intel-2.7/libImaging/Pack.o build/temp.macosx-10.9-intel-2.7/libImaging/PackDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Palette.o build/temp.macosx-10.9-intel-2.7/libImaging/Paste.o build/temp.macosx-10.9-intel-2.7/libImaging/Quant.o build/temp.macosx-10.9-intel-2.7/libImaging/QuantHash.o build/temp.macosx-10.9-intel-2.7/libImaging/QuantHeap.o build/temp.macosx-10.9-intel-2.7/libImaging/PcdDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/PcxDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/PcxEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/Point.o build/temp.macosx-10.9-intel-2.7/libImaging/RankFilter.o build/temp.macosx-10.9-intel-2.7/libImaging/RawDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/RawEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/Storage.o build/temp.macosx-10.9-intel-2.7/libImaging/SunRleDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/TgaRleDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Unpack.o build/temp.macosx-10.9-intel-2.7/libImaging/UnpackYCC.o build/temp.macosx-10.9-intel-2.7/libImaging/UnsharpMask.o build/temp.macosx-10.9-intel-2.7/libImaging/XbmDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/XbmEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/ZipDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/ZipEncode.o -L/usr/local/lib -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib -L/usr/lib -o /Users/cl/Downloads/Imaging-1.1.7/PIL/_imaging.so
+building '_imagingtk' extension
+creating build/temp.macosx-10.9-intel-2.7/Tk
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imagingtk.c -o build/temp.macosx-10.9-intel-2.7/_imagingtk.o -framework Tcl -framework Tk
+In file included from _imagingtk.c:19:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/tk.h:78:11: fatal error: 
+      'X11/Xlib.h' file not found
+#       include <X11/Xlib.h>
+                ^
+1 error generated.
+error: command 'cc' failed with exit status 1
+clserver:Imaging-1.1.7 cl$ python setup.py build_ext -ima
+clserver:Imaging-1.1.7 cl$ man ln
+clserver:Imaging-1.1.7 cl$ ln -s  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/X11 /usr/local/include/X11
+ln: /usr/local/include/X11: Permission denied
+clserver:Imaging-1.1.7 cl$ sudo ln -s  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/X11 /usr/local/include/X11
+Password:
+clserver:Imaging-1.1.7 cl$ python setup.py build_ext -i
+running build_ext
+--- using frameworks at /System/Library/Frameworks
+building '_imagingtk' extension
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imagingtk.c -o build/temp.macosx-10.9-intel-2.7/_imagingtk.o -framework Tcl -framework Tk
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c Tk/tkImaging.c -o build/temp.macosx-10.9-intel-2.7/Tk/tkImaging.o -framework Tcl -framework Tk
+cc -bundle -undefined dynamic_lookup -arch x86_64 -arch i386 -Wl,-F. -Qunused-arguments -Qunused-arguments build/temp.macosx-10.9-intel-2.7/_imagingtk.o build/temp.macosx-10.9-intel-2.7/Tk/tkImaging.o -L/usr/local/lib -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib -L/usr/lib -o /Users/cl/Downloads/Imaging-1.1.7/PIL/_imagingtk.so -framework Tcl -framework Tk
+building '_imagingmath' extension
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imagingmath.c -o build/temp.macosx-10.9-intel-2.7/_imagingmath.o
+cc -bundle -undefined dynamic_lookup -arch x86_64 -arch i386 -Wl,-F. -Qunused-arguments -Qunused-arguments build/temp.macosx-10.9-intel-2.7/_imagingmath.o -L/usr/local/lib -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib -L/usr/lib -o /Users/cl/Downloads/Imaging-1.1.7/PIL/_imagingmath.so
+--------------------------------------------------------------------
+PIL 1.1.7 SETUP SUMMARY
+--------------------------------------------------------------------
+version       1.1.7
+platform      darwin 2.7.5 (default, Aug 25 2013, 00:04:04)
+              [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+--------------------------------------------------------------------
+--- TKINTER support available
+*** JPEG support not available
+*** ZLIB (PNG/ZIP) support not available
+*** FREETYPE2 support not available
+*** LITTLECMS support not available
+--------------------------------------------------------------------
+To add a missing option, make sure you have the required
+library, and set the corresponding ROOT variable in the
+setup.py script.
+
+To check the build, run the selftest.py script.
+clserver:Imaging-1.1.7 cl$ python selftest.py
+--------------------------------------------------------------------
+PIL 1.1.7 TEST SUMMARY 
+--------------------------------------------------------------------
+Python modules loaded from ./PIL
+Binary modules loaded from ./PIL
+--------------------------------------------------------------------
+--- PIL CORE support ok
+--- TKINTER support ok
+*** JPEG support not installed
+*** ZLIB (PNG/ZIP) support not installed
+*** FREETYPE2 support not installed
+*** LITTLECMS support not installed
+--------------------------------------------------------------------
+Running selftest:
+*****************************************************************
+Failure in example:
+try:
+ _info(Image.open(os.path.join(ROOT, "Images/lena.jpg")))
+except IOError, v:
+ print v
+from line #24 of selftest.testimage
+Expected: ('JPEG', 'RGB', (128, 128))
+Got: decoder jpeg not available
+1 items had failures:
+   1 of  57 in selftest.testimage
+***Test Failed*** 1 failures.
+*** 1 tests of 57 failed.
+clserver:Imaging-1.1.7 cl$ python setup.py build_ext -i
+running build_ext
+--- using frameworks at /System/Library/Frameworks
+--------------------------------------------------------------------
+PIL 1.1.7 SETUP SUMMARY
+--------------------------------------------------------------------
+version       1.1.7
+platform      darwin 2.7.5 (default, Aug 25 2013, 00:04:04)
+              [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+--------------------------------------------------------------------
+--- TKINTER support available
+--- JPEG support available
+*** ZLIB (PNG/ZIP) support not available
+*** FREETYPE2 support not available
+*** LITTLECMS support not available
+--------------------------------------------------------------------
+To add a missing option, make sure you have the required
+library, and set the corresponding ROOT variable in the
+setup.py script.
+
+To check the build, run the selftest.py script.
+clserver:Imaging-1.1.7 cl$ python selftest.py
+--------------------------------------------------------------------
+PIL 1.1.7 TEST SUMMARY 
+--------------------------------------------------------------------
+Python modules loaded from ./PIL
+Binary modules loaded from ./PIL
+--------------------------------------------------------------------
+--- PIL CORE support ok
+--- TKINTER support ok
+*** JPEG support not installed
+*** ZLIB (PNG/ZIP) support not installed
+*** FREETYPE2 support not installed
+*** LITTLECMS support not installed
+--------------------------------------------------------------------
+Running selftest:
+*****************************************************************
+Failure in example:
+try:
+ _info(Image.open(os.path.join(ROOT, "Images/lena.jpg")))
+except IOError, v:
+ print v
+from line #24 of selftest.testimage
+Expected: ('JPEG', 'RGB', (128, 128))
+Got: decoder jpeg not available
+1 items had failures:
+   1 of  57 in selftest.testimage
+***Test Failed*** 1 failures.
+*** 1 tests of 57 failed.
+clserver:Imaging-1.1.7 cl$ cd ..
+clserver:Downloads cl$ cd Imaging-1.1.7
+clserver:Imaging-1.1.7 cl$ python setup.py build_ext -i
+running build_ext
+--- using frameworks at /System/Library/Frameworks
+building '_imaging' extension
+creating build
+creating build/temp.macosx-10.9-intel-2.7
+creating build/temp.macosx-10.9-intel-2.7/libImaging
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imaging.c -o build/temp.macosx-10.9-intel-2.7/_imaging.o
+_imaging.c:3017:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) image_length, /*sq_length*/
+    ^~~~~~~~~~~~~~~~~~~~~~
+_imaging.c:3077:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) NULL, /*mp_length*/
+    ^~~~~~~~~~~~~~
+2 warnings generated.
+_imaging.c:3017:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) image_length, /*sq_length*/
+    ^~~~~~~~~~~~~~~~~~~~~~
+_imaging.c:3077:5: warning: incompatible pointer types initializing 'lenfunc'
+      (aka 'Py_ssize_t (*)(PyObject *)') with an expression of type 'inquiry'
+      (aka 'int (*)(PyObject *)') [-Wincompatible-pointer-types]
+    (inquiry) NULL, /*mp_length*/
+    ^~~~~~~~~~~~~~
+2 warnings generated.
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c decode.c -o build/temp.macosx-10.9-intel-2.7/decode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c encode.c -o build/temp.macosx-10.9-intel-2.7/encode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c map.c -o build/temp.macosx-10.9-intel-2.7/map.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c display.c -o build/temp.macosx-10.9-intel-2.7/display.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c outline.c -o build/temp.macosx-10.9-intel-2.7/outline.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c path.c -o build/temp.macosx-10.9-intel-2.7/path.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Access.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Access.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Antialias.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Antialias.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Bands.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Bands.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/BitDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/BitDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Blend.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Blend.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Chops.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Chops.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Convert.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Convert.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/ConvertYCbCr.c -o build/temp.macosx-10.9-intel-2.7/libImaging/ConvertYCbCr.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Copy.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Copy.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Crc32.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Crc32.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Crop.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Crop.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Dib.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Dib.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Draw.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Draw.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Effects.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Effects.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/EpsEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/EpsEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/File.c -o build/temp.macosx-10.9-intel-2.7/libImaging/File.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Fill.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Fill.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Filter.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Filter.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/FliDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/FliDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Geometry.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Geometry.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/GetBBox.c -o build/temp.macosx-10.9-intel-2.7/libImaging/GetBBox.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/GifDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/GifDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/GifEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/GifEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/HexDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/HexDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Histo.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Histo.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/JpegDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/JpegDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/JpegEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/JpegEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/LzwDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/LzwDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Matrix.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Matrix.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/ModeFilter.c -o build/temp.macosx-10.9-intel-2.7/libImaging/ModeFilter.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/MspDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/MspDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Negative.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Negative.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Offset.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Offset.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Pack.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Pack.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/PackDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/PackDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Palette.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Palette.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Paste.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Paste.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Quant.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Quant.o
+libImaging/Quant.c:154:10: warning: cast to 'void *' from smaller integer type
+      'int' [-Wint-to-void-pointer-cast]
+   *valp=(void *)((*(int *)valp)+(*(int *)&newval));
+         ^
+1 warning generated.
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/QuantHash.c -o build/temp.macosx-10.9-intel-2.7/libImaging/QuantHash.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/QuantHeap.c -o build/temp.macosx-10.9-intel-2.7/libImaging/QuantHeap.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/PcdDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/PcdDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/PcxDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/PcxDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/PcxEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/PcxEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Point.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Point.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/RankFilter.c -o build/temp.macosx-10.9-intel-2.7/libImaging/RankFilter.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/RawDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/RawDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/RawEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/RawEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Storage.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Storage.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/SunRleDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/SunRleDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/TgaRleDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/TgaRleDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/Unpack.c -o build/temp.macosx-10.9-intel-2.7/libImaging/Unpack.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/UnpackYCC.c -o build/temp.macosx-10.9-intel-2.7/libImaging/UnpackYCC.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/UnsharpMask.c -o build/temp.macosx-10.9-intel-2.7/libImaging/UnsharpMask.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/XbmDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/XbmDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/XbmEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/XbmEncode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/ZipDecode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/ZipDecode.o
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -DHAVE_LIBJPEG -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c libImaging/ZipEncode.c -o build/temp.macosx-10.9-intel-2.7/libImaging/ZipEncode.o
+cc -bundle -undefined dynamic_lookup -arch x86_64 -arch i386 -Wl,-F. -Qunused-arguments -Qunused-arguments build/temp.macosx-10.9-intel-2.7/_imaging.o build/temp.macosx-10.9-intel-2.7/decode.o build/temp.macosx-10.9-intel-2.7/encode.o build/temp.macosx-10.9-intel-2.7/map.o build/temp.macosx-10.9-intel-2.7/display.o build/temp.macosx-10.9-intel-2.7/outline.o build/temp.macosx-10.9-intel-2.7/path.o build/temp.macosx-10.9-intel-2.7/libImaging/Access.o build/temp.macosx-10.9-intel-2.7/libImaging/Antialias.o build/temp.macosx-10.9-intel-2.7/libImaging/Bands.o build/temp.macosx-10.9-intel-2.7/libImaging/BitDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Blend.o build/temp.macosx-10.9-intel-2.7/libImaging/Chops.o build/temp.macosx-10.9-intel-2.7/libImaging/Convert.o build/temp.macosx-10.9-intel-2.7/libImaging/ConvertYCbCr.o build/temp.macosx-10.9-intel-2.7/libImaging/Copy.o build/temp.macosx-10.9-intel-2.7/libImaging/Crc32.o build/temp.macosx-10.9-intel-2.7/libImaging/Crop.o build/temp.macosx-10.9-intel-2.7/libImaging/Dib.o build/temp.macosx-10.9-intel-2.7/libImaging/Draw.o build/temp.macosx-10.9-intel-2.7/libImaging/Effects.o build/temp.macosx-10.9-intel-2.7/libImaging/EpsEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/File.o build/temp.macosx-10.9-intel-2.7/libImaging/Fill.o build/temp.macosx-10.9-intel-2.7/libImaging/Filter.o build/temp.macosx-10.9-intel-2.7/libImaging/FliDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Geometry.o build/temp.macosx-10.9-intel-2.7/libImaging/GetBBox.o build/temp.macosx-10.9-intel-2.7/libImaging/GifDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/GifEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/HexDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Histo.o build/temp.macosx-10.9-intel-2.7/libImaging/JpegDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/JpegEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/LzwDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Matrix.o build/temp.macosx-10.9-intel-2.7/libImaging/ModeFilter.o build/temp.macosx-10.9-intel-2.7/libImaging/MspDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Negative.o build/temp.macosx-10.9-intel-2.7/libImaging/Offset.o build/temp.macosx-10.9-intel-2.7/libImaging/Pack.o build/temp.macosx-10.9-intel-2.7/libImaging/PackDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Palette.o build/temp.macosx-10.9-intel-2.7/libImaging/Paste.o build/temp.macosx-10.9-intel-2.7/libImaging/Quant.o build/temp.macosx-10.9-intel-2.7/libImaging/QuantHash.o build/temp.macosx-10.9-intel-2.7/libImaging/QuantHeap.o build/temp.macosx-10.9-intel-2.7/libImaging/PcdDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/PcxDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/PcxEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/Point.o build/temp.macosx-10.9-intel-2.7/libImaging/RankFilter.o build/temp.macosx-10.9-intel-2.7/libImaging/RawDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/RawEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/Storage.o build/temp.macosx-10.9-intel-2.7/libImaging/SunRleDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/TgaRleDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/Unpack.o build/temp.macosx-10.9-intel-2.7/libImaging/UnpackYCC.o build/temp.macosx-10.9-intel-2.7/libImaging/UnsharpMask.o build/temp.macosx-10.9-intel-2.7/libImaging/XbmDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/XbmEncode.o build/temp.macosx-10.9-intel-2.7/libImaging/ZipDecode.o build/temp.macosx-10.9-intel-2.7/libImaging/ZipEncode.o -L/usr/local/lib -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib -L/usr/lib -ljpeg -o /Users/cl/Downloads/Imaging-1.1.7/PIL/_imaging.so
+building '_imagingtk' extension
+creating build/temp.macosx-10.9-intel-2.7/Tk
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imagingtk.c -o build/temp.macosx-10.9-intel-2.7/_imagingtk.o -framework Tcl -framework Tk
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c Tk/tkImaging.c -o build/temp.macosx-10.9-intel-2.7/Tk/tkImaging.o -framework Tcl -framework Tk
+cc -bundle -undefined dynamic_lookup -arch x86_64 -arch i386 -Wl,-F. -Qunused-arguments -Qunused-arguments build/temp.macosx-10.9-intel-2.7/_imagingtk.o build/temp.macosx-10.9-intel-2.7/Tk/tkImaging.o -L/usr/local/lib -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib -L/usr/lib -o /Users/cl/Downloads/Imaging-1.1.7/PIL/_imagingtk.so -framework Tcl -framework Tk
+building '_imagingmath' extension
+cc -DNDEBUG -g -fwrapv -Os -Wall -Wstrict-prototypes -Qunused-arguments -Qunused-arguments -arch x86_64 -arch i386 -pipe -IlibImaging -I/System/Library/Frameworks/Python.framework/Versions/2.7/include -I/usr/local/include -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c _imagingmath.c -o build/temp.macosx-10.9-intel-2.7/_imagingmath.o
+cc -bundle -undefined dynamic_lookup -arch x86_64 -arch i386 -Wl,-F. -Qunused-arguments -Qunused-arguments build/temp.macosx-10.9-intel-2.7/_imagingmath.o -L/usr/local/lib -L/System/Library/Frameworks/Python.framework/Versions/2.7/lib -L/usr/lib -o /Users/cl/Downloads/Imaging-1.1.7/PIL/_imagingmath.so
+--------------------------------------------------------------------
+PIL 1.1.7 SETUP SUMMARY
+--------------------------------------------------------------------
+version       1.1.7
+platform      darwin 2.7.5 (default, Aug 25 2013, 00:04:04)
+              [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+--------------------------------------------------------------------
+--- TKINTER support available
+--- JPEG support available
+*** ZLIB (PNG/ZIP) support not available
+*** FREETYPE2 support not available
+*** LITTLECMS support not available
+--------------------------------------------------------------------
+To add a missing option, make sure you have the required
+library, and set the corresponding ROOT variable in the
+setup.py script.
+
+To check the build, run the selftest.py script.
+clserver:Imaging-1.1.7 cl$ python selftest.py
+--------------------------------------------------------------------
+PIL 1.1.7 TEST SUMMARY 
+--------------------------------------------------------------------
+Python modules loaded from ./PIL
+Binary modules loaded from ./PIL
+--------------------------------------------------------------------
+--- PIL CORE support ok
+--- TKINTER support ok
+--- JPEG support ok
+*** ZLIB (PNG/ZIP) support not installed
+*** FREETYPE2 support not installed
+*** LITTLECMS support not installed
+--------------------------------------------------------------------
+Running selftest:
+--- 57 tests passed.
+clserver:Imaging-1.1.7 cl$ cd ..
+clserver:Downloads cl$ make -v
+GNU Make 3.81
+Copyright (C) 2006  Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+
+This program built for i386-apple-darwin11.3.0
+clserver:Downloads cl$ pwd
+/Users/cl/Downloads
+clserver:Downloads cl$ cd freetype-2.5.3
+clserver:freetype-2.5.3 cl$ ls
+CMakeLists.txt	ChangeLog.23	README		devel		src
+ChangeLog	ChangeLog.24	README.git	docs		version.sed
+ChangeLog.20	Jamfile		autogen.sh	include		vms_make.com
+ChangeLog.21	Jamrules	builds		modules.cfg
+ChangeLog.22	Makefile	configure	objs
+clserver:freetype-2.5.3 cl$ pwd
+/Users/cl/Downloads/freetype-2.5.3
+clserver:freetype-2.5.3 cl$ make
+	**** OK
+clserver:freetype-2.5.3 cl$ sudo make install
+	**** OK
+clserver:freetype-2.5.3 cl$ 

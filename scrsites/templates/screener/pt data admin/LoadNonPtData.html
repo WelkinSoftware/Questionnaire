@@ -1,0 +1,40 @@
+<div style="text-align: left; ">
+{% include 'screener/header.html' %}
+<div style="text-align: left; ">
+
+<h3>List of non-Patient data listed in local database</h3>
+<p>
+ 	{{ current_date }}
+</p>
+
+<div class="indented">
+
+		{% if nonptlist %}
+			<p>List of site specific identification for computer: {{host}}:</p>
+        <ul>
+			<li>Questionnaire Title: {{ nonptlist.questionnaireTitle }}</li>
+			<li>Questionnaire Version: {{ nonptlist.questionnaireVersion }}</li>
+			<li>Questionnaire Update: {{ nonptlist.questionnaireUpdate }}</li>
+			<li>Questionnaire Email: {{ nonptlist.questionnaireEmail }}</li>
+			<li>Project Name: {{ nonptlist.projectName }}</li>
+			<li>Project Abbrev: {{ nonptlist.projectAbbrev }}</li>
+			<li>Project Contact Phone: {{ nonptlist.projectContactPhone }}</li>
+			<li>Project Internet Resources: {{ nonptlist.projectInternetResources }}</li>
+			<li>Project Informed Consent: {{ nonptlist.projectInformedConsent }}</li>
+        </ul>
+        {% else %}
+        	<p>No site data loaded.</p>
+     	{% endif %}
+
+<p>Click <a href="{{urlprefix}}scrn/scrnrAdmin/" target="_self">here</a> to return to the administration page.</p>
+
+</div>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {padding-left: 50pt;
+   padding-right: 50pt;
+   }
+-->
+</STYLE>

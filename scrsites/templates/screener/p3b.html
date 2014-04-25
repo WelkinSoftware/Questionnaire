@@ -1,0 +1,57 @@
+	<head>
+		<title> PAMF breast health screening questionnaire - Page 3b</title>
+	</head>
+{% include 'screener/header.html' %}
+<div>
+	{% if form.errors %}
+		<p style="color: red;">
+			Please correct the error{{ form.errors|pluralize }} below.
+		</p>
+	{% endif %}
+    <table frame='border' rules='all' border='2px'>
+  		<form action="" method="post">{% csrf_token %}
+		<div class="field">
+			{{ form.ashkenaziJewish.errors }}
+            <label for="id_ashkenaziJewish"><i>Ashkenazi Jewish people have a higher chance of BRCA gene mutations.</i>
+                <p>
+                    Do you have at least one close blood relative who is
+                    <a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+                       href="{{urlprefix}}scrn/explanations/ashkenazijewishrelatives">Ashkenazi Jewish</a>?
+                </p>
+                </label>
+            {{ form.ashkenaziJewish }}
+        </div>
+		<div class="field">
+            {{ form.pHxBrCAGE1RelBrCALE50Years.errors }}
+            <label for="id_pHxBrCAGE1RelBrCALE50Years"> Do you have any close blood relatives with breast cancer that was
+                diagnosed at age 50 years or younger?</label>
+            {{ form.pHxBrCAGE1RelBrCALE50Years }}
+        </div>
+		<div class="field">
+            {{ form.pHxBrCAGE2RelBrPancCA.errors }}
+            <label for="id_pHxBrCAGE2RelBrPancCA"> Did two or more close blood relatives from the same side have breast or pancreatic cancer?</label>
+            {{ form.pHxBrCAGE2RelBrPancCA }}
+        </div>
+	<a href="{{urlprefix}}scrn/{{back_to}}">Back</a>
+			<input type="submit" value="Next">
+	</form>
+    </table>
+    <br /><br />
+    {% include 'screener/footer.html' %}
+</div>
+
+<!--
+Copyright 2011 Health Records for Everyone
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->

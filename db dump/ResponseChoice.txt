@@ -1,0 +1,41 @@
+['ResponseChoice ID', 'Choice Tag', 'Question ID', 'Question Tag', 'Choice Text', 'Choice Type', 'Choice Sequence']
+1,fHxBrCADermMan,4,fHxBrCAOther,Breast cancer involving the skin overlying the breast,fHxBrCADermMan,01
+2,fHxBrCAThyroidCA,4,fHxBrCAOther,Thyroid cancer,fHxBrCAThyroidCA,02
+3,fHxBrCASarcoma,4,fHxBrCAOther,Sarcoma,fHxBrCASarcoma,03
+4,fHxBrCAAdrenalCA,4,fHxBrCAOther,Adrenal cancer,fHxBrCAAdrenalCA,04
+5,fHxBrCAEndometrialCA,4,fHxBrCAOther,Cancer of the uterus,fHxBrCAEndometrialCA,05
+6,fHxBrCAPancreaticCA,4,fHxBrCAOther,Pancreatic cancer,fHxBrCAPancreaticCA,06
+7,fHxBrCABrainTumors,4,fHxBrCAOther,Brain tumors,fHxBrCABrainTumors,07
+8,fHxBrCAGastricCA,4,fHxBrCAOther,Stomach cancer,fHxBrCAGastricCA,08
+9,fHxBrCALeukLymphoma,4,fHxBrCAOther,Leukemia or lymphoma,fHxBrCALeukLymphoma,09
+10,pHxBrBi_HwoA,15,pHxBrBi,Hyperplasia without atypia,pHxBrBi_HwoA,1
+11,pHxBrBi_Les,15,pHxBrBi,High Risk lesion:  atypical hyperplasia<aComma> or lobular carcinoma in situ (LCIS),pHxBrBi_Les,2
+12,pHxBrBi_Unk,15,pHxBrBi,I don't know,pHxBrBi_Unk,3
+13,Yes,21,pHxBrCALE50Yrs,Age 50 or under,Yes,01
+14,No,21,pHxBrCALE50Yrs,Age 51 or older,No,02
+15,pHxBrCAThyroidCA,22,pHxBrCAOther,Thyroid cancer,pHxBrCAThyroidCA,02
+16,pHxBrCASarcoma,22,pHxBrCAOther,Sarcoma,pHxBrCASarcoma,03
+17,pHxBrCAAdrenalCA,22,pHxBrCAOther,Adrenal cancer,pHxBrCAAdrenalCA,04
+18,pHxBrCAEndometrialCA,22,pHxBrCAOther,Cancer of the uterus,pHxBrCAEndometrialCA,05
+19,pHxBrCAPancreaticCA,22,pHxBrCAOther,Pancreatic cancer,pHxBrCAPancreaticCA,06
+20,pHxBrCABrainTumors,22,pHxBrCAOther,Brain tumors,pHxBrCABrainTumors,07
+21,pHxBrCAGastricCA,22,pHxBrCAOther,Stomach cancer,pHxBrCAGastricCA,08
+22,pHxBrCALeukLymphoma,22,pHxBrCAOther,Leukemia or lymphoma,pHxBrCALeukLymphoma,09
+23,pHxHormUse_BC,27,pHxHormUse,Birth control pills,pHxHormUse_BC,1
+24,pHxHormUse_Est,27,pHxHormUse,Estrogen replacement,pHxHormUse_Est,2
+25,pHxHormUse_Pro,27,pHxHormUse,Progesterone replacement,pHxHormUse_Pro,3
+26,pHxHormUse_Tam,27,pHxHormUse,Tamoxifen,pHxHormUse_Tam,4
+27,pHxHormUse_Ral,27,pHxHormUse,Raloxifene,pHxHormUse_Ral,5
+28,pHxHormUse_Ari,27,pHxHormUse,Arimidex,pHxHormUse_Ari,6
+29,ptEth_W,41,ptEth,White,ptEth_W,01
+30,ptEth_AA,41,ptEth,African American,ptEth_AA,02
+31,ptEth_H,41,ptEth,Hispanic,ptEth_H,03
+32,ptEth_AI,41,ptEth,American Indian,ptEth_AI,04
+33,ptEth_AN,41,ptEth,Alaskan Native,ptEth_AN,05
+34,ptEth_C,41,ptEth,Chinese,ptEth_C,06
+35,ptEth_J,41,ptEth,Japanese,ptEth_J,07
+36,ptEth_F,41,ptEth,Filipino,ptEth_F,08
+37,ptEth_Hii,41,ptEth,Hawaiian,ptEth_Hii,09
+38,ptEth_OPI,41,ptEth,Other Pacific Islander,ptEth_OPI,10
+39,ptEth_OAA,41,ptEth,Other Asian American,ptEth_OAA,11
+40,ptEth_OU,41,ptEth,Other or unknown,ptEth_OU,12

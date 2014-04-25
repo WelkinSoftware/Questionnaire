@@ -1,0 +1,3 @@
+['shortTag', 'id', 'abbrev', 'name', 'email', 'contactPhone', 'internetLocation']
+PAMF,1,PAMF,Palo Alto Medical Foundation,screener@screengenes.org,650-555-1212,http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html
+test_project,2,my test project,Test Project “curly quotes”,,,

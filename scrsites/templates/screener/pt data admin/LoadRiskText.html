@@ -1,0 +1,32 @@
+<div style="text-align: left; ">
+{% include 'screener/header.html' %}
+<div style="text-align: left; ">
+
+<h3>Loading risk text into database "scrsites_risknames" for computer: {{host}}</h3>
+<p>
+ 	{{ current_date }}
+</p>
+
+<div class="indented">
+
+		{% if LoadFail %}
+        <ul>
+        <p>Risk statement text not loaded into database.</p>
+        <p>"looptx" counter value is:  {{looptx}}</p>
+        </ul>
+        {% else %}
+        	<p>Risk statement text successfully loaded into database. Number of records:  {{looptx}}</p>
+     	{% endif %}
+
+<p>Click <a href="{{urlprefix}}scrn/scrnrAdmin/" target="_self">here</a> to return to the administration page.</p>
+
+</div>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {padding-left: 50pt;
+   padding-right: 50pt;
+   }
+-->
+</STYLE>

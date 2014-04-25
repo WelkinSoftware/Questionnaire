@@ -1,0 +1,55 @@
+	<head>
+		<title> PAMF breast health screening questionnaire - Page 3</title>
+	</head>
+{% include 'screener/header.html' %}
+<div>
+    <p>
+        Have you ever had <a title="Tap here for more information about breast cancer"
+            href="{{urlprefix}}scrn/explanations/moreonbreastca">
+        breast cancer or DCIS?</a>.
+    </p>
+	{% if diagMess %}
+   <p>
+    back to:  {{back_to}}
+    diagMess:  {{diagMess}}
+    </p>
+	{% endif %}
+    
+    <table width='70%'>
+				{% if form.errors %}
+					<p style="color: red;">
+						Please correct the error{{ form.errors|pluralize }} below.
+					</p>
+				{% endif %}
+  	<form action="" method="post">{% csrf_token %}
+		<div class="field">
+            {{ form.pHxBreastCA.errors }}
+            <label for="id_pHxBreastCA"></label>
+            {{ form.pHxBreastCA }}
+        </div>
+			<a href="{{urlprefix}}scrn/{{back_to}}">Back</a>
+			<input type="submit" value="Next">
+	</form>
+    </table>
+    <p><i>
+
+    </i></p>
+    <br /><br />
+    {% include 'screener/footer.html' %}
+</div>
+
+<!--
+Copyright 2011 Health Records for Everyone
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->

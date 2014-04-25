@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title> PAMF breast health screening questionnaire - Page {{this_page}}</title>
+	</head>
+<body>
+{% include 'screener/header.html' %}
+
+    <p style='font-size:Large;'>
+Select debug options.    
+	</p>
+
+    {% if errmsg %}
+		<p style="color: red;">
+    	{{errmsg }}
+		</p>
+    {% endif %}
+	{% if form.errors %}
+		<p style="color: red;">
+			Please correct the error{{ form.errors|pluralize }} below.
+		</p>
+	{% endif %}
+		<form action="" method="post" >{% csrf_token %}
+			{{form.as_p }}	
+		<a href="{{urlprefix}}{{baseURL}}{{back_to}}">
+		<button type="button">Back</button> </a>
+		<input type="submit" value="Next">
+	</form>
+    {% include 'screener/footer.html' %}

@@ -1,0 +1,17 @@
+{% include 'screener/header.html' %}
+<div>
+    <p>
+		Termination page. Click the "Flush" button to remove Session data
+    </p>
+    <p>
+		{{fmess}}
+    </p>
+    <p>
+		{{othermess}}
+    </p>
+ 	<form action="" method="post">{% csrf_token %}
+		<input type="submit" value="Flush">
+	</form>
+    <br /><br />
+</div>
+{% include 'screener/footer.html' %}

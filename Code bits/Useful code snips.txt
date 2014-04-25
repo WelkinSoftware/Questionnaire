@@ -1,0 +1,509 @@
+Useful code snips
+
+Code snips are separated by "============="
+
+=============<h3>most common minimum environment</h3>
+from multiquest.adminUtilities import *
+from multiquest.forms import *
+from multiquest.models import *
+from multiquest.views import *
+from multiquest.utilities import *
+from multiquest.utilities_db import *
+from django.contrib.auth.models import Group, User, Permission
+
+=============<h3>Permissions fix</h3>
+Permissions fix
+/Users/cl/Documents/DjCode/PostgresPermissionsFix.sh
+
+=============<h3>get default project (Standard)</h3>
+
+	theProject = getSessionProject(request)
+	if not theProject: # not in session data
+		# fall back to user default
+		theUser = request.user
+		theProject = getAssociatedProjectForUser(theUser)
+	if not theProject:
+		# Redirect if still no project
+		redirectURL = registrationURL_base + 'selectProjectDefault/'
+		DebugOut('No project, so redirect to: %s' %redirectURL)
+		return HttpResponseRedirect(redirectURL)
+
+=============<h3>call Information screen if error</h3>
+
+	errMsg = []
+	allSubmissions = Submission.objects.all().order_by('questionnaireID__shortTag', '-lastUpdate')
+	if len(allSubmissions) == 0:
+		errMsg.append('Zero submissions. No Questionnaire submissions to display for this Project.')
+		return render(request, 'InfoScreenExit.html', { 'errMsg': [errMsg]})
+
+
+
+=============<h3>csrf error fix</h3>
+# Cross Site Request Forgery protection
+Call the following after "currentContext" is set with values
+currentContext.update(csrf(request))
+Otherwise, use "render()" to display a page
+
+=============<h3>Page sequence for BRCA questionnaire</h3>
+'splash','respondentIdent','H1','H2','H3','H3a','H3b','H4','H5','H5a','H6','H7','H7a','P1','P2','P3','P4','P5','questionnaireSummary','completion'
+'P3a','P3b','P3c','P5'
+'P4a','P4b','P5'
+'avgRisk','completion'
+'indetRisk','completion'
+'riskAssess2','completion'
+
+=============<h3>Update object fields</h3>
+You can use the setattr function to dynamically set attributes:
+"foo" is a model instance
+for key,value in request.GET.items():
+    setattr(foo, key, value)
+    
+=============<h3>Example function documentation</h3>
+def getAllActiveQuestionnaires( ):
+	"""Documentation statement with a period.
+
+	This is a one line or more descriptive summary.
+	Blah Blah Blah.
+
+	Args:
+		argument_one: This is of some type a and does x.
+		arg....:...
+
+	Returns:
+		return_value: Some return value of type a. 	
+
+	Raises:
+		SomeErrorException: Blah.
+	"""
+
+
+=============<h3>Create an object from a dictionary of field values</h3>
+
+localInput is an input dictionary
+
+theQuestionnaireObj = Questionnaire(**localInput)
+
+=============<h3>set up Environment only for utilities</h3>
+
+from multiquest.adminUtilities import *
+
+=============<h3>set up environment</h3>
+#set up environment
+from django.utils.encoding import smart_text
+from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.template.loader import get_template
+from django.template import Context
+from django.shortcuts import render_to_response, render, get_object_or_404
+from django.conf import settings
+from django import forms
+from datetime import datetime, date
+from dateutil.relativedelta import relativedelta
+from django.forms import ModelForm
+import pickle
+from django.db.models import Q
+from django.core.mail import send_mail, EmailMessage
+from django.utils.timezone import *
+import csv
+import unicodedata
+
+
+from django.shortcuts import render_to_response, render, get_object_or_404
+
+comprehensiveQuestionnaireProjectList()
+
+# set up a Project and Questionnaire
+allProjects = getAllProjects()
+theProject = allProjects.get(shortTag='PAMF')
+allQuests = getQuestionnaireObjsForProject(theProject)
+theQuestionnaire = allQuests.get(shortTag='BRCA_F')
+allPages = getAllPageObjsForQuestionnaire(theQuestionnaire)
+allPagesinOrder = allPagesInDefaultOrder(theQuestionnaire)
+allTagsInOrder=[ap.shortTag for ap in allPagesinOrder]
+thePage = allPages.get(shortTag='P1')
+theQuestionsOnPage = getPageQuestions( thePage)
+
+UtoTdict = MakeUniqueKeyToTagDict(theQuestionsOnPage)
+theQuestionnaire = getQuestionnaireObjFromTags( 'Lavender', 'SampleQ')
+allPageTags = getAllPageTags(theQuestionnaire)
+deleteQuestionnaire(xxxQuestionnaire)
+
+
+=============<h3>Quick shell reset</h3>
+#Quick utilities test
+quit()
+python manage.py shell
+from multiquest.adminUtilities import *
+dbTestQuestInit()
+
+=============<h3>HTML loop</h3>
+
+{% if allProjectInfo %}
+	<p>The current Projects is: {{allProjectInfo.shortTag}}</p>
+	<dl>
+	{% for aProjectTag, aProjectName in allProjectInfo %}
+		<dt>{{aProjectTag }}</dt>
+		<dd>{{aProjectName}}</dd>
+	{% endfor %}
+	</dl>
+{% endif %}
+
+=============<h3>strip html tags from textp</h3>
+strip_tags(aline[1]) # no html in the Summary
+
+=============<h3>Extract a dictionary from a queryset</h3>
+
+theDict = thequeryset.values('testCondition','nextPageID') # field names
+
+=============<h3>Make a list of unique items</h3>
+
+uniqueRecs = list(set(allRecs))
+
+=============<h3>list comprehension example</h3>
+
+	questionObjs = [aquest.questionID for aquest in thePageQuestions] # list comprehension
+
+=============<h3>intersection of two lists</h3>
+I know how to get an intersection of two flat lists:
+
+b1 = [1,2,3,4,5,9,11,15]
+b2 = [4,5,6,7,8]
+b3 = [val for val in b1 if val in b2]
+or
+
+def intersect(a, b):
+     return list(set(a) & set(b))
+
+print intersect(b1, b2)
+
+=============<h3>Merging lists and sublists - intersection of</h3>
+If you want:
+
+c1 = [1, 6, 7, 10, 13, 28, 32, 41, 58, 63]
+c2 = [[13, 17, 18, 21, 32], [7, 11, 13, 14, 28], [1, 5, 6, 8, 15, 16]]
+c3 = [[13, 32], [7, 13, 28], [1,6]]
+Then here is your solution:
+
+c3 = [filter(lambda x: x in c1, sublist) for sublist in c2]
+Explanation:
+
+The filter part takes each sublist's item and checks to see if it is in the source list c1.
+The list comprehension is executed for each sublist in c2.
+
+=============<h3>create a character string from a list - comma separated</h3>
+	pageTagListStr = ', '.join(allTags)
+	
+	
+=============<h3>Duplicate a record in the database</h3>
+
+        object.id = None
+        object.save()
+	
+=============<h3>List fields in a Model</h3>
+
+model._meta.get_all_field_names()
+That requires an actual model instance.
+If all you have is a subclass of django.db.models.Model, then you should call myproject.myapp.models.MyModel._meta.get_all_field_names()
+
+def get_model_fields(model):
+    return model._meta.fields
+I believe this will return a list of Field objects.
+To get the value of each field from the instance,
+	use getattr(instance, field.name)
+	
+=============<h3>access field names in a Model</h3>
+	respFields = ['lastName', 'middleName', 'firstName', 'birthDate', 'ptEmail', 'contactPhone', 'contactEmail', 'externalID', 'externalIDAuthority']
+	for aSubmission in allSubmissions:
+		responderObj = aSubmission.respondentID
+		for respField in respFields: # process respondent identifiction
+			try:
+				theItem = unicode(getattr(responderObj, respField)).encode('utf-8')
+			except AttributeError:
+				DebugOut('syserrmsg: respField field: %s not found in database.' %(respField))
+			except:
+				DebugOut('syserrmsg: respField field: %s error in db retrieval' %(respField))
+
+
+=============<h3>OR queries into a single query</h3>
+from django.db.models import Q
+	# construct the query using the "Q object" (see page 104) in pdf from Django site
+
+# OR queries into a single query
+	# construct a query which will obtain question objects corresponding to question tags in allResults
+# 	questionObjectQuery = ""
+# 	for key, value in allResults.iteritems():
+# 		#risk_list.append('key value pair: ' + key +' '+ str(value))
+# 		if questionObjectQuery:
+# 			questionObjectQuery = questionObjectQuery | Q(questionTag=key)
+# 		else:
+# 			questionObjectQuery = Q(questionTag=key)
+# 	questionResponses = Question.objects.filter( questionObjectQuery) # retrieve all question objects
+# 	DebugOut('questionResponses:')
+# 	DebugOut(str(questionResponses))
+Another example
+	if len(allRecs) == 0: # no Projects, so return empty queryset
+		allUniqueProjects = Project.objects.none() # initialize
+	else:
+		queryOR = Q(id=allRecs[0])
+		if len(allRecs) >1:
+			for aRec in allRecs[1:]:
+				queryOR = queryOR | Q(id=aRec)
+		allUniqueProjects = Project.objects.filter(queryOR)
+
+=============<h3>build a "Q object" for a single query</h3>
+	# build a "Q object" for a single query
+	questionObjectQuery = ""
+	for key, value in allRes.iteritems():
+		#risk_list.append('key value pair: ' + key +' '+ str(value))
+		if questionObjectQuery:
+			questionObjectQuery = questionObjectQuery | Q(questionTag=key)
+		else:
+			questionObjectQuery = Q(questionTag=key)
+	questionResponses = Question.objects.filter( questionObjectQuery)
+
+
+=============
+To access field names and field values in a model
+aquaireObj = Questionnaire.objects.get(shortTag='BRCA')
+qaireFields = aquaireObj._meta.get_all_field_names() # skip the id field
+fValue = unicode(getattr(aquaireObj, qaireFields[0])).encode('utf-8')
+
+=============<h3>Create a table</h3>
+	for aQuest in tableListing:
+		try:
+			projectShortTag = Project.objects.get(questionnaireID=aQuest).shortTag
+		except Project.DoesNotExist: # catch freestanding questionnaires
+			allProjects = Project.objects.all()
+			projectShortTag = allProjects[0].shortTag # arbitrarily assign the first one
+		rowValues = []
+		for item in dbNames:
+			if item == 'shortTag':
+				fValue=unicode(getattr(aQuest, item)).encode('utf-8')
+				theLaunchURL = 'http:/'+thisHost+pageBaseURL+projectShortTag+'/'+fValue+'/'
+				rowValues.append("""<a title="Tap here to launch the Questionnaire" href=" """+theLaunchURL+""" "> """+theLaunchURL+"""</a>""")
+			else:
+				rowValues.append(unicode(getattr(aQuest, item)).encode('utf-8'))		
+		allValues.append(rowValues)
+
+=============  <h3>example of an html table</h3>
+<table frame='border' border='1px' width='100%'>
+	<h3>{{bannerText1}}</h3>
+	{% for cHeader in colList %}
+		<td>{{cHeader}}</td>
+	{% endfor %}
+	{% for item in allValues %}
+	<tr>
+		{% for fieldName in item %}
+		<td>{{ fieldName }}</td>
+		{% endfor %}
+	</tr>
+	{% endfor %}
+</table>
+=============  <h3>Arrays using Numpy</h3>
+>>> import numpy as np
+>>> Y = np.array(list("ABCDE"*5)).reshape(5,5)
+
+Grab row 1 (as with lists):
+
+>>> Y[1,:]
+array(['A', 'B', 'C', 'D', 'E'], 
+      dtype='|S1')
+Grab column 1 (new!):
+
+>>> Y[:,1]
+array(['B', 'B', 'B', 'B', 'B'], 
+      dtype='|S1')
+    
+
+>>> initStart = [
+...     ["","","","","","8","","",""],
+...     ["4","","","","2","","","7",""],
+...     ["8","","","","4","1","3","",""],
+...     ["2","","","","","","7","4",""],
+...     ["5","","","","","","","","9"],
+...     ["","8","3","","","","","","5"],
+...     ["","","6","5","1","","","","8"],
+...     ["","9","","","7","","","","1"],
+...     ["","","","8","","","","",""],
+...     ]
+>>> initStartTrans = map(list,zip(*initStart)) # transpose a list of lists
+>>> initStart
+[['', '', '', '', '', '8', '', '', ''], ['4', '', '', '', '2', '', '', '7', ''], ['8', '', '', '', '4', '1', '3', '', ''], ['2', '', '', '', '', '', '7', '4', ''], ['5', '', '', '', '', '', '', '', '9'], ['', '8', '3', '', '', '', '', '', '5'], ['', '', '6', '5', '1', '', '', '', '8'], ['', '9', '', '', '7', '', '', '', '1'], ['', '', '', '8', '', '', '', '', '']]
+>>> initStartTrans
+[['', '4', '8', '2', '5', '', '', '', ''], ['', '', '', '', '', '8', '', '9', ''], ['', '', '', '', '', '3', '6', '', ''], ['', '', '', '', '', '', '5', '', '8'], ['', '2', '4', '', '', '', '1', '7', ''], ['8', '', '1', '', '', '', '', '', ''], ['', '', '3', '7', '', '', '', '', ''], ['', '7', '', '4', '', '', '', '', ''], ['', '', '', '', '9', '5', '8', '1', '']]
+>>> import numpy
+>>> yy=numpy.array(initStart) # translate to an array
+>>> print yy
+[['' '' '' '' '' '8' '' '' '']
+ ['4' '' '' '' '2' '' '' '7' '']
+ ['8' '' '' '' '4' '1' '3' '' '']
+ ['2' '' '' '' '' '' '7' '4' '']
+ ['5' '' '' '' '' '' '' '' '9']
+ ['' '8' '3' '' '' '' '' '' '5']
+ ['' '' '6' '5' '1' '' '' '' '8']
+ ['' '9' '' '' '7' '' '' '' '1']
+ ['' '' '' '8' '' '' '' '' '']]
+
+=============  <h3>parts of a simple form</h3>
+
+class xx(forms.Form):
+	cFieldValue = forms.CharField(label="this var")
+... 
+>>> f = xx()
+>>> print(f)
+<tr><th><label for="id_cFieldValue">this var:</label></th><td><input id="id_cFieldValue" name="cFieldValue" type="text" /></td></tr>
+# or for a single variable:
+>>> print(f['cFieldValue'])
+<input id="id_cFieldValue" name="cFieldValue" type="text" />
+
+
+>>> dir(f)
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__getitem__', '__hash__', '__init__', '__iter__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__unicode__', '__weakref__', '_changed_data', '_clean_fields', '_clean_form', '_errors', '_get_changed_data', '_get_errors', '_get_media', '_html_output', '_post_clean', '_raw_value', 'add_initial_prefix', 'add_prefix', 'as_p', 'as_table', 'as_ul', 'auto_id', u'base_fields', 'changed_data', 'clean', 'data', 'empty_permitted', 'error_class', 'errors', 'fields', 'files', 'full_clean', 'has_changed', 'hidden_fields', 'initial', 'is_bound', 'is_multipart', 'is_valid', 'label_suffix', 'media', 'non_field_errors', 'prefix', 'visible_fields']
+>>> f.fields['cFieldValue']
+<django.forms.fields.CharField object at 0x10a4a0990>
+
+>>> f.fields['cFieldValue'].label
+u'this var'
+
+>>> f.fields['cFieldValue'].label='changed is good'
+>>> print(f)
+<tr><th><label for="id_cFieldValue">changed is good:</label></th><td><input id="id_cFieldValue" name="cFieldValue" type="text" /></td></tr>
+
+>>> f.fields['cFieldValue']
+<django.forms.fields.CharField object at 0x10a453650>
+
+>>> f.fields['cFieldValue'].help_text='useful text'
+>>> print(f)
+<tr><th><label for="id_cFieldValue">changed is good:</label></th><td><input id="id_cFieldValue" name="cFieldValue" type="text" /><br /><span class="helptext">useful text</span></td></tr>
+
+
+
+return HttpResponse("this page back page: %s, %s\n" %(this_page, back_to))
+
+
+
+
+dictmy = {}
+for item in qp:
+	dictmy.update({item.pageID.pageTag:item.nextPageTag})
+dictmy
+{u'P2': u'P3', u'P3': u'P4', u'P1': u'P2', u'P4': u''}
+dictmy['P2']
+u'P3'
+
+
+for item in qp:
+	item.pageID.pageTag
+	item.nextPageTag
+... 
+u'P1'
+u'P2'
+u'P2'
+u'P3'
+u'P3'
+u'P4'
+u'P4'
+u''
+
+============= <h3>sample QuestionnairePage query</h3>
+QuestionnairePage.objects.filter(questionnaireID__shortTag='BRCA')
+[<QuestionnairePage:  1
+>, <QuestionnairePage:  2
+>, <QuestionnairePage:  3
+>, <QuestionnairePage:  4
+>]
+
+# get the page sequence numbers from the Questionnaire shortTag
+qp = QuestionnairePage.objects.filter(questionnaireID__shortTag='BRCA')
+qp[0].pageSequence # gives the page sequence number for entry 0 (zero)
+for item in qp:
+	item.nextPageTag
+... 
+u'P2'
+u'P3'
+u'P4'
+u''
+
+qp[0].pageID # gives question title which is not unique
+for item in qp:
+	item.pageID.title
+... 
+u'Patient history of ovarian cancer'
+u'Family history of ovarian cancer'
+u'Patient history of breast cancer'
+u'Family history of Ashkenazi Jewish'
+
+# how to get the page pageTag? It's easy!
+for item in qp:
+	item.pageID.pageTag
+... 
+u'P1'
+u'P2'
+u'P3'
+u'P4'
+qp[2].pageSequence
+3
+
+# to get the page sequence for a particular page in a questionnaire:
+QuestionnairePage.objects.filter(questionnaireID__shortTag__exact='TestQuest')[1].pageSequence
+3
+
+
+    #	{% for iiRisk in riskList %}
+    #		<li>{{ iiRisk }}</li>
+    #	{% endfor %}
+=============<h3> set a script file for execution</h3>
+chmod u+rwx xxxx.sh
+=============<h3>Display field names in a model</h3>
+# if Project is a class in model.py, then display the field names with:
+Project._meta.get_all_field_names()
+
+# Display field info in a form:
+for item in theForm:
+	item.html_name	# field name
+	item.label		# associated label
+
+#retrieve session data in put into a dictionary
+	theForm = RespondantForm()
+	sessionValueSave = {}		# initialize dictionary of values
+	for item in theForm:
+		theName = item.html_name	# field name
+		if theName in request.session:
+			sessionValueSave[theName] = request.session[theName]
+	theForm = RespondantForm(sessionValueSave) # redefine form with new values
+
+
+	# open a debug file
+	fpage = open('debugInfo.txt','w')
+	fpage.write("Started:  Time: %s \n" % now)
+	fpage.write("pageToPage: %s \n" % pageToPage)
+	fpage.close()
+
+<h3>Make a matrix out of lists</h3>
+	iNum=map(str,range(81))
+	ii = 0
+	for iRow in range(3):
+		c=[]
+		for iCol in range(3):
+			b = []
+			for iRow2 in range(3):
+				a = []
+				for iCol2 in range(3):
+					a.append(str(iNum[ii]))
+					ii+=1
+				b.append(a)
+			c.append(b)
+		d.append(c)
+
+
+=============
+<h3>Add a popup</h3>
+http://www.awebcoder.com/post/16/djangos-admin-related-objects-pop-up-in-the-front-end
+
+<script type="text/javascript" src="/media/js/admin/RelatedObjectLookups.js"></script>
+<a
+    href="/add/xxx"
+    class="add-another"
+    id="add_id_xx"
+    onclick="return showAddAnotherPopup(this);">
+	<img src="/media/img/admin/icon_addlink.gif" width="10" height="10" alt="Add Another"/>
+</a>

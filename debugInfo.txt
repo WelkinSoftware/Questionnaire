@@ -1,0 +1,1310 @@
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+after POST
+after accept Page Edits
+after thePageForm.is_valid
+Question text: Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+Question form tag: QuestionText_1
+Question NOT updated QuestionText_1
+updatePageQuestionSequence:  updating a record
+Question text: This is a test
+Question form tag: QuestionText_2
+Question NOT updated QuestionText_2
+updatePageQuestionSequence:  updating a record
+Question text: Charfield entry
+Question form tag: QuestionText_3
+Question NOT updated QuestionText_3
+updatePageQuestionSequence:  updating a record
+Question text: 
+Question form tag: QuestionText_4
+Question updated QuestionText_4
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+after POST
+after accept Page Edits
+after thePageForm.is_valid
+Question text: Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+Question form tag: QuestionText_1
+Question NOT updated QuestionText_1
+updatePageQuestionSequence:  updating a record
+Question text: This is a test
+Question form tag: QuestionText_2
+Question NOT updated QuestionText_2
+updatePageQuestionSequence:  updating a record
+Question text: Charfield entry
+Question form tag: QuestionText_3
+Question NOT updated QuestionText_3
+updatePageQuestionSequence:  updating a record
+Question text: Multiple choice question
+Question form tag: QuestionText_4
+Question text is blank
+Question "QuestionText_4" deleted
+updatedChoiceText text is blank
+Question text: 
+Question form tag: QuestionText_4
+Question text is blank
+updatedChoiceText text is blank
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+after POST
+after accept Page Edits
+after thePageForm.is_valid
+Question text: Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+Question form tag: QuestionText_1
+Question NOT updated QuestionText_1
+updatePageQuestionSequence:  updating a record
+Question text: This is a test
+Question form tag: QuestionText_2
+Question NOT updated QuestionText_2
+updatePageQuestionSequence:  updating a record
+Question text: Charfield entry
+Question form tag: QuestionText_3
+Question NOT updated QuestionText_3
+updatePageQuestionSequence:  updating a record
+Question text: 
+Question form tag: QuestionText_4
+Question updated QuestionText_4
+updatedChoiceText text is blank
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P3b
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 575, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?, YesNoField, 2014-04-24 22:30:21.005206
+>, <Question: 589, , This is a test, YesNoField, 2014-04-24 23:19:09.524982
+>, <Question: 590, , Charfield entry, CharField, 2014-04-25 06:36:28.754405
+>, <Question: 593, , Multiple choice entry, MultipleChoiceField, 2014-04-25 06:51:47.935507
+>]
+Not a POST
+No page data in session tag: P3b
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion.questionTag pHxBrCAGE1RelBrCALE50Years
+YesNoField pHxBrCAGE1RelBrCALE50Years Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+aQuestion.questionTag 
+YesNoField  This is a test
+aQuestion.questionTag 
+CharField  Charfield entry
+aQuestion.questionTag 
+MultipleChoiceField  Multiple choice entry
+UserDynamicFormCreation:  No choiceList for this question (ok)
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+after POST
+after accept Page Edits
+after thePageForm.is_valid
+Question text: Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+Question form tag: QuestionText_1
+Question NOT updated QuestionText_1
+updatePageQuestionSequence:  updating a record
+Question text: This is a test
+Question form tag: QuestionText_2
+Question NOT updated QuestionText_2
+updatePageQuestionSequence:  updating a record
+Question text: Charfield entry
+Question form tag: QuestionText_3
+Question NOT updated QuestionText_3
+updatePageQuestionSequence:  updating a record
+Question text: Multiple choice entry
+Question form tag: QuestionText_4
+Question text is blank
+Question "QuestionText_4" deleted
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+after POST
+after accept Page Edits
+after thePageForm.is_valid
+Question text: Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+Question form tag: QuestionText_1
+Question NOT updated QuestionText_1
+updatePageQuestionSequence:  updating a record
+Question text: This is a test
+Question form tag: QuestionText_2
+Question NOT updated QuestionText_2
+updatePageQuestionSequence:  updating a record
+Question text: Charfield entry
+Question form tag: QuestionText_3
+Question NOT updated QuestionText_3
+updatePageQuestionSequence:  updating a record
+Question text: 
+Question form tag: QuestionText_4
+Question updated QuestionText_4
+ResponseChoice updated Choice_1
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+after POST
+after accept Page Edits
+after thePageForm.is_valid
+Question text: Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+Question form tag: QuestionText_1
+Question NOT updated QuestionText_1
+updatePageQuestionSequence:  updating a record
+Question text: This is a test
+Question form tag: QuestionText_2
+Question NOT updated QuestionText_2
+updatePageQuestionSequence:  updating a record
+Question text: Charfield entry
+Question form tag: QuestionText_3
+Question NOT updated QuestionText_3
+updatePageQuestionSequence:  updating a record
+Question text: multi choice
+Question form tag: QuestionText_4
+Question NOT updated QuestionText_4
+updatePageQuestionSequence:  updating a record
+ResponseChoice text NOT updated Choice_1. Sequence number is updated.
+ResponseChoice updated Choice_2
+Question text: 
+Question form tag: QuestionText_5
+Question text is blank
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P3b
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 575, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?, YesNoField, 2014-04-24 22:30:21.005206
+>, <Question: 589, , This is a test, YesNoField, 2014-04-24 23:19:09.524982
+>, <Question: 590, , Charfield entry, CharField, 2014-04-25 06:36:28.754405
+>, <Question: 594, , multi choice, MultipleChoiceField, 2014-04-25 07:26:21.489658
+>]
+Not a POST
+No page data in session tag: P3b
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion.questionTag pHxBrCAGE1RelBrCALE50Years
+YesNoField pHxBrCAGE1RelBrCALE50Years Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+aQuestion.questionTag 
+YesNoField  This is a test
+aQuestion.questionTag 
+CharField  Charfield entry
+aQuestion.questionTag 
+MultipleChoiceField  multi choice
+Choices follow:
+Choice tag:  Choice Text: this is choice 1
+Choice label: Question_594_442
+Choice tag:  Choice Text: this is choice 2
+Choice label: Question_594_443
+End Choices
+Choices end. Count: 2
+choiceList: [['Question_594_442', u'this is choice 1'], ['Question_594_443', u'this is choice 2']]
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P3b
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P3b
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 575, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?, YesNoField, 2014-04-24 22:30:21.005206
+>, <Question: 589, , This is a test, YesNoField, 2014-04-24 23:19:09.524982
+>, <Question: 590, , Charfield entry, CharField, 2014-04-25 06:36:28.754405
+>, <Question: 594, , multi choice, MultipleChoiceField, 2014-04-25 07:26:21.489658
+>]
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: has forms data input
+aQuestion.questionTag pHxBrCAGE1RelBrCALE50Years
+YesNoField pHxBrCAGE1RelBrCALE50Years Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+aQuestion.questionTag 
+YesNoField  This is a test
+aQuestion.questionTag 
+CharField  Charfield entry
+aQuestion.questionTag 
+MultipleChoiceField  multi choice
+Choices follow:
+Choice tag:  Choice Text: this is choice 1
+Choice label: Question_594_442
+Choice tag:  Choice Text: this is choice 2
+Choice label: Question_594_443
+End Choices
+Choices end. Count: 2
+choiceList: [['Question_594_442', u'this is choice 1'], ['Question_594_443', u'this is choice 2']]
+UserDynamicFormCreation:  exit
+after POST
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P3b
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P3b
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 575, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?, YesNoField, 2014-04-24 22:30:21.005206
+>, <Question: 589, , This is a test, YesNoField, 2014-04-24 23:19:09.524982
+>, <Question: 590, , Charfield entry, CharField, 2014-04-25 06:36:28.754405
+>, <Question: 594, , multi choice, MultipleChoiceField, 2014-04-25 07:26:21.489658
+>]
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: has forms data input
+aQuestion.questionTag pHxBrCAGE1RelBrCALE50Years
+YesNoField pHxBrCAGE1RelBrCALE50Years Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+aQuestion.questionTag 
+YesNoField  This is a test
+aQuestion.questionTag 
+CharField  Charfield entry
+aQuestion.questionTag 
+MultipleChoiceField  multi choice
+Choices follow:
+Choice tag:  Choice Text: this is choice 1
+Choice label: Question_594_442
+Choice tag:  Choice Text: this is choice 2
+Choice label: Question_594_443
+End Choices
+Choices end. Count: 2
+choiceList: [['Question_594_442', u'this is choice 1'], ['Question_594_443', u'this is choice 2']]
+UserDynamicFormCreation:  exit
+after POST
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P3b
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P3b
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 575, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?, YesNoField, 2014-04-24 22:30:21.005206
+>, <Question: 589, , This is a test, YesNoField, 2014-04-24 23:19:09.524982
+>, <Question: 590, , Charfield entry, CharField, 2014-04-25 06:36:28.754405
+>, <Question: 594, , multi choice, MultipleChoiceField, 2014-04-25 07:26:21.489658
+>]
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: has forms data input
+aQuestion.questionTag pHxBrCAGE1RelBrCALE50Years
+YesNoField pHxBrCAGE1RelBrCALE50Years Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+aQuestion.questionTag 
+YesNoField  This is a test
+aQuestion.questionTag 
+CharField  Charfield entry
+aQuestion.questionTag 
+MultipleChoiceField  multi choice
+Choices follow:
+Choice tag:  Choice Text: this is choice 1
+Choice label: Question_594_442
+Choice tag:  Choice Text: this is choice 2
+Choice label: Question_594_443
+End Choices
+Choices end. Count: 2
+choiceList: [['Question_594_442', u'this is choice 1'], ['Question_594_443', u'this is choice 2']]
+UserDynamicFormCreation:  exit
+after POST
+Form is valid. Saving data.
+The cleaned data with Unique question tags is:
+{'Question_594_': [u'Question_594_442'], 'Question_589_': u'Yes', 'Question_575_': u'No', 'Question_590_': u'yup'}
+The cleaned data with question tags is:
+{u'': [u'Question_594_442'], u'_4': u'yup', u'pHxBrCAGE1RelBrCALE50Years': u'No', u'_2': u'Yes'}
+savePageData:  enter
+Cleaned data is:
+{'Question_594_': [u'Question_594_442'], 'Question_589_': u'Yes', 'Question_575_': u'No', 'Question_590_': u'yup'}
+Input questions are: 
+[<Question: 575, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?, YesNoField, 2014-04-24 22:30:21.005206
+>, <Question: 589, , This is a test, YesNoField, 2014-04-24 23:19:09.524982
+>, <Question: 590, , Charfield entry, CharField, 2014-04-25 06:36:28.754405
+>, <Question: 594, , multi choice, MultipleChoiceField, 2014-04-25 07:26:21.489658
+>]
+Session dict data updated in savePageData
+Dump the data dictionary after updating
+keyname Question_582_,keyvalue No
+keyname Question_583_,keyvalue []
+keyname Question_570_,keyvalue No
+keyname Question_571_,keyvalue No
+keyname Question_590_,keyvalue yup
+keyname Question_573_,keyvalue Question_573_421
+keyname Question_567_,keyvalue No
+keyname Question_579_,keyvalue No
+keyname Question_572_,keyvalue No
+keyname Question_589_,keyvalue Yes
+keyname Question_575_,keyvalue No
+keyname Question_568_,keyvalue No
+keyname Question_578_,keyvalue No
+keyname Question_594_,keyvalue [u'Question_594_442']
+keyname Question_581_,keyvalue No
+keyname Question_580_,keyvalue Yes
+keyname Question_569_,keyvalue Yes
+Dump the data dictionary end
+Dump the data list
+a record [u'No', u'\u0915\u094d\u092f\u093e \u0924\u0941\u092e\u0928\u0947 \u0915\u092d\u0940 \u0921\u093f\u092e\u094d\u092c\u0917\u094d\u0930\u0902\u0925\u093f \u0915\u0947 \u0915\u0948\u0902\u0938\u0930 \u0925\u093e?', 567, None, u'P1', 598, u'Question_567_', u'pHxOvarianCA']
+a record [u'No', u'Have any of your close blood relatives ever had ovarian cancer?', 568, None, u'P2', 599, u'Question_568_', u'fHxOvarianCA']
+a record [[], u'For any of your close blood relatives who had breast cancer, please indicate  testing:', 583, None, u'P4b', 606, u'Question_583_', u'fHxBrCAOther']
+a record [u'No', u'Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?', 582, None, u'P4a', 605, u'Question_582_', u'fHxBrCASameSideGE2']
+a record [u'No', u'Has any <u>male</u> blood relative had breast cancer?', 581, None, u'P4a', 605, u'Question_581_', u'fHxBrCAMale']
+a record [u'No', u'Is any close blood relative \n<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"\nhref="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>. \n<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a>.</i>\n', 578, None, u'P4', 604, u'Question_578_', u'ashkenaziJewishCloseRels']
+a record [u'No', u'Have any close blood relatives been confirmed to have BRCA gene mutations?', 579, None, u'P4', 604, u'Question_579_', u'fHxBrCASuscGene']
+a record [u'Yes', u'Have any close blood relatives had breast cancer?', 580, None, u'P4', 604, u'Question_580_', u'fHxBreastCA']
+a record [u'Yes', u'Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.', 569, None, u'P3', 600, u'Question_569_', u'pHxBreastCA']
+a record [u'No', u'Was your cancer \u201ctriple negative\u201d, without receptors for estrogen, progesterone and HER2?', 570, None, u'P3a', 601, u'Question_570_', u'pHxBrCA3Neg']
+a record [u'No', u'Have you had cancer in both breasts?', 571, None, u'P3a', 601, u'Question_571_', u'pHxBrCAGT1PrimaryBoth']
+a record [u'No', u'Was your cancer found in more than one location in the same breast?', 572, None, u'P3a', 601, u'Question_572_', u'pHxBrCAGT1PrimarySame']
+a record [u'Question_573_421', u'What was your age when your breast cancer was first diagnosed?', 573, None, u'P3a', 601, u'Question_573_', u'pHxBrCALE50Yrs']
+Dump the data list end
+Look for a list type(questionResponseValue) <type 'list'>
+Look for a list type(uniqueQuestionLabel) <type 'str'>
+questionResponseValue [u'Question_594_442']
+uniqueQuestionLabel Question_594_
+Question record number "594", ResponseChoice record number "None"
+Item Question_594_ points to a list
+List length, len(questionResponseValue) 1
+aChoiceTag: Question_594_442
+Question record number "594", ResponseChoice record number "442"
+end list processing
+aLine [[u'Question_594_442'], u'multi choice', 594, None, u'P3b', 602, 'Question_594_', u'']
+Look for a list type(questionResponseValue) <type 'unicode'>
+Look for a list type(uniqueQuestionLabel) <type 'str'>
+questionResponseValue Yes
+uniqueQuestionLabel Question_589_
+Question record number "589", ResponseChoice record number "None"
+Response record is None
+aLine [u'Yes', u'This is a test', 589, None, u'P3b', 602, 'Question_589_', u'']
+Look for a list type(questionResponseValue) <type 'unicode'>
+Look for a list type(uniqueQuestionLabel) <type 'str'>
+questionResponseValue No
+uniqueQuestionLabel Question_575_
+Question record number "575", ResponseChoice record number "None"
+Response record is None
+aLine [u'No', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?', 575, None, u'P3b', 602, 'Question_575_', u'pHxBrCAGE1RelBrCALE50Years']
+Look for a list type(questionResponseValue) <type 'unicode'>
+Look for a list type(uniqueQuestionLabel) <type 'str'>
+questionResponseValue yup
+uniqueQuestionLabel Question_590_
+Question record number "590", ResponseChoice record number "None"
+Response record is None
+aLine [u'yup', u'Charfield entry', 590, None, u'P3b', 602, 'Question_590_', u'']
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P3b Questionnaire: BRCA_S_Hindi
+questionResponses "{u'': [u'Question_594_442'], u'_4': u'yup', u'pHxBrCAGE1RelBrCALE50Years': u'No', u'_2': u'Yes'}"
+successful query
+Test conditon: "anyYesButton", Global Flag to set: Referral
+questionResponses "{u'': [u'Question_594_442'], u'_4': u'yup', u'pHxBrCAGE1RelBrCALE50Years': u'No', u'_2': u'Yes'}"
+questionResponses type "<type 'dict'>"
+Obtained test condition and global flag
+TCInput "[(u'', [u'Question_594_442']), (u'_2', u'Yes'), (u'_4', u'yup'), (u'pHxBrCAGE1RelBrCALE50Years', u'No')]"
+testCondition4 "anyYesButton"
+globalFlagName "Referral"
+questionResponses.values() [[u'Question_594_442'], u'yup', u'No', u'Yes']
+anyYesButton: a "Yes" found, therefore flag is set
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P3b
+pageCalc: used Default to calculate current/next page P3b/P3c
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'': [u'Question_594_442'], u'_4': u'yup', u'pHxBrCAGE1RelBrCALE50Years': u'No', u'_2': u'Yes'}
+getNextPageFromCalculation: enter
+Test condition: [(u'', [u'Question_594_442']), (u'_2', u'Yes'), (u'_4', u'yup'), (u'pHxBrCAGE1RelBrCALE50Years', u'No')]
+Found no match
+getNextPageFromCalculation: exit
+pageCalc:  No match for a calculated next page
+getNextPageFromGlobalFlags:  enter
+pageTag:  P3b
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+NEXT button clicked. thisPageTag: P3b, next_page: P3c
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P3c
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 577, pHxBrCAOther, Please indicate any of the following conditions you have had xxxx:, MultipleChoiceField, 2014-04-24 22:12:55.999343
+>]
+Not a POST
+No page data in session tag: P3c
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion.questionTag pHxBrCAOther
+MultipleChoiceField pHxBrCAOther Please indicate any of the following conditions you have had xxxx:
+Choices follow:
+Choice tag: pHxBrCAThyroidCA Choice Text: Thyroid cancer
+Choice label: Question_577_423
+Choice tag: pHxBrCASarcoma Choice Text: Sarcoma
+Choice label: Question_577_424
+Choice tag: pHxBrCAAdrenalCA Choice Text: Adrenal cancer
+Choice label: Question_577_425
+Choice tag: pHxBrCAEndometrialCA Choice Text: Cancer of the uterus
+Choice label: Question_577_426
+Choice tag: pHxBrCAPancreaticCA Choice Text: Pancreatic cancer
+Choice label: Question_577_427
+Choice tag: pHxBrCABrainTumors Choice Text: Brain tumors
+Choice label: Question_577_428
+Choice tag: pHxBrCAGastricCA Choice Text: Stomach cancer
+Choice label: Question_577_429
+Choice tag: pHxBrCALeukLymphoma Choice Text: Leukemia or lymphoma
+Choice label: Question_577_430
+Choice tag:  Choice Text: xxxx
+Choice label: Question_577_441
+End Choices
+Choices end. Count: 9
+choiceList: [['Question_577_423', u'Thyroid cancer'], ['Question_577_424', u'Sarcoma'], ['Question_577_425', u'Adrenal cancer'], ['Question_577_426', u'Cancer of the uterus'], ['Question_577_427', u'Pancreatic cancer'], ['Question_577_428', u'Brain tumors'], ['Question_577_429', u'Stomach cancer'], ['Question_577_430', u'Leukemia or lymphoma'], ['Question_577_441', u'xxxx']]
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P3c
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P3c
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 577, pHxBrCAOther, Please indicate any of the following conditions you have had xxxx:, MultipleChoiceField, 2014-04-24 22:12:55.999343
+>]
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: has forms data input
+aQuestion.questionTag pHxBrCAOther
+MultipleChoiceField pHxBrCAOther Please indicate any of the following conditions you have had xxxx:
+Choices follow:
+Choice tag: pHxBrCAThyroidCA Choice Text: Thyroid cancer
+Choice label: Question_577_423
+Choice tag: pHxBrCASarcoma Choice Text: Sarcoma
+Choice label: Question_577_424
+Choice tag: pHxBrCAAdrenalCA Choice Text: Adrenal cancer
+Choice label: Question_577_425
+Choice tag: pHxBrCAEndometrialCA Choice Text: Cancer of the uterus
+Choice label: Question_577_426
+Choice tag: pHxBrCAPancreaticCA Choice Text: Pancreatic cancer
+Choice label: Question_577_427
+Choice tag: pHxBrCABrainTumors Choice Text: Brain tumors
+Choice label: Question_577_428
+Choice tag: pHxBrCAGastricCA Choice Text: Stomach cancer
+Choice label: Question_577_429
+Choice tag: pHxBrCALeukLymphoma Choice Text: Leukemia or lymphoma
+Choice label: Question_577_430
+Choice tag:  Choice Text: xxxx
+Choice label: Question_577_441
+End Choices
+Choices end. Count: 9
+choiceList: [['Question_577_423', u'Thyroid cancer'], ['Question_577_424', u'Sarcoma'], ['Question_577_425', u'Adrenal cancer'], ['Question_577_426', u'Cancer of the uterus'], ['Question_577_427', u'Pancreatic cancer'], ['Question_577_428', u'Brain tumors'], ['Question_577_429', u'Stomach cancer'], ['Question_577_430', u'Leukemia or lymphoma'], ['Question_577_441', u'xxxx']]
+UserDynamicFormCreation:  exit
+after POST
+Form is valid. Saving data.
+The cleaned data with Unique question tags is:
+{'Question_577_': [u'Question_577_426', u'Question_577_441']}
+The cleaned data with question tags is:
+{u'pHxBrCAOther': [u'Question_577_426', u'Question_577_441']}
+savePageData:  enter
+Cleaned data is:
+{'Question_577_': [u'Question_577_426', u'Question_577_441']}
+Input questions are: 
+[<Question: 577, pHxBrCAOther, Please indicate any of the following conditions you have had xxxx:, MultipleChoiceField, 2014-04-24 22:12:55.999343
+>]
+Session dict data updated in savePageData
+Dump the data dictionary after updating
+keyname Question_582_,keyvalue No
+keyname Question_577_,keyvalue [u'Question_577_426', u'Question_577_441']
+keyname Question_583_,keyvalue []
+keyname Question_570_,keyvalue No
+keyname Question_571_,keyvalue No
+keyname Question_590_,keyvalue yup
+keyname Question_573_,keyvalue Question_573_421
+keyname Question_567_,keyvalue No
+keyname Question_579_,keyvalue No
+keyname Question_572_,keyvalue No
+keyname Question_589_,keyvalue Yes
+keyname Question_575_,keyvalue No
+keyname Question_568_,keyvalue No
+keyname Question_578_,keyvalue No
+keyname Question_594_,keyvalue [u'Question_594_442']
+keyname Question_581_,keyvalue No
+keyname Question_580_,keyvalue Yes
+keyname Question_569_,keyvalue Yes
+Dump the data dictionary end
+Dump the data list
+a record [u'No', u'\u0915\u094d\u092f\u093e \u0924\u0941\u092e\u0928\u0947 \u0915\u092d\u0940 \u0921\u093f\u092e\u094d\u092c\u0917\u094d\u0930\u0902\u0925\u093f \u0915\u0947 \u0915\u0948\u0902\u0938\u0930 \u0925\u093e?', 567, None, u'P1', 598, u'Question_567_', u'pHxOvarianCA']
+a record [u'No', u'Have any of your close blood relatives ever had ovarian cancer?', 568, None, u'P2', 599, u'Question_568_', u'fHxOvarianCA']
+a record [[], u'For any of your close blood relatives who had breast cancer, please indicate  testing:', 583, None, u'P4b', 606, u'Question_583_', u'fHxBrCAOther']
+a record [u'No', u'Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?', 582, None, u'P4a', 605, u'Question_582_', u'fHxBrCASameSideGE2']
+a record [u'No', u'Has any <u>male</u> blood relative had breast cancer?', 581, None, u'P4a', 605, u'Question_581_', u'fHxBrCAMale']
+a record [u'No', u'Is any close blood relative \n<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"\nhref="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>. \n<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a>.</i>\n', 578, None, u'P4', 604, u'Question_578_', u'ashkenaziJewishCloseRels']
+a record [u'No', u'Have any close blood relatives been confirmed to have BRCA gene mutations?', 579, None, u'P4', 604, u'Question_579_', u'fHxBrCASuscGene']
+a record [u'Yes', u'Have any close blood relatives had breast cancer?', 580, None, u'P4', 604, u'Question_580_', u'fHxBreastCA']
+a record [u'Yes', u'Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.', 569, None, u'P3', 600, u'Question_569_', u'pHxBreastCA']
+a record [u'No', u'Was your cancer \u201ctriple negative\u201d, without receptors for estrogen, progesterone and HER2?', 570, None, u'P3a', 601, u'Question_570_', u'pHxBrCA3Neg']
+a record [u'No', u'Have you had cancer in both breasts?', 571, None, u'P3a', 601, u'Question_571_', u'pHxBrCAGT1PrimaryBoth']
+a record [u'No', u'Was your cancer found in more than one location in the same breast?', 572, None, u'P3a', 601, u'Question_572_', u'pHxBrCAGT1PrimarySame']
+a record [u'Question_573_421', u'What was your age when your breast cancer was first diagnosed?', 573, None, u'P3a', 601, u'Question_573_', u'pHxBrCALE50Yrs']
+a record [[u'Question_594_442'], u'multi choice', 594, None, u'P3b', 602, u'Question_594_', u'']
+a record [u'Yes', u'This is a test', 589, None, u'P3b', 602, u'Question_589_', u'']
+a record [u'No', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?', 575, None, u'P3b', 602, u'Question_575_', u'pHxBrCAGE1RelBrCALE50Years']
+a record [u'yup', u'Charfield entry', 590, None, u'P3b', 602, u'Question_590_', u'']
+Dump the data list end
+Look for a list type(questionResponseValue) <type 'list'>
+Look for a list type(uniqueQuestionLabel) <type 'str'>
+questionResponseValue [u'Question_577_426', u'Question_577_441']
+uniqueQuestionLabel Question_577_
+Question record number "577", ResponseChoice record number "None"
+Item Question_577_ points to a list
+List length, len(questionResponseValue) 2
+aChoiceTag: Question_577_426
+Question record number "577", ResponseChoice record number "426"
+aChoiceTag: Question_577_441
+Question record number "577", ResponseChoice record number "441"
+end list processing
+aLine [[u'Question_577_426', u'Question_577_441'], u'Please indicate any of the following conditions you have had xxxx:', 577, None, u'P3c', 603, 'Question_577_', u'pHxBrCAOther']
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P3c Questionnaire: BRCA_S_Hindi
+questionResponses "{u'pHxBrCAOther': [u'Question_577_426', u'Question_577_441']}"
+successful query
+Test conditon: "anySelectedButton", Global Flag to set: Referral
+questionResponses "{u'pHxBrCAOther': [u'Question_577_426', u'Question_577_441']}"
+questionResponses type "<type 'dict'>"
+Obtained test condition and global flag
+TCInput "[(u'pHxBrCAOther', [u'Question_577_426', u'Question_577_441'])]"
+testCondition2 "anySelectedButton"
+globalFlagName "Referral"
+anySelectedButton: not null, therefore flag is set
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P3c
+pageCalc: used Default to calculate current/next page P3c/P5
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'pHxBrCAOther': [u'Question_577_426', u'Question_577_441']}
+getNextPageFromCalculation: enter
+Test condition: [(u'pHxBrCAOther', [u'Question_577_426', u'Question_577_441'])]
+Found no match
+getNextPageFromCalculation: exit
+pageCalc:  No match for a calculated next page
+getNextPageFromGlobalFlags:  enter
+pageTag:  P3c
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+NEXT button clicked. thisPageTag: P3c, next_page: P5
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P5
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 584, fHxSufficient, Have any of your female close blood relatives lived beyond age 45 years?, YesNoField, 2014-04-22 12:35:56.322535
+>]
+Not a POST
+No page data in session tag: P5
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion.questionTag fHxSufficient
+YesNoField fHxSufficient Have any of your female close blood relatives lived beyond age 45 years?
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P5
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: P5
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 584, fHxSufficient, Have any of your female close blood relatives lived beyond age 45 years?, YesNoField, 2014-04-22 12:35:56.322535
+>]
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: has forms data input
+aQuestion.questionTag fHxSufficient
+YesNoField fHxSufficient Have any of your female close blood relatives lived beyond age 45 years?
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+after POST
+Form is valid. Saving data.
+The cleaned data with Unique question tags is:
+{'Question_584_': u'Yes'}
+The cleaned data with question tags is:
+{u'fHxSufficient': u'Yes'}
+savePageData:  enter
+Cleaned data is:
+{'Question_584_': u'Yes'}
+Input questions are: 
+[<Question: 584, fHxSufficient, Have any of your female close blood relatives lived beyond age 45 years?, YesNoField, 2014-04-22 12:35:56.322535
+>]
+Session dict data updated in savePageData
+Dump the data dictionary after updating
+keyname Question_582_,keyvalue No
+keyname Question_577_,keyvalue [u'Question_577_426', u'Question_577_441']
+keyname Question_583_,keyvalue []
+keyname Question_570_,keyvalue No
+keyname Question_571_,keyvalue No
+keyname Question_590_,keyvalue yup
+keyname Question_573_,keyvalue Question_573_421
+keyname Question_584_,keyvalue Yes
+keyname Question_567_,keyvalue No
+keyname Question_579_,keyvalue No
+keyname Question_572_,keyvalue No
+keyname Question_589_,keyvalue Yes
+keyname Question_575_,keyvalue No
+keyname Question_568_,keyvalue No
+keyname Question_578_,keyvalue No
+keyname Question_594_,keyvalue [u'Question_594_442']
+keyname Question_581_,keyvalue No
+keyname Question_580_,keyvalue Yes
+keyname Question_569_,keyvalue Yes
+Dump the data dictionary end
+Dump the data list
+a record [u'No', u'\u0915\u094d\u092f\u093e \u0924\u0941\u092e\u0928\u0947 \u0915\u092d\u0940 \u0921\u093f\u092e\u094d\u092c\u0917\u094d\u0930\u0902\u0925\u093f \u0915\u0947 \u0915\u0948\u0902\u0938\u0930 \u0925\u093e?', 567, None, u'P1', 598, u'Question_567_', u'pHxOvarianCA']
+a record [u'No', u'Have any of your close blood relatives ever had ovarian cancer?', 568, None, u'P2', 599, u'Question_568_', u'fHxOvarianCA']
+a record [[], u'For any of your close blood relatives who had breast cancer, please indicate  testing:', 583, None, u'P4b', 606, u'Question_583_', u'fHxBrCAOther']
+a record [u'No', u'Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?', 582, None, u'P4a', 605, u'Question_582_', u'fHxBrCASameSideGE2']
+a record [u'No', u'Has any <u>male</u> blood relative had breast cancer?', 581, None, u'P4a', 605, u'Question_581_', u'fHxBrCAMale']
+a record [u'No', u'Is any close blood relative \n<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"\nhref="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>. \n<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a>.</i>\n', 578, None, u'P4', 604, u'Question_578_', u'ashkenaziJewishCloseRels']
+a record [u'No', u'Have any close blood relatives been confirmed to have BRCA gene mutations?', 579, None, u'P4', 604, u'Question_579_', u'fHxBrCASuscGene']
+a record [u'Yes', u'Have any close blood relatives had breast cancer?', 580, None, u'P4', 604, u'Question_580_', u'fHxBreastCA']
+a record [u'Yes', u'Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.', 569, None, u'P3', 600, u'Question_569_', u'pHxBreastCA']
+a record [u'No', u'Was your cancer \u201ctriple negative\u201d, without receptors for estrogen, progesterone and HER2?', 570, None, u'P3a', 601, u'Question_570_', u'pHxBrCA3Neg']
+a record [u'No', u'Have you had cancer in both breasts?', 571, None, u'P3a', 601, u'Question_571_', u'pHxBrCAGT1PrimaryBoth']
+a record [u'No', u'Was your cancer found in more than one location in the same breast?', 572, None, u'P3a', 601, u'Question_572_', u'pHxBrCAGT1PrimarySame']
+a record [u'Question_573_421', u'What was your age when your breast cancer was first diagnosed?', 573, None, u'P3a', 601, u'Question_573_', u'pHxBrCALE50Yrs']
+a record [[u'Question_594_442'], u'multi choice', 594, None, u'P3b', 602, u'Question_594_', u'']
+a record [u'Yes', u'This is a test', 589, None, u'P3b', 602, u'Question_589_', u'']
+a record [u'No', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?', 575, None, u'P3b', 602, u'Question_575_', u'pHxBrCAGE1RelBrCALE50Years']
+a record [u'yup', u'Charfield entry', 590, None, u'P3b', 602, u'Question_590_', u'']
+a record [[u'Question_577_426', u'Question_577_441'], u'Please indicate any of the following conditions you have had xxxx:', 577, None, u'P3c', 603, u'Question_577_', u'pHxBrCAOther']
+Dump the data list end
+Look for a list type(questionResponseValue) <type 'unicode'>
+Look for a list type(uniqueQuestionLabel) <type 'str'>
+questionResponseValue Yes
+uniqueQuestionLabel Question_584_
+Question record number "584", ResponseChoice record number "None"
+Response record is None
+aLine [u'Yes', u'Have any of your female close blood relatives lived beyond age 45 years?', 584, None, u'P5', 607, 'Question_584_', u'fHxSufficient']
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P5 Questionnaire: BRCA_S_Hindi
+questionResponses "{u'fHxSufficient': u'Yes'}"
+successful query
+Test conditon: "{u'fHxSufficient': u'No'}", Global Flag to set: Indeterminate
+questionResponses "{u'fHxSufficient': u'Yes'}"
+questionResponses type "<type 'dict'>"
+Obtained test condition and global flag
+TCInput "[(u'fHxSufficient', u'Yes')]"
+syserrmsg:  Test condition type does not match any known type.
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P5
+pageCalc: used Default to calculate current/next page P5/SummaryPage
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'fHxSufficient': u'Yes'}
+getNextPageFromCalculation: enter
+Test condition: [(u'fHxSufficient', u'Yes')]
+Found no match
+getNextPageFromCalculation: exit
+pageCalc:  No match for a calculated next page
+getNextPageFromGlobalFlags:  enter
+pageTag:  P5
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+PageType appended to next_page url:  SummaryPage/questionnaireSummary
+questionnaireSummary:  enter
+Current page url: SummaryPage
+formatResponseforDisplay:  enter
+questionResponse: No
+questionText: Have any of your close blood relatives ever had ovarian cancer?
+questionResponse: No
+questionText: For any of your close blood relatives who had breast cancer, please indicate  testing:
+questionText: Have two or more close blood relatives from the same side of your family had breast cancer?
+questionResponse: No
+questionText: Has any male blood relative had breast cancer?
+questionResponse: No
+questionText: Is any close blood relative 
+Ashkenazi Jewish?. 
+Ashkenazi Jewish people have a higher chance of BRCA gene mutations.
+
+questionResponse: No
+questionText: Have any close blood relatives been confirmed to have BRCA gene mutations?
+questionResponse: No
+questionText: Have any close blood relatives had breast cancer?
+questionResponse: Yes
+questionText: Have you ever had  breast cancer or ductal carcinoma in situ (DCIS)?.
+questionResponse: Yes
+questionResponse: No
+questionText: Have you had cancer in both breasts?
+questionResponse: No
+questionText: Was your cancer found in more than one location in the same breast?
+questionResponse: No
+questionText: What was your age when your breast cancer was first diagnosed?
+questionResponse: Question_573_421
+questionText: multi choice
+in choice loop: aValue Question_594_442
+questionText: This is a test
+questionResponse: Yes
+questionText: Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+questionResponse: No
+questionText: Charfield entry
+questionResponse: yup
+questionText: Please indicate any of the following conditions you have had xxxx:
+in choice loop: aValue Question_577_426
+in choice loop: aValue Question_577_441
+questionText: Have any of your female close blood relatives lived beyond age 45 years?
+questionResponse: Yes
+formatResponseforDisplay:  exit
+birthDate
+1984-04-04
+data type: <type 'unicode'>
+questionnaireSummary:  creating contextDict
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+questionnaireSummary:  inside GET
+this_page SummaryPage
+questionnaireSummary:  exit
+questionnaireSummary:  enter
+Current page url: SummaryPage
+formatResponseforDisplay:  enter
+questionResponse: No
+questionText: Have any of your close blood relatives ever had ovarian cancer?
+questionResponse: No
+questionText: For any of your close blood relatives who had breast cancer, please indicate  testing:
+questionText: Have two or more close blood relatives from the same side of your family had breast cancer?
+questionResponse: No
+questionText: Has any male blood relative had breast cancer?
+questionResponse: No
+questionText: Is any close blood relative 
+Ashkenazi Jewish?. 
+Ashkenazi Jewish people have a higher chance of BRCA gene mutations.
+
+questionResponse: No
+questionText: Have any close blood relatives been confirmed to have BRCA gene mutations?
+questionResponse: No
+questionText: Have any close blood relatives had breast cancer?
+questionResponse: Yes
+questionText: Have you ever had  breast cancer or ductal carcinoma in situ (DCIS)?.
+questionResponse: Yes
+questionResponse: No
+questionText: Have you had cancer in both breasts?
+questionResponse: No
+questionText: Was your cancer found in more than one location in the same breast?
+questionResponse: No
+questionText: What was your age when your breast cancer was first diagnosed?
+questionResponse: Question_573_421
+questionText: multi choice
+in choice loop: aValue Question_594_442
+questionText: This is a test
+questionResponse: Yes
+questionText: Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?
+questionResponse: No
+questionText: Charfield entry
+questionResponse: yup
+questionText: Please indicate any of the following conditions you have had xxxx:
+in choice loop: aValue Question_577_426
+in choice loop: aValue Question_577_441
+questionText: Have any of your female close blood relatives lived beyond age 45 years?
+questionResponse: Yes
+formatResponseforDisplay:  exit
+birthDate
+1984-04-04
+data type: <type 'unicode'>
+questionnaireSummary:  creating contextDict
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+questionnaireSummary:  inside POST
+this_page SummaryPage
+Next button clicked
+questionnaireSummary: page context: {u'versionDate': u'2014-04-03 00:00:00', 'contactPhone': u'888 888 8888', 'startQURL': u'/multiquest/PAMF/BRCA_S_Hindi/', 'explanation': u'', 'birthDate': u'1984-04-04', 'contactEmail': u'clewis222@me.com', u'pageSubTitle': u'', 'fontSizeTextBox': '.8em', 'questionResponseList': [['main', u'\u0915\u094d\u092f\u093e \u0924\u0941\u092e\u0928\u0947 \u0915\u092d\u0940 \u0921\u093f\u092e\u094d\u092c\u0917\u094d\u0930\u0902\u0925\u093f \u0915\u0947 \u0915\u0948\u0902\u0938\u0930 \u0925\u093e?', 'No', u'P1'], ['main', u'Have any of your close blood relatives ever had ovarian cancer?', 'No', u'P2'], ['sub', u'For any of your close blood relatives who had breast cancer, please indicate  testing:', '', u'P4b'], ['main', u'Have two or more close blood relatives from the same side of your family had breast cancer?', 'No', u'P4a'], ['main', u'Has any male blood relative had breast cancer?', 'No', u'P4a'], ['main', u'Is any close blood relative \nAshkenazi Jewish?. \nAshkenazi Jewish people have a higher chance of BRCA gene mutations.\n', 'No', u'P4'], ['main', u'Have any close blood relatives been confirmed to have BRCA gene mutations?', 'No', u'P4'], ['main', u'Have any close blood relatives had breast cancer?', 'Yes', u'P4'], ['main', u'Have you ever had  breast cancer or ductal carcinoma in situ (DCIS)?.', 'Yes', u'P3'], ['main', u'Was your cancer \u201ctriple negative\u201d, without receptors for estrogen, progesterone and HER2?', 'No', u'P3a'], ['main', u'Have you had cancer in both breasts?', 'No', u'P3a'], ['main', u'Was your cancer found in more than one location in the same breast?', 'No', u'P3a'], ['main', u'What was your age when your breast cancer was first diagnosed?', 'Question_573_421', u'P3a'], ['sub', u'multi choice', '', u'P3b'], ['sub', u'this is choice 1', '', u'P3b'], ['main', u'This is a test', 'Yes', u'P3b'], ['main', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?', 'No', u'P3b'], ['main', u'Charfield entry', 'yup', u'P3b'], ['sub', u'Please indicate any of the following conditions you have had xxxx:', '', u'P3c'], ['sub', u'Cancer of the uterus', '', u'P3c'], ['sub', u'xxxx', '', u'P3c'], ['main', u'Have any of your female close blood relatives lived beyond age 45 years?', 'Yes', u'P5']], u'footerText': u'se', u'debugMode': True, u'barTitle': 'Questionnaire Summary Page', 'epilogue': u'', 'pt_currentAge': '', 'projectContactPhone': u'650-555-1212', 'projectAbbrev': u'PAMF', u'urlprefix': u'/', u'imageloc': u'http://screengenes.org/screener/images/', u'pageTitle': u'\u0938\u094d\u0924\u0928 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091c\u093e\u0902\u091a', 'current_date': datetime.datetime(2014, 4, 25, 7, 36, 14, 611513), u'version': u'BRCA version 1.8 Slow Exit', 'fontSize': '1.2em', 'respondentName': u'Pensive, Peggy, P', u'pageBaseURL': u'/multiquest/PAMF/BRCA_S_Hindi/', 'prologue': u'\r\n    <p>\r\nThe following is a summary of all your answers to the questionnaire.\r\n    </p>\r\n    <p>\r\nIf any of your answers need correction, click the "Back" button to return to the page needing correction. Enter your changes, and click the "Next" button to work through the survey again.  \r\n    </p>\r\n', 'buttons_not_enabled': True}
+savePtResponse: Enter
+Before calculate_ptAge_now( birthDate)
+After calculate_ptAge_now( birthDate)
+savePtResponse:  Respondent doesn't already exist, so create it.
+respIDDict: {u'contactPhone': u'888 888 8888', u'firstName': u'Peggy', u'middleName': u'P', u'lastName': u'Pensive', u'birthDate': u'1984-04-04', u'contactEmail': u'clewis222@me.com'}
+Saved contactPhone to respIDDict
+savePtResponse:  updated respondent data
+before creating a submission record
+after creating a submission record
+aline: [u'No', u'\u0915\u094d\u092f\u093e \u0924\u0941\u092e\u0928\u0947 \u0915\u092d\u0940 \u0921\u093f\u092e\u094d\u092c\u0917\u094d\u0930\u0902\u0925\u093f \u0915\u0947 \u0915\u0948\u0902\u0938\u0930 \u0925\u093e?', 567, None, u'P1', 598, u'Question_567_', u'pHxOvarianCA']
+aline: [u'No', u'\u0915\u094d\u092f\u093e \u0924\u0941\u092e\u0928\u0947 \u0915\u092d\u0940 \u0921\u093f\u092e\u094d\u092c\u0917\u094d\u0930\u0902\u0925\u093f \u0915\u0947 \u0915\u0948\u0902\u0938\u0930 \u0925\u093e?', 567, None, u'P1', 598, u'Question_567_', u'pHxOvarianCA']
+aline: [u'No', u'Have any of your close blood relatives ever had ovarian cancer?', 568, None, u'P2', 599, u'Question_568_', u'fHxOvarianCA']
+aline: [u'No', u'Have any of your close blood relatives ever had ovarian cancer?', 568, None, u'P2', 599, u'Question_568_', u'fHxOvarianCA']
+aline: [[], u'For any of your close blood relatives who had breast cancer, please indicate  testing:', 583, None, u'P4b', 606, u'Question_583_', u'fHxBrCAOther']
+aline: [[], u'For any of your close blood relatives who had breast cancer, please indicate  testing:', 583, None, u'P4b', 606, u'Question_583_', u'fHxBrCAOther']
+aline: [u'No', u'Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?', 582, None, u'P4a', 605, u'Question_582_', u'fHxBrCASameSideGE2']
+aline: [u'No', u'Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?', 582, None, u'P4a', 605, u'Question_582_', u'fHxBrCASameSideGE2']
+aline: [u'No', u'Has any <u>male</u> blood relative had breast cancer?', 581, None, u'P4a', 605, u'Question_581_', u'fHxBrCAMale']
+aline: [u'No', u'Has any <u>male</u> blood relative had breast cancer?', 581, None, u'P4a', 605, u'Question_581_', u'fHxBrCAMale']
+aline: [u'No', u'Is any close blood relative \n<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"\nhref="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>. \n<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a>.</i>\n', 578, None, u'P4', 604, u'Question_578_', u'ashkenaziJewishCloseRels']
+aline: [u'No', u'Is any close blood relative \n<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"\nhref="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>. \n<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a>.</i>\n', 578, None, u'P4', 604, u'Question_578_', u'ashkenaziJewishCloseRels']
+aline: [u'No', u'Have any close blood relatives been confirmed to have BRCA gene mutations?', 579, None, u'P4', 604, u'Question_579_', u'fHxBrCASuscGene']
+aline: [u'No', u'Have any close blood relatives been confirmed to have BRCA gene mutations?', 579, None, u'P4', 604, u'Question_579_', u'fHxBrCASuscGene']
+aline: [u'Yes', u'Have any close blood relatives had breast cancer?', 580, None, u'P4', 604, u'Question_580_', u'fHxBreastCA']
+aline: [u'Yes', u'Have any close blood relatives had breast cancer?', 580, None, u'P4', 604, u'Question_580_', u'fHxBreastCA']
+aline: [u'Yes', u'Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.', 569, None, u'P3', 600, u'Question_569_', u'pHxBreastCA']
+aline: [u'Yes', u'Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.', 569, None, u'P3', 600, u'Question_569_', u'pHxBreastCA']
+aline: [u'No', u'Was your cancer \u201ctriple negative\u201d, without receptors for estrogen, progesterone and HER2?', 570, None, u'P3a', 601, u'Question_570_', u'pHxBrCA3Neg']
+aline: [u'No', u'Was your cancer \u201ctriple negative\u201d, without receptors for estrogen, progesterone and HER2?', 570, None, u'P3a', 601, u'Question_570_', u'pHxBrCA3Neg']
+aline: [u'No', u'Have you had cancer in both breasts?', 571, None, u'P3a', 601, u'Question_571_', u'pHxBrCAGT1PrimaryBoth']
+aline: [u'No', u'Have you had cancer in both breasts?', 571, None, u'P3a', 601, u'Question_571_', u'pHxBrCAGT1PrimaryBoth']
+aline: [u'No', u'Was your cancer found in more than one location in the same breast?', 572, None, u'P3a', 601, u'Question_572_', u'pHxBrCAGT1PrimarySame']
+aline: [u'No', u'Was your cancer found in more than one location in the same breast?', 572, None, u'P3a', 601, u'Question_572_', u'pHxBrCAGT1PrimarySame']
+aline: [u'Question_573_421', u'What was your age when your breast cancer was first diagnosed?', 573, None, u'P3a', 601, u'Question_573_', u'pHxBrCALE50Yrs']
+aline: [u'Question_573_421', u'What was your age when your breast cancer was first diagnosed?', 573, None, u'P3a', 601, u'Question_573_', u'pHxBrCALE50Yrs']
+aline: [[u'Question_594_442'], u'multi choice', 594, None, u'P3b', 602, u'Question_594_', u'']
+aline: [[u'Question_594_442'], u'multi choice', 594, None, u'P3b', 602, u'Question_594_', u'']
+savePtResponse: list response: Question_594_442
+aline: [u'Yes', u'This is a test', 589, None, u'P3b', 602, u'Question_589_', u'']
+aline: [u'Yes', u'This is a test', 589, None, u'P3b', 602, u'Question_589_', u'']
+aline: [u'No', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?', 575, None, u'P3b', 602, u'Question_575_', u'pHxBrCAGE1RelBrCALE50Years']
+aline: [u'No', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?', 575, None, u'P3b', 602, u'Question_575_', u'pHxBrCAGE1RelBrCALE50Years']
+aline: [u'yup', u'Charfield entry', 590, None, u'P3b', 602, u'Question_590_', u'']
+aline: [u'yup', u'Charfield entry', 590, None, u'P3b', 602, u'Question_590_', u'']
+aline: [[u'Question_577_426', u'Question_577_441'], u'Please indicate any of the following conditions you have had xxxx:', 577, None, u'P3c', 603, u'Question_577_', u'pHxBrCAOther']
+aline: [[u'Question_577_426', u'Question_577_441'], u'Please indicate any of the following conditions you have had xxxx:', 577, None, u'P3c', 603, u'Question_577_', u'pHxBrCAOther']
+savePtResponse: list response: Question_577_426
+savePtResponse: list response: Question_577_441
+aline: [u'Yes', u'Have any of your female close blood relatives lived beyond age 45 years?', 584, None, u'P5', 607, u'Question_584_', u'fHxSufficient']
+aline: [u'Yes', u'Have any of your female close blood relatives lived beyond age 45 years?', 584, None, u'P5', 607, u'Question_584_', u'fHxSufficient']
+savePtResponse: Exit
+pageCalc: entering
+pageCalc: current page is SummaryPage
+pageCalc: used Default to calculate current/next page SummaryPage/avgRisk
+getNextPageFromGlobalFlags:  enter
+pageTag:  SummaryPage
+globalFlagName "Indeterminate" transitions to page "indetRisk"
+globalFlagName "Referral" transitions to page "riskAssess2"
+Number of global flags (2) apply to page "SummaryPage"
+Checking global flags in session data
+allGlobalFlagsInSession: [u'Referral']
+myFlagName: Indeterminate
+myFlagNextPageobj: indetRisk
+myFlagName: Referral
+myFlagNextPageobj: riskAssess2
+getGlobalFlagPriority:  enter
+getGlobalFlagPriority:  exit
+Got a hit for global flag "Referral" (priority a), the next page is riskAssess2
+got a hit! Select the highest priority flag
+getNextPageFromGlobalFlags: exit
+pageCalc:  Match for a global flag determined next page riskAssess2
+pageCalc: exit
+Edits to the summary done, so exit page "SummaryPage" to next page "riskAssess2"
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: riskAssess2
+pageType: singlePass
+NO sendQuestions
+#3No questions can be found for this page (riskAssess2).
+Not a POST
+No page data in session tag: riskAssess2
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: no forms data input (ok)
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page riskAssess2
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_S_Hindi whichPage: riskAssess2
+pageType: singlePass
+NO sendQuestions
+#3No questions can be found for this page (riskAssess2).
+UserDynamicFormCreation:  enter
+UserDynamicFormCreation: has forms data input
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+after POST
+Form is valid. Saving data.
+The cleaned data with Unique question tags is:
+{}
+The cleaned data with question tags is:
+{}
+savePageData:  enter
+Cleaned data is:
+{}
+Input questions are: 
+[]
+Session dict data updated in savePageData
+Dump the data dictionary after updating
+keyname Question_582_,keyvalue No
+keyname Question_568_,keyvalue No
+keyname Question_590_,keyvalue yup
+keyname Question_570_,keyvalue No
+keyname Question_571_,keyvalue No
+keyname Question_583_,keyvalue []
+keyname Question_573_,keyvalue Question_573_421
+keyname Question_579_,keyvalue No
+keyname Question_567_,keyvalue No
+keyname Question_584_,keyvalue Yes
+keyname Question_572_,keyvalue No
+keyname Question_589_,keyvalue Yes
+keyname Question_575_,keyvalue No
+keyname Question_577_,keyvalue [u'Question_577_426', u'Question_577_441']
+keyname Question_578_,keyvalue No
+keyname Question_594_,keyvalue [u'Question_594_442']
+keyname Question_581_,keyvalue No
+keyname Question_580_,keyvalue Yes
+keyname Question_569_,keyvalue Yes
+Dump the data dictionary end
+Dump the data list
+a record [u'No', u'\u0915\u094d\u092f\u093e \u0924\u0941\u092e\u0928\u0947 \u0915\u092d\u0940 \u0921\u093f\u092e\u094d\u092c\u0917\u094d\u0930\u0902\u0925\u093f \u0915\u0947 \u0915\u0948\u0902\u0938\u0930 \u0925\u093e?', 567, None, u'P1', 598, u'Question_567_', u'pHxOvarianCA']
+a record [u'No', u'Have any of your close blood relatives ever had ovarian cancer?', 568, None, u'P2', 599, u'Question_568_', u'fHxOvarianCA']
+a record [[], u'For any of your close blood relatives who had breast cancer, please indicate  testing:', 583, None, u'P4b', 606, u'Question_583_', u'fHxBrCAOther']
+a record [u'No', u'Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?', 582, None, u'P4a', 605, u'Question_582_', u'fHxBrCASameSideGE2']
+a record [u'No', u'Has any <u>male</u> blood relative had breast cancer?', 581, None, u'P4a', 605, u'Question_581_', u'fHxBrCAMale']
+a record [u'No', u'Is any close blood relative \n<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"\nhref="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>. \n<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a>.</i>\n', 578, None, u'P4', 604, u'Question_578_', u'ashkenaziJewishCloseRels']
+a record [u'No', u'Have any close blood relatives been confirmed to have BRCA gene mutations?', 579, None, u'P4', 604, u'Question_579_', u'fHxBrCASuscGene']
+a record [u'Yes', u'Have any close blood relatives had breast cancer?', 580, None, u'P4', 604, u'Question_580_', u'fHxBreastCA']
+a record [u'Yes', u'Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.', 569, None, u'P3', 600, u'Question_569_', u'pHxBreastCA']
+a record [u'No', u'Was your cancer \u201ctriple negative\u201d, without receptors for estrogen, progesterone and HER2?', 570, None, u'P3a', 601, u'Question_570_', u'pHxBrCA3Neg']
+a record [u'No', u'Have you had cancer in both breasts?', 571, None, u'P3a', 601, u'Question_571_', u'pHxBrCAGT1PrimaryBoth']
+a record [u'No', u'Was your cancer found in more than one location in the same breast?', 572, None, u'P3a', 601, u'Question_572_', u'pHxBrCAGT1PrimarySame']
+a record [u'Question_573_421', u'What was your age when your breast cancer was first diagnosed?', 573, None, u'P3a', 601, u'Question_573_', u'pHxBrCALE50Yrs']
+a record [[u'Question_594_442'], u'multi choice', 594, None, u'P3b', 602, u'Question_594_', u'']
+a record [u'Yes', u'This is a test', 589, None, u'P3b', 602, u'Question_589_', u'']
+a record [u'No', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or youngerxxx?', 575, None, u'P3b', 602, u'Question_575_', u'pHxBrCAGE1RelBrCALE50Years']
+a record [u'yup', u'Charfield entry', 590, None, u'P3b', 602, u'Question_590_', u'']
+a record [[u'Question_577_426', u'Question_577_441'], u'Please indicate any of the following conditions you have had xxxx:', 577, None, u'P3c', 603, u'Question_577_', u'pHxBrCAOther']
+a record [u'Yes', u'Have any of your female close blood relatives lived beyond age 45 years?', 584, None, u'P5', 607, u'Question_584_', u'fHxSufficient']
+Dump the data list end
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page riskAssess2 Questionnaire: BRCA_S_Hindi
+questionResponses "{}"
+successful query
+No analysis records found for page "riskAssess2" therefore no global flag created.
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is riskAssess2
+pageCalc: used Default to calculate current/next page riskAssess2/completion
+pageCalc:  incoming question results
+pageCalc:  questionResults: {}
+getNextPageFromCalculation: enter
+Test condition: []
+Found no match
+getNextPageFromCalculation: exit
+pageCalc:  No match for a calculated next page
+getNextPageFromGlobalFlags:  enter
+pageTag:  riskAssess2
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+NEXT button clicked. thisPageTag: riskAssess2, next_page: completion
+In Completion.
+Completion:  cookie removed.
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+In Completion.
+Completion:  cookie not removed.
+In POST.
+In submitButton.
+In Submit e-mail.
+questionnaireEmail: screener@screengenes.org
+Found summary information to send.
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 1, PAMF, Palo Alto Medical Foundation, 2014-04-08 23:25:54.722876
+, Questionnaire: 52, BRCA_S_Hindi, स्तन स्वास्थ्य जांच, 2014-04-22 14:23:21.615269
+
+after POST
+selectProjectDefault:  exit to /multiquest/registration/userLanding/
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+selectProjectDefault:  exit to /multiquest/registration/userLanding/
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectProjectDefault:  enter
+displayProjectsWithinScope:  enter
+displayProjectsWithinScope:  exit
+selectProjectDefault:  exit
+selectProjectDefault:  enter
+displayProjectsWithinScope:  enter
+displayProjectsWithinScope:  exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+after POST
+transitionMatrixTo2DList: enter
+transitionMatrixTo2DList: exit
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+after POST
+transitionMatrixTo2DList: enter
+transitionMatrixTo2DList: exit
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+after POST
+selectProjectDefault:  exit to /multiquest/registration/userLanding/
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectProjectsQuestionnairesToExecute:  enter
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+currentProjectDefault:  Lavender
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+currentProjectDefault:  Lavender
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectDefault:  exit to /multiquest/registration/userLanding/
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+after POST
+transitionMatrixTo2DList: enter
+transitionMatrixTo2DList: exit
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+after POST
+transitionMatrixTo2DList: enter
+transitionMatrixTo2DList: exit
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+after POST
+selectProjectDefault:  exit to /multiquest/registration/userLanding/
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+bulkPageEdit:  enter
+Project: 3, Lavender, A colorful project:  Lavender, 2014-04-13 15:04:37.056516
+, Questionnaire: 51, SampleQ, Banner at the top of every page, 2014-04-19 11:01:57.530151
+
+getAllQuestionnaires:  enter
+bulkPageEdit:  exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectProjectDefault:  enter
+displayProjectsWithinScope:  enter
+displayProjectsWithinScope:  exit
+selectProjectDefault:  exit
+selectProjectDefault:  enter
+displayProjectsWithinScope:  enter
+displayProjectsWithinScope:  exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+selectProjectDefault:  exit to /multiquest/registration/userLanding/
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectProjectDefault:  enter
+displayProjectsWithinScope:  enter
+displayProjectsWithinScope:  exit
+selectProjectDefault:  exit
+selectProjectDefault:  enter
+displayProjectsWithinScope:  enter
+displayProjectsWithinScope:  exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+editProjectRecord: enter
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+editProjectRecord: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectProjectDefault:  enter
+displayProjectsWithinScope:  enter
+displayProjectsWithinScope:  exit
+selectProjectDefault:  exit
+selectProjectDefault:  enter
+displayProjectsWithinScope:  enter
+displayProjectsWithinScope:  exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+userLanding: enter
+the user is: djsuser
+getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: djsuser
+userLanding: exit
+In QuestContinue. whichProject: test_project whichQuest: TestQuest whichPage: TP2
+Debug:  current Project is not specified for this Session.
+syserrmsg: current Questionnaire is not specified for this Session.

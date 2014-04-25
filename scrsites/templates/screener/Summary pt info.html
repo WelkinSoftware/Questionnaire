@@ -1,0 +1,32 @@
+    <table>
+		<tr valign='top' width='50%'>
+		<th>Completed for:  </th>
+		</tr>
+		<tr>
+		<td>Patient name: {{patientName}}</td>
+		</tr>
+		{% if patientCallbackNumber %}
+		<tr>
+		<td>Patient phone: {{patientCallbackNumber}}</td>
+		</tr>
+		{% endif %}
+		{% if callbackReq %}
+		<tr>
+		<td>Call back requested.</td>
+		</tr>
+		{% endif %}
+		{% if ptEmail %}
+		<tr>
+		<td>Patient e-mail: {{ptEmail}}</td>
+		</tr>
+		{% endif %}
+		<tr>
+		<td>Birthdate: {{birthDate}}</td>
+		</tr>
+		<tr>
+		<td>Today's date: {{current_date}}</td>
+		</tr>
+		<tr>
+		<td>Patient age: {{pt_currentAge}}</td>
+		</tr>
+    </table>

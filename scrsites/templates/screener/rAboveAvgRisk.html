@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+    <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+{% include 'screener/header.html' %}
+		<title> PAMF breast health screening questionnaire</title>
+	</head>
+<div>
+ {% include 'screener/Summary pt info.html' %}
+    <p>
+        Thank you for completing our questionnaire!
+    </p>
+    <p>
+Based on your answers, we estimate that <b><i>you may have a higher than average chance of carrying a BRCA mutation</i></b>.
+        To evaluate this more completely, we recommend that you talk with a {{projectAbbrev}} genetic counseler.
+        Please enter your phone number below. We will attempt to contact you within one week.
+	</p>
+	{% if diagMess %}
+   <p>
+    back to:  {{back_to}}
+    diagMess:  {{diagMess}}
+    </p>
+	{% endif %}
+<table>
+	<form action="" method="post">{% csrf_token %}
+		<tr>
+			<td width='50%'>
+				<div class="field">
+					{{ form.patientCallbackNumber.errors }}
+					<label for="id_patientCallbackNumber">My phone number (aaa.nnn.nnnn): </label>
+					{{ form.patientCallbackNumber }}
+				</div>
+				<div class="field">
+					{{ form.callbackReq.errors }}
+					<label for="id_callbackReq">Please call me (allow 7 working days) </label>
+					{{ form.callbackReq }}
+				</div>
+			<a href="{{urlprefix}}scrn/{{back_to}}" target="_self">
+				Back </a>
+				<input type="submit" value="Finish">
+			</td>
+		</tr>
+		<tr>
+			<td width='100%'>
+				If you prefer, you may call to set up that appointment: {{projectContactPhone}}.
+			</td>
+		</tr>
+	</form>
+</table>
+    </p>
+    <p>
+		{% if risk_list %}
+			<p>Your responses are summarized here:</p>
+        <ul>
+        	{% for item in risk_list %}
+        	<li>{{ item }}</li>
+        	{% endfor %}
+        </ul>
+     	{% endif %}
+    </p>
+    <p>
+If any of your answers need correction, click the "Back" box to return to the page needing correction. Enter your changes, and click the "Next" box to work through the survey again.  
+    </p>
+    <p>
+        When your answers are correct, click the "Finish" box to save them.
+    </p>
+    <p>
+    {% include 'screener/Summary other ways you can learn more.html' %}
+    </p>
+    {% include 'screener/footer.html' %}
+</div>
+
+<!--
+Copyright 2012 Health Records for Everyone
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->

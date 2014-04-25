@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+    <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+{% include 'screener/header.html' %}
+		<title> PAMF breast health screening questionnaire</title>
+	</head>
+<div >
+ {% include 'screener/Summary pt info.html' %}
+    <p>
+        Thank you for completing our questionnaire!
+ </p>
+    <p>
+		1. Your chances of carrying a BRCA mutation are <b>very low</b>.
+    </p>
+    <p>
+        2. Your chances of developing breast or ovarian cancer are <b>average, not increased</b>.
+         "Average" risk means about 1 in 10 chance of getting breast cancer and about 1 in 100 chance of getting ovarian cancer.
+    </p>
+    <p>
+		{% if risk_list %}
+			<p>3. Your answers are summarized here:</p>
+        <ul>
+        	{% for item in risk_list %}
+        	<li>{{ item }}</li>
+        	{% endfor %}
+        </ul>
+        {% else %}
+        	<p>3. Your answers indicated no risk factors.</>
+     	{% endif %}
+    </p>
+    <p>
+If any of your answers need correction, click the "Back" box to return to the page needing correction. Enter your changes, and click the "Next" box to work through the survey again.  
+    </p>
+    <p>
+        When your answers are correct, click the "Finish" box to save them.
+    </p>
+    <p>
+    {% include 'screener/Summary other ways you can learn more.html' %}
+    </p>
+	<form action="" method="post">{% csrf_token %}
+			<a href="{{urlprefix}}scrn/{{back_to}}">
+				Back </a>
+				<input type="submit" value="Finish">
+	</form>
+</div>
+
+<!--
+Copyright 2012 Health Records for Everyone
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->

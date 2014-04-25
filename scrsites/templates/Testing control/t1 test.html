@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+	<head>
+		<title> Test page</title>
+	</head>
+	    <h2>Test page = even less than a prototype</h2>
+    <p style='font-size:Large;'><i>
+       This questionnaire first asks about <a title="Tap here for more information about ovarian cancer"
+                               href="../explanations.html#ovca">ovarian cancer</a>, because women with this condition have a higher chance of BRCA gene mutations.
+    </i></p>
+	<form action="" method="post">{% csrf_token %}
+            {{ form.pHxOvarianCA_form.errors }}
+            <label for=id_pHxOvarianCA_form>Have you ever had ovarian cancer?</label>
+            {{ form.pHxOvarianCA_form }}
+			<tr >
+ 			<a href="{{urlprefix}}scrn/scrnrAdmin/" ><button type="button">Back</button></a>
+			</tr >
+			<input type="submit" value="Next">
+           <img src="{{ imageloc }}femaleReproductive.png" alt='female reproductive system image' height="300" />
+	</form>
+
+<!--
+Copyright 2012 Health Records for Everyone
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->

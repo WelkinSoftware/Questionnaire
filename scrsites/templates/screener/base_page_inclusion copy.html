@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>PAMF breast health screening questionnaire - Page {{this_page}}</title>
+	</head>
+<body>
+	    <h2>Breast Health Screening</h2>
+	    <h5>(This is a prototype questionnaire:  please disregard the results.)</h5>
+	{% autoescape off %}
+	{% block preamble %}{% endblock  %}
+	{% endautoescape %}
+    {% if errmsg %}
+		<p style="color: red;">
+    	{{errmsg }}
+		</p>
+    {% endif %}
+	<form action="" method="post" >{% csrf_token %}
+	<table >
+	{% if form.errors %}
+		<p style="color: red;">
+			Please correct the error{{ form.errors|pluralize }} below.
+		</p>
+	{% endif %}
+	<tr>
+		<td>
+		{% block fieldQuery %}
+		{% if field_style == 'as_table' %}		
+			<table frame='border' rules='all' border='2px' with='70%'>
+				{{form.as_table}}
+			</table>
+		{% elif field_style == 'as_p' %}
+		<p>
+			{{form.as_p }}
+		</p>
+		{% elif field_style == 'as_ul' %}
+			<ul>
+				{{form.as_ul}}
+			</ul>
+		{% endif %}
+		{% endblock  %} <!-- fieldQuery -->
+	{% autoescape off %}
+	{% block preamblepost %}{% endblock  %}
+	{% endautoescape %}
+		</td>
+	{% block pageImage %}{% endblock  %}
+	</tr>
+	</table>
+
+	<a href="{{urlprefix}}{{baseURL}}{{back_to}}">
+	<button type="button">Back</button> </a>
+	<input type="submit" value="Next">
+	</form>
+	
+	<p style='font-size:small; text-align:left; text-decoration:none; color:black;'>
+		PAMF breast and ovarian cancer genetic counseling screening questionnaire version 1.5. Last updated Thursday, August 15, 2013.
+	</p>
+</body>
+</html>

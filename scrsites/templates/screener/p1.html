@@ -1,0 +1,43 @@
+{% extends 'screener/base_page_inclusion.html' %}
+
+{% block preamble %}
+    <p style='font-size:Large;'><i>
+       This questionnaire first asks about <a title="Tap here for more information about ovarian cancer"
+                               href="{{urlprefix}}scrn/explanations/ovca">ovarian cancer</a>, because women with this condition have a higher chance of BRCA gene mutations.
+    </i></p>
+{% endblock  %}
+
+{% block preamblepost %}
+<p style='font-size:Large;'>
+	<i>
+		This question does not apply to the following types of cancer:<ul>
+			<li>Cancer of the cervix (cervical cancer)</li>
+			<li>Cancer in the lining of the uterus (uterine cancer)</li>
+		</ul>
+	</i>
+</p>
+{% endblock  %}
+
+
+{% block pageImage %}
+            <td width='50%'>
+                <img src="{{ imageloc }}femaleReproductive.png" alt='female reproductive system image' height="250" />
+            </td>
+{% endblock  %}
+
+
+<!--
+Copyright 2012 Health Records for Everyone
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->

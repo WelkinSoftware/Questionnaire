@@ -1,0 +1,5 @@
+['shortTag', 'id', 'barTitle', 'pageTitle', 'pageSubTitle', 'description', 'footerText', 'version', 'versionDate', 'language', 'firstPageTag', 'imageFilePath', 'imageFileName', 'imageFileType', 'ProjectID', 'ProjectTag']
+TestQuest,5,Sample Questionnaire,Banner at the top of every page,Banner subtitle,Description of the Questionnaire,Footer at the bottom of every page,Questionnaire version,2014-02-04 00:00:00,English,,,,test_project,2
+BRCA,1,PAMF breast health screening questionnaire,Breast Health Screening,,BRCA gene risk assessment. Extended with additional questions.,,BRCA version 1.8 Extended,2014-04-03 16:00:00,English,,,,PAMF,1
+BRCA_F,2,PAMF breast health screening questionnaire (fe),Breast Health Screening,,BRCA gene risk assessment. Quick Exit,qe,BRCA version 1.8 Fast Exit,2014-04-03 08:00:00,English,,,,PAMF,1
+BRCA_S,3,PAMF breast health screening questionnaire (se),Breast Health Screening,,BRCA gene risk assessment.,se,BRCA version 1.8 Slow Exit,2014-04-03 00:00:00,English,,,,PAMF,1

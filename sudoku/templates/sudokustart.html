@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+		<title>Sudoku Helper</title>
+	    <h2>Welcome to the Sudoku Helper</h2>
+<html>
+<body>
+<style>
+table {
+	border-collapse:collapse;
+}
+table, td, th {
+	border:1px solid black;
+}
+</style>
+<div>
+<p>This "helper" does simple bookkeeping on a Sudoku puzzle. 
+</p>
+<p>
+Each legal element of the 9x9 array is identified in the second matrix defined below.
+A legal element is a number 1-9 which does not appear in any of the intersecting 
+row and column and the 3x3 submatrix. The number of legal elements is further reduced by 
+eliminating other options when two cells share a pair of possible elements.
+</p>
+
+<p>
+	{% ifequal computerT  'iPad' %}
+	<p>
+		Tap in the boxes below to display the keyboard and then type a number 1 - 9.
+	{% else %}
+		Enter a number in the blank boxes to continue.
+    </p>
+    {% endifequal %}
+</p>
+<h2>The input matrix</h2>
+<p>Replace any or all numbers with your own, then click "Calculate using your entries".
+</p>
+
+<form action="" method="post" >{% csrf_token %}
+
+<table >
+{% for aItem in displayForInput %}
+	<tr>
+	{% for bItem in aItem %}
+		<td>
+		<table frame="box">
+		{% for cItem in bItem %}
+			<tr>
+			{% for theValue, listLocation, array33Location in cItem %}
+				<td>
+				<input type="text" name="Elem_{{listLocation}}_{{array33Location}}" value="{{theValue}}" size = "13">
+				</td>
+			{% endfor %}
+			</tr>
+		{% endfor %}
+		</table>
+		</td>
+	{% endfor %}
+	</tr>
+{% endfor %}
+</table>
+<input type="submit" name="submitButton" value="Calculate using your entries">  Use the above matrix, with any values you have entered, to determine legal values for each entry.
+
+{% if errMsg %}
+	<ul>
+	{% for msg in errMsg %}
+		<li style="color: red;">{{msg}}</li>
+	{% endfor %}
+	</ul>
+{% endif %}
+<p>
+<input type="submit" name="submitButton" value="Start over, purge all"> Purge all entries. Start over with built-in default matrix.
+</p>
+<p>
+<input type="submit" name="submitButton" value="Save Puzzle">Save the current puzzle.
+</p>
+<p>
+<input type="submit" name="submitButton" value="Restore Puzzle"> Restore Puzzle which you previously saved.
+</p>
+</form>
+
+
+<p>
+	The values in the square brackets are possible selections to continue the puzzle.
+	Enter your selection in the matrix at the top of the page.
+</p>
+<table>
+{% for aRow in displayForOutput %}
+	<tr>
+	{% for aCol in aRow %}
+		<td>
+		<table frame="box" border="1" width="100%">
+		{% for aRowI in aCol %}
+			<tr>
+			{% for aColI in aRowI %}
+				<td>
+					{{aColI}}
+				</td>
+			{% endfor %}
+			</tr>
+		{% endfor %}
+		</table>
+		</td>
+	{% endfor %}
+	</tr>
+{% endfor %}
+</table>
+
+
+</div>
+</body>
+</html>
+
+
+<!--
+Copyright 2014
+-->

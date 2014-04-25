@@ -1,0 +1,53 @@
+<div style="text-align: left; ">
+	<head>
+		<title> Screening questionnaire administration</title>
+	</head>
+</div>
+
+<h3>Welcome to the Screener administrative page</h3>
+<p>
+ 	{{ current_date }}
+</p>
+<p>
+ 	This computer's host name: {{ thishost }}
+</p>
+<p>This is a test site for the BRCA screening questionnaire prototype.</p>
+<p>This server is under development.</p>
+<p>Here are the things you can do on this page:</p>
+
+<div class="indented">
+<p>Click <a href="{{urlprefix}}scrn/quickExit">here</a> to start the questionnaire with "quick exit".</p>
+
+<p>Click <a href="{{urlprefix}}scrn/">here</a> to start the questionnaire without "quick exit".</p>
+
+<p>Click <a href="{{urlprefix}}admin/">here</a> to login to view pt data. (ptdataview, scr)</p>
+
+<p>Click <a href="{{urlprefix}}scrn/savecsv/">here</a> to dump patient data to a spreadsheet file.</p>
+
+<p>Click <a href="{{urlprefix}}scrn/listReferrals/">here</a> to list the patients to be referred.</p>
+
+<p>The following are debug menu items, or unfinished.</p>
+{% if thishost != "www.screengenes.org" %}
+<p>Click <a href="{{urlprefix}}scrn/setDebugOptions/">here</a> to set debug options.</p>
+{% endif %}
+<p>Click <a href="{{urlprefix}}scrn/testpage0/">here</a> for a testpage.</p>
+
+<p>Click <a href="{{urlprefix}}scrn/LoadNonPtData/">here</a> to load site specific information for PAMF.</p>
+
+<p> <a href="{{urlprefix}}scrn/LoadRiskText/">Load</a> risk statement text into database.</p
+
+<p> Dump patient data</p
+
+<p> Load patient data</>
+
+
+</div>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {padding-left: 50pt;
+   padding-right: 50pt;
+   }
+-->
+</STYLE>

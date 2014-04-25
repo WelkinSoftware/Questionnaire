@@ -1,0 +1,36 @@
+<div style="text-align: left; ">
+{% include 'screener/header.html' %}
+<div style="text-align: left; ">
+
+<h3>Query the database and list the patients to be referred to a genetic counselor.</h3>
+<p>
+</p>
+<div class="indented">
+
+<table>
+{% if ptReferralList %}
+		<td>Pt Name</td>
+		<td>Pt Birthday</td>
+		<td>Data entry date</td>
+	{% for item in ptReferralList %}
+	<tr>
+		<td>{{ item.patientName }}</td>
+		<td>{{ item.birthDate   }}</td>
+		<td>{{ item.entryDate }}</td>
+	</tr>
+	{% endfor %}
+{% endif %}
+</table>
+</div>
+
+	<a href="{{urlprefix}}scrn/scrnrAdmin/" >Back to the admin page</a>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {
+   padding-left: 50pt;
+   padding-right: 50pt;
+   }
+-->
+</STYLE>

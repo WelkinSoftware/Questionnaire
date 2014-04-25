@@ -1,0 +1,20 @@
+from multiquest.adminUtilities import *
+from multiquest.forms import *
+from multiquest.models import *
+from multiquest.views import *
+from multiquest.utilities import *
+from multiquest.utilities_db import *
+from django.contrib.auth.models import Group, User, Permission
+
+getAllProjects()
+getAllProjectsWithinScope()
+# should be different according to the ProjectAttributes table
+
+pageObj = Page.objects.get(shortTag='P1')
+# test page referencing
+getCompleteListQuestionnairesReferencingAPage( pageObj )
+
+aQrefed = getAllQuestionnairesReferencingAPage( pageObj )
+aQrefed
+Only "within scope"
+# should be a subset from getCompleteListQuestionnairesReferencingAPage

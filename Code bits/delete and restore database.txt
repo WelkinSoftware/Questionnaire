@@ -1,0 +1,82 @@
+Set up the database - delete and restore.
+
+
+Permissions fix
+/Users/cl/Documents/DjCode/PostgresPermissionsFix.sh
+
+
+****Before deleting the data tables, save *****
+from Terminal - enter the shell
+python manage.py shell
+#Include the utilities:
+from multiquest.adminUtilities import *
+from multiquest.forms import *
+from multiquest.models import *
+from multiquest.views import *
+from multiquest.utilities import *
+from multiquest.utilities_db import *
+from django.contrib.auth.models import Group, User, Permission
+#Execute
+doAllDumps()
+#Exit shell
+quit()
+
+from Terminal - delete all data tables:
+Get to the the folder containing manage.py
+cd /Users/cl/Documents/DjCode
+or
+cd /Volumes/WebHD/Web2/
+# run
+./deleteMultiquestTables.sh
+
+python manage.py validate
+# correct errors
+python manage.py syncdb
+Creating tables ...
+Creating table multiquest_question
+Creating table multiquest_responsechoice
+Creating table multiquest_page
+Creating table multiquest_project
+Creating table multiquest_userproject
+Creating table multiquest_projectattributes
+Creating table multiquest_questionnaire
+Creating table multiquest_questionnaireattributes
+Creating table multiquest_questionnairepage
+Creating table multiquest_projectquestionnaire
+Creating table multiquest_pageanalysis
+Creating table multiquest_questionnaireanalysis
+Creating table multiquest_pagequestion
+Creating table multiquest_respondent
+Creating table multiquest_submission
+Creating table multiquest_response
+Creating table multiquest_responseselection
+Creating table multiquest_pageattributes
+Creating table multiquest_submissionanalysis
+Creating table multiquest_riskcalculation
+Creating table multiquest_risksubmission
+Installing custom SQL ...
+Installing indexes ...
+Installed 0 object(s) from 0 fixture(s)
+
+#Set up environment, Load data for Questions
+python manage.py shell
+from multiquest.adminUtilities import *
+from multiquest.forms import *
+from multiquest.models import *
+from multiquest.views import *
+from multiquest.utilities import *
+from multiquest.utilities_db import *
+from django.contrib.auth.models import Group, User, Permission
+#Execute
+doAllLoads()
+
+Check database administrator in Safari
+	http://localhost:8000/admin/multiquest/
+
+
+Check and make sure .htaccess at /Volumes/WebHD/Library/Server/Web/Data/Sites/Default/
+	Verify the redirect.
+
+Check the admin to make sure that all multiquest data tables can be seen by the multiQuest user! Login as djsuser (superuser)
+Make sure that these tables are also referenced in admin.py
+

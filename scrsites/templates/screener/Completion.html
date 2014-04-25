@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+    <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+{% include 'screener/header.html' %}
+		<title> PAMF breast health screening questionnaire</title>
+	</head>
+
+<h2>You have completed the Breast Health Screening Questionnaire</h2>
+<h5>(This is a prototype questionnaire:  please disregard the results.)</h5>
+
+<p>
+ 	{{ current_date }}
+</p>
+
+<div class="indented">
+{% if ptEmail and not sentMail %}
+	<form action="" method="post" >{% csrf_token %}
+<p>Click to email a copy of these results to "{{ptEmail}}".</p>
+		<input type="submit" value="Submit e-mail">
+	</form>
+{% endif %}
+<p>Click <a href="{{startQURL}}">here</a> to go to the start of the questionnaire.</p>
+
+{% if sentMail %}
+	<p style="color: red;">
+	{{sentMail }}
+	</p>
+{% endif %}
+
+
+</div>
+
+<STYLE TYPE="text/css">
+<!--
+.indented
+   {padding-left: 50pt;
+   padding-right: 50pt;
+   }
+-->
+</STYLE>

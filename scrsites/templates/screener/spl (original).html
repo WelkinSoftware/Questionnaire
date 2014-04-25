@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+    <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+{% include 'screener/header.html' %}
+		<title> PAMF breast health screening questionnaire</title>
+	</head>
+	
+    <h4>
+    <p>This questionnaire helps determine if you might benefit from discussion regarding breast and ovarian cancer.</p>
+    <p>Certain tests and treatments may lower your chances of getting these cancers or their recurrence.</p>
+    </h4>
+    
+    <p>This questionnaire is based on national guidelines to screen for certain gene mutations that may increase risk of cancer. It is 
+		meant for women who have <i>not</i> already had genetic testing for <a title="Tap here to learn more about BRCA1 & BRCA2 mutations" href="{{urlprefix}}scrn/explanations/brcatesting">
+        BRCA1 and BRCA2 mutations</a>.  If you have already had such testing, you are done! Please return this device to the
+        person who gave it to you.
+    </p>
+    <p>     
+		Your answers will suggest whether your chances of having these gene mutations are low or are high enough to merit further discussion. 
+		If you aren't able to answer some of the questions now, you may want to collect that information and talk further with your doctor.
+	</p>
+    <p>
+		To start the questionnaire, please click the "Next" box. To learn more about any words highlighted in blue, simply tap that term. To return to the previous screen, tap the back arrow.
+    <div>
+	{% if errmsg != "" %}
+		<p style="color: red;">
+			{{ errmsg }}
+		</p>
+	{% endif %}
+		
+	<form action="" method="post">{% csrf_token %}
+			<input type="submit" value="Next">
+	</form>
+	{% if debugMode %}
+		{% if quickExit %}
+			<p>Mode is:  "quick exit"</p>
+		{% else %}
+			<p>Mode is:  "slow exit"</p>
+		{% endif %}
+	{% endif %}
+	
+
+</div>
+{% include 'screener/footer.html' %}
+</html>
+
+<!--
+Copyright 2012 Health Records for Everyone
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
