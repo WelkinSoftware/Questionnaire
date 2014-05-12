@@ -8,9 +8,6 @@
 7,fHxBrCABrainTumors,4,fHxBrCAOther,Brain tumors,fHxBrCABrainTumors,07
 8,fHxBrCAGastricCA,4,fHxBrCAOther,Stomach cancer,fHxBrCAGastricCA,08
 9,fHxBrCALeukLymphoma,4,fHxBrCAOther,Leukemia or lymphoma,fHxBrCALeukLymphoma,09
-10,pHxBrBi_HwoA,15,pHxBrBi,Hyperplasia without atypia,pHxBrBi_HwoA,1
-11,pHxBrBi_Les,15,pHxBrBi,High Risk lesion:  atypical hyperplasia<aComma> or lobular carcinoma in situ (LCIS),pHxBrBi_Les,2
-12,pHxBrBi_Unk,15,pHxBrBi,I don't know,pHxBrBi_Unk,3
 13,Yes,21,pHxBrCALE50Yrs,Age 50 or under,Yes,01
 14,No,21,pHxBrCALE50Yrs,Age 51 or older,No,02
 15,pHxBrCAThyroidCA,22,pHxBrCAOther,Thyroid cancer,pHxBrCAThyroidCA,02
@@ -21,6 +18,9 @@
 20,pHxBrCABrainTumors,22,pHxBrCAOther,Brain tumors,pHxBrCABrainTumors,07
 21,pHxBrCAGastricCA,22,pHxBrCAOther,Stomach cancer,pHxBrCAGastricCA,08
 22,pHxBrCALeukLymphoma,22,pHxBrCAOther,Leukemia or lymphoma,pHxBrCALeukLymphoma,09
+10,pHxBrBi_HwoA,15,pHxBrBi,Hyperplasia without atypia,pHxBrBi_HwoA,1
+11,pHxBrBi_Les,15,pHxBrBi,High Risk lesion:  atypical hyperplasia<aComma> or lobular carcinoma in situ (LCIS),pHxBrBi_Les,2
+12,pHxBrBi_Unk,15,pHxBrBi,I don't know,pHxBrBi_Unk,3
 23,pHxHormUse_BC,27,pHxHormUse,Birth control pills,pHxHormUse_BC,1
 24,pHxHormUse_Est,27,pHxHormUse,Estrogen replacement,pHxHormUse_Est,2
 25,pHxHormUse_Pro,27,pHxHormUse,Progesterone replacement,pHxHormUse_Pro,3
@@ -39,3 +39,53 @@
 38,ptEth_OPI,41,ptEth,Other Pacific Islander,ptEth_OPI,10
 39,ptEth_OAA,41,ptEth,Other Asian American,ptEth_OAA,11
 40,ptEth_OU,41,ptEth,Other or unknown,ptEth_OU,12
+444,,597,,this is choice 1,,01
+445,,597,,Choice 2,,02
+446,,598,,this is choice 1,,01
+447,,598,,choice 2,,02
+448,,598,,choice 3,,03
+51,fHxBrCADermMan,79,fHxBrCAOther,Breast cancer involving the skin overlying the breast,fHxBrCADermMan,01
+52,fHxBrCAThyroidCA,79,fHxBrCAOther,Thyroid cancer,fHxBrCAThyroidCA,02
+53,fHxBrCASarcoma,79,fHxBrCAOther,Sarcoma,fHxBrCASarcoma,03
+54,fHxBrCAAdrenalCA,79,fHxBrCAOther,Adrenal cancer,fHxBrCAAdrenalCA,04
+55,fHxBrCAEndometrialCA,79,fHxBrCAOther,Cancer of the uterus,fHxBrCAEndometrialCA,05
+56,fHxBrCAPancreaticCA,79,fHxBrCAOther,Pancreatic cancer,fHxBrCAPancreaticCA,06
+57,fHxBrCABrainTumors,79,fHxBrCAOther,Brain tumors,fHxBrCABrainTumors,07
+58,fHxBrCAGastricCA,79,fHxBrCAOther,Stomach cancer,fHxBrCAGastricCA,08
+59,fHxBrCALeukLymphoma,79,fHxBrCAOther,Leukemia or lymphoma,fHxBrCALeukLymphoma,09
+41,Yes,69,pHxBrCALE50Yrs,Age 50 or under,Yes,01
+42,No,69,pHxBrCALE50Yrs,Age 51 or older,No,02
+43,pHxBrCAThyroidCA,73,pHxBrCAOther,Thyroid cancer,pHxBrCAThyroidCA,02
+44,pHxBrCASarcoma,73,pHxBrCAOther,Sarcoma,pHxBrCASarcoma,03
+45,pHxBrCAAdrenalCA,73,pHxBrCAOther,Adrenal cancer,pHxBrCAAdrenalCA,04
+46,pHxBrCAEndometrialCA,73,pHxBrCAOther,Cancer of the uterus,pHxBrCAEndometrialCA,05
+47,pHxBrCAPancreaticCA,73,pHxBrCAOther,Pancreatic cancer,pHxBrCAPancreaticCA,06
+48,pHxBrCABrainTumors,73,pHxBrCAOther,Brain tumors,pHxBrCABrainTumors,07
+49,pHxBrCAGastricCA,73,pHxBrCAOther,Stomach cancer,pHxBrCAGastricCA,08
+50,pHxBrCALeukLymphoma,73,pHxBrCAOther,Leukemia or lymphoma,pHxBrCALeukLymphoma,09
+442,,594,,this is choice 1,,01
+443,,594,,this is choice 2,,02
+452,,594,,this is choice 3,,03
+449,,600,,this is choice 1,,01
+450,,600,,this is choice 2,,02
+451,,600,,this is choice 3,,03
+431,fHxBrCADermMan,583,fHxBrCAOther,Breast cancer involving the skin overlying the breast updated,fHxBrCADermMan,01
+432,fHxBrCAThyroidCA,583,fHxBrCAOther,Thyroid cancer,fHxBrCAThyroidCA,02
+433,fHxBrCASarcoma,583,fHxBrCAOther,Sarcoma,fHxBrCASarcoma,03
+434,fHxBrCAAdrenalCA,583,fHxBrCAOther,Adrenal cancer and this one,fHxBrCAAdrenalCA,04
+435,fHxBrCAEndometrialCA,583,fHxBrCAOther,Cancer of the uterus,fHxBrCAEndometrialCA,05
+436,fHxBrCAPancreaticCA,583,fHxBrCAOther,Pancreatic cancer,fHxBrCAPancreaticCA,06
+437,fHxBrCABrainTumors,583,fHxBrCAOther,Brain tumors,fHxBrCABrainTumors,07
+438,fHxBrCAGastricCA,583,fHxBrCAOther,Stomach cancer,fHxBrCAGastricCA,08
+439,fHxBrCALeukLymphoma,583,fHxBrCAOther,Leukemia or lymphoma,fHxBrCALeukLymphoma,09
+421,Yes,573,pHxBrCALE50Yrs,Age 50 or under,Yes,01
+422,No,573,pHxBrCALE50Yrs,Age 51 or older,No,02
+423,pHxBrCAThyroidCA,577,pHxBrCAOther,Thyroid cancer,pHxBrCAThyroidCA,02
+424,pHxBrCASarcoma,577,pHxBrCAOther,Sarcoma,pHxBrCASarcoma,03
+425,pHxBrCAAdrenalCA,577,pHxBrCAOther,Adrenal cancer,pHxBrCAAdrenalCA,04
+426,pHxBrCAEndometrialCA,577,pHxBrCAOther,Cancer of the uterus,pHxBrCAEndometrialCA,05
+427,pHxBrCAPancreaticCA,577,pHxBrCAOther,Pancreatic cancer,pHxBrCAPancreaticCA,06
+428,pHxBrCABrainTumors,577,pHxBrCAOther,Brain tumors,pHxBrCABrainTumors,07
+429,pHxBrCAGastricCA,577,pHxBrCAOther,Stomach cancer,pHxBrCAGastricCA,08
+430,pHxBrCALeukLymphoma,577,pHxBrCAOther,Leukemia or lymphoma,pHxBrCALeukLymphoma,09
+441,,577,pHxBrCAOther,xxxx,,09

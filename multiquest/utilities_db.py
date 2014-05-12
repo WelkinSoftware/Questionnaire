@@ -56,37 +56,30 @@ def saveGlobalFlagsToSessionData(request, theQuestionnaire, thePageObj, question
 	DebugOut('saveGlobalFlagsToSessionData:  enter')
 	DebugOut('page %s Questionnaire: %s' %(thePageObj.shortTag,theQuestionnaire.shortTag) )
 	DebugOut('questionResponses "%s"' %questionResponses)
-	gotPageAnalysisRecords = False	# pessimism
-	try:
-		pageAnalysisRecords = PageAnalysis.objects.filter( # allow for multiple results
-			questionnaireID = theQuestionnaire,
-			pageID=thePageObj,
-			)
-		DebugOut('successful query')
-		if len(pageAnalysisRecords) == 0:
-			DebugOut('No analysis records found for page "%s" therefore no global flag created.'%thePageObj.shortTag)
-			sessionDataCreated = False
-			DebugOut('saveGlobalFlagsToSessionData:  exit')
-			return sessionDataCreated
-		# accumulate the test conditions and flags in a dictionary with test condition as key
-		testCondDict = {}
-		for apageAnalysisRecords in pageAnalysisRecords:
-			theTC = apageAnalysisRecords.testCondition
-			theTCResultFlag = apageAnalysisRecords.testResultFlag
-			testCondDict.update({theTC : theTCResultFlag})
-			DebugOut('Test conditon: "%s", Global Flag to set: %s' %(theTC,theTCResultFlag ))
-		DebugOut('questionResponses "%s"' %questionResponses)
-		DebugOut('questionResponses type "%s"' %type(questionResponses))
-			
-		gotPageAnalysisRecords = True
-		DebugOut('Obtained test condition and global flag')
-	except PageAnalysis.DoesNotExist: # normal behavior. Not defined for all pages
-		gotPageAnalysisRecords = False
-		DebugOut("No global flag exists for this page %s. It's ok" %thePageObj.shortTag)
+	DebugOut('questionResponses type "%s"' %type(questionResponses))
 
+	pageAnalysisRecords = PageAnalysis.objects.filter( # allow for multiple results
+		questionnaireID = theQuestionnaire,
+		pageID=thePageObj,
+		)
+	DebugOut('successful query')
+	if len(pageAnalysisRecords) == 0:
+		DebugOut('No analysis records found for page "%s" therefore no global flag added to Session Data.'%thePageObj.shortTag)
+		sessionDataCreated = False
+		DebugOut('saveGlobalFlagsToSessionData:  exit')
+		return sessionDataCreated # no session data to create! So exit
+	# accumulate the test conditions and flags in a dictionary with test condition as key
+	testCondDict = {}
+	for apageAnalysisRecords in pageAnalysisRecords:
+		theTC = apageAnalysisRecords.testCondition
+		theTCResultFlag = apageAnalysisRecords.testResultFlag
+		testCondDict.update({theTC : theTCResultFlag})
+		DebugOut('Test conditon: "%s", Global Flag to set: %s' %(theTC,theTCResultFlag ))
+		
+	DebugOut('Obtained test condition and global flag')
 		
 	sessionDataCreated = False # pessimism
-	if gotPageAnalysisRecords:
+	if pageAnalysisRecords:
 		# testCondition is retrieved as a string from PageAnalysis
 		# questionResponses enters as a dictionary, so convert to string
 		# sort first
@@ -143,9 +136,9 @@ def saveGlobalFlagsToSessionData(request, theQuestionnaire, thePageObj, question
 				request.session['pageGlobalFlags'] = [globalFlagName]
 				sessionDataCreated = True
 		else: # test conditions not propitious for flag setting
-			DebugOut('syserrmsg:  Test condition type does not match any known type.')
+			DebugOut('Test condition type does not match any known type (ok).') # ok
 	else:
-		DebugOut('syserrmsg:  Failed to get PageAnalysis record')
+		DebugOut('Exists no PageAnalysis record for this page (ok)') # ok
 		
 	DebugOut('saveGlobalFlagsToSessionData:  exit')
 	return sessionDataCreated
@@ -220,25 +213,37 @@ def getNextPageFromGlobalFlags(request, theQuestionnaire, pageObj):
 def getNextPageFromCalculation(theQuestionnaire, thePageObj, testConditionInput):
 	# get the next page which matches the test condition
 	DebugOut('getNextPageFromCalculation: enter')
-	success = True # optimism
-	recordType = 'calculated'
 	sortedResults=str(sorted(testConditionInput.items())) # get the list in standard order
 	DebugOut('Test condition: %s' %sortedResults)
-	try:
-		nestPageObj = QuestionnairePage.objects.get(
-			questionnaireID = theQuestionnaire,
-			pageID=thePageObj,
-			testCondition = sortedResults,
-			recordType = recordType,
-			).nextPageID
-		DebugOut('Found a match')
-	except QuestionnairePage.DoesNotExist:
+	DebugOut('Questionnaire record %s'%theQuestionnaire.id)
+	DebugOut('Page record %s'%thePageObj.id)
+	recordType = 'calculated'
+	qpObjs = QuestionnairePage.objects.filter(
+		questionnaireID = theQuestionnaire,
+		pageID=thePageObj,
+		recordType = recordType,
+		)
+	# extract multiple saved page conditions
+	nextPageObj = None # pessimism
+	for (ii, qp) in enumerate(qpObjs): # check for page condition match
+		if sortedResults == qp.testCondition:
+			DebugOut('Test condition (%s) matches: "%s"'%(ii+1,qp.testCondition))
+			nextPageObj = qp.nextPageID # a match, so set the next page
+			success = True
+		else:
+			DebugOut('Test condition does not match %s: "%s"'%(ii,qp.testCondition))
+			pass
+	if not nextPageObj:
 		DebugOut('Found no match')
-		success = False
-		nestPageObj = Page()
 	DebugOut('getNextPageFromCalculation: exit')
-	return [nestPageObj, success]
+	return nextPageObj
 
+
+# ====================================================================================
+# ====================================================================================
+# Defines Session Data objects
+# ====================================================================================
+# ====================================================================================
 def setSessionQuestionnaire(request, theQuestionnaire):
 	"""Set Questionnaire record number into Session data.
 	"""
@@ -260,12 +265,6 @@ def getSessionQuestionnaire(request):
 		theQuestionnaire = None
 	return theQuestionnaire
 
-
-# ====================================================================================
-# ====================================================================================
-# Defines Session Data objects
-# ====================================================================================
-# ====================================================================================
 def setSessionProject(request, theProject):
 	"""Set Project record number into Session data.
 	"""
@@ -320,7 +319,8 @@ def removeResponsesFromSessionData(request):
 	"""Remove questionnaire responses from Session Data.
 	
 	Purpose:  Preserve personal privacy between questionnaire executions
-	
+	Note:  see function "questionnaireEnvironmentPrep"
+	Note:  see function "questionnaireToGo"
 	Args:
 		Questionnaire object
 		Page Tag:  character string

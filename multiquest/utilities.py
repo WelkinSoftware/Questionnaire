@@ -255,10 +255,19 @@ def removeDupsFromEnd(aList):
 	
 def getModelFieldList( theModel ):
 	"""gets all of the fields in a model & foreign keys"""
-	fieldList = theModel._meta.get_all_field_names()
+	fieldList = theModel._meta.get_all_field_names() # returns as a list.
+	# We are not done. The problem with fieldList is that it contains the name of tables
+	# with foreign keys which point to theModel. Remove these.
+	outField = []
+	for aField in fieldList:
+		try:
+			theName = theModel._meta.get_field(aField).name
+			outField.append(theName)
+		except: # name not in table
+			continue
 	# http://stackoverflow.com/questions/3106295/django-get-list-of-model-fields
 	# https://django-model-internals-reference.readthedocs.org/en/latest/get_all_field_names.html
-	return fieldList
+	return outField
 
 def getModelFieldValueDict( theModel):
 	"""Get fields and values from a model. Make a dictionary"""
@@ -397,14 +406,14 @@ def display_meta(request):
 def DebugOut( debugMessage):
 	#now = timezone.now()
 	# open a debug file
-	try:
-		if settings.DEBUG_1:
+	if settings.DEBUG_1:
+		try:
 			fpage = open('debugInfo.txt','a')
 			#fpage.write('mQuest:  Time: %s \n' % now)
 			fpage.write( debugMessage + '\n')
 			fpage.close()
-	except:
-		pass
+		except:
+			settings.DEBUG_1 = False # persistent for this execution! No further
 	return True
 
 def transposeListMatrix(xx):

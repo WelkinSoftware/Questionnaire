@@ -17,6 +17,7 @@ from django.utils.timezone import *
 #from multiquest.utilities_db import getAllProjects, getPageObjectViaTag, getModelFieldList, getModelFieldValueDict
 from multiquest.utilities_db import *
 from multiquest.utilities import *
+from django.db import connection
 import os
 import pickle
 import codecs
@@ -63,17 +64,21 @@ def listTestConditons(theQuestionnaire):
 
 	return
 
-def dumpTable(tableName, fieldNamesToDump):
+def dumpTable(theTable, tableName):
 	# Dumps a table to a file
 	print('dumpTable:  enter')
-	allRecs = tableName.objects.all()
-	fileName = 'db dump/%s.txt' %tableName
-	fileRec = codecs.open(fileName,'w', encoding='utf-8')
+	print('table name:  %s'%tableName)
+	allRecs = theTable.objects.all()
+	fileName = 'test dump/%s.txt' %tableName
+	fileOut = codecs.open(fileName,'w', encoding='utf-8')
 	# write header field names
-	allFieldNames = getModelFieldList( theModel )
+	allFieldNames = getModelFieldList( theTable )
 	for aRec in allRecs:
-		pass
-	
+		print 'rec: %s' %aRec
+		for aFieldName in allFieldNames:
+			fieldValue = unicode(getattr(aRec, aFieldName)).encode('utf-8')
+			print '%s, %s'%(aFieldName, fieldValue)
+	fileOut.close()
 	return
 
 def doTestDumps():
@@ -182,6 +187,7 @@ def dumpSubmissions():
 		rDate = str(aSub.lastUpdate)[:19]
 		wLine = qName + ', ' + respName + ' ' + email + ' ' + rDate
 		frec.write(wLine + '\n')
+	frec.close()
 	return
 
 def createNewProjects():
@@ -711,18 +717,17 @@ def loadUserProject():
 		recFields = [repPChar(aField) for aField in recFieldsSplit]
 		oldUserProjectIDstr = recFields[0] # string version of the record number
 		userID = int(recFields[1])
+		username = recFields[3]
 		projectTag = recFields[4]
 		try:
 			userObj = User.objects.get(id=userID)
-			username = userObj.username
+			if username != userObj.username:
+				outMess = 'loadUserProject: Normal difference:  username in file "%s" does not match username in User table "%s" in this database' %(username,userObj.username)
+				print outMess
+				continue # continue to next UserProject record
 		except:
-			username = recFields[3]
-			outMess= 'loadUserProject: Grievous error:  User %s does not exist for Project %s' %(username,projectTag)
+			outMess= 'loadUserProject: Normal difference:  User %s does not exist for Project %s' %(username,projectTag)
 			ferrLog.write(outMess+os.linesep)
-			print outMess
-			continue # continue to next UserProject record
-		if username != recFields[3]:
-			outMess = 'loadUserProject: Grievous error:  username in file "%s" does not match username in table "%s"' %(recFields[3],username)
 			print outMess
 			continue # continue to next UserProject record
 		oldProjectIDstr = recFields[2]

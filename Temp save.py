@@ -1,47 +1,21 @@
-td {text-align:left;
-	width:30%;}
-
-<table style="width:70%">
-{% for aField in thePageForm %}
-	<tr>
-	<td width="5%">
-		<input type="submit" name="deleteQuestion" value="delQ_{{forloop.counter0}}">
-		<input type="submit" name="moveUpQuestion" value="moveUp_{{forloop.counter0}}">
-	</td>
-	<td width="15%">Quest_{{forloop.counter}}</td>
-	<td width="85%">{{ aField }}</td>
-	</tr>
-{% endfor %}
-</table>
-
-
-<table style="width:70%">
-{% for theQuestion in thePageQuestions %}
-	<tr>
-	<td width="5%">
-		<input type="submit" name="deleteQuestion" value="delQ_{{forloop.counter0}}">
-		<input type="submit" name="moveUpQuestion" value="moveUp_{{forloop.counter0}}">
-	</td>
-	<td width="5%">Quest_{{forloop.counter}}</td>
-	<td width="80%">{{theQuestion.questionText}}</td>
-	<td width="10%">{{theQuestion.questionTag}}</td>
-	</tr>
-	{% for aChoice in theResponseChoices %}
-	<tr>
-	<td>
-	<input type="submit" name="deleteChoice" value="delChoice_{{forloop.counter0}}">
-	<input type="submit" name="moveUpChoice" value="moveUp_{{forloop.counter0}}">
-	</td>
-	<td>Choice_{{forloop.counter}}</td>
-	<td>{{aChoice.choiceText}}</td>
-	<td>{{aChoice.choiceTag}}</td>
-	</tr>
-	{% endfor %}
-{% endfor %}
-</table>
-
-
-
+	nextPageObjs = QuestionnairePage.objects.filter(
+		questionnaireID = theQuestionnaire,
+		pageID=thePageObj,
+		recordType = recordType,
+		)
+	# extract saved page conditions
+	for (ii, ap) in enumerate(nextPageObjs):
+		if sortedResults == ap.testCondition:
+			DebugOut('Test condition matches %s: "%s"'%(ii,ap.testCondition))
+			nextPageObj = ap # a match, so set the next page
+			success = True
+		else:
+			DebugOut('Test condition does not match %s: "%s"'%(ii,ap.testCondition))
+	if not success:
+		success = False
+		DebugOut('Found no match')
+		nextPageObj = Page()
+	
 
 .latest('lastUpdate')
 xx = [

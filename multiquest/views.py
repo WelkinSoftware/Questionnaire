@@ -7,6 +7,7 @@ from django.template import Context
 from django.utils.safestring import SafeString
 from django.utils.html import strip_tags
 from django.utils.timezone import *
+from django.utils.encoding import smart_str, smart_text
 #from dateutil.relativedelta import relativedelta
 from django.shortcuts import render_to_response, render, get_object_or_404
 from django.conf import settings
@@ -20,7 +21,6 @@ import pickle
 from django.db.models import Q
 from django.core.mail import send_mail, EmailMessage
 from django.core.context_processors import csrf
-from django.utils.encoding import smart_text
 from reportlab.pdfgen import canvas
 import os
 from django.contrib.auth import authenticate
@@ -28,6 +28,7 @@ from django.contrib.auth.views import login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import Group, User, Permission
 from django.contrib.auth.decorators import login_required
+from operator import itemgetter, attrgetter # used for sorting & selecting from a list
 
 import csv
 import unicodedata
@@ -216,6 +217,9 @@ def selectProjectDefault(request):
 				setSessionProject(request, theProject) # set Session data default
 				associateUserToProject(theProject, theUser)
 				projectTag = theProject.shortTag
+				# remove Questionnaire default since it is invalid
+				if 'theQuestionnaire' in request.session:
+					del request.session['theQuestionnaire']
 				errMsg.append('Project "%s" selected.' %projectTag)
 				redirectURL = registrationURL_base + 'userLanding/'
 				return HttpResponseRedirect(redirectURL)
@@ -303,7 +307,8 @@ def getAssociatedProjectForUser(theUser):
 		if len(allSAObjs)>=1:
 			# Should not be greater than 1! So select 1st one in the list.
 			theUSObj = allSAObjs[0]
-			DebugOut('getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: %s'%theUser.username)
+			if len(allSAObjs)>1:
+				DebugOut('getAssociatedProjectForUser:  syserrmsg: Found more than one project in UserProject table for user: %s'%theUser.username)
 			theProject = theUSObj.projectID
 		elif len(allSAObjs)==0:
 			theProject=None
@@ -326,15 +331,20 @@ def userLanding(request):
 	errMsg = []
 	theUser = request.user
 	DebugOut('the user is: %s' %theUser)
-	theProject = getAssociatedProjectForUser(theUser) # retrieve default project for User
-	if theProject == None:
-		# redirect to project selection
-		redirectURL = registrationURL_base + 'selectProjectDefault/'
-		DebugOut('No project, so redirect to: %s' %redirectURL)
-		return HttpResponseRedirect(redirectURL)
-	else: # set default project in session data
-		setSessionProject(request, theProject)
-	theQuestionnaire = getSessionQuestionnaire(request)
+	theProject = getSessionProject(request)
+	if not theProject: # if not already set in session data, then use User default
+		theProject = getAssociatedProjectForUser(theUser) # retrieve default project for User
+		if theProject == None:
+			# redirect to project selection
+			redirectURL = registrationURL_base + 'selectProjectDefault/'
+			DebugOut('No project, so redirect to: %s' %redirectURL)
+			return HttpResponseRedirect(redirectURL)
+		else: # set default project in session data
+			setSessionProject(request, theProject)
+			# remove Questionnaire default since it may be invalid
+			if 'theQuestionnaire' in request.session:
+				del request.session['theQuestionnaire']
+	theQuestionnaire = getSessionQuestionnaire(request) # May be None
 	
 	if request.method == 'POST':
 		if 'differentProject' in request.POST:
@@ -350,6 +360,8 @@ def userLanding(request):
 			redirectURL = url_base + 'working_pages/duplicateQuestionnaireView/'
 			return HttpResponseRedirect(redirectURL)
 		elif 'runTheQuestionnaire' in request.POST:
+			removeResponsesFromSessionData(request)
+			questionnaireEnvironmentPrep( request, theProject, theQuestionnaire)
 			urltogo = questionnaireToGo(request, theProject, theQuestionnaire)
 			return HttpResponseRedirect(urltogo)
 		elif 'selectQuestionnaireDefault' in request.POST:
@@ -646,8 +658,6 @@ def intro(request):
 	DebugOut('intro:  exit')
 	return render(request, workingPageTemplateRoot + 'intro.html', introContext)
 
-		
-from operator import itemgetter, attrgetter
 def selectPages(request):
 	"""Select pages to include in a Questionnaire from a list.
 	
@@ -1262,6 +1272,7 @@ def selectProjectsQuestionnairesToExecute(request):
 			workingProjectTag = theProject.shortTag # should be the same!
 			theRecInDB = allQuestionnaireInfo[recNum][-1] # last element is the record number for the questionnaire
 			theQuestionnaire = Questionnaire.objects.get(id=theRecInDB)
+			
 			if getQuestionnaireStatusValue(theProject,theQuestionnaire) != 'enabled':
 				errMsg.append('Please enable "%s" before executing the questionnaire.' %workingQuestionnaireTag)
 				enabledFlag = False
@@ -1272,6 +1283,7 @@ def selectProjectsQuestionnairesToExecute(request):
 				# prepare Session Data environment for running the questionnaire
 				removeResponsesFromSessionData(request)
 				DebugOut('Removed Response data from Session Data')
+				questionnaireEnvironmentPrep( request, theProject, theQuestionnaire)
 				urltogo = questionnaireToGo(request, theProject, theQuestionnaire)
 				return HttpResponseRedirect(urltogo) # next screen url
 		elif 'ToggleDisable' in request.POST:
@@ -1524,13 +1536,16 @@ def setSessionProjectQuestionnaireDefault(request):
 			# format is "Select" "record number in display list"
 			[theProject, theQuestionnaire] = displayQuestionnairesAndProjectsRetrieve(allQuestionnaireInfo, listRecNum)
 			workingQuestionnaireTag = theQuestionnaire.shortTag
+			setSessionQuestionnaire(request, theQuestionnaire)
 			errMsg.append('The default Questionnaire selected: %s' %workingQuestionnaireTag)
 			if theProject:
 				workingProjectTag = theProject.shortTag
 				errMsg.append('The default Project selected: %s' %workingProjectTag)
+				setSessionProject(request, theProject)
 			else:
 				workingProjectTag = ''
 				errMsg.append('A Project has not been assigned to this questionnaire.')
+			removeResponsesFromSessionData(request) # remove previous questionnaire responses
 			# prepare environment
 			pageBaseURL = questionnaireEnvironmentPrep( request, theProject, theQuestionnaire)
 			DebugOut('questionnaireEnvironmentPrep called')
@@ -2058,6 +2073,10 @@ def bulkPageEdit(request):
 					thisPageObj.epilogue = cleanedData['epilogue']
 					isPageUpdated = True
 				if isPageUpdated: # so update the Page record
+					if thisPageObj.shortTag == '' and thisPageObj.id:
+						thisPageObj.shortTag = 'PageRecord_'+str(thisPageObj.id)
+					elif thisPageObj.shortTag == '':
+						thisPageObj.shortTag = 'Page'
 					DebugOut('Page updated %s' %thisPageObj.shortTag)
 					infoMsg.append('Page updated')
 					thisPageObj.save() # remove for sessionstest**************
@@ -2078,12 +2097,15 @@ def bulkPageEdit(request):
 					DebugOut('Question form tag: %s' %theQuestionFormTag)
 					if updatedQuestionText == '':
 						DebugOut('Question text is blank')
-						if theQuestion.id:
+						if theQuestion.id: # avoid AssertionError if id set to None
 							DebugOut('Question "%s" deleted'%theQuestionFormTag)
 							theQuestion.delete()
 					elif questionText != updatedQuestionText or responseType != upatedResponseType: # so update
 						theQuestion.questionText = updatedQuestionText
-						theQuestion.responseType = upatedResponseType
+						if updatedQuestionText:
+							theQuestion.responseType = upatedResponseType
+						elif not responseType:
+							theQuestion.responseType = 'CharField'
 						
 						DebugOut('Question updated %s' %theQuestionFormTag)
 						theQuestion.save() # remove for sessionstest**************
@@ -2480,8 +2502,8 @@ def pageCalc(request,theQuestionnaire, thePageObj, **kwargs ):
 		questionResults = kwargs.pop('questionResults')
 		DebugOut('pageCalc:  questionResults: %s' %questionResults)
 		# check for calculated next page
-		[nextfromCalc, success] =getNextPageFromCalculation(theQuestionnaire, thePageObj, questionResults)
-		if success:
+		nextfromCalc =getNextPageFromCalculation(theQuestionnaire, thePageObj, questionResults)
+		if nextfromCalc:
 			nextPageTag = nextfromCalc.shortTag
 			nextPageObj = nextfromCalc
 			DebugOut('pageCalc:  Have a match for a calculated next page: %s' %nextPageTag)
@@ -2585,9 +2607,9 @@ def Completion(request, whichProject, whichQuest):
 			elif request.POST["submitButton"] == "start": # return to start page
 				DebugOut( 'In start.')
 				removeResponsesFromSessionData(request) # remove Respondent data
-				# questionnaire start page
-				startQURL = pageBaseURL + firstpage + '/'
-				return HttpResponseRedirect(startQURL) # next screen url
+				questionnaireEnvironmentPrep( request, theProject, theQuestionnaire)
+				urltogo = questionnaireToGo(request, theProject, theQuestionnaire)
+				return HttpResponseRedirect(urltogo)
 			else:	# not contactEmail
 				removeResponsesFromSessionData(request) # remove respondent data
 		
@@ -2652,54 +2674,55 @@ def ListQuestionsForQuestionnaire(aQuaireObj):
 	pageList = []
 	tagToText = {}
 	for ap in qpObj: # examine each page in the questionnaire
-		#DebugOut('Top of page loop')
+		DebugOut('Top of page loop')
 		aPageObj = ap
 		aPageTag = aPageObj.shortTag
-		#DebugOut('processing page: %s' %aPageTag)
+		DebugOut('processing page: %s' %aPageTag)
 		pageList.append(aPageTag)
 		thePageQuestionsAll = getPageQuestions(aPageObj) # get all questions on the page
-		#DebugOut('Number of questions found: %s' %len(thePageQuestionsAll))
-		#DebugOut('thePageQuestionsAll: %s' %thePageQuestionsAll)
+		DebugOut('Number of questions found: %s' %len(thePageQuestionsAll))
+		DebugOut('thePageQuestionsAll: %s' %thePageQuestionsAll)
 		for aQuest in thePageQuestionsAll: # examine each question on a page
-			#DebugOut('at the top of the questions on the page loop')
+			DebugOut('at the top of the questions on the page loop')
 			theQRecNum = str(aQuest.id)
 			theQLabel = encodeQuestionResponseLabel(theQRecNum,'')
-			#DebugOut('after theQLabel: %s'% theQLabel)
+			DebugOut('after theQLabel: %s'% theQLabel)
 			qText = aQuest.questionText
-			#DebugOut('question text: %s' %qText)
+			DebugOut('question text: %s' %qText)
 			questionType = aQuest.responseType # look for MultipleChoiceField
-			#DebugOut('Before determing multichoice')
+			DebugOut('Before determining multichoice')
 			responseCount = ResponseChoice.objects.filter( questionID=aQuest).count()
 			if responseCount>0: # go down to sublist for MultipleChoiceField
-				#DebugOut('found a MultipleChoiceField for question label: %s' %theQLabel)
-				#DebugOut('questionType: %s' %questionType)
+				DebugOut('found a MultipleChoiceField for question label: %s' %theQLabel)
+				DebugOut('questionType: %s' %questionType)
 				tagToText.update({theQLabel:qText}) # add the tag for the multi choice
 				fieldList.append(theQLabel)
 				theList.append([aPageTag, theQLabel, qText])
 				theResponses = ResponseChoice.objects.order_by('choiceSequence').filter(questionID=aQuest)
 				# collect the multiple responses
-				#DebugOut('Number of multiple responses: %s' %len(theResponses))
+				DebugOut('Number of multiple responses: %s' %len(theResponses))
 				for aResponse in theResponses:
+					DebugOut('aResponse: "%s"'%aResponse.choiceText)
 					theChoiceRecNum = str(aResponse.id)
 					theQResponseLabel = encodeQuestionResponseLabel(theQRecNum,theChoiceRecNum)
-					#DebugOut('Multiple choice label %s' %theQResponseLabel)
+					DebugOut('Multiple choice label %s' %theQResponseLabel)
 					qText = aResponse.choiceText
-					#DebugOut('MultipleChoiceField tag & text: %s %s' %(theQResponseLabel,qText))
+					DebugOut('MultipleChoiceField tag & text: %s %s' %(theQResponseLabel,qText))
 					tagToText.update({theQResponseLabel:qText}) # add Subchoices
 					fieldList.append(theQResponseLabel)
 					theList.append([aPageTag, theQResponseLabel, qText])
-					#DebugOut('Multiple choice appended to the list %s' %theQResponseLabel)
-				#DebugOut('Exiting multiple choice.')
+					DebugOut('Multiple choice appended to the list %s' %theQResponseLabel)
+				DebugOut('Exiting multiple choice.')
 			else:
-				#DebugOut('found a single choice for tag: %s' %theQLabel)
+				DebugOut('found a single choice for tag: %s' %theQLabel)
 				tagToText.update({theQLabel:qText})
 				fieldList.append(theQLabel)
 				theList.append([aPageTag, theQLabel, qText])
-				#DebugOut('Single choice appended to the list')
+				DebugOut('Single choice appended to the list')
 	# make the output list of question field tags unique by eliminating the first of a succession of duplicate
-	#DebugOut('Before makeUniqueListReverse')
+	DebugOut('Before makeUniqueListReverse')
 	fieldList = makeUniqueListReverse(fieldList)
-	#DebugOut('After makeUniqueListReverse')
+	DebugOut('After makeUniqueListReverse')
 	DebugOut('Exiting ListQuestionsForQuestionnaire')
 	return [pageList, fieldList, theList, tagToText]
 
@@ -2731,21 +2754,16 @@ def formatResponseforDisplay(request):
 		responseChoiceRecNum = aline[3]
 		pageShortTag = aline[4]
 		pageRecNum = aline[5]
+		uniqueTagNotUsed = aline[6]
 		questionTag = aline[7]
 		if type(rawQuestionResponse) == list:
 			# null value since value is a set of keywords
 			listLevel = 'sub'
 			questionResponseList.append([listLevel, questionText,"", pageShortTag])
+			DebugOut('rawQuestionResponse: "%s"'%rawQuestionResponse)
 			for aValue in rawQuestionResponse: # create additional lines, one for each element in the list
 				DebugOut('in choice loop: aValue %s' %aValue)
-				# change unique tag to tag in ResponseChoice. Decode the tag to get record numbers
-				[questionRecNum,responseChoiceRecNum] = decodeQuestionResponseLabel(aValue)
-				RCid = int(responseChoiceRecNum)
-				RCobj = ResponseChoice.objects.get(id=RCid)
-				tagName = RCobj.choiceText
-				# assume a null value since the "tagName" is the response
-				questionResponseList.append([listLevel, tagName,'', pageShortTag])
-				DebugOut(theLine)
+				questionResponseList.append([listLevel, aValue,'', pageShortTag])
 		else:# not a list, therefore at the main level
 			listLevel = 'main'
 			questionResponse = str(rawQuestionResponse)
@@ -2789,9 +2807,7 @@ def questionnaireSummary(request, whichProject, whichQuest, whichPage):
 		DebugOut(errMsg)
 		return render(request, 'system_error.html', {'syserrmsg': errMess})
 	
-	if allResultsDict in request.session:
-		allResultsDictValues = request.session[allResultsDict]
-	else:
+	if allResultsDict not in request.session:
 		errMsg = ['No session data']
 		DebugOut(errMsg)
 		return render(request, 'system_error.html', {'syserrmsg': errMess})
@@ -2922,7 +2938,7 @@ def questionnaireSummary(request, whichProject, whichQuest, whichPage):
 			currentContext = constantPageDataDict.copy()
 			currentContext.update(contextDict)
 			currentContext.update({'buttons_not_enabled': True}) # leave off the buttons for email!
-			DebugOut('questionnaireSummary: page context: %s' %currentContext)
+# 			DebugOut('questionnaireSummary: page context: %s' %currentContext)
 			summaryPagehtml = render(request, 'questionnaireSummary.html', currentContext)
 			request.session["summaryPagehtml"]=str(summaryPagehtml) # save the html for possible email
 			savePtResponse(request) # save data to database
@@ -3261,15 +3277,10 @@ def responseViewer(request,forProject=None):
 			elif numResponses > 1: #  list of tags
 				for aRespToQuestion in allRespForQuestionObj:
 					responseRaw = aRespToQuestion.responseText
-					DebugOut('responseRaw: %s' %responseRaw)
+					DebugOut('responseRaw: %s' %responseRaw) # responseRaw is the responseChoice text
 					# also append to a loop in case of multiple sub responses
 					# translate tag to text
-					try:
-						currentVal = tagToText[responseRaw]
-					except KeyError:
-						currentVal = "" # deliver a null value for display.
-						DebugOut('Keyvalue not found: %s' %responseRaw)
-					responseList.append(currentVal)
+					responseList.append(responseRaw)
 			else:
 				DebugOut('No value for question tag %s, therefore "None"' %theQuestionTag)
 				responseRaw = 'None'
@@ -3324,9 +3335,7 @@ def savePtResponse(request):
 		# return to respondent id page
 		errmsg.append('savePtResponse:  Pt data is missing.')
 	
-	if allResultsDict in request.session:
-		allResults = request.session[allResultsDict]
-	else:
+	if allResultsDict not in request.session:
 		errmsg.append('savePtResponse:  no questionnaire results data.')
 
 	# process respondent identity, insert into database "Respondent".
@@ -3363,8 +3372,9 @@ def savePtResponse(request):
 	# create a unique id
 	ptUniqueID = uniquePTID(firstName, middleName, lastName, birthDate),
 	if errmsg != []:
+		DebugOut('syserrmsg:  exiting with message: %s'%errmsg)
 		return render(request, 'system_error.html', { 'syserrmsg': errmsg})
-
+		
 	# create a record of the respondent, if it doesn't already exist
 	try:
 		therespondentID = Respondent.objects.get(
@@ -3444,15 +3454,11 @@ def savePtResponse(request):
 		DebugOut('aline: %s' %aline)
 		qResponse = aline[0] # user response to the question
 		questionRecNum = aline[2]
-		aPageTag = aline[4]
 		responseChoiceRecNum = aline[3]
-		questionRecNum = aline[2]
-		DebugOut('aline: %s' %aline)
+		aPageTag = aline[4]
+		uniqueTagWithEncoding = aline[6]
+		qQuestionTag = aline[7]
 		pageObj = Page.objects.get(id=int(aline[5]))
-		if responseChoiceRecNum:
-			responseChoiceObj = ResponseChoice.objects.get(id=int(responseChoiceRecNum))
-		else:
-			responseChoiceObj = None
 		theQuestionObj = Question.objects.get(id=int(questionRecNum))
 		qQuestionTag = theQuestionObj.questionTag
 		if qResponse == '':
@@ -3780,7 +3786,7 @@ def savecsv(request, forProject=None):
 					# Select the response (if any)
 					questionTag = aQuestion.questionTag
 					responsesPerQuestion = allResponses.filter(questionID=aQuestion)
-					responseChoices = ResponseChoice.objects.order_by('choiceSequence').filter(questionID=aQuestion)
+					responseChoices = ResponseChoice.objects.order_by('choiceSequence').filter(questionID=aQuestion) # may be none
 					if responsesPerQuestion.count() >1:
 						# error condition
 						DebugOut('syserrmsg:  multiple Response records for Question object %s'%questionTag)
@@ -4269,10 +4275,10 @@ def setGlobalFlags(request):
 
 	if 'testCondition_exists' in request.session: # a test condition has already been entered
 		testCondition = request.session['testCondition_exists']
-		theQForm = UserDynamicFormCreation( thePageQuestions, testCondition)
+		[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, testCondition, useQuestionTag=True)
 		# theQForm collects responses to questions which become the testCondition
 	else:
-		theQForm = UserDynamicFormCreation( thePageQuestions, [''])
+		[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, [''], useQuestionTag=True)
 		testCondition = ''
 	
 	flagAndConditionMsg = False
@@ -4288,13 +4294,13 @@ def setGlobalFlags(request):
 			if success:
 				request.session['setGlobalFlags_pageid'] = [theWorkingPage.id, theWorkingPage.shortTag]
 				thePageQuestions=getPageQuestions(theWorkingPage)
-				theQForm = UserDynamicFormCreation( thePageQuestions, [''])
+				[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, [''], useQuestionTag=True)
 			else:
 				errMsgs = 'Page "%s" not found.' %workingPageTag
 		elif 'SubmitResponsesButton' in request.POST: # write to database
 			DebugOut('SubmitResponsesButton: enter')
 			# question responses have been entered
-			theQForm = UserDynamicFormCreation( thePageQuestions, request.POST)
+			[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, request.POST, useQuestionTag=True)
 			if theQForm.is_valid():
 				DebugOut('SubmitResponsesButton: theQForm.is_valid')
 				# collect question responses which become the test condition
@@ -4302,20 +4308,20 @@ def setGlobalFlags(request):
 				request.session['testCondition_exists'] = testCondition
 				DebugOut('testCondition: %s' %testCondition)
 				DebugOut('globalFlagExists: %s' %globalFlagExists)
-				theQForm = UserDynamicFormCreation( thePageQuestions, testCondition)
+				[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, testCondition, useQuestionTag=True)
 				if globalFlagExists:
 					DebugOut('SubmitResponsesButton: globalFlagExists')
 					createGlobalFlagRecord(workingQuestionnaire, theWorkingPage, testCondition, theGlobalFlag, theGlobalFlagPriority, theGlobalFlagDescription)
 					flagAndConditionMsg = True
 					DebugOut('Saved tag %s with test condition %s' %(theGlobalFlag,testCondition))
 			else:
-				theQForm = UserDynamicFormCreation( thePageQuestions, request.POST)
+				[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, request.POST, useQuestionTag=True)
 		elif 'analysisAlternatives' in request.POST: # write to database
 			# Set flag when any button is "yes"
 			# no need to check theQForm.
 			# verify existence of global flag
 			DebugOut('Save analy flag')
-			theQForm = UserDynamicFormCreation( thePageQuestions, [''])
+			[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, [''], useQuestionTag=True)
 			testCondition = testCondChoices[request.POST['analysisAlternatives']] # get button text indicating condition
 			if globalFlagExists:
 				createGlobalFlagRecord(workingQuestionnaire, theWorkingPage, testCondition, theGlobalFlag, theGlobalFlagPriority, theGlobalFlagDescription)
@@ -4333,7 +4339,7 @@ def setGlobalFlags(request):
 			recNum = allGlobalFlagsRecordList[recSelect][4] # record to delete
 			DebugOut('recNum: %s' %recNum)
 			deleteGlobalFlagRecord(workingQuestionnaire, recNum)
-			theQForm = UserDynamicFormCreation( thePageQuestions, [''])
+			[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, [''], useQuestionTag=True)
 		elif 'globalFlagEnteredButton' in request.POST:
 			# A new global flag name entered
 			DebugOut('globalFlagEnteredButton: enter')
@@ -4351,7 +4357,7 @@ def setGlobalFlags(request):
 				request.session['globalFlagSelect'] = theGlobalFlag
 				request.session['globalFlagSelectPriority'] = theGlobalFlagPriority
 				request.session['globalFlagSelectDescription'] = theGlobalFlagDescription
-			theQForm = UserDynamicFormCreation( thePageQuestions, [''])
+			[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, [''], useQuestionTag=True)
 			DebugOut('globalFlagEnteredButton: exit')
 		elif 'globalFlagSelectButton' in request.POST:
 			# A different global flag is selected from the displayed list of previously existing global flags
@@ -4363,7 +4369,7 @@ def setGlobalFlags(request):
 			request.session['globalFlagSelect'] = theGlobalFlag
 			request.session['globalFlagSelectPriority'] = theGlobalFlagPriority
 			request.session['globalFlagSelectDescription'] = theGlobalFlagDescription
-			theQForm = UserDynamicFormCreation( thePageQuestions, [''])
+			[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, [''], useQuestionTag=True)
 			DebugOut('The global flag selected: %s' %theGlobalFlag)
 		elif 'submitButton' in request.POST:
 			# return to the admin page
@@ -4581,7 +4587,8 @@ def setPageToPageTransitionCalculated(request):
 			[newNextPageObj, success]=getPageObj(workingQuestionnaire, newNextPageTag)
 			request.session['setPageTransPageNextCalc'] = newNextPageObj.id
 			DebugOut('The new calculated next page: %s' %newNextPageObj.shortTag)
-		elif 'Select responses to questions' in request.POST:
+		elif 'Save responses to questions' in request.POST:
+			DebugOut('In Save responses to questions')
 			# display questions, accept responses, save to db
 			# retrieve the questions on the page
 			thePageQuestions=getPageQuestions(theWorkingPage)
@@ -4607,11 +4614,12 @@ def setPageToPageTransitionCalculated(request):
 			if theQForm.is_valid() and newNextPageObj:
 				DebugOut('Question response data is valid')
 				# tag for 'next page'
-				testCondition = theQForm.cleaned_data
+				questionResponsesWithTags = theQForm.cleaned_data
+				testCondition = questionResponsesWithTags # uses tags from database when available. Unique tag per page
 				saveTestConditonToQuestionnairePage(testCondition,
 					newNextPageObj, theWorkingPage, workingQuestionnaire, recordType)
 				nextPAndConditionMsg = 'The test conditon "%s" for transition to the next page "%s" was saved' %(testCondition, newNextPageObj.shortTag)
-				theQForm = UserDynamicFormCreation( thePageQuestions, testCondition, useQuestionTag=True)
+				theQForm = UserDynamicFormCreation( thePageQuestions, questionResponsesWithTags, useQuestionTag=True)
 				DebugOut('testCondition: %s' %testCondition)
 			DebugOut('workingQuestionnaireTag: %s' %workingQuestionnaireTag)
 			DebugOut('workingPageTag: %s' %workingPageTag)
@@ -5074,22 +5082,19 @@ def QuestContinue(request, whichProject, whichQuest, whichPage):
 	errmsg = '' # to display on the page
 	
 	if request.method == 'POST':
-		theForm = UserDynamicFormCreation( theQuestionsOnThePage, request.POST)
 		DebugOut( 'after POST')
+		[theForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( theQuestionsOnThePage, request.POST, useQuestionTag=True)
 		if useAlternateQuestions:
 			# questions already responded to in Form. Delete communication for "sendQuestions" page
 			del request.session[useQuestionsFromSessionTag] # delete questions data
 		if theForm.is_valid(): # have valid data from page
 			DebugOut( 'Form is valid. Saving data.') # Save the cleaned data
-			questionResponsesWithUKey = theForm.cleaned_data
-			DebugOut('The cleaned data with Unique question tags is:')
-			DebugOut(str(questionResponsesWithUKey))
-			questionResponsesWithTags = replaceUniqueKeysWithDBQuestionTags(questionResponsesWithUKey, theQuestionsOnThePage)
+			questionResponsesWithTags = theForm.cleaned_data
 			DebugOut('The cleaned data with question tags is:')
 			DebugOut(str(questionResponsesWithTags))
 			# save this page data for redisplay of the page at Questionnaire Summary
-			request.session[pageSessionTag] = questionResponsesWithUKey
-			savePageData(request, questionResponsesWithUKey, thePageObj, theQuestionsOnThePage) # save for recap at the end of session
+			request.session[pageSessionTag] = questionResponsesWithTags
+			savePageData(request, questionResponsesWithTags, thePageObj, theQuestionsOnThePage, qustionTagToRecordNum,choiceTagToRecordNum) # save for recap at the end of session
 			if request.POST['submitButton'] == 'Next':
 				UpdateLast_URL_Next(request, thisPageTag) # ignore 'back to' output
 				saveGlobalFlagsToSessionData(request, theQuestionnaire, thePageObj, questionResponsesWithTags)
@@ -5130,7 +5135,7 @@ def QuestContinue(request, whichProject, whichQuest, whichPage):
 			# fill fields with previously entered data from this session - if any
 			DebugOut('Page data is in session tag, so fill the form with previous data. Page: %s' %thisPageTag)
 			# this data has been 'cleaned'
-			theForm = UserDynamicFormCreation( theQuestionsOnThePage, request.session[pageSessionTag])
+			[theForm, qustionTagToRecordNum,choiceTagToRecordNum]  = UserDynamicFormCreation( theQuestionsOnThePage, request.session[pageSessionTag], useQuestionTag=True)
 			# so retrieve the data
 			DebugOut('session data dump start:')
 			DebugOut('Session: %s' %request.session[pageSessionTag])
@@ -5138,7 +5143,7 @@ def QuestContinue(request, whichProject, whichQuest, whichPage):
 			DebugOut('bound?: %s' %theForm.is_bound)
 		else: # no valid data from prior visit to this page
 			DebugOut('No page data in session tag: %s' %thisPageTag)
-			theForm = UserDynamicFormCreation( theQuestionsOnThePage, [''])
+			[theForm, qustionTagToRecordNum,choiceTagToRecordNum]  = UserDynamicFormCreation( theQuestionsOnThePage, [''], useQuestionTag=True)
 
 	computerT = computertype(request) # identify computer type
 	dynamicPageDetails = pagePerComputer(computerT)
@@ -5171,137 +5176,100 @@ def QuestContinue(request, whichProject, whichQuest, whichPage):
 	currentContext.update(csrf(request))
 	DebugOut( 'QuestContinue: exit')
 	return render(request, 'generic_page.html', currentContext)
-
-def encodeQuestionResponseLabel(questionRecNum,responseChoiceRecNum):
-	""" Encodes Question and QuestionResponse record numbers into a special label.
-	"""
-	uniqueQuestionLabel = 'Question_'+str(questionRecNum)+'_'+str(responseChoiceRecNum)
-	return uniqueQuestionLabel
-
-def decodeQuestionResponseLabel(uniqueQuestionLabel):
-	""" Decodes special label set by encodeQuestionResponseLabel
-	"""
-	msgOut = []
-	labelParts = uniqueQuestionLabel.split('_')
-	try:
-		part1 = labelParts[1]
-		try:
-			questionRecNum = int(part1)
-		except ValueError:
-			questionRecNum = 'ValueXError'
-	except IndexError:
-		questionRecNum = 'xxx'
-		msgOut = 'decodeQuestionResponseLabel:  Index of part 1 out of range'
-	try:
-		part2 = labelParts[2]
-		if part2:
-			try:
-				responseChoiceRecNum = int(part2)
-			except ValueError:
-				responseChoiceRecNum = 'ValueXError'
-		else:
-			responseChoiceRecNum = None
-	except IndexError:
-		responseChoiceRecNum = 'yyy'
-		msgOut = 'decodeQuestionResponseLabel:  Index of part 2 out of range'
-	for aMess in msgOut:
-		DebugOut(aMess)
-	return [questionRecNum,responseChoiceRecNum]
 	
-def savePageData(request, cleanedData, thePageObj, thePageQuestions ):
+def savePageData(request, cleanedData, thePageObj, thePageQuestions, qustionTagToRecordNum,choiceTagToRecordNum ):
 	# Use this function to save question responses to Session Data
 	DebugOut('savePageData:  enter')
 	# cleanedData is a dictionary
 	# always use this function to update allResultsDict and allResultsList
-	DebugOut('Cleaned data is:')
-	DebugOut(str(cleanedData))
-	DebugOut('Input questions are: ')
-	DebugOut(str(thePageQuestions))
-	if allResultsDict in request.session: # add to the previous responses
-		# *** warning, duplicate uniqueQuestionLabels are trashed
-		request.session[allResultsDict].update(cleanedData)
-		DebugOut('Session dict data updated in savePageData')
-	else:
-		request.session[allResultsDict] = cleanedData
-		DebugOut('Session dictionary data initialized in savePageData')
-
-	DebugOut('Dump the data dictionary after updating')
-	for keyname,keyvalue in request.session[allResultsDict].iteritems():
-		DebugOut('keyname %s,keyvalue %s' %(keyname,keyvalue))
-	DebugOut('Dump the data dictionary end')
-
-	# also save page data as a list with unique tags. Delete previous duplicate tags.
-	if allResultsList in request.session: # add to the previous responses
-		allSessionResultsList = request.session[allResultsList]
-	else:
-		# then initialize
-		request.session[allResultsList] = []
-		allSessionResultsList = request.session[allResultsList]
-		DebugOut('Session list data initialized in savePageData')
-		
-	DebugOut('Dump the data list')
-	for recList in request.session[allResultsList]:
-		DebugOut('a record %s' %recList)
-	DebugOut('Dump the data list end')
-
-	# append data, but delete previous duplicate entries
+	#DebugOut('Cleaned data as input is:')
+	#DebugOut(str(cleanedData))
+	#DebugOut('Input questions are: ')
+	#DebugOut(str(thePageQuestions))
+	# Questions are associated with a sequential number. This number is incremented throughout the session
+	if 'questionSequenceNumber' in request.session:
+		seqNumber = request.session['questionSequenceNumber']
+	else: # initialize
+		seqNumber = 0
+		request.session['questionSequenceNumber'] = seqNumber
+	
+	# create a version of the cleaned data with a tag unique with respect to the entire questionnaire
+	cleanedDataUniqueTag = {}
 	for uniqueQuestionLabel, questionResponseValue in cleanedData.iteritems():
-		[questionRecNum,responseChoiceRecNum]=decodeQuestionResponseLabel(uniqueQuestionLabel)
-		# Remove duplicate question tags
-		if allSessionResultsList:
-			listOfUniqueQuestionLabels = [aLine[6] for aLine in allSessionResultsList]
-			try:
-				matchIndex = listOfUniqueQuestionLabels.index(uniqueQuestionLabel)
-				DebugOut('Found dup key (replace with new page results): %s' %uniqueQuestionLabel)
-				del allSessionResultsList[matchIndex] # delete the duplicate
-			except ValueError:
-				matchIndex = None
-		# display stuff about the incoming data
-		DebugOut('Look for a list type(questionResponseValue) %s'%type(questionResponseValue))
-		DebugOut('Look for a list type(uniqueQuestionLabel) %s'%type(uniqueQuestionLabel))
-		DebugOut('questionResponseValue %s'%questionResponseValue)
-		DebugOut('uniqueQuestionLabel %s'%uniqueQuestionLabel)
-		DebugOut('Question record number "%s", ResponseChoice record number "%s"' %(questionRecNum,responseChoiceRecNum))
-		if responseChoiceRecNum != 'None' and type(questionResponseValue) == list:
-			DebugOut('Item '+uniqueQuestionLabel+' points to a list')
-			# extract record numbers from the list
-			DebugOut('List length, len(questionResponseValue) %s' %len(questionResponseValue))
-			choiceTags=questionResponseValue
-			for aChoiceTag in choiceTags:
-				DebugOut('aChoiceTag: %s'%aChoiceTag)
-				[questionRecNumSub,responseChoiceRecNumSub]=decodeQuestionResponseLabel(aChoiceTag)
-				DebugOut('Question record number "%s", ResponseChoice record number "%s"' %(questionRecNumSub,responseChoiceRecNumSub))
-			DebugOut('end list processing')
-		elif responseChoiceRecNum != 'None':
-			DebugOut('Response record is None')
-		for aQ in thePageQuestions:
-			if aQ.id == questionRecNum:
-				aQuest = aQ
-				break # break the for loop
-		questionText = aQuest.questionText
-		questionTag = aQuest.questionTag
+		if uniqueQuestionLabel in qustionTagToRecordNum:
+			questionRecNum = qustionTagToRecordNum[uniqueQuestionLabel]
+			aQuest = Question.objects.get(id=questionRecNum)
+		else:
+			DebugOut('syserrmsg:  A question label without a corresponding record.')
+			return
+		if uniqueQuestionLabel in choiceTagToRecordNum:
+			responseChoiceRecNum = choiceTagToRecordNum[uniqueQuestionLabel]
+		else:
+			responseChoiceRecNum = None # no problem
+		# find values for output
+		questionRecNumStr = str(questionRecNum)
+		responseChoiceRecNumStr = str(responseChoiceRecNum)
+		uniqueTag = encodeQuestionResponseLabel(questionRecNum,responseChoiceRecNum) # with encoded record numbers
+		seqNumber+=1
+		
+		if type(questionResponseValue) == list:
+			multipleResponses = []
+			for aResponse in questionResponseValue:
+				if '_' in aResponse:
+					[questionRecNumLoop,responseChoiceRecNumLoop] = decodeQuestionResponseLabel(aResponse)
+					try:
+						loopResponse = ResponseChoice.objects.get(id=int(responseChoiceRecNumLoop)).choiceText
+						DebugOut('Should be a unique id with encoding "%s"'%aResponse)
+					except:
+						DebugOut('savePageData: failed inside loop: aResponse: "%s"'%aResponse)
+						loopResponse = 'Fail'
+				else:
+					loopResponse = aResponse # make a guess:  actual choiceText
+				multipleResponses.append(loopResponse)
+			questionResponseValue = multipleResponses
+		# Prepare a record in Session Data
 		aLine = [
 			questionResponseValue,	# 0
-			questionText,			# 1
-			questionRecNum,			# 2
-			responseChoiceRecNum,	# 3
+			aQuest.questionText,	# 1
+			questionRecNumStr,		# 2
+			responseChoiceRecNumStr,# 3
 			thePageObj.shortTag,	# 4
 			thePageObj.id,			# 5
-			uniqueQuestionLabel,	# 6 # from Session data, with encoded record numbers
-			questionTag,			# 7 # from database
+			uniqueTag,				# 6 # with encoded record numbers
+			aQuest.questionTag,		# 7
+			seqNumber,				# 8
 			]
-		DebugOut('aLine %s' %aLine)
-		allSessionResultsList.append(aLine)
-	# request.session[allResultsList] structure: 
-	#	[questionResponse, questionText,questionRecNum,responseChoiceRecNum,pageShortTag,pageRecNum, uniqueQuestionLabel, questionTag]
-# 	DebugOut('Dump the data list after addition')
-# 	for recList in request.session[allResultsList]:
-# 		DebugOut('a record %s' %recList)
-# 	DebugOut('Dump the data list end after addition')
-# 	DebugOut('Dump the data list after addition and using pointer allSessionResultsList')
-# 	for recList in allSessionResultsList:
-# 		DebugOut('a record %s' %recList)
-# 	DebugOut('Dump the data list end after addition')
+		#DebugOut('savePageData: uniqueTag: "%s"'%uniqueTag)
+		#DebugOut('aLine %s' %aLine)
+		cleanedDataUniqueTag.update({uniqueTag:aLine})
+	request.session['questionSequenceNumber'] = seqNumber
+	
+	if allResultsDict in request.session: # add to the previous responses
+		# *** warning, duplicate uniqueQuestionLabels are trashed
+		request.session[allResultsDict].update(cleanedDataUniqueTag)
+		#DebugOut('Session dict data updated in savePageData')
+	else:
+		request.session[allResultsDict] = cleanedDataUniqueTag
+		#DebugOut('Session dictionary data initialized in savePageData')
+
+# 	DebugOut('Dump the data dictionary after updating') # for Debug
+# 	for keyname,keyvalue in request.session[allResultsDict].iteritems():
+# 		DebugOut('keyname %s,keyvalue %s' %(keyname,keyvalue))
+# 	DebugOut('Dump the data dictionary end')
+	
+	# also save page data as a list with unique tags. Duplicates have been removed.
+	allSessionResultsList = []
+	for uniqueQuestionLabel, lineInfo in request.session[allResultsDict].iteritems():
+		allSessionResultsList.append(lineInfo)
+	
+	allSessionResultsListSorted = sorted( allSessionResultsList, key=itemgetter(8))
+	
+	allSessionResultsListOut = []
+	for aLine in allSessionResultsListSorted:
+		allSessionResultsListOut.append(aLine[:8]) # strip the sequence number
+#		DebugOut('Sorted question response: %s'%aLine[:8])
+	
+	request.session[allResultsList] = allSessionResultsListOut # destroy previous list - this list is complete with no dups
 	DebugOut('Session list data updated in savePageData')
 
 	DebugOut('savePageData:  exiting')
@@ -5327,7 +5295,8 @@ def convertDictDataToList(theDictData): #convert dict data to list
 	return listOut
 
 def convertFormsDataToDict(theCleanedData):
-	# flatten the incoming dictionary, which prepares items for saving to Session data
+	"""flatten the incoming dictionary, which prepares items for saving to Session data
+	"""
 	DebugOut('entering convertFormsDataToDict')
 	dictOut = {}
 	for itemKey in theCleanedData.keys():
@@ -5341,6 +5310,50 @@ def convertFormsDataToDict(theCleanedData):
 	DebugOut('Exiting convertFormsDataToDict')
 	return dictOut
 
+def encodeQuestionResponseLabel(questionRecNum,responseChoiceRecNum):
+	""" Encodes Question and QuestionResponse record numbers into a special label.
+	"""
+	if responseChoiceRecNum:
+		rcRec = str(responseChoiceRecNum)
+	else:
+		rcRec = ''
+	uniqueQuestionLabel = 'Question_'+str(questionRecNum)+'_'+rcRec
+	return uniqueQuestionLabel
+
+def decodeQuestionResponseLabel(uniqueQuestionLabel):
+	""" Decodes special label set by encodeQuestionResponseLabel
+	"""
+	msgOut = []
+	if '_' not in uniqueQuestionLabel:
+		# wrong format
+		DebugOut('decodeQuestionResponseLabel:  wrong format: "%s"'%uniqueQuestionLabel)
+		return ['','']
+	labelParts = uniqueQuestionLabel.split('_')
+	try:
+		part1 = labelParts[1]
+		try:
+			questionRecNum = int(part1)
+		except ValueError:
+			questionRecNum = 'ValueXError'
+	except IndexError:
+		questionRecNum = 'xxx'
+		msgOut.append('decodeQuestionResponseLabel:  Index of part 1 out of range')
+	try:
+		part2 = labelParts[2]
+		if part2:
+			try:
+				responseChoiceRecNum = int(part2)
+			except ValueError:
+				responseChoiceRecNum = 'ValueYError'
+		else:
+			responseChoiceRecNum = ''
+	except IndexError:
+		responseChoiceRecNum = ''
+		msgOut.append('decodeQuestionResponseLabel:  Index of part 2 out of range')
+	for aMess in msgOut:
+		DebugOut(aMess)
+	return [questionRecNum,responseChoiceRecNum]
+
 def MakeUniqueKeyToTagDict(thePageQuestions):
 	"""Create dictionary for converting from Unique key to Question.shortTag
 	Some functions:  saveGlobalFlagsToSessionData, 
@@ -5353,11 +5366,30 @@ def MakeUniqueKeyToTagDict(thePageQuestions):
 		theQLabel = encodeQuestionResponseLabel(theQRecNum,'')
 		theQTag = aQuestion.questionTag
 		UtoTdict.update({theQLabel:theQTag})
+		choiceCount = ResponseChoice.objects.filter(questionID=aQuestion).count()
+		if choiceCount > 0:
+			# multiple choice question.
+			theResponses = ResponseChoice.objects.filter(questionID=aQuestion)
+			for aResponse in theResponses:
+				theChoiceRecNum = str(aResponse.id)
+				choiceText = aResponse.choiceText
+				choiceType = aResponse.choiceType
+				choiceTag = aResponse.choiceTag
+				theQResponseLabel = encodeQuestionResponseLabel(theQRecNum,theChoiceRecNum)
+				UtoTdict.update({theQResponseLabel:choiceText})
 	return UtoTdict
 
 def replaceUniqueKeysWithDBQuestionTags(questionResponses, thePageQuestions):
-	"""Replaces the Unique key with local keys.
+	"""Replaces the Unique key with local keys. The result, limited to the page, is unique and not null
+	Note:  keep this logic the same is as in UserDynamicFormCreation
+	Args:
+		questionResponses:  dictionary of question responses:  key word, key value
+		thePageQuestions:  query set or list of pages
+	Returns:
+		questionResponsesWithTags:  unique key names in dictionary questionResponses,
+			with new key names from the question record
 	"""
+	DebugOut('replaceUniqueKeysWithDBQuestionTags:  enter')
 	UtoTdict = MakeUniqueKeyToTagDict(thePageQuestions)
 	
 	questionResponsesWithTags = {}
@@ -5365,12 +5397,17 @@ def replaceUniqueKeysWithDBQuestionTags(questionResponses, thePageQuestions):
 	tagKeyList = [] # accumulate the encountered tags
 	for uniquekey, keyValue in questionResponses.iteritems():
 		# Change the unique key.
+		DebugOut('uniquekey: "%s",keyValue: "%s"'%(uniquekey, keyValue))
+		DebugOut('Data type of keyValue "%s"'%type(keyValue))
 		tagKey = UtoTdict[uniquekey]
-		if tagKey in tagKeyList:
+		if tagKey == '':
+			tagKey = 'QuestionTag_' + str(ii)
+		if tagKey in tagKeyList: # if already in the list
 			tagKey = tagKey + "_" + str(ii) # force the tag to be unique
 		tagKeyList.append(tagKey)
 		questionResponsesWithTags.update({tagKey:keyValue})
 		ii+=1
+	DebugOut('replaceUniqueKeysWithDBQuestionTags:  exit')
 	return questionResponsesWithTags
 	
 def UserDynamicFormCreation( thePageQuestions, formData, useQuestionTag=False):
@@ -5383,6 +5420,7 @@ def UserDynamicFormCreation( thePageQuestions, formData, useQuestionTag=False):
 		aForm: a form with the questions and response choices  (if any)
 	"""
 	DebugOut('UserDynamicFormCreation:  enter')
+	DebugOut('formData: %s'%formData)
 	if formData == ['']:
 		formData = None # "None" is acceptable input.
 		DebugOut('UserDynamicFormCreation: no forms data input (ok)')
@@ -5393,12 +5431,24 @@ def UserDynamicFormCreation( thePageQuestions, formData, useQuestionTag=False):
 				# at the moment, can handle only one "multiple choice' field.
 				# This might make the best sense from the user interface point of view as well.
 	questionList = [] # each element of the List is a dictionary
+	ii = 0
+	labelList = [] # accumulate a list of tags to make sure they are unique on the page
+	qustionTagToRecordNum = {} # tag to record number translation for Question
+	choiceTagToRecordNum = {} # tag to record number translation for ResponseChoice
 	for aQuestion in thePageQuestions:
+		ii+=1
 		theQRecNum = str(aQuestion.id) # used as a label, so string is needed
-		if useQuestionTag:
-			theQLabel = aQuestion.questionTag
+		if useQuestionTag: # use short tag if it is non-null
+			if aQuestion.questionTag: 
+				theQLabel = aQuestion.questionTag
+				if theQLabel in labelList:
+					theQLabel = theQLabel+'_'+ str(ii)
+			else: # tag is null. Invent a tag. Use the same logic as in replaceUniqueKeysWithDBQuestionTags
+				theQLabel = 'QuestionTag_' + str(ii)
 		else:
 			theQLabel = encodeQuestionResponseLabel(theQRecNum,'') # creates a unique label
+		labelList.append(theQLabel)
+		qustionTagToRecordNum.update({theQLabel:aQuestion.id})
 		# save to object with substitutions
 		updatedQuestionText = SubstituteWords(aQuestion.questionText)
 		questionList.append({
@@ -5408,25 +5458,37 @@ def UserDynamicFormCreation( thePageQuestions, formData, useQuestionTag=False):
 			'theQLabel':theQLabel,
 			})
 		# Note:  do not "save" aQuestion!!
-		DebugOut('aQuestion.questionTag %s' %aQuestion.questionTag)
-		dbgMess=aQuestion.responseType+' '+aQuestion.questionTag+' '+updatedQuestionText
-		DebugOut(dbgMess)
+		DebugOut('aQuestion record number: "%s"' %aQuestion.id)
+		DebugOut('aQuestion.questionTag1: "%s"' %aQuestion.questionTag)
+		DebugOut('aQuestion.responseType2: "%s"' %aQuestion.responseType)
+		DebugOut('aQuestion.questionText3: "%s"' %smart_str(aQuestion.questionText))
+		DebugOut('updatedQuestionText4: "%s"' %smart_str(updatedQuestionText))
+		DebugOut('theQLabel5: "%s"' %theQLabel)
 		# are there multiple responses??
 		responseCount = ResponseChoice.objects.filter( questionID=aQuestion).count()
 		if responseCount >0:
 			# query for the multiple choices for a specific question tag
 			theResponseChoices=ResponseChoice.objects.order_by('choiceSequence').filter( questionID=aQuestion)
 			DebugOut('Choices follow:')
-			multCount=multCount+1 # only one multiple choice question per page, so count them
+			multCount=multCount+1 # allowed only one multiple choice question per page, so count them
 			choiceList = []
 			for aChoice in theResponseChoices:
+				ii+=1
 				theChoiceTextTemp = aChoice.choiceText
 				theChoiceText = SubstituteWords(theChoiceTextTemp)
 				theChoiceRecNum = str(aChoice.id) # used as a label, so string is needed
-				if useQuestionTag:
-					theChoiceLabel = aChoice.choiceTag
-				else:
-					theChoiceLabel = encodeQuestionResponseLabel(theQRecNum,theChoiceRecNum)
+# 				if useQuestionTag: # use short tag if it is non-null
+# 					if aChoice.choiceTag: 
+# 						theChoiceLabel = aChoice.choiceTag
+# 						if theChoiceLabel in labelList:
+# 							theChoiceLabel = theChoiceLabel+'_'+ str(ii)
+# 					else: # tag is null. Invent a tag. Use the same logic as in replaceUniqueKeysWithDBQuestionTags
+# 						theChoiceLabel = 'ChoiceTag_' + str(ii)
+# 				else:
+# 				theChoiceLabel = encodeQuestionResponseLabel(theQRecNum,theChoiceRecNum) # creates a unique label
+				theChoiceLabel = theChoiceText # bigChange!
+				labelList.append(theChoiceLabel)
+				choiceTagToRecordNum.update({theChoiceLabel:aChoice.id})
 				DebugOut('Choice tag: '+aChoice.choiceTag+' Choice Text: '+theChoiceText)
 				DebugOut('Choice label: '+theChoiceLabel)
 				choiceList.append( [theChoiceLabel , theChoiceText])
@@ -5442,7 +5504,7 @@ def UserDynamicFormCreation( thePageQuestions, formData, useQuestionTag=False):
 		DebugOut('UserDynamicFormCreation:  No choiceList for this question (ok)')
 		aForm = UserFormPoly(formData, questions=questionList)
 	DebugOut('UserDynamicFormCreation:  exit')
-	return aForm
+	return [aForm, qustionTagToRecordNum,choiceTagToRecordNum]
 	
 def SubstituteWords( inputText ):
 # 	DebugOut('SubstituteWords: enter')
@@ -5594,7 +5656,8 @@ def dumpSessionData(request):
 def questionnaireToGo(request, theProject, theQuestionnaire):
 	"""Prepare the Session Data for questionnaire execution.
 	Provide the url.
-
+	Note:  see function "removeResponsesFromSessionData"
+	Note:  see function "questionnaireEnvironmentPrep"
 	Args:
 		"request" input
 
@@ -5625,7 +5688,8 @@ def questionnaireToGo(request, theProject, theQuestionnaire):
 
 def questionnaireEnvironmentPrep( request, theProject, theQuestionnaire):
 	"""Prepare the Session Data for questionnaire execution.
-
+	Note:  see function "removeResponsesFromSessionData"
+	Note:  see function "questionnaireToGo"
 	Args:
 		"request" input
 

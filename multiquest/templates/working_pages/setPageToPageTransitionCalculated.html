@@ -15,7 +15,7 @@
 <h4>No questionnaire has been selected</h4>
 {% endif %}
 		
-		<h3> Step 1:  Click a Page button to change the <b>CURRENT</b> page "{{workingPageTag}}": </h3>
+		<h3> Step 1:  Click a Page button to change the <b>CURRENT</b> page which is "{{workingPageTag}}": </h3>
 
 		{% for tag in allPageTagsQs %}
 			<input type="submit" name="currentPage" value="{{tag}}">
@@ -53,7 +53,7 @@
 		{% endif %}
 		{% if pageQuestionsExist %}
 			<p>
-			<h3>Step 2:  Select the next page after responding to the questions on this page "{{workingPageTag}}".</h3>
+			<h3>Step 2:  Select the next page after responding to the questions on the <b>CURRENT</b> page.</h3>
 			</p>
 			<ul>
 			{% for tag in allPageTags %}
@@ -100,7 +100,7 @@
 			</div>
 		{% endfor %}
 		<h3>Step 4:  Click the button to save the question response:</h3>
-		<input type="submit" name="Select responses to questions" value="Submit responses to questions">
+		<input type="submit" name="Save responses to questions" value="Save responses to questions">
 		<p style="color: red;">
 		{{nextPAndConditionMsg}}
 		</p>

@@ -41,6 +41,7 @@ DATABASES = {
 ALLOWED_HOSTS = [
 	'.screengenes.org',
 	'screengenes.org.',
+	'50.79.41.36',
 	'50.79.41.35',
 	'50.79.41.33',
 	'localhost',

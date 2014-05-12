@@ -135,11 +135,8 @@ class UserFormPoly(forms.Form):
 		for aQuestion in quests:
 			# aQuestion is a dictionary
 			theQRespType = aQuestion.get('responseType',None)
-# 			theQRespType = aQuestion['responseType']
 			theQText = mark_safe(aQuestion.get('questionText',None)) # allow html
-# 			theQText = mark_safe(aQuestion['questionText']) # allow html
  			theQLabel = aQuestion.get('theQLabel',None)
-# 			theQLabel = aQuestion['theQLabel']
 			if theQRespType == 'MultipleChoiceField':
 				self.fields[theQLabel] = forms.MultipleChoiceField( label=theQText, required=False, widget=forms.CheckboxSelectMultiple(attrs={'class':'inlineLabels'}), choices=theChoices)
 			elif theQRespType == 'MultipleChoiceRequiredField':

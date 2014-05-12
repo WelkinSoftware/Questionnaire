@@ -15,6 +15,9 @@ from django.contrib.auth.models import Group, User, Permission
 Permissions fix
 /Users/cl/Documents/DjCode/PostgresPermissionsFix.sh
 
+=============<h3>Make files visible</h3>
+defaults write com.apple.finder AppleShowAllFiles TRUE
+
 =============<h3>get default project (Standard)</h3>
 
 	theProject = getSessionProject(request)

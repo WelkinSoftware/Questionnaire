@@ -271,7 +271,7 @@ class ResponseSelection(models.Model):
 	responseID = models.ForeignKey(Response)
 	responseChoiceID = models.ForeignKey(ResponseChoice, null=True) # required only for multiple-choice
 	language = models.CharField(default='English', max_length=30)
-	responseText = models.CharField(blank=True, max_length=200) # dependent upon the Question.responseType.
+	responseText = models.CharField(blank=True, max_length=200) # depends upon the Question.responseType.
 	responseType = models.CharField(max_length=30, choices=FIELD_TYPES) # not used
 	
 	def __unicode__(self):
