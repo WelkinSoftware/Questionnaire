@@ -3705,11 +3705,12 @@ def savecsv(request, forProject=None):
 	icountExports = 0 # count the exported submissions
 	for aQuestionnaire in allQuestionnaires:
 		DebugOut('Top of Questionnaire loop')
-		DebugOut('Questionnaire: %s'%aQuestionnaire.shortTag)
 		submissionsForQuestionnaire = Submission.objects.filter(questionnaireID=aQuestionnaire)
 		# A requirement is to maintain the same order for the same questionnaire, for each Submission
 		# Start with getting the pages in canonical order
 		allPages = allPagesInDefaultOrder(aQuestionnaire)
+		DebugOut( 'Pages in Questionnaire "%s":  "%s"'%(aQuestionnaire.shortTag,len(allPages)))
+		DebugOut( 'Number of Submissions "%s" in Questionnaire "%s"'%(submissionsForQuestionnaire.count(),aQuestionnaire.shortTag))
 		oldHeaderCopy = [] # save the old header here
 		DebugOut('Submissions loop')
 		for aSubmission in submissionsForQuestionnaire:
@@ -3776,6 +3777,7 @@ def savecsv(request, forProject=None):
 			
 			# retrieve all Response objects belonging to this Submission
 			allResponses = Response.objects.filter(submissionID=aSubmission)
+			DebugOut('Response count: %s'%allResponses.count())
 			fieldCount = 1
 			for aPage in allPages:
 				DebugOut('top of Page loop: %s'%aPage.shortTag)
@@ -3785,56 +3787,78 @@ def savecsv(request, forProject=None):
 					questionid = aQuestion.id
 					# Select the response (if any)
 					questionTag = aQuestion.questionTag
-					responsesPerQuestion = allResponses.filter(questionID=aQuestion)
+					DebugOut('Question tag: %s'%questionTag)
+					responsesPerQuestion = allResponses.filter(questionID=aQuestion) # select only one if multiple.
+						# "responsesPerQuestion" a Response queryset
+					DebugOut('Number of responses for this question: %s'%responsesPerQuestion.count())
+					if responsesPerQuestion:
+						if responsesPerQuestion.count() >1: # more than one response to a question. Choose one.
+							# Question appears more than once in a Questionnaire
+							# Note the error condition
+							DebugOut('syserrmsg:  Question "%s" appears more than once in "%s"'%(questionTag,aQuestionnaire.shortTag))
+							DebugOut('syserrmsg:  Arbitrarily select one question for output into the csv')
+						theResponse = responsesPerQuestion[0] # choose arbitrarily
+						responseSelections = ResponseSelection.objects.filter(responseID=theResponse) # Question asked
+						responseValues = [rpq.responseText for rpq in responseSelections] # Gather all responses
+						DebugOut('responseValues: %s'%responseValues)
+					elif responsesPerQuestion.count() == 0: # No response, but add header info at top of column
+						# provide for strange case of Question asked, but no responses
+						responseValues = []
+						DebugOut('No response to Question %s'%questionTag)
+# 						aRow.append('')
+# 						colm_headers.append(questionTag+'_'+str(fieldCount)) # choice text is the tag
+# 						fieldCount+=1
+# 						break # go to next question
+					# now consult the Questionnaire design for a list of all responses
 					responseChoices = ResponseChoice.objects.order_by('choiceSequence').filter(questionID=aQuestion) # may be none
-					if responsesPerQuestion.count() >1:
-						# error condition
-						DebugOut('syserrmsg:  multiple Response records for Question object %s'%questionTag)
-						noResponse = False
-					elif responsesPerQuestion.count() == 0: # eliminate the easy case
-						noResponse = True
-					else:
-						noResponse = False
-					if not noResponse:
-						aResponseObj = responsesPerQuestion[0] # select the single Response record for this question
-						responsesPerQuestion = ResponseSelection.objects.filter(responseID=aResponseObj)
+					allResponsechoices = [arc.choiceText for arc in responseChoices]
 					
-					# could be the top of a list
-					if noResponse:
-						theValue = ''
-					elif responseChoices.count() > 0:
-						# top of a list. Name of a list. Values are placed in the following loop
-						theValue = '(list)'
+					# responseValues is from the User, allResponsechoices is from the Questionnaire design
+					DebugOut('responseValues "%s", allResponsechoices "%s"'%(responseValues,allResponsechoices))
+					if len(responseValues) > 1 and len(allResponsechoices) == 0:
+						DebugOut('syserrmsg:  multiple choices for a non-muliple choice question!! Question: "%s"'%questionTag)
+					elif len(responseValues) > len(allResponsechoices) > 0:
+						DebugOut('syserrmsg:  more responses than choices!!')
+					
+					if len(allResponsechoices) > 0 and len(responseValues) > 0:
+						theValue = 'Multiple Choice Question' # a list
+					elif len(allResponsechoices) > 0 and len(responseValues) == 0:
+						theValue = 'No Choice Selected' # a list
+					elif len(responseValues) == 1:
+						# one value
+						theValue = smart_str(responseValues[0])
 					else:
-						aResp = responsesPerQuestion[0]
-						theValue = aResp.responseText
-					# one question, one response
+						DebugOut('Question result: '+questionTag+'_'+str(fieldCount)+' Null result')
+						theValue = ''
+					DebugOut('Question result: '+questionTag+'_'+str(fieldCount)+'   The Value: ' +str(theValue))
 					aRow.append(theValue)
-					#DebugOut('Question result: '+questionTag+'_'+str(fieldCount)+'   The Value: ' +str(theValue))
 					colm_headers.append(questionTag+'_'+str(fieldCount)) # choice text is the tag
 					fieldCount+=1
-					if responseChoices.count() > 0: # go to a list of responses per question
+
+					if responseChoices: # examine a list of all possible responses per question
+						# Question is multiple choice
+						# top of a list. Name of a list. Values are placed in the following loop
 						# multiple choice per record. Perhaps none selected.
-						if not noResponse:
-							responseValues = [rpq.responseText for rpq in responsesPerQuestion]
-						else:
-							responseValues = []
 						for aResponseChoice in responseChoices:
 							DebugOut('top of ResponseChoice per Question loop')
 							# create the unique record which might be a response, if there is any response.
-							RCid = aResponseChoice.id
 							choiceText = aResponseChoice.choiceText
 							choiceTag = aResponseChoice.choiceTag
-							theQLabel = encodeQuestionResponseLabel(questionid,RCid)
-							if theQLabel in responseValues: # check for this response
+							DebugOut('choiceText: "%s", choiceTag: "%s"'%(choiceText, choiceTag))
+# 							DebugOut('choiceText: "%s", responseValues: "%s"'%(choiceText, responseValues))
+# 							DebugOut('choiceText type: "%s", responseValues type: "%s"'%(type(choiceText), type(responseValues)))
+# 							if len(responseValues) >0:
+# 								DebugOut('element type: "%s"'%type(responseValues[0]))
+							if choiceText in responseValues: # check for this response
 								aRow.append(choiceText)
 								colm_headers.append(choiceTag+'_'+str(fieldCount)) # choice text is the tag
-								fieldCount+=1
+								DebugOut('choiceText: "%s" added to row string.'%(choiceText))
 							else:
 								aRow.append('')
+								DebugOut('choiceText: "%s" NOT added to row string.'%(choiceText))
 								colm_headers.append(choiceTag+'_'+str(fieldCount)) # choice text is the tag
-								fieldCount+=1
-	
+							fieldCount+=1
+					
 			DebugOut('End of responses')			
 			DebugOut('Row %s' %aRow)
 			if oldHeaderCopy != colm_headers:
@@ -5009,27 +5033,26 @@ def QuestContinue(request, whichProject, whichQuest, whichPage):
 		# set up for page 'H7a'
 		# build question follow up table
 		qFollow = [ 
-			['pHxHormUse_BC' , 'pHxHormUseBCAgeStart'],
-			['pHxHormUse_BC' , 'pHxHormUseBCAgeEnd'],
-			['pHxHormUse_Est', 'pHxHormUseEstrogenAgeStart'],
-			['pHxHormUse_Est', 'pHxHormUseEstrogenAgeEnd'],
-			['pHxHormUse_Pro', 'pHxHormUseProgesteroneAgeStart'],
-			['pHxHormUse_Pro' , 'pHxHormUseProgesteroneAgeEnd'],
-			['pHxHormUse_Tam', 'pHxHormUseTamoxifenAgeStart'],
-			['pHxHormUse_Tam' , 'pHxHormUseTamoxifenAgeEnd'],
-			['pHxHormUse_Ral', 'pHxHormUseRaloxifeneAgeStart'],
-			['pHxHormUse_Ral' , 'pHxHormUseRaloxifeneAgeEnd'],
-			['pHxHormUse_Ari', 'pHxHormUseArimidexAgeStart'],
-			['pHxHormUse_Ari' , 'pHxHormUseArimidexAgeEnd'],
+			['Birth control pills' , 'pHxHormUseBCAgeStart'],
+			['Birth control pills' , 'pHxHormUseBCAgeEnd'],
+			['Estrogen replacement', 'pHxHormUseEstrogenAgeStart'],
+			['Estrogen replacement', 'pHxHormUseEstrogenAgeEnd'],
+			['Progesterone replacement', 'pHxHormUseProgesteroneAgeStart'],
+			['Progesterone replacement' , 'pHxHormUseProgesteroneAgeEnd'],
+			['Tamoxifen', 'pHxHormUseTamoxifenAgeStart'],
+			['Tamoxifen' , 'pHxHormUseTamoxifenAgeEnd'],
+			['Raloxifene', 'pHxHormUseRaloxifeneAgeStart'],
+			['Raloxifene' , 'pHxHormUseRaloxifeneAgeEnd'],
+			['Arimidex', 'pHxHormUseArimidexAgeStart'],
+			['Arimidex' , 'pHxHormUseArimidexAgeEnd'],
 			]
 		followQTags = [] # make a list of followOn question tags
-		for prevTag in tagListFromPrev:
+		for prevTag in tagListFromPrev.keys():
 			for followOn in qFollow:
 				if prevTag in followOn:
 					followQTags.append(followOn[1])
 		if followQTags != []:	
 			DebugOut('Selected tags for followOn questions: %s' %followQTags)
-			DebugOut('tagListFromPrev: %s' %tagListFromPrev)
 			# retrieve these questions from the database
 			# construct the query using the "Q object" (see page 104) in pdf from Django site
 			# and:  https://docs.djangoproject.com/en/1.5/topics/db/queries/#complex-lookups-with-q
@@ -5037,7 +5060,8 @@ def QuestContinue(request, whichProject, whichQuest, whichPage):
 			qtSum = Q(questionID__questionTag=followQTags[0])
 			for aQuestTag in followQTags:
 				qtSum = qtSum | Q(questionID__questionTag=aQuestTag) # Sum the queries as "or"'s
-			replacePQ = PageQuestion.objects.order_by('questionSequence').filter( qtSum)
+			qtAll = qtSum & Q(pageID=thePageObj) # make sure the question belong to this Page!
+			replacePQ = PageQuestion.objects.order_by('questionSequence').filter( qtAll)
 			replacePageQuestions = [aPQ.questionID for aPQ in replacePQ]
 			# Kludge:  append the record number to get a unique page tag.
 			for aQuestion in replacePageQuestions:
@@ -5301,7 +5325,7 @@ def convertFormsDataToDict(theCleanedData):
 	dictOut = {}
 	for itemKey in theCleanedData.keys():
 		itemValue = theCleanedData[itemKey]
-		if type(itemValue) == list: # go another level
+		if type(itemValue) == list: # go to another level
 			for itemKey2 in itemValue:
 				dictOut.update({itemKey2 : True}) # Assume Boolean!!
 		else:

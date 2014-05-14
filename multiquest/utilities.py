@@ -414,6 +414,7 @@ def DebugOut( debugMessage):
 			fpage.close()
 		except:
 			settings.DEBUG_1 = False # persistent for this execution! No further
+			pass
 	return True
 
 def transposeListMatrix(xx):

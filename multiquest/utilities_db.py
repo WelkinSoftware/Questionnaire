@@ -143,6 +143,7 @@ def saveGlobalFlagsToSessionData(request, theQuestionnaire, thePageObj, question
 	DebugOut('saveGlobalFlagsToSessionData:  exit')
 	return sessionDataCreated
 
+	return theQueryset
 def getNextPageFromGlobalFlags(request, theQuestionnaire, pageObj):
 	# returns "next page", if a flag is in session data.
 	# Finds next page object from QuestionnairePage
@@ -1190,6 +1191,14 @@ def retrieveBulk( objClass, theRecordIDs ):
 		qSet = objClass.objects.none()
 	return qSet
 
+def changeListToQueryset(theList, theObject):
+	""" Changes a list of objects to a query set by accessing the database
+	"""
+	# collect the record ids
+	theIDs=[ar.id for ar in theList]
+	theQuerySet = retrieveBulk( theObject, theIDs )
+	return theQuerySet
+	
 def getResponseChoicesForAPage(thisPageObj):
 	"""Return a QuerySet of objects of type "ResponseChoice" belonging to the questions on a page,
 	"""
