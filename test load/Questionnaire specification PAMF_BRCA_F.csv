@@ -1,0 +1,103 @@
+ProjectSeparator
+TableSeparator,Project
+HeaderLine,abbrev,contactPhone,email,id,internetLocation,lastUpdate,name,projectAddress,shortTag
+Record,PAMF,650-555-1212,screener@screengenes.org,1,http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html,2014-04-08 23:25:54.722876,Palo Alto Medical Foundation,,PAMF
+TableSeparator,Questionnaire
+HeaderLine,barTitle,description,footerText,id,imageFileName,imageFilePath,imageFileType,language,lastUpdate,pageSubTitle,pageTitle,shortTag,version,versionDate
+Record,PAMF breast health screening questionnaire (fe),BRCA gene risk assessment. Quick Exit,qe,2,,,,English,2014-04-08 23:25:54.741745,,Breast Health Screening,BRCA_F,BRCA version 1.8 Fast Exit,2014-04-03 08:00:00
+TableSeparator,Page
+HeaderLine,description,epilogue,explanation,helpButtonTitle,helpPage,id,imageFileName,imageFilePath,imageFileType,language,lastUpdate,pageType,prologue,shortTag
+Record,Patient history of ovarian cancer,<lfeedr><lfeed><p class="indent1" style='font-size:Large;'><lfeedr><lfeed>	<i><lfeedr><lfeed>		This question does not apply to:<ul><lfeedr><lfeed>			<li class="indent1" >Cancer of the cervix (cervical cancer) OR</li><lfeedr><lfeed>			<li class="indent1" >Cancer of the uterus</li><lfeedr><lfeed>		</ul><lfeedr><lfeed>	</i><lfeedr><lfeed></p>,<lfeedr><lfeed><p style='font-size:Large;'><i><lfeedr><lfeed>Click here for a picture and information about  <lfeedr><lfeed>	<a title="Tap here for more information about ovarian cancer"href="{{explainURLprefix}}ovca">ovarian cancer.</a><lfeedr><lfeed></i></p><lfeedr><lfeed>,,,12,,,,English,2014-06-04 00:54:10.565775,singlePass,,P1
+Record,Family history of ovarian cancer,<lfeedr><lfeed><p class="indent1" style='font-size:Large;'><lfeedr><lfeed>	<i><lfeedr><lfeed>		This question does not apply to:<ul><lfeedr><lfeed>			<li class="indent1" >Cancer of the cervix (cervical cancer) OR</li><lfeedr><lfeed>			<li class="indent1" >Cancer of the uterus</li><lfeedr><lfeed>		</ul><lfeedr><lfeed>	</i><lfeedr><lfeed></p>,<lfeedr><lfeed><p style='font-size:Large;'><i><lfeedr><lfeed>Click here for a picture and information about  <lfeedr><lfeed>	<a title="Tap here for more information about ovarian cancer"href="{{explainURLprefix}}ovca">ovarian cancer.</a><lfeedr><lfeed></i></p><lfeedr><lfeed>,,,13,,,,English,2014-06-04 01:00:58.931635,singlePass,<lfeedr><lfeed> <p><lfeedr><lfeed>	We will ask a few questions about your family history. In considering your family<aComma> "close blood relatives" include the following people related to you by <b>blood</b> (not marriage):<lfeedr><lfeed>	<ul><lfeedr><lfeed>		<li>parents<aComma> brothers & sisters<aComma> children</li><lfeedr><lfeed>		<li>grandparents<aComma> grandchildren<aComma> aunts<aComma> uncles<aComma> nieces<aComma> nephews<aComma> half-brothers<aComma> half-sisters</li><lfeedr><lfeed>		<li>great grandparents<aComma> great grandchildren<aComma> great aunts<aComma> great uncles<aComma> first cousins</li><lfeedr><lfeed>	</ul><lfeedr><lfeed></p>,P2
+Record,Patient history of breast cancer,,,,,14,,,,English,2014-04-08 23:25:54.804405,singlePass,,P3
+Record,patient history breast cancer details,,Please answer all of the following questions about your breast cancer:,,,15,,,,English,2014-04-08 23:25:54.805166,singlePass,,P3a
+Record,patient history breast cancer more details,,Please answer all of the following questions about your <a title="Tap here to see what we mean by close blood relatives for this survey"href="{{explainURLprefix}}closebloodrelatives">close blood relatives</a>:,,,16,,,,English,2014-04-08 23:25:54.805969,singlePass,,P3b
+Record,Patient history of other cancers,,,,,17,,,,English,2014-04-08 23:25:54.806773,singlePass,,P3c
+Record,Family history of Ashkenazi Jewish,,Please answer all of the following questions about your <a title="Tap here to see what we mean by close blood relatives for this survey"href="{{explainURLprefix}}closebloodrelatives">close blood relatives</a> ...,,,18,,,,English,2014-04-08 23:25:54.807643,singlePass,,P4
+Record,Family history of breast cancer,,,,,19,,,,English,2014-04-08 23:25:54.808558,singlePass,,P4a
+Record,Family history of other cancers,,,,,20,,,,English,2014-04-08 23:25:54.809379,singlePass,,P4b
+Record,Female close blood relatives living past age 45 years,<p style='font-size:Large;'>Why we ask this question:  if no female close blood relatives lived beyond age 45 years<aComma> estimates of your BRCA mutation risk may be inaccurate.</p>,,,,21,,,,English,2014-06-04 01:40:31.047600,singlePass,,P5
+Record,Questionnaire Summary for all risks,,,,,22,,,,English,2014-04-08 23:25:54.810973,questionnaireSummary,<lfeedr><lfeed>    <p><lfeedr><lfeed>The following is a summary of all your answers to the questionnaire.<lfeedr><lfeed>    </p><lfeedr><lfeed>    <p><lfeedr><lfeed>If any of your answers need correction<aComma> click the "Back" button to return to the page needing correction. Enter your changes<aComma> and click the "Next" button to work through the survey again.  <lfeedr><lfeed>    </p><lfeedr><lfeed>,SummaryPage
+Record,Questionnaire analysis result:  average risk,<p><lfeedr><lfeed>	Here are other ways you can learn more:<br /><lfeedr><lfeed>	1. You may ask your physician for our handout.<br /><lfeedr><lfeed>	2. We suggest these websites:<lfeedr><lfeed></p><lfeedr><lfeed><ul><lfeedr><lfeed>	<li>National Institutes of Health: <a href="http://health.nih.gov/topic/BreastCancer">http://health.nih.gov/topic/BreastCancer</a></li><lfeedr><lfeed>	<li>Susan Komen Foundation: <a href="http://ww5.komen.org/AboutUs/AboutUs.html">http://ww5.komen.org/AboutUs/AboutUs.html</a></li><lfeedr><lfeed>	<li>National Comprehensive Cancer Network: <a href="http://www.nccn.org/patients/patient_guidelines/breast/index.html">http://www.nccn.org/patients/patient_guidelines/breast/index.html</a></li><lfeedr><lfeed>	<li>PAMF: <a href="http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html">http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html</a></li><lfeedr><lfeed>	</ul><lfeedr><lfeed>,<lfeedr><lfeed>    <p><lfeedr><lfeed>        Thank you for completing our questionnaire!<lfeedr><lfeed>    </p><lfeedr><lfeed>	<p><lfeedr><lfeed>		1. Your chances of carrying a BRCA mutation are <b>very low</b>.<lfeedr><lfeed>    </p><lfeedr><lfeed>    <p><lfeedr><lfeed>		2. Your chances of developing breast or ovarian cancer are <b>average<aComma> not increased</b>.<br><lfeedr><lfeed>		"Average" risk means about 1 in 10 chance of getting breast cancer and about 1 in 100 chance of getting ovarian cancer.<lfeedr><lfeed>    </p><lfeedr><lfeed>,,,23,,,,English,2014-05-06 22:45:31.926658,singlePass,,avgRisk
+Record,Completion page. Last page if one is needed,,,,,24,,,,English,2014-04-08 23:25:54.812379,hasTemplateAndFunction,,completion
+Record,Questionnaire analysis result:  indeterminate risk,<lfeedr><lfeed>	Here are other ways you can learn more:<br /><lfeedr><lfeed>	1. You may ask your physician for our handout.<br /><lfeedr><lfeed>	2. We suggest these websites:<ul><lfeedr><lfeed>	<li>National Institutes of Health: <a href="http://health.nih.gov/topic/BreastCancer">http://health.nih.gov/topic/BreastCancer</a></li><lfeedr><lfeed>	<li>Susan Komen Foundation: <a href="http://ww5.komen.org/AboutUs/AboutUs.html">http://ww5.komen.org/AboutUs/AboutUs.html</a></li><lfeedr><lfeed>	<li>National Comprehensive Cancer Network: <a href="http://www.nccn.org/patients/patient_guidelines/breast/index.html">http://www.nccn.org/patients/patient_guidelines/breast/index.html</a></li><lfeedr><lfeed>	<li>PAMF: <a href="http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html">http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html</a></li><lfeedr><lfeed>	</ul><lfeedr><lfeed>,<lfeedr><lfeed>    <p><lfeedr><lfeed>         Thank you for completing our questionnaire! <lfeedr><lfeed>  </p><lfeedr><lfeed>    <p><lfeedr><lfeed>To assess your chances of carrying a BRCA mutation<aComma> <b><i>we need more information</i></b>. Please see the summary on the next page<lfeedr><lfeed>     that shows your answers and the information you were unable to provide. <lfeedr><lfeed>    </p><lfeedr><lfeed>    <p><lfeedr><lfeed>        Once you gather that additional information<aComma> or if you cannot do so<aComma> we recommend that you<lfeedr><lfeed>         talk with a PAMC genetic counseling professional. Please call for<lfeedr><lfeed>         that appointment: 650-555-1212.<lfeedr><lfeed>    </p><lfeedr><lfeed>		,,,25,,,,English,2014-04-08 23:25:54.813117,singlePass,,indetRisk
+Record,Get respondent identity,,The information you enter in this questionnaire is kept confidential. It is stored securely only inside our internal network. It will not be visible to unauthorized individuals or shared on the internet.,,,26,,,,English,2014-04-08 23:25:54.814106,hasTemplateAndFunction,<p>By entering your name and birth date below<aComma> you are confirming that:</p><li>You understand and accept the terms and conditions of use of information you enter into this questionnaire.</li><li>You have not already had genetic testing for BRCA1 or BRCA2 mutations.</li>,respondentIdent
+Record,Questionnaire analysis result:  higher risk,Here are other ways you can learn more:<br /><lfeedr><lfeed>1. You may ask your physician for our handout.<br /><lfeedr><lfeed>2. We suggest these websites:<ul><lfeedr><lfeed><li>National Institutes of Health: <a href="http://health.nih.gov/topic/BreastCancer">http://health.nih.gov/topic/BreastCancer</a></li><lfeedr><lfeed><li>Susan Komen Foundation: <a href="http://ww5.komen.org/AboutUs/AboutUs.html">http://ww5.komen.org/AboutUs/AboutUs.html</a></li><lfeedr><lfeed><li>National Comprehensive Cancer Network: <a href="http://www.nccn.org/patients/patient_guidelines/breast/index.html">http://www.nccn.org/patients/patient_guidelines/breast/index.html</a></li><lfeedr><lfeed><li>PAMF: <a href="http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html">http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html</a></li><lfeedr><lfeed></ul>,<p>Thank you for completing our questionnaire!</p><lfeedr><lfeed><p>Based on your answers<aComma> we estimate that <b><i>you may have a higher than average chance of carrying a BRCA mutation</i></b>.<lfeedr><lfeed>To evaluate this more completely<aComma> we recommend that you talk with a PAMC genetic counselor.<lfeedr><lfeed>Please enter your phone number below. We will attempt to contact you within one week.<lfeedr><lfeed></p><lfeedr><lfeed>,,,27,,,,English,2014-04-08 23:25:54.815133,singlePass,,riskAssess2
+Record,Splash page,,<p><lfeedr><lfeed>This questionnaire asks questions about your health and your family's health history. Your answers will help decide whether you might benefit from tests to check for certain gene mutations (especially BRCA) that increase risk of certain cancers.<lfeedr><lfeed></p><lfeedr><lfeed><p><lfeedr><lfeed>If you have already had such tests<aComma> this questionnaire is not for you.<lfeedr><lfeed></p><lfeedr><lfeed><p><lfeedr><lfeed>If you don't know the answers to the questions below<aComma> please try to collect that information and then talk with your doctor.<lfeedr><lfeed></p><lfeedr><lfeed><p><lfeedr><lfeed>To start the questionnaire<aComma> please click the "Next" button. To learn more about any terms highlighted in blue<aComma> simply tap them.<lfeedr><lfeed></p>,,,28,,,,English,2014-04-08 23:25:54.816570,hasTemplateAndFunction,,splash
+TableSeparator,Question
+HeaderLine,description,explanation,helpText,id,imageFileName,imageFilePath,imageFileType,language,lastUpdate,questionTag,questionText,responseType
+Record,family history,Ashkenazi Jewish relatives,,1,,,,English,2014-06-04 01:17:31.567536,ashkenaziJewishCloseRels,Is any close blood relative <lfeedr><lfeed><a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"<lfeedr><lfeed>href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>. <lfeedr><lfeed><i>Ashkenazi Jewish people have a higher chance of BRCA gene mutations</i>.,YesNoField
+Record,family history,Ashkenazi Jewish relatives,,2,,,,English,2014-04-08 23:25:55.088067,ashkenaziJewishOneRel,Do you have at least one close blood relative who is <lfeedr><lfeed><a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"<lfeedr><lfeed>href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  <lfeedr><lfeed><i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>.,YesNoField
+Record,family history,,,3,,,,English,2014-04-08 23:25:55.089245,fHxBrCAMale,Has any <u>male</u> blood relative had breast cancer?,YesNoField
+Record,family history,List additional cancers in family.,,4,,,,English,2014-06-04 01:24:58.737378,fHxBrCAOther,For any of your close blood relatives who had breast cancer<aComma> please indicate if that same relative also had any of the following conditions  (check all that apply):,MultipleChoiceField
+Record,family history,,,5,,,,English,2014-04-08 23:25:55.091207,fHxBrCASameSideGE2,Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?,YesNoField
+Record,family history,These mutations are also found in 10 to 15 women out of 100 who get ovarian cancer.,,6,,,,English,2014-06-04 01:17:31.558622,fHxBrCASuscGene,Have any close blood relatives been confirmed to have <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a>?,YesNoField
+Record,family history,Breast cancer - cancer that starts in breast cells. Several types of cells in the breast that may form cancers.,,7,,,,English,2014-04-08 23:25:55.092926,fHxBreastCA,Have any close blood relatives had breast cancer?,YesNoField
+Record,family history,,,8,,,,English,2014-04-08 23:25:55.093858,fHxOvarianCA,Have any of your close blood relatives ever had ovarian cancer?,YesNoField
+Record,family history,,,9,,,,English,2014-04-08 23:25:55.094660,fHxSufficient,Have any of your female close blood relatives lived beyond age 45 years?,YesNoField
+Record,patient history,,,16,,,,English,2014-06-04 01:09:05.115378,pHxBrCA3Neg,Was your cancer <u>“triple negative”</u><aComma> without receptors for estrogen<aComma> progesterone and HER2?,YesNoField
+Record,family history,,,17,,,,English,2014-04-08 23:25:55.101058,pHxBrCAGE1RelBrCALE50Years,Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?,YesNoField
+Record,family history,,,18,,,,English,2014-04-08 23:25:55.101754,pHxBrCAGE2RelBrPancCA,Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?,YesNoField
+Record,patient history,,,19,,,,English,2014-06-04 01:09:05.124932,pHxBrCAGT1PrimaryBoth,Have you had cancer in <u>both</u> breasts?,YesNoField
+Record,patient history,,,20,,,,English,2014-06-04 01:09:05.120252,pHxBrCAGT1PrimarySame,Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?,YesNoField
+Record,patient history,,,21,,,,English,2014-06-04 01:09:05.102697,pHxBrCALE50Yrs,What was your age when your breast cancer was <u>first</u> diagnosed?,SingleChoiceField
+Record,patient history of other cancers,List additional cancers had by patient.,,22,,,,English,2014-04-08 23:25:55.104636,pHxBrCAOther,Please indicate any of the following conditions you have had:,MultipleChoiceField
+Record,patient history,Breast cancer - cancer that starts in breast cells. Several types of cells in the breast that may form cancers.,,25,,,,English,2014-04-08 23:25:55.106619,pHxBreastCA,Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.,YesNoField
+Record,Patient history of ovarian Cancer.,,,40,,,,English,2014-04-08 23:25:55.116791,pHxOvarianCA,Have you ever had ovarian cancer?,YesNoField
+TableSeparator,ProjectQuestionnaire
+HeaderLine,id,projectID,questionnaireID,questionnaireStatus,recordType
+Record,2,1,2,enabled,connection
+TableSeparator,PageQuestion
+HeaderLine,id,pageID,questionGroup,questionID,questionSequence
+Record,29,14,1,25,1
+Record,34,16,1,17,1
+Record,35,16,1,18,2
+Record,36,16,1,2,3
+Record,37,17,1,22,1
+Record,41,19,1,3,1
+Record,42,19,1,5,2
+Record,27,12,1,40,001
+Record,28,13,1,8,001
+Record,30,15,1,21,001
+Record,31,15,1,16,002
+Record,32,15,1,20,003
+Record,33,15,1,19,004
+Record,38,18,1,6,001
+Record,39,18,1,7,002
+Record,40,18,1,1,003
+Record,44,21,1,9,001
+Record,43,20,1,4,001
+TableSeparator,ResponseChoice
+HeaderLine,choiceSequence,choiceTag,choiceText,choiceType,id,questionID
+Record,01,Yes,Age 50 or under,notUsed,13,21
+Record,01,fHxBrCADermMan,Breast cancer involving the skin overlying the breast,notUsed,1,4
+Record,02,fHxBrCAThyroidCA,Thyroid cancer,BooleanField,463,4
+Record,02,pHxBrCAThyroidCA,Thyroid cancer,notUsed,15,22
+Record,02,No,Age 51 or older,notUsed,14,21
+Record,03,fHxBrCASarcoma,Sarcoma,notUsed,3,4
+Record,03,pHxBrCASarcoma,Sarcoma,notUsed,16,22
+Record,04,pHxBrCAAdrenalCA,Adrenal cancer,notUsed,17,22
+Record,04,fHxBrCAAdrenalCA,Adrenal cancer,notUsed,4,4
+Record,05,pHxBrCAEndometrialCA,Cancer of the uterus,notUsed,18,22
+Record,05,fHxBrCAEndometrialCA,Cancer of the uterus,notUsed,5,4
+Record,06,pHxBrCAPancreaticCA,Pancreatic cancer,notUsed,19,22
+Record,06,fHxBrCAPancreaticCA,Pancreatic cancer,notUsed,6,4
+Record,07,fHxBrCABrainTumors,Brain tumors,notUsed,7,4
+Record,07,pHxBrCABrainTumors,Brain tumors,notUsed,20,22
+Record,08,pHxBrCAGastricCA,Stomach cancer,notUsed,21,22
+Record,08,fHxBrCAGastricCA,Stomach cancer,notUsed,8,4
+Record,09,fHxBrCALeukLymphoma,Leukemia or lymphoma,notUsed,9,4
+Record,09,pHxBrCALeukLymphoma,Leukemia or lymphoma,notUsed,22,22
+TableSeparator,ProjectAttributes
+HeaderLine,id,keyCategory,keyDescription,keyName,keyValue,projectID
+Record,1,,,Display,,1
+TableSeparator,PageAnalysis
+HeaderLine,id,pageID,questionnaireID,testCondition,testResultFlag,testResultFlagDescription,testResultFlagPriority
+Record,14,13,2,[(u'fHxOvarianCA'<aComma> u'Yes')],Referral,Referral flag,a
+Record,15,12,2,[(u'pHxOvarianCA'<aComma> u'Yes')],Referral,Referral flag,a
+Record,16,21,2,[(u'fHxSufficient'<aComma> u'No')],Indeterminate,Need more information,b
+Record,17,16,2,anyYesButton,Referral,Referral flag,a
+Record,18,19,2,anyYesButton,Referral,Referral flag,a
+Record,19,15,2,anyYesButton,Referral,Referral flag,a
+Record,20,17,2,anySelectedButton,Referral,Referral flag,a
+Record,21,20,2,anySelectedButton,Referral,Referral flag,a

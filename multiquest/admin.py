@@ -26,3 +26,5 @@ admin.site.register(PageAttributes)
 admin.site.register(SubmissionAnalysis)
 admin.site.register(RiskCalculation)
 admin.site.register(RiskSubmission)
+admin.site.register(RequestLog)
+

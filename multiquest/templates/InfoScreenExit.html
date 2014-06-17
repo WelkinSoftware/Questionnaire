@@ -14,11 +14,11 @@
 		</p>
     {% endfor %}
     {% endif %}
-
+url is:  /{{wsgiPrefix}}/multiquest/registration/userLanding/
 {% if altURL and altURLannot %}
 <p>Click <a href=altURL>here</a> {{altURLannot}}</p>
 {% else %}
-<p>Click <a href="/{{settings.WSGI_URL_PREFIX}}multiquest/registration/userLanding/">here</a> to return to the home page</p>
+<p>Click <a href="http://localhost:8000/multiquest/registration/userLanding/">here</a> to return to the home page</p>
 {% endif %}
 
 </body>

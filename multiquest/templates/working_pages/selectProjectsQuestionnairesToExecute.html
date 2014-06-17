@@ -9,7 +9,8 @@
 
 <form action="" method="post" >{% csrf_token %}
 	
-	<h3>The following lists Questionnaires and corresponding Projects. Click "Select" to execute.</h3>
+	<h3>The following table displays and includes links to various questionnaires.<br>
+Click the box in the “Select” column to execute the corresponding questionnaire.</h3>
 	
 	{% if currentProjectDefault %}
 		<p>The current project is "{{currentProjectDefault.shortTag}}" with the name: "{{currentProjectDefault.name}}".</p>

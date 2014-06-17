@@ -53,6 +53,10 @@ multipleChoiceTypes = [
 
 autoDebugFlag = 'debugSessionFlag'
 
+# for deleting old records in the table "RequestLog"
+recNumTrigger = 60 # triggers deletion of old records
+numDelRequestLogs = 10 # number of RequestLog records to delete.
+
 class ArticleForm(forms.Form):
 	title = forms.CharField()
 	pub_date = forms.DateField()
@@ -315,7 +319,217 @@ def getAssociatedProjectForUser(theUser):
 	except:
 		theProject=None
 	return theProject
+
+@login_required()
+def uploadDownloadQuestionnaire(request):
+	"""Dumps a csv-type file of the default Questionnaire.
+
+	This is a one line or more descriptive summary.
+	Blah Blah Blah.
+
+	Args:
+		argument_one: This is of some type a and does x.
+		arg....:...
+
+	Returns:
+		http response 	
+
+	Raises:
+		none.
+	"""
+	DebugOut('uploadDownloadQuestionnaire:  enter')
+	errMsg = ''
+#Standards: “Handling Session values of Project and Questionnaire” for Groups
+	[theProject, theQuestionnaire] = getSessionQuestionnaireProject(request)
+	theUser = request.user
+	if not theProject:
+			theProject = getAssociatedProjectForUser(theUser)
+	if not theQuestionnaire:
+		errMsg = ['The questionnaire has not been selected']
+		redirectURL = registrationURL_base + 'selectQuestionnaireDefault/'
+		DebugOut('No questionnaire selected, so redirect to: %s' %redirectURL)
+		return HttpResponseRedirect(redirectURL)
+	workingQuestionnaireTag = theQuestionnaire.shortTag
+	if not theProject:
+		# select a project.
+		DebugOut('The Project has not been selected')
+		errMsg = ['The Project has not been selected']
+		redirectURL = registrationURL_base + 'selectProjectDefault/'
+		DebugOut('No project, so redirect to: %s' %redirectURL)
+		return HttpResponseRedirect(redirectURL)
+	theProjectTag = theProject.shortTag
+	DebugOut('Project: %s, Questionnaire: %s' %(theProject.shortTag, theQuestionnaire.shortTag))
 	
+	if request.method == 'POST':
+		if 'dumpQuestionnaireSpecification' in request.POST:
+			redirectURL = url_base + 'working_pages/dumpQuestionnaireSpecification/'
+			return HttpResponseRedirect(redirectURL)
+		elif 'uploadQuestionnaireSpecification' in request.POST:
+			DebugOut('in uploadQuestionnaireSpecification')
+			redirectURL = url_base + 'working_pages/uploadQuestionnaireSpecification/'
+			return HttpResponseRedirect(redirectURL)
+		elif 'returnToHome' in request.POST:
+			redirectURL = registrationURL_base + 'userLanding/'
+			DebugOut('selectProjectDefault:  exit to %s'%redirectURL)
+			return HttpResponseRedirect(redirectURL)
+	
+	currentContext = {
+		'theProject' : theProject,
+		'theUser' : theUser,
+		'theQuestionnaire' : theQuestionnaire,
+		'errMsg' : errMsg,
+		}
+	DebugOut('uploadDownloadQuestionnaire: exit')
+	return render(request,'working_pages/uploadDownloadQuestionnaire.html',
+		currentContext)
+
+@login_required()
+def uploadQuestionnaireSpecification(request):
+	"""Loads a csv-type file of a Questionnaire specification.
+
+	The text-editable file is a serialization of the database.
+
+	Args:
+		http request
+		
+	Returns:
+		http response 	
+
+	Raises:
+		none.
+	"""
+	DebugOut('uploadQuestionnaireSpecification: Enter')
+	errMsg = []
+	DebugOut('User is: %s'%request.user)
+	if request.method == 'POST':
+		DebugOut('in UploadQuestionnaire')
+		DebugOut('request.POST:  %s'%request.POST)
+		theForm = UploadFileForm(request.POST, request.FILES)
+		if 'returnToHome' in request.POST:
+			redirectURL = registrationURL_base + 'userLanding/'
+			DebugOut('selectProjectDefault:  exit to %s'%redirectURL)
+			return HttpResponseRedirect(redirectURL)
+		if theForm.is_valid():
+# 			handle_uploaded_file(request.FILES['theFile'])
+			errMsg.append('This feature is under development.')
+			urlPrefix = request.get_host()+settings.WSGI_URL_PREFIX
+			return render(request, 'InfoScreenExit.html', { 'errMsg': errMsg, 'wsgiPrefix':urlPrefix})
+		else:
+			DebugOut('Form errors %s'%theForm.errors)
+	else:
+		DebugOut('Not a POST')
+		theForm = UploadFileForm()
+
+	DebugOut('uploadQuestionnaireSpecification: Exit')
+	return render(request,'working_pages/uploadQuestionnaireSpecification.html', {'theForm': theForm})
+
+@login_required()
+def handle_uploaded_file(thePost):
+	DebugOut('handle_uploaded_file: enter')
+	
+	return
+
+@login_required()
+def dumpQuestionnaireSpecification(request):
+	"""Dumps a csv-type file of the default Questionnaire.
+
+	This is a one line or more descriptive summary.
+	Blah Blah Blah.
+
+	Args:
+		argument_one: This is of some type a and does x.
+		arg....:...
+
+	Returns:
+		http response 	
+
+	Raises:
+		none.
+	"""
+	DebugOut('dumpQuestionnaireSpecification: Enter')
+	errMsg = []
+	[theProject, theQuestionnaire] = getSessionQuestionnaireProject(request)
+	# Create the HttpResponse object with the appropriate CSV header.
+	response = HttpResponse(content_type='text/csv')
+	now = str(timezone.now())
+	questionnaireSpecFileName = "Questionnaire specification %s_%s"%(theProject.shortTag, theQuestionnaire.shortTag)
+	contentDispo = 'attachment; filename=' + '"' + questionnaireSpecFileName + '"'
+	response['Content-Disposition'] = contentDispo
+
+	response.write('ProjectSeparator'+os.linesep)
+	# Dump Project record
+	# make project pointer into a queryset which adheres to dumpQuerySet requirements
+	projectQS = Project.objects.filter(id=theProject.id)
+	nRecs = dumpQuerySet(response, projectQS)
+	DebugOut('Project nRecs: %s'%nRecs)
+	
+	# dump questionnaire record
+	questionnaireQS = Questionnaire.objects.filter(id=theQuestionnaire.id)
+	nRecs = dumpQuerySet(response, questionnaireQS)
+	DebugOut('Questionnaire nRecs: %s'%nRecs)
+	
+	# dump Pages
+	pageQS = getAllPageObjsForQuestionnaire(theQuestionnaire)
+	nRecs = dumpQuerySet(response, pageQS)
+	DebugOut('Page nRecs: %s'%nRecs)
+	
+	# dump Questions
+	questQS = getAllQuestionObjsForQuestionnaire(theQuestionnaire)
+	nRecs = dumpQuerySet(response, questQS)
+	DebugOut('Question nRecs: %s'%nRecs)
+	
+	# dump ProjectQuestionnaire
+	pqQS = ProjectQuestionnaire.objects.filter(
+		projectID=theProject,
+		questionnaireID=theQuestionnaire,
+		)
+	nRecs = dumpQuerySet(response, pqQS)
+	DebugOut('ProjectQuestionnaire nRecs: %s'%nRecs)
+	
+	# Dump PageQuestion table
+	# build an "or" query to include all pages
+	# initialize query
+	queryOR = Q(pageID=pageQS[0])
+	for anID in pageQS[1:]:
+		queryOR = queryOR | Q(pageID=anID)
+	PageQuestionQS = PageQuestion.objects.filter(queryOR)
+	nRecs = dumpQuerySet(response, PageQuestionQS)
+	DebugOut('PageQuestion nRecs: %s'%nRecs)
+
+	# Dump ResponseChoice table
+	# build an "or" query to include all pages
+	# initialize query
+	queryOR = Q(questionID=questQS[0])
+	for anID in questQS[1:]:
+		queryOR = queryOR | Q(questionID=anID)
+	ResponseChoiceQS = ResponseChoice.objects.filter(queryOR)
+	nRecs = dumpQuerySet(response, ResponseChoiceQS)
+	DebugOut('ResponseChoice nRecs: %s'%nRecs)
+
+	# Dump ProjectAttributes table
+	ProjectAttributesQS = ProjectAttributes.objects.filter(projectID=theProject)
+	nRecs = dumpQuerySet(response, ProjectAttributesQS)
+	DebugOut('ProjectAttributes nRecs: %s'%nRecs)
+
+	# Dump QuestionnaireAttributes table
+	QuestionnaireAttributesQS = QuestionnaireAttributes.objects.filter(questionnaireID=theQuestionnaire)
+	nRecs = dumpQuerySet(response, QuestionnaireAttributesQS)
+	DebugOut('QuestionnaireAttributes nRecs: %s'%nRecs)
+	
+	# Dump PageAnalysis table
+	PageAnalysisQS = PageAnalysis.objects.filter(questionnaireID=theQuestionnaire)
+	nRecs = dumpQuerySet(response, PageAnalysisQS)
+	DebugOut('PageAnalysis nRecs: %s'%nRecs)
+	
+	# Dump PageAttribute table
+	PageAttributesQS = PageAttributes.objects.all()
+	nRecs = dumpQuerySet(response, PageAttributesQS)
+	DebugOut('PageAttribute nRecs: %s'%nRecs)
+		
+	DebugOut('dumpQuestionnaireSpecification: Exit')
+	return response
+
+
 @login_required()
 def userLanding(request):
 	"""
@@ -328,6 +542,7 @@ def userLanding(request):
 	Untouched.
 	"""
 	DebugOut('userLanding: enter')
+	requestLog(request, 'UserLanding')
 	errMsg = []
 	theUser = request.user
 	DebugOut('the user is: %s' %theUser)
@@ -347,6 +562,12 @@ def userLanding(request):
 	theQuestionnaire = getSessionQuestionnaire(request) # May be None
 	
 	if request.method == 'POST':
+		if request.session.test_cookie_worked(): # check for cookie function
+			DebugOut('userLanding: Cookies worked fine!')
+		else:
+			errMess=['Please enable cookies in your browser.']
+			DebugOut('splash: Please enable cookies in your browser.')
+			return render(request, 'system_error.html', {'syserrmsg': errMess})
 		if 'differentProject' in request.POST:
 			redirectURL = registrationURL_base + 'selectProjectDefault/'
 			return HttpResponseRedirect(redirectURL)
@@ -370,6 +591,12 @@ def userLanding(request):
 		elif 'createPageTransition' in request.POST:
 			redirectURL = url_base + 'working_pages/setPageToPageTransitionCalculated/'
 			return HttpResponseRedirect(redirectURL)
+		elif 'setGlobalFlags' in request.POST:
+			redirectURL = url_base + 'working_pages/setGlobalFlags/'
+			return HttpResponseRedirect(redirectURL)
+		elif 'setPageToPageTransitionGlobalFlags' in request.POST:
+			redirectURL = url_base + 'working_pages/setPageToPageTransitionGlobalFlags/'
+			return HttpResponseRedirect(redirectURL)
 		elif 'editDefaultPageTransitions' in request.POST:
 			redirectURL = url_base + 'working_pages/editDefaultPageTransitions/'
 			return HttpResponseRedirect(redirectURL)
@@ -378,6 +605,9 @@ def userLanding(request):
 			return HttpResponseRedirect(redirectURL)
 		elif 'createProjectWithSamples' in request.POST:
 			redirectURL = url_base + 'working_pages/createProjectWithSamples/'
+			return HttpResponseRedirect(redirectURL)
+		elif 'uploadDownloadQuestionnaire' in request.POST:
+			redirectURL = url_base + 'working_pages/uploadDownloadQuestionnaire/'
 			return HttpResponseRedirect(redirectURL)
 		elif 'dumpSubmissionDataForProject' in request.POST:
 			redirectURL = url_base + 'working_pages/dumpSubmissionDataForProject/'
@@ -394,6 +624,9 @@ def userLanding(request):
 		elif 'bulkPageEdit' in request.POST:
 			redirectURL = url_base + 'working_pages/bulkPageEdit/'
 			return HttpResponseRedirect(redirectURL)
+		elif 'editQuestionNames' in request.POST:
+			redirectURL = url_base + 'working_pages/editQuestionNames/'
+			return HttpResponseRedirect(redirectURL)
 		elif 'bulkQuestionEdit' in request.POST:
 			redirectURL = url_base + 'working_pages/bulkQuestionEdit/'
 			return HttpResponseRedirect(redirectURL)
@@ -406,13 +639,16 @@ def userLanding(request):
 		elif 'logout' in request.POST:
 			redirectURL = url_base + 'registration/logout/'
 			return HttpResponseRedirect(redirectURL)
-#http://10.0.1.73:8000/multiquest/working_pages/savecsvDecoder/
+	#http://10.0.1.73:8000/multiquest/working_pages/savecsvDecoder/
 	currentContext = {
+		'current_date' : timezone.now(),
+		'thishost' : request.get_host(),
 		'theProject' : theProject,
 		'theUser' : theUser,
 		'theQuestionnaire' : theQuestionnaire,
 		'errMsg' : errMsg,
 		}
+	request.session.set_test_cookie() # Set test cookie to test in next POST
 	DebugOut('userLanding: exit')
 	return render(request,'registration/userLanding.html',
 		currentContext)
@@ -627,6 +863,41 @@ def listRegistration(request):
 		'back_toPrompt' : 'Return to the Introduction Page',
 		'errMsg' : errMsg,
 		})
+		
+def requestLog(request, otherInfo):
+	"""Collects information from the Request object and updates table RequestLog.
+	"""
+	# check the number of records in the table
+	numRecs=RequestLog.objects.count()
+	if numRecs >= recNumTrigger:
+		# select the oldest records then delete
+		toBeDeleted=RequestLog.objects.order_by('lastUpdate')[0:numDelRequestLogs]
+		for aRec in toBeDeleted:
+			aRec.delete()
+			DebugOut('Record deleted')
+	values = request.META
+	theRequestObj=RequestLog.objects.create(
+		otherInfo = otherInfo[0:99],
+		CONTENT_LENGTH = values.get('CONTENT_LENGTH','')[0:99],
+		CONTENT_TYPE = values.get('CONTENT_TYPE','')[0:99],
+		HTTP_HOST = values.get('HTTP_HOST','')[0:99],
+		HTTP_REFERER = values.get('HTTP_REFERER','')[0:99],
+		HTTP_USER_AGENT = values.get('HTTP_USER_AGENT','')[0:99],
+		QUERY_STRING = values.get('QUERY_STRING','')[0:99],
+		REMOTE_ADDR = values.get('REMOTE_ADDR','')[0:99],
+		REMOTE_HOST = values.get('REMOTE_HOST','')[0:99],
+		REMOTE_USER = values.get('REMOTE_USER','')[0:99],
+		REQUEST_METHOD = values.get('REQUEST_METHOD','')[0:99],
+		SERVER_NAME = values.get('SERVER_NAME','')[0:99],
+		SERVER_PORT = values.get('SERVER_PORT','')[0:99],
+		USER = values.get('USER','')[0:99],
+		PATH = values.get('PATH','')[0:99],
+		PATH_INFO = values.get('PATH_INFO','')[0:99],
+		PWD = values.get('PWD','')[0:99],
+		)
+		
+	return
+	
 	
 def intro(request):
 	DebugOut('intro:  enter')
@@ -644,7 +915,8 @@ def intro(request):
 	else:
 		questionnaireName = ''
 	
-	introContext = {'current_date' : timezone.now(),
+	introContext = {
+		'current_date' : timezone.now(),
 		'thishost' : request.get_host(),
 		'back_to' : 'multiquest/intro/',
 		'projectName' : projectName,
@@ -1790,11 +2062,21 @@ def editQuestionnaire(request):
 		
 	if request.method == 'POST':
 		DebugOut('after POST')
+# 		DebugOut('request.POST:  %s'%request.POST)
 		if 'acceptEdits' in request.POST: # accept questionnaire edits
 			DebugOut('after submitButton')
 			theForm = editQuestionnaireForm(request.POST)
 			if theForm.is_valid():
 				DebugOut('Form is valid')
+				# check if project change selected.
+				if 'ProjectSelect' in request.POST:
+					newProjectTag = request.POST['ProjectSelect']
+					DebugOut('newProjectTag: %s'%newProjectTag)
+					newProjectObj = getProjectObj( newProjectTag)
+					setSessionProject(request, newProjectObj)
+					setProjectForQuestionnaire(newProjectObj, theQuestionnaire)
+					theProject=newProjectObj
+					theProjectTag=newProjectTag
 				# check the questionnaire tag for identity with an existing tag
 				cleanedData = theForm.cleaned_data
 				DebugOut('Cleaned data:  %s' %cleanedData)
@@ -1856,11 +2138,13 @@ def editQuestionnaire(request):
 	language=theQuestionnaire.language
 	questTags = getQuestionnaireTagsForProject(theProject)
 	questTagsList = ', '.join(questTags)
+	allProjectTags = getAllProjectTags()
 	
 	currentContext = {
 		'theForm' : theForm,
 		'questTagsList' : questTagsList,
 		'theProjectTag' : theProjectTag,
+		'allProjectTags' : allProjectTags,
 		'workingQuestionnaireTag' : workingQuestionnaireTag,
 		'questName' : questName,
 		'firstPageInQuestTag' : firstPageInQuestTag,
@@ -2029,8 +2313,9 @@ def bulkPageEdit(request):
 	
 	# Make sure this page is part of the project! Might have switched questionnaires
 	allPages = getAllPageObjsForQuestionnaire(theQuestionnaire)
+	allPageTags = [ap.shortTag for ap in allPages]
 	if thisPageObj not in allPages:
-		thisPageObj = firstPageObj
+		thisPageObj = firstPageObj # choose the first page not legal. Should not happen!
 	
 	initialValues ={ # for forms initial data
 		'pageTitle' : theQuestionnaire.pageTitle,
@@ -2073,36 +2358,40 @@ def bulkPageEdit(request):
 					thisPageObj.epilogue = cleanedData['epilogue']
 					isPageUpdated = True
 				if isPageUpdated: # so update the Page record
-					if thisPageObj.shortTag == '' and thisPageObj.id:
-						thisPageObj.shortTag = 'PageRecord_'+str(thisPageObj.id)
-					elif thisPageObj.shortTag == '':
-						thisPageObj.shortTag = 'Page'
+					if thisPageObj.shortTag == '':
+						# Invent a name of the name is null in the object (may or may not be saved)
+						newShortTag = 'Page'
+						maxLength = 30
+						newUniqueName = makeUniqueTag( allPageTags, newShortTag, maxLength)
+						thisPageObj.shortTag = newUniqueName
 					DebugOut('Page updated %s' %thisPageObj.shortTag)
 					infoMsg.append('Page updated')
 					thisPageObj.save() # remove for sessionstest**************
 				# Update the Question record.
-				questionCount = 1
+				questionCount = 0
 				for theQuestion in thePageQuestions: # already sorted in order of appearance on page
+					questionCount+=1
 					theQuestionFormTag = 'QuestionText_'+str(questionCount)
 					theQuestionTypeTag = 'QuestionType_'+str(questionCount)
-					questSeq = str(questionCount).zfill(2)
+					DebugOut('questionCount: %s'%questionCount)
+					questSeq = str(questionCount).zfill(3) # will be character sorted
 					questionText = theQuestion.questionText
-					questionTag = theQuestion.questionTag
-					if questionTag == '':
-						questionTag = questSeq # Kludge - put a non-blank tag in
+					if theQuestion.questionTag == '':
+						theQuestion.questionTag = 'Quest'+questSeq # Kludge - insert a non-blank tag
 					updatedQuestionText = cleanedData[theQuestionFormTag]
 					responseType = theQuestion.responseType
 					upatedResponseType = cleanedData[theQuestionTypeTag]
 					DebugOut('Question text: %s' %questionText)
 					DebugOut('Question form tag: %s' %theQuestionFormTag)
-					if updatedQuestionText == '':
-						DebugOut('Question text is blank')
+					if updatedQuestionText == '': # signal to delete the Question if it exists in the DB
+						DebugOut('Question text is blank') # therefore delete
 						if theQuestion.id: # avoid AssertionError if id set to None
 							DebugOut('Question "%s" deleted'%theQuestionFormTag)
 							theQuestion.delete()
+						continue # continue to the next question
 					elif questionText != updatedQuestionText or responseType != upatedResponseType: # so update
 						theQuestion.questionText = updatedQuestionText
-						if updatedQuestionText:
+						if upatedResponseType:
 							theQuestion.responseType = upatedResponseType
 						elif not responseType:
 							theQuestion.responseType = 'CharField'
@@ -2111,12 +2400,10 @@ def bulkPageEdit(request):
 						theQuestion.save() # remove for sessionstest**************
 						# Update or create the PageRecord table
 						updatePageQuestionSequence(thisPageObj,theQuestion, questSeq)
-						questionCount+=1
 					else:
 						DebugOut('Question NOT updated %s' %theQuestionFormTag)
 						# however, update PageQuestion table which might have changed due to deletions
 						updatePageQuestionSequence(thisPageObj,theQuestion, questSeq)
-						questionCount+=1
 # 					theResponses = ResponseChoice.objects.order_by('choiceSequence').filter(questionID=theQuestion)
 					theResponses = theResponseChoices.order_by('choiceSequence').filter(questionID=theQuestion)
 					numResponses = theResponses.count()
@@ -2130,33 +2417,45 @@ def bulkPageEdit(request):
 						blkResp = ResponseChoice(
 							questionID = theQuestion,
 							)
-						responseObjList.append(blkResp)
+						responseObjList.append(blkResp) # add blank response to the end.
 						if numResponses == 0: # first entry
 							# A newly created multiple choice has no "choices", so add an entry
 							# Add text as if the user created the entry
 							cleanedData.update({'Choice_'+str(1):'this is choice 1'})
 					else:
 						responseObjList = []
-					choiceCount=1
+					choiceCount=0
 					for aResponse in responseObjList:
+						choiceCount+=1
+						DebugOut('choiceCount: %s'%choiceCount)
 						choiceTag = 'Choice_'+str(choiceCount)
-						choiceText = aResponse.choiceText
+						choiceSequence = str(choiceCount).zfill(2) # zfill pads a string with zeroes
 						updatedChoiceText = cleanedData.get(choiceTag,'')
+						isResponseChoiceUpdated = False
 						if updatedChoiceText == '': # blank so delete the record
 							DebugOut('updatedChoiceText text is blank')
 							if aResponse.id: # avoid AssertionError if id set to None
 								aResponse.delete()
 								DebugOut('Choice "%s" deleted'%choiceTag)
-						elif aResponse.choiceText != cleanedData[choiceTag]: # so update
-							aResponse.choiceText = cleanedData[choiceTag]
-							aResponse.choiceSequence = str(choiceCount).zfill(2) # zfill pads a string with zeroes
-							DebugOut('ResponseChoice updated %s' %choiceTag)
-							aResponse.save()
-							choiceCount+=1
+							continue # continue to next choice
+						elif aResponse.choiceText != updatedChoiceText: # so update
+							aResponse.choiceText = updatedChoiceText
+							if aResponse.choiceTag == '':
+								aResponse.choiceTag = choiceTag
+							aResponse.choiceSequence = choiceSequence
+							DebugOut('ResponseChoice choiceTag updated %s' %choiceTag)
+							DebugOut('ResponseChoice choiceText updated %s' %cleanedData[choiceTag])
+							isResponseChoiceUpdated = True
 						else:
-							aResponse.choiceSequence = str(choiceCount).zfill(2) # zfill pads a string with zeroes
-							choiceCount+=1
-							DebugOut('ResponseChoice text NOT updated %s. Sequence number is updated.' %choiceTag)
+							if aResponse.choiceTag == '':
+								aResponse.choiceTag = choiceTag
+								isResponseChoiceUpdated = True
+								DebugOut('ResponseChoice choiceTag was null, now is updated.' %choiceTag)
+							if aResponse.choiceSequence != choiceSequence:
+								aResponse.choiceSequence = choiceSequence
+								isResponseChoiceUpdated = True
+								DebugOut('ResponseChoice Sequence number is updated.' %choiceTag)
+						aResponse.save()
 			else:
 				msg = 'Page edits not accepted'
 				DebugOut(msg)
@@ -2169,7 +2468,6 @@ def bulkPageEdit(request):
 				DebugOut('after newPageTag: %s'%newShortTag)
 				# subtract the current page name
 				# find all existing page shortTag's for this questionnaire
-				allPageTags = getAllPageTags(theQuestionnaire)
 				if newShortTag == thisPageObj.shortTag: # name is unchanged
 					infoMsg.append('Page name unchanged.')
 				elif newShortTag in allPageTags: # Different from current, but not unique among all tags
@@ -2210,7 +2508,6 @@ def bulkPageEdit(request):
 			if 'newPageTag' in request.POST:
 				newShortTag = request.POST['newPageTag']
 				# find all page shortTag's for this questionnaire
-				allPageTags = getAllPageTags(theQuestionnaire)
 				if newShortTag in allPageTags: # not unique
 					maxLength = 30
 					newUniqueName = makeUniqueTag( allPageTags, newShortTag, maxLength)
@@ -2230,7 +2527,6 @@ def bulkPageEdit(request):
 			if 'newPageTag' in request.POST:
 				newShortTag = request.POST['newPageTag']
 				# find all page shortTag's for this questionnaire
-				allPageTags = getAllPageTags(theQuestionnaire)
 				if newShortTag in allPageTags: # not unique
 					maxLength = 30
 					newUniqueName = makeUniqueTag( allPageTags, newShortTag, maxLength)
@@ -2308,7 +2604,6 @@ def bulkPageEdit(request):
 		'theQuestionnaire' : theQuestionnaire, # object
 		'thisPageObj' : thisPageObj, # object
 		'thePageQuestions' : thePageQuestions, # query set
-		'theResponseChoices' : theResponseChoices, # query set
 		'thisPageTag' : thisPageObj.shortTag,
 		'errMsg' : errMsg,
 		'infoMsg' : infoMsg,
@@ -2316,6 +2611,112 @@ def bulkPageEdit(request):
 	DebugOut('bulkPageEdit:  exit')
 	return render(request, 'working_pages/bulkPageEdit.html', currentContext)
 
+@login_required()
+def editQuestionNames( request):
+	"""All questions in the entire questionnaire are presented in table form.
+	Various aspects can be edited:  including the question names.
+	"""
+	def makeQuestionInfoList(allQuestions):
+		allQuestionInfo = []
+		ii = 0
+		for aQuestion in allQuestions:
+			# get all Pages where this Question appears.
+			pageTagList = []
+			allPQs = PageQuestion.objects.filter(questionID=aQuestion)
+			allTags = [aPQ.pageID.shortTag for aPQ in allPQs] # list comprehension
+			tagListStr = ', '.join(allTags)
+			aRow = [
+				aQuestion.questionText, # Text
+				aQuestion.questionTag,	# Short tag
+				aQuestion.explanation,	# Explanation (viewed by respondent)
+				aQuestion.description,	# Description (not viewed by respondent)
+				aQuestion.responseType,	# Response type
+				str(tagListStr),		# pages which contain this question
+				str(aQuestion.id),			# Question record number
+				]
+			allQuestionInfo.append(aRow)
+			ii += 1
+		return allQuestionInfo
+	DebugOut('editQuestionNames:  enter')
+	errMsg = [] # Initialize error messages
+	# get default Project and Questionnaire
+	[theProject, theQuestionnaire] = getSessionQuestionnaireProject(request)
+	DebugOut('Project: %s, Questionnaire: %s' %(theProject, theQuestionnaire))
+	if not theProject:
+		# select a project.
+		DebugOut('The Project has not been selected')
+		errMsg = ['The Project has not been selected']
+		redirectURL = registrationURL_base + 'selectProjectDefault/'
+		DebugOut('No project, so redirect to: %s' %redirectURL)
+		return HttpResponseRedirect(redirectURL)
+
+	if not theQuestionnaire:
+		errMsg = ['The questionnaire has not been selected']
+		redirectURL = registrationURL_base + 'selectQuestionnaireDefault/'
+		DebugOut('No questionnaire selected, so redirect to: %s' %redirectURL)
+		return HttpResponseRedirect(redirectURL)
+	theQuestionnaireTag = theQuestionnaire.shortTag
+	theProjectTag = theProject.shortTag
+	# get all possible questions and question tags
+	allQuestions = getAllQuestionObjsForQuestionnaire(theQuestionnaire)
+	allQuestionInfo = makeQuestionInfoList(allQuestions)
+	# List the columns in the Question model
+	colList = [
+		'Text',
+		'Short tag',
+		'Explanation',
+		'Description (not viewed by respondent)',
+		'Response type',
+		"Page Tag('s)",
+		]
+	
+	if request.method == 'POST':
+		DebugOut('after POST')
+		DebugOut('request.POST: %s'%request.POST)
+		DebugOut('request.POST type: %s'%type(request.POST))
+		if 'acceptEdits' in request.POST: # accept questionnaire edits
+			# search for any changes in the data
+			for aRow in allQuestionInfo:
+				theQRec = aRow[6] # the record number
+				theQuestion = allQuestions.get(id=int(theQRec))
+				# Test each field for an update.
+				updateRecord = False
+				if request.POST['ShortTag_Rec_'+theQRec] != theQuestion.questionTag:
+					theQuestion.questionTag = request.POST['ShortTag_Rec_'+theQRec]
+					updateRecord = True
+				if request.POST['Descr_Rec_'+theQRec] != theQuestion.description:
+					theQuestion.description = request.POST['Descr_Rec_'+theQRec]
+					updateRecord = True
+				if updateRecord:
+					theQuestion.save()
+					DebugOut('Record "%s" updated'%theQRec)
+			allQuestions = getAllQuestionObjsForQuestionnaire(theQuestionnaire)
+			allQuestionInfo = makeQuestionInfoList(allQuestions)
+		elif 'returnToHome' in request.POST:
+			redirectURL = registrationURL_base + 'userLanding/'
+			DebugOut('selectProjectDefault:  exit to %s'%redirectURL)
+			return HttpResponseRedirect(redirectURL)
+		else:
+			pass #Unknown button hit
+			DebugOut('syserrmsg:  Unknown button hit')
+			DebugOut('request.POST')
+			DebugOut(str(request.POST))
+	else: # GET
+		DebugOut('after GET')
+
+	currentContext = {
+		'allQuestionInfo' : allQuestionInfo,
+		'theProjectTag' : theProjectTag,
+		'theQuestionnaireTag' : theQuestionnaireTag,
+		'colList' : colList,
+		'field_types' : FIELD_TYPES,
+		'url_base' : url_base,
+		'errMsg' : errMsg,
+		}
+	DebugOut('editQuestionNames:  exit')
+	return render(request, workingPageTemplateRoot + 'editQuestionNames.html',
+		currentContext)
+	
 def questionnaireOutput( theQuestionnaire ):
 	"""extract Questionnaire data from a query object, and reformat for text display via form
 	
@@ -2602,8 +3003,16 @@ def Completion(request, whichProject, whichQuest):
 					msg = EmailMessage(emailSubj, emailBody, questionnaireEmail, [adminEmail])
 					sentMail = 'Admin has been informed of an error: ' + adminEmail
 					summaryExist = False
-				msg.send()
-				removeResponsesFromSessionData(request) # remove Respondent data
+				try:
+					msg.send()
+					removeResponsesFromSessionData(request) # remove Respondent data
+# 				except SMTPAuthenticationError:
+# 					DebugOut('SMTPAuthenticationError ')
+# 					sentMail = 'SMTP Authenticaion Error - try again in a few minutes'
+				except:
+					DebugOut('Other exception upon attempting to send email ')
+					sentMail = 'Unknown error sending email. Please report.'
+					removeResponsesFromSessionData(request) # remove Respondent data
 			elif request.POST["submitButton"] == "start": # return to start page
 				DebugOut( 'In start.')
 				removeResponsesFromSessionData(request) # remove Respondent data
@@ -2734,6 +3143,7 @@ def formatResponseforDisplay(request):
 	success = True
 	if allResultsList in request.session:
 		allResults = request.session[allResultsList]
+		DebugOut('Have results data')
 	else:
 		errMsg = 'No questionnaire response session data'
 		DebugOut(errMsg)
@@ -2744,12 +3154,14 @@ def formatResponseforDisplay(request):
 	# go through all key values, in order answered
 	questionResponseList = []
 	# create the page results list
+	# reverse the list to get time-ordered output
+# 	allResults.reverse()
 	for aline in allResults:
 		# request.session[allResultsList] structure: 
 	#	[questionResponse, questionText,questionRecNum,responseChoiceRecNum,pageShortTag,pageRecNum, uniqueQuestionLabel, questionTag]
 		rawQuestionResponse = aline[0]
 		questionText = strip_tags(aline[1]) # no html in the Summary
-		DebugOut('questionText: %s' %questionText)
+		#DebugOut('questionText: %s' %questionText)
 		questionRecNum = aline[2]
 		responseChoiceRecNum = aline[3]
 		pageShortTag = aline[4]
@@ -2760,19 +3172,19 @@ def formatResponseforDisplay(request):
 			# null value since value is a set of keywords
 			listLevel = 'sub'
 			questionResponseList.append([listLevel, questionText,"", pageShortTag])
-			DebugOut('rawQuestionResponse: "%s"'%rawQuestionResponse)
+			#DebugOut('rawQuestionResponse: "%s"'%rawQuestionResponse)
 			for aValue in rawQuestionResponse: # create additional lines, one for each element in the list
-				DebugOut('in choice loop: aValue %s' %aValue)
+				#DebugOut('in choice loop: aValue %s' %aValue)
 				questionResponseList.append([listLevel, aValue,'', pageShortTag])
 		else:# not a list, therefore at the main level
 			listLevel = 'main'
 			questionResponse = str(rawQuestionResponse)
-			DebugOut('questionResponse: %s' %questionResponse)
+			#DebugOut('questionResponse: %s' %questionResponse)
 			theLine = [listLevel, questionText, questionResponse, pageShortTag]
 			questionResponseList.append(theLine)
-			DebugOut(theLine)
+			#DebugOut(theLine)
 	# questionResponseList record structure:
-	# []
+	# [listLevel, questionText, questionResponse, pageShortTag]
 	DebugOut('formatResponseforDisplay:  exit')
 	return [questionResponseList, success]
 
@@ -2893,9 +3305,9 @@ def questionnaireSummary(request, whichProject, whichQuest, whichPage):
 		contactPhone = "" # not required
 	
 	pageBaseURL = request.session['pageBaseURL']
-	projectAbbrev = Project.objects.get(shortTag=whichProject).abbrev
+	projectAbbrev = theProject.abbrev
 	
-	projectContactPhone = Project.objects.get(shortTag=whichProject).contactPhone
+	projectContactPhone = theProject.contactPhone
 	DebugOut('questionnaireSummary:  creating contextDict')
 	
 	computerT = computertype(request) # identify computer type
@@ -3042,7 +3454,8 @@ def dumpSubmissionTable(request):
 	allSubmissions = Submission.objects.all().order_by('questionnaireID__shortTag', '-lastUpdate')
 	if len(allSubmissions) == 0:
 		errMsg.append('Zero submissions. No Questionnaire submissions to display for this Project.')
-		return render(request, 'InfoScreenExit.html', { 'errMsg': [errMsg]})
+		urlPrefix = request.get_host()+settings.WSGI_URL_PREFIX
+		return render(request, 'InfoScreenExit.html', { 'errMsg': [errMsg], 'wsgiPrefix':urlPrefix})
 	# make a table of submissions
 	[submitTable, submitTableCols] = makeSubmissionListForDisplay(allSubmissions)
 	tableName = 'List the Submission Table - all Projects'
@@ -3104,7 +3517,8 @@ def responseDelete(request,selectAllSubmissions=False):
 		allSubmissions = getSubmissionsForProject(theProject)
 	if len(allSubmissions) == 0:
 		errMsg.append('Zero submissions. No Questionnaire submissions to display for this Project.')
-		return render(request, 'InfoScreenExit.html', { 'errMsg': errMsg})
+		urlPrefix = request.get_host()+settings.WSGI_URL_PREFIX
+		return render(request, 'InfoScreenExit.html', { 'errMsg': errMsg, 'wsgiPrefix':urlPrefix})
 	# make a table of submissions
 	[submitTable, submitTableCols] = makeSubmissionListForDisplay(allSubmissions,
 		firstColLabel='Delete', firstColPrefix='D_')
@@ -3131,7 +3545,8 @@ def responseDelete(request,selectAllSubmissions=False):
 				allSubmissions = getSubmissionsForProject(theProject)
 			if len(allSubmissions) == 0:
 				errMsg.append('Zero submissions. No Questionnaire submissions to display for this Project.')
-				return render(request, 'InfoScreenExit.html', { 'errMsg': errMsg})
+				urlPrefix = request.get_host()+settings.WSGI_URL_PREFIX
+				return render(request, 'InfoScreenExit.html', { 'errMsg': errMsg, 'wsgiPrefix':urlPrefix})
 			[submitTable, submitTableCols] = makeSubmissionListForDisplay(allSubmissions,
 				firstColLabel='Delete', firstColPrefix='D_')
 		elif 'returnToHome' in request.POST:
@@ -3181,7 +3596,8 @@ def responseViewer(request,forProject=None):
 #	allSubmissions = Submission.objects.all().order_by('questionnaireID__shortTag', '-lastUpdate')
 	if len(allSubmissions) == 0:
 		errMsg.append('Zero submissions. No Questionnaire submissions to display for this Project.')
-		return render(request, 'InfoScreenExit.html', { 'errMsg': [errMsg]})
+		urlPrefix = request.get_host()+settings.WSGI_URL_PREFIX
+		return render(request, 'InfoScreenExit.html', { 'errMsg': [errMsg], 'wsgiPrefix':urlPrefix})
 	# make a table of submissions
 	[submitTable, submitTableCols] = makeSubmissionListForDisplay(allSubmissions)
 
@@ -3699,7 +4115,8 @@ def savecsv(request, forProject=None):
 			allerrMsg = ['No Questionnaires available']
 		allerrMsg.append('No export submissions file created.')
 		DebugOut(allerrMsg)
-		return render(request, 'InfoScreenExit.html', { 'errMsg': allerrMsg})
+		urlPrefix = request.get_host()+settings.WSGI_URL_PREFIX
+		return render(request, 'InfoScreenExit.html', { 'errMsg': allerrMsg, 'wsgiPrefix':urlPrefix})
 	
 	# Loop through Questionnaires, Pages, Questions, ResponseChoices in a standard way
 	icountExports = 0 # count the exported submissions
@@ -3858,7 +4275,6 @@ def savecsv(request, forProject=None):
 								DebugOut('choiceText: "%s" NOT added to row string.'%(choiceText))
 								colm_headers.append(choiceTag+'_'+str(fieldCount)) # choice text is the tag
 							fieldCount+=1
-					
 			DebugOut('End of responses')			
 			DebugOut('Row %s' %aRow)
 			if oldHeaderCopy != colm_headers:
@@ -3874,7 +4290,8 @@ def savecsv(request, forProject=None):
 			allerrMsg = ['No Submissions available']
 		allerrMsg.append('No export submissions file created.')
 		DebugOut(allerrMsg)
-		return render(request, 'InfoScreenExit.html', { 'errMsg': allerrMsg})
+		urlPrefix = request.get_host()+settings.WSGI_URL_PREFIX
+		return render(request, 'InfoScreenExit.html', { 'errMsg': allerrMsg, 'wsgiPrefix':urlPrefix})
 	DebugOut('savecsv: Exit')
 	return response
 
@@ -3925,7 +4342,7 @@ def displayAndEditQuestion(request):
 					responseMsg = 'Question "%s" edited and saved.' %currentQuestionTag
 					request.session['currentQuestionTag'] = currentQuestionTag
 				elif request.POST['submitButton'] == 'Delete Current Question': # Return to previous page
-					Question.objects.filter(shortTag=currentQuestionTag).delete()
+					Question.objects.filter(questionTag=currentQuestionTag).delete()
 				return HttpResponseRedirect(pageBaseURL+'intro/') # previous screen url
 	else:
 		initialValues ={'questionTag' : currentQuestionTag,
@@ -4084,8 +4501,11 @@ def createPageQuestionLink(request):
 		
 	return render(request, 'working_pages/createPageQuestionLink.html', currentContext)
 
+@login_required()
 def setPageToPageTransitionGlobalFlags(request):
-	# determine page transition depending upon the existence of a global flag
+	"""
+	Determine page transition depending upon the existence of a global flag
+	"""
 	DebugOut('setPageToPageTransitionGlobalFlags:  entering')
 
 	# select a default Questionnaire and Project tag to start.
@@ -4143,7 +4563,9 @@ def setPageToPageTransitionGlobalFlags(request):
 			else: # clicked on a page button - change working page
 				workingPageTag = request.POST['submitButton']
 				try:
-					theWorkingPage=Page.objects.get(shortTag=workingPageTag)
+					thePageRecord = request.session['pageTagToRecord'][workingPageTag]
+					theWorkingPage=Page.objects.get(id=thePageRecord)
+					workingPageTag = theWorkingPage.shortTag
 					DebugOut('The new working page: %s' %workingPageTag)
 				except Page.DoesNotExist:
 					return render(request, 'system_error.html', {'syserrmsg': ['Debug:  Page does not exist: %s' %workingPageTag]})
@@ -4234,8 +4656,11 @@ def setPageToPageTransitionGlobalFlags(request):
 	DebugOut('setPageToPageTransitionGlobalFlags:  exiting')
 	return render(request, 'working_pages/setPageToPageTransitionGlobalFlags.html', currentContext)
 
+@login_required()
 def setGlobalFlags(request):
-	# Set global flags based upon response to questions.
+	"""
+	Set global flags based upon response to questions.
+	"""
 	DebugOut('setGlobalFlags:  entering')
 	
 	# select a default Questionnaire and Project tag to start.
@@ -4623,7 +5048,9 @@ def setPageToPageTransitionCalculated(request):
 			else:
 				DebugOut('Display questions and gather responses.')
 			# display questions, prepare for data entry
-			theQForm = UserDynamicFormCreation( thePageQuestions, request.POST, useQuestionTag=True)
+			DebugOut('test: thePageQuestions: %s'%str(thePageQuestions))
+			DebugOut('test: request.POST %s' %str(request.POST))
+			[theQForm, qustionTagToRecordNum,choiceTagToRecordNum ] = UserDynamicFormCreation( thePageQuestions, request.POST, useQuestionTag=True)
 			if 'setPageTransPageNextCalc' in request.session:
 				newNextPageid = request.session['setPageTransPageNextCalc']
 				try:
@@ -4643,7 +5070,7 @@ def setPageToPageTransitionCalculated(request):
 				saveTestConditonToQuestionnairePage(testCondition,
 					newNextPageObj, theWorkingPage, workingQuestionnaire, recordType)
 				nextPAndConditionMsg = 'The test conditon "%s" for transition to the next page "%s" was saved' %(testCondition, newNextPageObj.shortTag)
-				theQForm = UserDynamicFormCreation( thePageQuestions, questionResponsesWithTags, useQuestionTag=True)
+				[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, questionResponsesWithTags, useQuestionTag=True)
 				DebugOut('testCondition: %s' %testCondition)
 			DebugOut('workingQuestionnaireTag: %s' %workingQuestionnaireTag)
 			DebugOut('workingPageTag: %s' %workingPageTag)
@@ -4668,7 +5095,7 @@ def setPageToPageTransitionCalculated(request):
 	pageQuestionsExist = len(thePageQuestions) != 0
 	pluralQuestions = len(thePageQuestions) > 1
 	if theQForm == '' and len(thePageQuestions) != 0:
-		theQForm = UserDynamicFormCreation( thePageQuestions, [''], useQuestionTag=True)
+		[theQForm, qustionTagToRecordNum,choiceTagToRecordNum] = UserDynamicFormCreation( thePageQuestions, [''], useQuestionTag=True)
 	
 	# find existing test conditions for this page
 	testConditionTransitionList = getTestConditionFromQuestionnairePage(workingQuestionnaire, theWorkingPage)
@@ -4979,11 +5406,6 @@ def QuestContinue(request, whichProject, whichQuest, whichPage):
 	firstPage = getStartPageObj(theQuestionnaire)
 	if firstPage == thePageObj:
 		startPage = True
-	
-# *** rework the following errors
-# 	if not request.session.test_cookie_worked(): # check for cookie function and therefore session existence
-# 		DebugOut('QuestContinue: Please enable cookies in your browser.')
-# 		return render(request, 'system_error.html', {'syserrmsg': ['Please enable cookies in your browser.']})
 
 	if 'constantPageDataDict' in request.session:
 		constantPageDataDict = request.session['constantPageDataDict']
@@ -5762,7 +6184,7 @@ def splash(request, whichProject, whichQuest): #Select questionnaire, Check for 
 	DebugOut('splash: enter')
 	now = timezone.now()
 	DebugOut('whichProject %s, whichQuest %s' %(whichProject,whichQuest))
-	
+	requestLog(request, 'Splash page')
 	# Standard verification w.r.t. project and questionnaire
 	[theProject, theQuestionnaire, errMess] = verifyQuestionnaireProject(request, whichProject, whichQuest)
 	if errMess != []:
@@ -5784,14 +6206,13 @@ def splash(request, whichProject, whichQuest): #Select questionnaire, Check for 
 	# Standard page object retrieval
 	[thePageObj, success] = getPageObj(theQuestionnaire, this_page)
 	if not success:
-		errMsg=['Could not find a page transition for %s'%this_page]
+		errMess=['Could not find a page transition for %s'%this_page]
 		return render(request, 'system_error.html', {'syserrmsg': errMess})
 	
 	prologue = SubstituteWords( thePageObj.prologue )
 	epilogue = SubstituteWords( thePageObj.epilogue )
 	explanation = SubstituteWords( thePageObj.explanation )
 
-	request.session.set_test_cookie() # Set test cookie to test in next POST
 	pageBaseURL = request.session['pageBaseURL']
 	constantPageDataDict = request.session['constantPageDataDict']
 
@@ -5812,13 +6233,16 @@ def splash(request, whichProject, whichQuest): #Select questionnaire, Check for 
 		'fontSizeTextBox' : fontSizeTextBox,
 		'back_not_enabled' : True
 		}
+	currentContext = constantPageDataDict.copy()
+	currentContext.update(contextDict)
 
 	if request.method == 'POST':
-# 		if not request.session.test_cookie_worked(): # check for cookie function
-# 			currentContext = constantPageDataDict.copy()
-# 			currentContext.update(contextDict)
-# 			currentContext.update({'errmsg': 'Please enable cookies in your browser.'})
-# 			return render(request, 'generic_page.html', currentContext)
+		if request.session.test_cookie_worked(): # check for cookie function
+			DebugOut('splash: Cookies worked fine!')
+		else:
+			errMess=['Please enable cookies in your browser.']
+			DebugOut('splash: Please enable cookies in your browser.')
+			return render(request, 'system_error.html', {'syserrmsg': errMess})
 		# add logic for 'Back' button - remove it?? ****
 		UpdateLast_URL_Next(request, this_page) # ignore 'back to' output
 		next_pageObj = pageCalc(request,theQuestionnaire, thePageObj)
@@ -5828,8 +6252,7 @@ def splash(request, whichProject, whichQuest): #Select questionnaire, Check for 
 		DebugOut('splash: exit to page %s' %next_page)
 		return HttpResponseRedirect(theNextURL)
 
-	currentContext = constantPageDataDict.copy()
-	currentContext.update(contextDict)
+	request.session.set_test_cookie() # Set test cookie to test in next POST
 	DebugOut('splash:  exit')
 	return render(request, 'generic_page.html',currentContext )
 	

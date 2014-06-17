@@ -5,6 +5,7 @@ from django.utils.safestring import mark_safe, SafeString
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 #from multiquest.views import SubstituteWords
+#from multiquest.views import DebugOut
 from django.forms import ModelForm
 from multiquest.models import Project, ResponseChoice
 
@@ -124,6 +125,10 @@ class RegistrationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class UploadFileForm(forms.Form):
+    theFile  = forms.FileField()
+
 
 # http://jacobian.org/writing/dynamic-form-generation/
 class UserFormPoly(forms.Form):

@@ -1,25 +1,25 @@
 ['PageAnalysis ID', 'questionnaire ID', 'questionnaire Tag', 'Page ID', 'Page Tag', 'Test Condition', 'Test Result Flag', 'Test Flag Priority', 'Test Flag Description']
-22,3,BRCA_S,12,P1,[(u'pHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
-23,3,BRCA_S,13,P2,[(u'fHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
-24,3,BRCA_S,15,P3a,anyYesButton,Referral,a,Patient referral
-25,3,BRCA_S,16,P3b,anyYesButton,Referral,a,Patient referral
-26,3,BRCA_S,17,P3c,anySelectedButton,Referral,a,Patient referral
-27,3,BRCA_S,19,P4a,anyYesButton,Referral,a,Patient referral
-28,3,BRCA_S,20,P4b,anySelectedButton,Referral,a,Patient referral
-29,3,BRCA_S,21,P5,{u'fHxSufficient': u'No'},Indeterminate,b,Need more information
-1,1,BRCA,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'No')<aComma> (u'fHxBrCASuscGene'<aComma> u'Yes')<aComma> (u'fHxBreastCA'<aComma> u'No')],Referral,a,Patient referral
-2,1,BRCA,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'No')<aComma> (u'fHxBrCASuscGene'<aComma> u'Yes')<aComma> (u'fHxBreastCA'<aComma> u'Yes')],Referral,a,Patient referral
-3,1,BRCA,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'Yes')<aComma> (u'fHxBrCASuscGene'<aComma> u'No')<aComma> (u'fHxBreastCA'<aComma> u'Yes')],Referral,a,Patient referral
-4,1,BRCA,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'Yes')<aComma> (u'fHxBrCASuscGene'<aComma> u'Yes')<aComma> (u'fHxBreastCA'<aComma> u'No')],Referral,a,Patient referral
-5,1,BRCA,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'Yes')<aComma> (u'fHxBrCASuscGene'<aComma> u'Yes')<aComma> (u'fHxBreastCA'<aComma> u'Yes')],Referral,a,Patient referral
-6,1,BRCA,21,P5,[(u'fHxSufficient'<aComma> u'No')],Indeterminate,b,Need more information
-7,1,BRCA,13,P2,[(u'fHxOvarianCA'<aComma> u'Yes')],Referral,a,Patient referral
-8,1,BRCA,12,P1,[(u'pHxOvarianCA'<aComma> u'Yes')],Referral,a,Patient referral
-9,1,BRCA,15,P3a,anyYesButton,Referral,a,Patient referral
-10,1,BRCA,16,P3b,anyYesButton,Referral,a,Patient referral
-11,1,BRCA,19,P4a,anyYesButton,Referral,a,Patient referral
-12,1,BRCA,20,P4b,anySelectedButton,Referral,a,Patient referral
-13,1,BRCA,17,P3c,anySelectedButton,Referral,a,Patient referral
+1,1,BCARisk,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'No')<aComma> (u'fHxBrCASuscGene'<aComma> u'Yes')<aComma> (u'fHxBreastCA'<aComma> u'No')],Referral,a,Patient referral
+2,1,BCARisk,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'No')<aComma> (u'fHxBrCASuscGene'<aComma> u'Yes')<aComma> (u'fHxBreastCA'<aComma> u'Yes')],Referral,a,Patient referral
+3,1,BCARisk,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'Yes')<aComma> (u'fHxBrCASuscGene'<aComma> u'No')<aComma> (u'fHxBreastCA'<aComma> u'Yes')],Referral,a,Patient referral
+4,1,BCARisk,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'Yes')<aComma> (u'fHxBrCASuscGene'<aComma> u'Yes')<aComma> (u'fHxBreastCA'<aComma> u'No')],Referral,a,Patient referral
+5,1,BCARisk,18,P4,[(u'ashkenaziJewishCloseRels'<aComma> u'Yes')<aComma> (u'fHxBrCASuscGene'<aComma> u'Yes')<aComma> (u'fHxBreastCA'<aComma> u'Yes')],Referral,a,Patient referral
+6,1,BCARisk,21,P5,[(u'fHxSufficient'<aComma> u'No')],Indeterminate,b,Need more information
+7,1,BCARisk,13,P2,[(u'fHxOvarianCA'<aComma> u'Yes')],Referral,a,Patient referral
+8,1,BCARisk,12,P1,[(u'pHxOvarianCA'<aComma> u'Yes')],Referral,a,Patient referral
+9,1,BCARisk,15,P3a,anyYesButton,Referral,a,Patient referral
+10,1,BCARisk,16,P3b,anyYesButton,Referral,a,Patient referral
+11,1,BCARisk,19,P4a,anyYesButton,Referral,a,Patient referral
+12,1,BCARisk,20,P4b,anySelectedButton,Referral,a,Patient referral
+13,1,BCARisk,17,P3c,anySelectedButton,Referral,a,Patient referral
+14,2,BRCA_F,13,P2,[(u'fHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
+15,2,BRCA_F,12,P1,[(u'pHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
+16,2,BRCA_F,21,P5,[(u'fHxSufficient'<aComma> u'No')],Indeterminate,b,Need more information
+17,2,BRCA_F,16,P3b,anyYesButton,Referral,a,Referral flag
+18,2,BRCA_F,19,P4a,anyYesButton,Referral,a,Referral flag
+19,2,BRCA_F,15,P3a,anyYesButton,Referral,a,Referral flag
+20,2,BRCA_F,17,P3c,anySelectedButton,Referral,a,Referral flag
+21,2,BRCA_F,20,P4b,anySelectedButton,Referral,a,Referral flag
 30,8,BRCA_S,21,P5,{u'fHxSufficient': u'No'},Indeterminate,b,Need more information
 31,8,BRCA_S,20,P4b,anySelectedButton,Referral,a,Patient referral
 32,8,BRCA_S,19,P4a,anyYesButton,Referral,a,Patient referral
@@ -36,14 +36,14 @@
 43,8,BRCA_S,62,P4a,anyYesButton,Referral,a,Patient referral
 44,8,BRCA_S,63,P4b,anySelectedButton,Referral,a,Patient referral
 45,8,BRCA_S,64,P5,{u'fHxSufficient': u'No'},Indeterminate,b,Need more information
-14,2,BRCA_F,13,P2,[(u'fHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
-15,2,BRCA_F,12,P1,[(u'pHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
-16,2,BRCA_F,21,P5,[(u'fHxSufficient'<aComma> u'No')],Indeterminate,b,Need more information
-17,2,BRCA_F,16,P3b,anyYesButton,Referral,a,Referral flag
-18,2,BRCA_F,19,P4a,anyYesButton,Referral,a,Referral flag
-19,2,BRCA_F,15,P3a,anyYesButton,Referral,a,Referral flag
-20,2,BRCA_F,17,P3c,anySelectedButton,Referral,a,Referral flag
-21,2,BRCA_F,20,P4b,anySelectedButton,Referral,a,Referral flag
+22,3,BRCA_S,12,P1,[(u'pHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
+23,3,BRCA_S,13,P2,[(u'fHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
+24,3,BRCA_S,15,P3a,anyYesButton,Referral,a,Patient referral
+25,3,BRCA_S,16,P3b,anyYesButton,Referral,a,Patient referral
+26,3,BRCA_S,17,P3c,anySelectedButton,Referral,a,Patient referral
+27,3,BRCA_S,19,P4a,anyYesButton,Referral,a,Patient referral
+28,3,BRCA_S,20,P4b,anySelectedButton,Referral,a,Patient referral
+29,3,BRCA_S,21,P5,{u'fHxSufficient': u'No'},Indeterminate,b,Need more information
 1870,52,BRCA_S_Hindi,12,P1,[(u'pHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
 1871,52,BRCA_S_Hindi,13,P2,[(u'fHxOvarianCA'<aComma> u'Yes')],Referral,a,Referral flag
 1872,52,BRCA_S_Hindi,15,P3a,anyYesButton,Referral,a,Patient referral

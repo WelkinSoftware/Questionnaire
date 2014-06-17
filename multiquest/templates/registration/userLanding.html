@@ -42,6 +42,9 @@ webscreen@ScreenGenes.org</a>
 	<td><input type="submit" name="createProjectWithSamples" value="Create a new Sample Questionnaire"/></td>
 	<td><input type="submit" name="duplicateQuestionnaireView" value="Select and Duplicate a Questionnarie" /></td>		
 	</tr>
+	<tr>
+	<td><input type="submit" name="uploadDownloadQuestionnaire" value="Upload or Download the contents of the default Questionnaire"/></td>
+	</tr>
 </table>
 	<h4>Edit the Questionnaire information</h4>
 <table >
@@ -50,10 +53,11 @@ webscreen@ScreenGenes.org</a>
 	<td><input type="submit" name="deleteQuestionnaireView" value="Select then delete a Questionnaire." /></td>		
 	</tr>
 </table>
-	<h4>Edit Pages in the Questionnaire</h4>
+	<h4>Edit Pages and Questions in the Questionnaire</h4>
 <table >
 	<tr>
 	<td><input type="submit" name="bulkPageEdit" value="Edit the pages in the Questionnaire:  {{theQuestionnaire.shortTag}}" /></td>
+	<td><input type="submit" name="editQuestionNames" value="Edit Question information"/></td>
 	</tr>
 </table>
 	<h4>Edit the Page Transitions</h4>
@@ -61,6 +65,10 @@ webscreen@ScreenGenes.org</a>
 	<tr>
 	<td><input type="submit" name="createPageTransition" value="Choose next page based upon question response" /></td>
 	<td><input type="submit" name="editDefaultPageTransitions" value="Reshuffle the page sequence" /></td>		
+	</tr>
+	<tr>
+	<td><input type="submit" name="setGlobalFlags" value="Set global flags based upon response to questions" /></td>
+	<td><input type="submit" name="setPageToPageTransitionGlobalFlags" value="Transition according to global flags" /></td>		
 	</tr>
 </table>
 	<h4>Get Questionnaire results</h4>
@@ -79,4 +87,7 @@ webscreen@ScreenGenes.org</a>
 <p>	<input type="submit" name="logout" value="Logout of the Questionnaire Editor" /> </p>
 
 	</form>
+<p>
+ 	This server's name: {{ thishost }}. {{ current_date }} 
+</p>
 {% endblock %}

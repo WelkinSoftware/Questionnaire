@@ -318,4 +318,27 @@ class RiskSubmission(models.Model): # Connections risk calculation to the submis
 	def __unicode__(self):
 		return u'%s, %s, %s, %s\n' % ( self.submissionID.respondentID.lastName, self.riskValue, self.riskCalc.riskCalcName, self.dateofSubmission)
 
-	
+class RequestLog(models.Model): # log requests sent to web page
+	lastUpdate = models.DateTimeField(auto_now=True)
+	otherInfo = models.CharField(max_length=100, blank=True)
+	# following are taken from:  https://docs.djangoproject.com/en/1.6/ref/request-response/
+	CONTENT_LENGTH = models.CharField(max_length=100, blank=True)
+	CONTENT_TYPE = models.CharField(max_length=100, blank=True)
+	HTTP_HOST = models.CharField(max_length=100, blank=True)
+	HTTP_REFERER = models.CharField(max_length=100, blank=True)
+	HTTP_USER_AGENT = models.CharField(max_length=100, blank=True)
+	QUERY_STRING = models.CharField(max_length=100, blank=True)
+	REMOTE_ADDR = models.CharField(max_length=100, blank=True)
+	REMOTE_HOST = models.CharField(max_length=100, blank=True)
+	REMOTE_USER = models.CharField(max_length=100, blank=True)
+	REQUEST_METHOD = models.CharField(max_length=100, blank=True)
+	SERVER_NAME = models.CharField(max_length=100, blank=True)
+	SERVER_PORT = models.CharField(max_length=100, blank=True)
+	USER = models.CharField(max_length=100, blank=True)
+	PATH = models.CharField(max_length=100, blank=True)
+	PATH_INFO = models.CharField(max_length=100, blank=True)
+	PWD = models.CharField(max_length=100, blank=True)
+
+	def __unicode__(self):
+		return u'%s, %s, %s, %s, %s, %s\n' % ( self.otherInfo, self.HTTP_HOST, self.PATH_INFO, self.REMOTE_ADDR, self.USER, str(self.lastUpdate) )
+

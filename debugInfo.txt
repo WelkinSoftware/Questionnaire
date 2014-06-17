@@ -1,8 +1,132 @@
+userLanding: enter
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+uploadDownloadQuestionnaire:  enter
+No questionnaire selected, so redirect to: /multiquest/registration/selectQuestionnaireDefault/
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+userLanding: enter
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+uploadDownloadQuestionnaire:  enter
+Project: PAMF, Questionnaire: BRCA_F
+uploadDownloadQuestionnaire: exit
+uploadDownloadQuestionnaire:  enter
+Project: PAMF, Questionnaire: BRCA_F
+dumpQuestionnaireSpecification: Enter
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 1, fields: 9
+Project nRecs: 1
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 1, fields: 14
+Questionnaire nRecs: 1
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 17, fields: 14
+Page nRecs: 17
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 18, fields: 12
+Question nRecs: 18
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 1, fields: 5
+ProjectQuestionnaire nRecs: 1
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 18, fields: 5
+PageQuestion nRecs: 18
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 19, fields: 6
+ResponseChoice nRecs: 19
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 1, fields: 6
+ProjectAttributes nRecs: 1
+dumpQuerySet:  enter
+QuestionnaireAttributes nRecs: None
+dumpQuerySet:  enter
+dumpQuerySet:  exit. recs: 8, fields: 7
+PageAnalysis nRecs: 8
+dumpQuerySet:  enter
+PageAttribute nRecs: None
+dumpQuestionnaireSpecification: Exit
+uploadDownloadQuestionnaire:  enter
+Project: PAMF, Questionnaire: BRCA_F
+selectProjectDefault:  exit to /multiquest/registration/userLanding/
+userLanding: enter
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
 splash: enter
-whichProject PAMF, whichQuest BRCA
+whichProject PAMF, whichQuest BRCA_F
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
+splash:  exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+uploadDownloadQuestionnaire:  enter
+Project: PAMF, Questionnaire: BRCA_F
+uploadDownloadQuestionnaire: exit
+uploadDownloadQuestionnaire:  enter
+Project: PAMF, Questionnaire: BRCA_F
+uploadDownloadQuestionnaire: exit
+selectProjectsQuestionnairesToExecute:  enter
+Current project not defined.
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+userLanding: enter
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+userLanding: enter
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash: Cookies worked fine!
 pageCalc: entering
 pageCalc: current page is splash
 pageCalc: used Default to calculate current/next page splash/respondentIdent
@@ -10,806 +134,740 @@ getNextPageFromGlobalFlags:  enter
 pageTag:  splash
 No global flag applies to this page transition. (Normal)
 pageCalc: exit
-splash: theNextURL /multiquest/PAMF/BRCA/respondentIdent
+splash: theNextURL /multiquest/PAMF/BRCA_F/respondentIdent
 splash: exit to page respondentIdent
-In respondentIdent. whichProject: PAMF whichQuest: BRCA
+In respondentIdent. whichProject: PAMF whichQuest: BRCA_F
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
 respondentIdent: exit
-In respondentIdent. whichProject: PAMF whichQuest: BRCA
-form data: {'contactPhone': u'888 888 8888', 'firstName': u'Mindi', 'middleName': u'M', 'lastName': u'Minder', 'birthDate': datetime.date(1955, 5, 5), 'contactEmail': u'clewis222@me.com'}
+In respondentIdent. whichProject: PAMF whichQuest: BRCA_F
+form data: {'contactPhone': u'888-888-8888', 'firstName': u'A', 'middleName': u'B', 'lastName': u'C', 'birthDate': datetime.date(1955, 1, 1), 'contactEmail': u'clewis222@me.com'}
 pageCalc: entering
 pageCalc: current page is respondentIdent
-pageCalc: used Default to calculate current/next page respondentIdent/H1
+pageCalc: used Default to calculate current/next page respondentIdent/P1
 getNextPageFromGlobalFlags:  enter
 pageTag:  respondentIdent
 No global flag applies to this page transition. (Normal)
 pageCalc: exit
 respondentIdent: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H1
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P1
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 42, ptInfoHTFeet, Feet, IntegerField, 2014-04-08 23:25:55.118375
->, <Question: 43, ptInfoHTInches, Inches, IntegerField, 2014-04-08 23:25:55.118989
->, <Question: 44, ptInfoWT, What is your weight? (pounds), IntegerField, 2014-04-08 23:25:55.119650
+[<Question: 40, pHxOvarianCA, Have you ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.116791
 >]
 Not a POST
-No page data in session tag: H1
+No page data in session tag: P1
 UserDynamicFormCreation:  enter
 formData: ['']
 UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "42"
-aQuestion.questionTag1: "ptInfoHTFeet"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "Feet"
-updatedQuestionText4: "Feet"
-theQLabel5: "ptInfoHTFeet"
-aQuestion record number: "43"
-aQuestion.questionTag1: "ptInfoHTInches"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "Inches"
-updatedQuestionText4: "Inches"
-theQLabel5: "ptInfoHTInches"
-aQuestion record number: "44"
-aQuestion.questionTag1: "ptInfoWT"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "What is your weight? (pounds)"
-updatedQuestionText4: "What is your weight? (pounds)"
-theQLabel5: "ptInfoWT"
+aQuestion record number: "40"
+aQuestion.questionTag1: "pHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had ovarian cancer?"
+updatedQuestionText4: "Have you ever had ovarian cancer?"
+theQLabel5: "pHxOvarianCA"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H1
+rendering page P1
 QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H1
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P1
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 42, ptInfoHTFeet, Feet, IntegerField, 2014-04-08 23:25:55.118375
->, <Question: 43, ptInfoHTInches, Inches, IntegerField, 2014-04-08 23:25:55.118989
->, <Question: 44, ptInfoWT, What is your weight? (pounds), IntegerField, 2014-04-08 23:25:55.119650
+[<Question: 40, pHxOvarianCA, Have you ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.116791
 >]
 after POST
 UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'ptInfoWT': [u'190'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'ptInfoHTFeet': [u'6'], u'ptInfoHTInches': [u'9']}>
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'DM2fA6ec5FvRFnWFdwb9vUBhlKh8VhVY'], u'pHxOvarianCA': [u'No']}>
 UserDynamicFormCreation: has forms data input
-aQuestion record number: "42"
-aQuestion.questionTag1: "ptInfoHTFeet"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "Feet"
-updatedQuestionText4: "Feet"
-theQLabel5: "ptInfoHTFeet"
-aQuestion record number: "43"
-aQuestion.questionTag1: "ptInfoHTInches"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "Inches"
-updatedQuestionText4: "Inches"
-theQLabel5: "ptInfoHTInches"
-aQuestion record number: "44"
-aQuestion.questionTag1: "ptInfoWT"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "What is your weight? (pounds)"
-updatedQuestionText4: "What is your weight? (pounds)"
-theQLabel5: "ptInfoWT"
+aQuestion record number: "40"
+aQuestion.questionTag1: "pHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had ovarian cancer?"
+updatedQuestionText4: "Have you ever had ovarian cancer?"
+theQLabel5: "pHxOvarianCA"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 Form is valid. Saving data.
 The cleaned data with question tags is:
-{u'ptInfoWT': 190, u'ptInfoHTInches': 9, u'ptInfoHTFeet': 6}
+{u'pHxOvarianCA': u'No'}
 savePageData:  enter
 Session list data updated in savePageData
 savePageData:  exiting
 saveGlobalFlagsToSessionData:  enter
-page H1 Questionnaire: BRCA
-questionResponses "{u'ptInfoWT': 190, u'ptInfoHTInches': 9, u'ptInfoHTFeet': 6}"
+page P1 Questionnaire: BRCA_F
+questionResponses "{u'pHxOvarianCA': u'No'}"
 questionResponses type "<type 'dict'>"
 successful query
-No analysis records found for page "H1" therefore no global flag added to Session Data.
+Test conditon: "[(u'pHxOvarianCA', u'Yes')]", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'pHxOvarianCA', u'No')]"
+Test condition type does not match any known type (ok).
 saveGlobalFlagsToSessionData:  exit
 pageCalc: entering
-pageCalc: current page is H1
-pageCalc: used Default to calculate current/next page H1/H2
+pageCalc: current page is P1
+pageCalc: used Default to calculate current/next page P1/P2
 pageCalc:  incoming question results
-pageCalc:  questionResults: {u'ptInfoWT': 190, u'ptInfoHTInches': 9, u'ptInfoHTFeet': 6}
+pageCalc:  questionResults: {u'pHxOvarianCA': u'No'}
 getNextPageFromCalculation: enter
-Test condition: [(u'ptInfoHTFeet', 6), (u'ptInfoHTInches', 9), (u'ptInfoWT', 190)]
-Questionnaire record 1
-Page record 1
+Test condition: [(u'pHxOvarianCA', u'No')]
+Questionnaire record 2
+Page record 12
 Found no match
 getNextPageFromCalculation: exit
 pageCalc:  No match for a calculated next page
 getNextPageFromGlobalFlags:  enter
-pageTag:  H1
-No global flag applies to this page transition. (Normal)
+pageTag:  P1
+globalFlagName "Referral" transitions to page "SummaryPage"
+Number of global flags (1) apply to page "P1"
+no global flags set yet
+getNextPageFromGlobalFlags: exit
 pageCalc: exit
-NEXT button clicked. thisPageTag: H1, next_page: H2
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H2
+NEXT button clicked. thisPageTag: P1, next_page: P2
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P2
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 41, ptEth, What is your race/ethnicity? Check all that apply., MultipleChoiceRequiredField, 2014-04-08 23:25:55.117674
+[<Question: 8, fHxOvarianCA, Have any of your close blood relatives ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.093858
 >]
 Not a POST
-No page data in session tag: H2
+No page data in session tag: P2
 UserDynamicFormCreation:  enter
 formData: ['']
 UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "41"
-aQuestion.questionTag1: "ptEth"
-aQuestion.responseType2: "MultipleChoiceRequiredField"
-aQuestion.questionText3: "What is your race/ethnicity? Check all that apply."
-updatedQuestionText4: "What is your race/ethnicity? Check all that apply."
-theQLabel5: "ptEth"
+aQuestion record number: "8"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P2
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P2
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 8, fHxOvarianCA, Have any of your close blood relatives ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.093858
+>]
+after POST
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'fHxOvarianCA': [u'No'], u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'DM2fA6ec5FvRFnWFdwb9vUBhlKh8VhVY']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "8"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+Form is valid. Saving data.
+The cleaned data with question tags is:
+{u'fHxOvarianCA': u'No'}
+savePageData:  enter
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P2 Questionnaire: BRCA_F
+questionResponses "{u'fHxOvarianCA': u'No'}"
+questionResponses type "<type 'dict'>"
+successful query
+Test conditon: "[(u'fHxOvarianCA', u'Yes')]", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'fHxOvarianCA', u'No')]"
+Test condition type does not match any known type (ok).
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P2
+pageCalc: used Default to calculate current/next page P2/P3
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'fHxOvarianCA': u'No'}
+getNextPageFromCalculation: enter
+Test condition: [(u'fHxOvarianCA', u'No')]
+Questionnaire record 2
+Page record 13
+Found no match
+getNextPageFromCalculation: exit
+pageCalc:  No match for a calculated next page
+getNextPageFromGlobalFlags:  enter
+pageTag:  P2
+globalFlagName "Referral" transitions to page "SummaryPage"
+Number of global flags (1) apply to page "P2"
+no global flags set yet
+getNextPageFromGlobalFlags: exit
+pageCalc: exit
+NEXT button clicked. thisPageTag: P2, next_page: P3
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 25, pHxBreastCA, Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>., YesNoField, 2014-04-08 23:25:55.106619
+>]
+Not a POST
+No page data in session tag: P3
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "25"
+aQuestion.questionTag1: "pHxBreastCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>."
+updatedQuestionText4: "Have you ever had <a title="Tap here for more information about breast cancer"href="/multiquest/explanations/moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>."
+theQLabel5: "pHxBreastCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P3
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 25, pHxBreastCA, Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>., YesNoField, 2014-04-08 23:25:55.106619
+>]
+after POST
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'DM2fA6ec5FvRFnWFdwb9vUBhlKh8VhVY'], u'pHxBreastCA': [u'Yes']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "25"
+aQuestion.questionTag1: "pHxBreastCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>."
+updatedQuestionText4: "Have you ever had <a title="Tap here for more information about breast cancer"href="/multiquest/explanations/moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>."
+theQLabel5: "pHxBreastCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+Form is valid. Saving data.
+The cleaned data with question tags is:
+{u'pHxBreastCA': u'Yes'}
+savePageData:  enter
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P3 Questionnaire: BRCA_F
+questionResponses "{u'pHxBreastCA': u'Yes'}"
+questionResponses type "<type 'dict'>"
+successful query
+No analysis records found for page "P3" therefore no global flag added to Session Data.
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P3
+pageCalc: used Default to calculate current/next page P3/P4
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'pHxBreastCA': u'Yes'}
+getNextPageFromCalculation: enter
+Test condition: [(u'pHxBreastCA', u'Yes')]
+Questionnaire record 2
+Page record 14
+Test condition (1) matches: "[(u'pHxBreastCA', u'Yes')]"
+getNextPageFromCalculation: exit
+pageCalc:  Have a match for a calculated next page: P3a
+getNextPageFromGlobalFlags:  enter
+pageTag:  P3
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+NEXT button clicked. thisPageTag: P3, next_page: P3a
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3a
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 21, pHxBrCALE50Yrs, What was your age when your breast cancer was <u>first</u> diagnosed?, SingleChoiceField, 2014-06-04 01:09:05.102697
+>, <Question: 16, pHxBrCA3Neg, Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?, YesNoField, 2014-06-04 01:09:05.115378
+>, <Question: 20, pHxBrCAGT1PrimarySame, Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?, YesNoField, 2014-06-04 01:09:05.120252
+>, <Question: 19, pHxBrCAGT1PrimaryBoth, Have you had cancer in <u>both</u> breasts?, YesNoField, 2014-06-04 01:09:05.124932
+>]
+Not a POST
+No page data in session tag: P3a
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "21"
+aQuestion.questionTag1: "pHxBrCALE50Yrs"
+aQuestion.responseType2: "SingleChoiceField"
+aQuestion.questionText3: "What was your age when your breast cancer was <u>first</u> diagnosed?"
+updatedQuestionText4: "What was your age when your breast cancer was <u>first</u> diagnosed?"
+theQLabel5: "pHxBrCALE50Yrs"
 Choices follow:
-Choice tag: ptEth_W Choice Text: White
-Choice label: White
-Choice tag: ptEth_AA Choice Text: African American
-Choice label: African American
-Choice tag: ptEth_H Choice Text: Hispanic
-Choice label: Hispanic
-Choice tag: ptEth_AI Choice Text: American Indian
-Choice label: American Indian
-Choice tag: ptEth_AN Choice Text: Alaskan Native
-Choice label: Alaskan Native
-Choice tag: ptEth_C Choice Text: Chinese
-Choice label: Chinese
-Choice tag: ptEth_J Choice Text: Japanese
-Choice label: Japanese
-Choice tag: ptEth_F Choice Text: Filipino
-Choice label: Filipino
-Choice tag: ptEth_Hii Choice Text: Hawaiian
-Choice label: Hawaiian
-Choice tag: ptEth_OPI Choice Text: Other Pacific Islander
-Choice label: Other Pacific Islander
-Choice tag: ptEth_OAA Choice Text: Other Asian American
-Choice label: Other Asian American
-Choice tag: ptEth_OU Choice Text: Other or unknown
-Choice label: Other or unknown
+Choice tag: Yes Choice Text: Age 50 or under
+Choice label: Age 50 or under
+Choice tag: No Choice Text: Age 51 or older
+Choice label: Age 51 or older
 End Choices
-Choices end. Count: 12
-choiceList: [[u'White', u'White'], [u'African American', u'African American'], [u'Hispanic', u'Hispanic'], [u'American Indian', u'American Indian'], [u'Alaskan Native', u'Alaskan Native'], [u'Chinese', u'Chinese'], [u'Japanese', u'Japanese'], [u'Filipino', u'Filipino'], [u'Hawaiian', u'Hawaiian'], [u'Other Pacific Islander', u'Other Pacific Islander'], [u'Other Asian American', u'Other Asian American'], [u'Other or unknown', u'Other or unknown']]
+aQuestion record number: "16"
+aQuestion.questionTag1: "pHxBrCA3Neg"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?"
+updatedQuestionText4: "Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?"
+theQLabel5: "pHxBrCA3Neg"
+aQuestion record number: "20"
+aQuestion.questionTag1: "pHxBrCAGT1PrimarySame"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?"
+updatedQuestionText4: "Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?"
+theQLabel5: "pHxBrCAGT1PrimarySame"
+aQuestion record number: "19"
+aQuestion.questionTag1: "pHxBrCAGT1PrimaryBoth"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you had cancer in <u>both</u> breasts?"
+updatedQuestionText4: "Have you had cancer in <u>both</u> breasts?"
+theQLabel5: "pHxBrCAGT1PrimaryBoth"
+Choices end. Count: 2
+choiceList: [[u'Age 50 or under', u'Age 50 or under'], [u'Age 51 or older', u'Age 51 or older']]
 UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H2
+rendering page P3a
 QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H2
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3a
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 41, ptEth, What is your race/ethnicity? Check all that apply., MultipleChoiceRequiredField, 2014-04-08 23:25:55.117674
+[<Question: 21, pHxBrCALE50Yrs, What was your age when your breast cancer was <u>first</u> diagnosed?, SingleChoiceField, 2014-06-04 01:09:05.102697
+>, <Question: 16, pHxBrCA3Neg, Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?, YesNoField, 2014-06-04 01:09:05.115378
+>, <Question: 20, pHxBrCAGT1PrimarySame, Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?, YesNoField, 2014-06-04 01:09:05.120252
+>, <Question: 19, pHxBrCAGT1PrimaryBoth, Have you had cancer in <u>both</u> breasts?, YesNoField, 2014-06-04 01:09:05.124932
 >]
 after POST
 UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'ptEth': [u'Chinese'], u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t']}>
+formData: <QueryDict: {u'pHxBrCA3Neg': [u'No'], u'pHxBrCAGT1PrimarySame': [u'No'], u'pHxBrCAGT1PrimaryBoth': [u'No'], u'pHxBrCALE50Yrs': [u'Age 51 or older'], u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'DM2fA6ec5FvRFnWFdwb9vUBhlKh8VhVY']}>
 UserDynamicFormCreation: has forms data input
-aQuestion record number: "41"
-aQuestion.questionTag1: "ptEth"
-aQuestion.responseType2: "MultipleChoiceRequiredField"
-aQuestion.questionText3: "What is your race/ethnicity? Check all that apply."
-updatedQuestionText4: "What is your race/ethnicity? Check all that apply."
-theQLabel5: "ptEth"
+aQuestion record number: "21"
+aQuestion.questionTag1: "pHxBrCALE50Yrs"
+aQuestion.responseType2: "SingleChoiceField"
+aQuestion.questionText3: "What was your age when your breast cancer was <u>first</u> diagnosed?"
+updatedQuestionText4: "What was your age when your breast cancer was <u>first</u> diagnosed?"
+theQLabel5: "pHxBrCALE50Yrs"
 Choices follow:
-Choice tag: ptEth_W Choice Text: White
-Choice label: White
-Choice tag: ptEth_AA Choice Text: African American
-Choice label: African American
-Choice tag: ptEth_H Choice Text: Hispanic
-Choice label: Hispanic
-Choice tag: ptEth_AI Choice Text: American Indian
-Choice label: American Indian
-Choice tag: ptEth_AN Choice Text: Alaskan Native
-Choice label: Alaskan Native
-Choice tag: ptEth_C Choice Text: Chinese
-Choice label: Chinese
-Choice tag: ptEth_J Choice Text: Japanese
-Choice label: Japanese
-Choice tag: ptEth_F Choice Text: Filipino
-Choice label: Filipino
-Choice tag: ptEth_Hii Choice Text: Hawaiian
-Choice label: Hawaiian
-Choice tag: ptEth_OPI Choice Text: Other Pacific Islander
-Choice label: Other Pacific Islander
-Choice tag: ptEth_OAA Choice Text: Other Asian American
-Choice label: Other Asian American
-Choice tag: ptEth_OU Choice Text: Other or unknown
-Choice label: Other or unknown
+Choice tag: Yes Choice Text: Age 50 or under
+Choice label: Age 50 or under
+Choice tag: No Choice Text: Age 51 or older
+Choice label: Age 51 or older
 End Choices
-Choices end. Count: 12
-choiceList: [[u'White', u'White'], [u'African American', u'African American'], [u'Hispanic', u'Hispanic'], [u'American Indian', u'American Indian'], [u'Alaskan Native', u'Alaskan Native'], [u'Chinese', u'Chinese'], [u'Japanese', u'Japanese'], [u'Filipino', u'Filipino'], [u'Hawaiian', u'Hawaiian'], [u'Other Pacific Islander', u'Other Pacific Islander'], [u'Other Asian American', u'Other Asian American'], [u'Other or unknown', u'Other or unknown']]
+aQuestion record number: "16"
+aQuestion.questionTag1: "pHxBrCA3Neg"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?"
+updatedQuestionText4: "Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?"
+theQLabel5: "pHxBrCA3Neg"
+aQuestion record number: "20"
+aQuestion.questionTag1: "pHxBrCAGT1PrimarySame"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?"
+updatedQuestionText4: "Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?"
+theQLabel5: "pHxBrCAGT1PrimarySame"
+aQuestion record number: "19"
+aQuestion.questionTag1: "pHxBrCAGT1PrimaryBoth"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you had cancer in <u>both</u> breasts?"
+updatedQuestionText4: "Have you had cancer in <u>both</u> breasts?"
+theQLabel5: "pHxBrCAGT1PrimaryBoth"
+Choices end. Count: 2
+choiceList: [[u'Age 50 or under', u'Age 50 or under'], [u'Age 51 or older', u'Age 51 or older']]
 UserDynamicFormCreation:  exit
 Form is valid. Saving data.
 The cleaned data with question tags is:
-{u'ptEth': [u'Chinese']}
+{u'pHxBrCA3Neg': u'No', u'pHxBrCAGT1PrimaryBoth': u'No', u'pHxBrCAGT1PrimarySame': u'No', u'pHxBrCALE50Yrs': u'Age 51 or older'}
 savePageData:  enter
 Session list data updated in savePageData
 savePageData:  exiting
 saveGlobalFlagsToSessionData:  enter
-page H2 Questionnaire: BRCA
-questionResponses "{u'ptEth': [u'Chinese']}"
+page P3a Questionnaire: BRCA_F
+questionResponses "{u'pHxBrCA3Neg': u'No', u'pHxBrCAGT1PrimaryBoth': u'No', u'pHxBrCAGT1PrimarySame': u'No', u'pHxBrCALE50Yrs': u'Age 51 or older'}"
 questionResponses type "<type 'dict'>"
 successful query
-No analysis records found for page "H2" therefore no global flag added to Session Data.
+Test conditon: "anyYesButton", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'pHxBrCA3Neg', u'No'), (u'pHxBrCAGT1PrimaryBoth', u'No'), (u'pHxBrCAGT1PrimarySame', u'No'), (u'pHxBrCALE50Yrs', u'Age 51 or older')]"
+testCondition4 "anyYesButton"
+globalFlagName "Referral"
+questionResponses.values() [u'No', u'No', u'No', u'Age 51 or older']
 saveGlobalFlagsToSessionData:  exit
 pageCalc: entering
-pageCalc: current page is H2
-pageCalc: used Default to calculate current/next page H2/H3
+pageCalc: current page is P3a
+pageCalc: used Default to calculate current/next page P3a/P3b
 pageCalc:  incoming question results
-pageCalc:  questionResults: {u'ptEth': [u'Chinese']}
+pageCalc:  questionResults: {u'pHxBrCA3Neg': u'No', u'pHxBrCAGT1PrimaryBoth': u'No', u'pHxBrCAGT1PrimarySame': u'No', u'pHxBrCALE50Yrs': u'Age 51 or older'}
 getNextPageFromCalculation: enter
-Test condition: [(u'ptEth', [u'Chinese'])]
-Questionnaire record 1
-Page record 2
+Test condition: [(u'pHxBrCA3Neg', u'No'), (u'pHxBrCAGT1PrimaryBoth', u'No'), (u'pHxBrCAGT1PrimarySame', u'No'), (u'pHxBrCALE50Yrs', u'Age 51 or older')]
+Questionnaire record 2
+Page record 15
 Found no match
 getNextPageFromCalculation: exit
 pageCalc:  No match for a calculated next page
 getNextPageFromGlobalFlags:  enter
-pageTag:  H2
-No global flag applies to this page transition. (Normal)
+pageTag:  P3a
+globalFlagName "Referral" transitions to page "SummaryPage"
+Number of global flags (1) apply to page "P3a"
+no global flags set yet
+getNextPageFromGlobalFlags: exit
 pageCalc: exit
-NEXT button clicked. thisPageTag: H2, next_page: H3
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
+NEXT button clicked. thisPageTag: P3a, next_page: P3b
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3b
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
+[<Question: 17, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?, YesNoField, 2014-04-08 23:25:55.101058
+>, <Question: 18, pHxBrCAGE2RelBrPancCA, Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?, YesNoField, 2014-06-11 00:46:45.038886
+>, <Question: 2, ashkenaziJewishOneRel, Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>., YesNoField, 2014-04-08 23:25:55.088067
 >]
 Not a POST
-No page data in session tag: H3
+No page data in session tag: P3b
 UserDynamicFormCreation:  enter
 formData: ['']
 UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
+aQuestion record number: "17"
+aQuestion.questionTag1: "pHxBrCAGE1RelBrCALE50Years"
 aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
+aQuestion.questionText3: "Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?"
+updatedQuestionText4: "Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?"
+theQLabel5: "pHxBrCAGE1RelBrCALE50Years"
+aQuestion record number: "18"
+aQuestion.questionTag1: "pHxBrCAGE2RelBrPancCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?"
+updatedQuestionText4: "Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?"
+theQLabel5: "pHxBrCAGE2RelBrPancCA"
+aQuestion record number: "2"
+aQuestion.questionTag1: "ashkenaziJewishOneRel"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>."
+updatedQuestionText4: "Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="/multiquest/explanations/ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="/multiquest/explanations/brcatesting">BRCA gene mutations</a></i>."
+theQLabel5: "ashkenaziJewishOneRel"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3
+rendering page P3b
 QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3b
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
+[<Question: 17, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?, YesNoField, 2014-04-08 23:25:55.101058
+>, <Question: 18, pHxBrCAGE2RelBrPancCA, Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?, YesNoField, 2014-06-11 00:46:45.038886
+>, <Question: 2, ashkenaziJewishOneRel, Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>., YesNoField, 2014-04-08 23:25:55.088067
 >]
 after POST
 UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsy': [u'Yes']}>
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'DM2fA6ec5FvRFnWFdwb9vUBhlKh8VhVY'], u'pHxBrCAGE1RelBrCALE50Years': [u'Yes'], u'pHxBrCAGE2RelBrPancCA': [u'No'], u'ashkenaziJewishOneRel': [u'Yes']}>
 UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
+aQuestion record number: "17"
+aQuestion.questionTag1: "pHxBrCAGE1RelBrCALE50Years"
 aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
+aQuestion.questionText3: "Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?"
+updatedQuestionText4: "Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?"
+theQLabel5: "pHxBrCAGE1RelBrCALE50Years"
+aQuestion record number: "18"
+aQuestion.questionTag1: "pHxBrCAGE2RelBrPancCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?"
+updatedQuestionText4: "Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?"
+theQLabel5: "pHxBrCAGE2RelBrPancCA"
+aQuestion record number: "2"
+aQuestion.questionTag1: "ashkenaziJewishOneRel"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>."
+updatedQuestionText4: "Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="/multiquest/explanations/ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="/multiquest/explanations/brcatesting">BRCA gene mutations</a></i>."
+theQLabel5: "ashkenaziJewishOneRel"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 Form is valid. Saving data.
 The cleaned data with question tags is:
-{u'pHxBreastBiopsy': u'Yes'}
+{u'pHxBrCAGE2RelBrPancCA': u'No', u'pHxBrCAGE1RelBrCALE50Years': u'Yes', u'ashkenaziJewishOneRel': u'Yes'}
 savePageData:  enter
 Session list data updated in savePageData
 savePageData:  exiting
 saveGlobalFlagsToSessionData:  enter
-page H3 Questionnaire: BRCA
-questionResponses "{u'pHxBreastBiopsy': u'Yes'}"
+page P3b Questionnaire: BRCA_F
+questionResponses "{u'pHxBrCAGE2RelBrPancCA': u'No', u'pHxBrCAGE1RelBrCALE50Years': u'Yes', u'ashkenaziJewishOneRel': u'Yes'}"
 questionResponses type "<type 'dict'>"
 successful query
-No analysis records found for page "H3" therefore no global flag added to Session Data.
+Test conditon: "anyYesButton", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'ashkenaziJewishOneRel', u'Yes'), (u'pHxBrCAGE1RelBrCALE50Years', u'Yes'), (u'pHxBrCAGE2RelBrPancCA', u'No')]"
+testCondition4 "anyYesButton"
+globalFlagName "Referral"
+questionResponses.values() [u'No', u'Yes', u'Yes']
+anyYesButton: a "Yes" found, therefore flag is set
 saveGlobalFlagsToSessionData:  exit
 pageCalc: entering
-pageCalc: current page is H3
-pageCalc: used Default to calculate current/next page H3/H3a
+pageCalc: current page is P3b
+pageCalc: used Default to calculate current/next page P3b/P3c
 pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBreastBiopsy': u'Yes'}
+pageCalc:  questionResults: {u'pHxBrCAGE2RelBrPancCA': u'No', u'pHxBrCAGE1RelBrCALE50Years': u'Yes', u'ashkenaziJewishOneRel': u'Yes'}
 getNextPageFromCalculation: enter
-Test condition: [(u'pHxBreastBiopsy', u'Yes')]
-Questionnaire record 1
-Page record 3
-Test condition does not match 0: "[(u'pHxBreastBiopsy', u'No')]"
+Test condition: [(u'ashkenaziJewishOneRel', u'Yes'), (u'pHxBrCAGE1RelBrCALE50Years', u'Yes'), (u'pHxBrCAGE2RelBrPancCA', u'No')]
+Questionnaire record 2
+Page record 16
 Found no match
 getNextPageFromCalculation: exit
 pageCalc:  No match for a calculated next page
 getNextPageFromGlobalFlags:  enter
-pageTag:  H3
-No global flag applies to this page transition. (Normal)
+pageTag:  P3b
+globalFlagName "Referral" transitions to page "SummaryPage"
+Number of global flags (1) apply to page "P3b"
+Checking global flags in session data
+allGlobalFlagsInSession: [u'Referral']
+myFlagName: Referral
+myFlagNextPageobj: SummaryPage
+getGlobalFlagPriority:  enter
+getGlobalFlagPriority:  exit
+Got a hit for global flag "Referral" (priority a), the next page is SummaryPage
+got a hit! Select the highest priority flag
+getNextPageFromGlobalFlags: exit
+pageCalc:  Match for a global flag determined next page SummaryPage
 pageCalc: exit
-NEXT button clicked. thisPageTag: H3, next_page: H3a
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3a
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 24, pHxBreastBiopsyNumber, How many breast biopsies did you have?, IntegerField, 2014-04-08 23:25:55.105991
->]
-Not a POST
-No page data in session tag: H3a
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "24"
-aQuestion.questionTag1: "pHxBreastBiopsyNumber"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many breast biopsies did you have?"
-updatedQuestionText4: "How many breast biopsies did you have?"
-theQLabel5: "pHxBreastBiopsyNumber"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
+PageType appended to next_page url:  SummaryPage/questionnaireSummary
+questionnaireSummary:  enter
+Current page url: SummaryPage
+formatResponseforDisplay:  enter
+Have results data
+formatResponseforDisplay:  exit
+birthDate
+1955-01-01
+data type: <type 'unicode'>
+questionnaireSummary:  creating contextDict
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3a
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3a
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 24, pHxBreastBiopsyNumber, How many breast biopsies did you have?, IntegerField, 2014-04-08 23:25:55.105991
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Back'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsyNumber': [u'2']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "24"
-aQuestion.questionTag1: "pHxBreastBiopsyNumber"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many breast biopsies did you have?"
-updatedQuestionText4: "How many breast biopsies did you have?"
-theQLabel5: "pHxBreastBiopsyNumber"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBreastBiopsyNumber': 2}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-not NEXT button clicked. thisPageTag: H3a, back_to: H3
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H3
-UserDynamicFormCreation:  enter
-formData: {u'pHxBreastBiopsy': u'Yes'}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBreastBiopsy': u'Yes'}
-session data dump end
-bound?: True
+questionnaireSummary:  inside GET
+this_page SummaryPage
+questionnaireSummary:  exit
+questionnaireSummary:  enter
+Current page url: SummaryPage
+formatResponseforDisplay:  enter
+Have results data
+formatResponseforDisplay:  exit
+birthDate
+1955-01-01
+data type: <type 'unicode'>
+questionnaireSummary:  creating contextDict
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsy': [u'No']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBreastBiopsy': u'No'}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H3 Questionnaire: BRCA
-questionResponses "{u'pHxBreastBiopsy': u'No'}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H3" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
+questionnaireSummary:  inside POST
+this_page SummaryPage
+Next button clicked
+savePtResponse: Enter
+Before calculate_ptAge_now( birthDate)
+After calculate_ptAge_now( birthDate)
+savePtResponse:  Respondent doesn't already exist, so create it.
+respIDDict: {u'contactPhone': u'888-888-8888', u'firstName': u'A', u'middleName': u'B', u'lastName': u'C', u'birthDate': u'1955-01-01', u'contactEmail': u'clewis222@me.com'}
+Saved contactPhone to respIDDict
+savePtResponse:  updated respondent data
+before creating a submission record
+after creating a submission record
+aline: [u'No', u'Have you ever had ovarian cancer?', u'40', u'None', u'P1', 12, u'Question_40_', u'pHxOvarianCA']
+aline: [u'No', u'Have any of your close blood relatives ever had ovarian cancer?', u'8', u'None', u'P2', 13, u'Question_8_', u'fHxOvarianCA']
+aline: [u'Yes', u'Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.', u'25', u'None', u'P3', 14, u'Question_25_', u'pHxBreastCA']
+aline: [u'No', u'Was your cancer <u>\u201ctriple negative\u201d</u>, without receptors for estrogen, progesterone and HER2?', u'16', u'None', u'P3a', 15, u'Question_16_', u'pHxBrCA3Neg']
+aline: [u'No', u'Have you had cancer in <u>both</u> breasts?', u'19', u'None', u'P3a', 15, u'Question_19_', u'pHxBrCAGT1PrimaryBoth']
+aline: [u'No', u'Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?', u'20', u'None', u'P3a', 15, u'Question_20_', u'pHxBrCAGT1PrimarySame']
+aline: [u'Age 51 or older', u'What was your age when your breast cancer was <u>first</u> diagnosed?', u'21', u'None', u'P3a', 15, u'Question_21_', u'pHxBrCALE50Yrs']
+aline: [u'No', u'Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?', u'18', u'None', u'P3b', 16, u'Question_18_', u'pHxBrCAGE2RelBrPancCA']
+aline: [u'Yes', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?', u'17', u'None', u'P3b', 16, u'Question_17_', u'pHxBrCAGE1RelBrCALE50Years']
+aline: [u'Yes', u'Do you have at least one close blood relative who is \r\n<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"\r\nhref="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  \r\n<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>.', u'2', u'None', u'P3b', 16, u'Question_2_', u'ashkenaziJewishOneRel']
+savePtResponse: Exit
 pageCalc: entering
-pageCalc: current page is H3
-pageCalc: used Default to calculate current/next page H3/H3a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBreastBiopsy': u'No'}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxBreastBiopsy', u'No')]
-Questionnaire record 1
-Page record 3
-Test condition (1) matches: "[(u'pHxBreastBiopsy', u'No')]"
-getNextPageFromCalculation: exit
-pageCalc:  Have a match for a calculated next page: H4
+pageCalc: current page is SummaryPage
+pageCalc: used Default to calculate current/next page SummaryPage/avgRisk
 getNextPageFromGlobalFlags:  enter
-pageTag:  H3
-No global flag applies to this page transition. (Normal)
+pageTag:  SummaryPage
+globalFlagName "Indeterminate" transitions to page "indetRisk"
+globalFlagName "Referral" transitions to page "riskAssess2"
+Number of global flags (2) apply to page "SummaryPage"
+Checking global flags in session data
+allGlobalFlagsInSession: [u'Referral']
+myFlagName: Indeterminate
+myFlagNextPageobj: indetRisk
+myFlagName: Referral
+myFlagNextPageobj: riskAssess2
+getGlobalFlagPriority:  enter
+getGlobalFlagPriority:  exit
+Got a hit for global flag "Referral" (priority a), the next page is riskAssess2
+got a hit! Select the highest priority flag
+getNextPageFromGlobalFlags: exit
+pageCalc:  Match for a global flag determined next page riskAssess2
 pageCalc: exit
-NEXT button clicked. thisPageTag: H3, next_page: H4
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H4
+Edits to the summary done, so exit page "SummaryPage" to next page "riskAssess2"
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: riskAssess2
 pageType: singlePass
 NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 12, pHxAgeMenarche, How old were you when you had your first period?, IntegerField, 2014-04-08 23:25:55.097173
->, <Question: 10, pHxAgeLastPer, How old were you when you had your most recent period?, IntegerField, 2014-04-08 23:25:55.095548
->, <Question: 11, pHxAgeLastPer1Yr, Was your last period more than 1 year ago?, YesNoField, 2014-04-08 23:25:55.096388
->]
+#3No questions can be found for this page (riskAssess2).
 Not a POST
-No page data in session tag: H4
+No page data in session tag: riskAssess2
 UserDynamicFormCreation:  enter
 formData: ['']
 UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "12"
-aQuestion.questionTag1: "pHxAgeMenarche"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first period?"
-updatedQuestionText4: "How old were you when you had your first period?"
-theQLabel5: "pHxAgeMenarche"
-aQuestion record number: "10"
-aQuestion.questionTag1: "pHxAgeLastPer"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your most recent period?"
-updatedQuestionText4: "How old were you when you had your most recent period?"
-theQLabel5: "pHxAgeLastPer"
-aQuestion record number: "11"
-aQuestion.questionTag1: "pHxAgeLastPer1Yr"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Was your last period more than 1 year ago?"
-updatedQuestionText4: "Was your last period more than 1 year ago?"
-theQLabel5: "pHxAgeLastPer1Yr"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H4
+rendering page riskAssess2
 QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H4
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: riskAssess2
 pageType: singlePass
 NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 12, pHxAgeMenarche, How old were you when you had your first period?, IntegerField, 2014-04-08 23:25:55.097173
->, <Question: 10, pHxAgeLastPer, How old were you when you had your most recent period?, IntegerField, 2014-04-08 23:25:55.095548
->, <Question: 11, pHxAgeLastPer1Yr, Was your last period more than 1 year ago?, YesNoField, 2014-04-08 23:25:55.096388
->]
+#3No questions can be found for this page (riskAssess2).
 after POST
 UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxAgeLastPer': [u'65'], u'pHxAgeLastPer1Yr': [u'Yes'], u'pHxAgeMenarche': [u'15']}>
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'DM2fA6ec5FvRFnWFdwb9vUBhlKh8VhVY']}>
 UserDynamicFormCreation: has forms data input
-aQuestion record number: "12"
-aQuestion.questionTag1: "pHxAgeMenarche"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first period?"
-updatedQuestionText4: "How old were you when you had your first period?"
-theQLabel5: "pHxAgeMenarche"
-aQuestion record number: "10"
-aQuestion.questionTag1: "pHxAgeLastPer"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your most recent period?"
-updatedQuestionText4: "How old were you when you had your most recent period?"
-theQLabel5: "pHxAgeLastPer"
-aQuestion record number: "11"
-aQuestion.questionTag1: "pHxAgeLastPer1Yr"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Was your last period more than 1 year ago?"
-updatedQuestionText4: "Was your last period more than 1 year ago?"
-theQLabel5: "pHxAgeLastPer1Yr"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 Form is valid. Saving data.
 The cleaned data with question tags is:
-{u'pHxAgeLastPer1Yr': u'Yes', u'pHxAgeLastPer': 65, u'pHxAgeMenarche': 15}
+{}
 savePageData:  enter
 Session list data updated in savePageData
 savePageData:  exiting
 saveGlobalFlagsToSessionData:  enter
-page H4 Questionnaire: BRCA
-questionResponses "{u'pHxAgeLastPer1Yr': u'Yes', u'pHxAgeLastPer': 65, u'pHxAgeMenarche': 15}"
+page riskAssess2 Questionnaire: BRCA_F
+questionResponses "{}"
 questionResponses type "<type 'dict'>"
 successful query
-No analysis records found for page "H4" therefore no global flag added to Session Data.
+No analysis records found for page "riskAssess2" therefore no global flag added to Session Data.
 saveGlobalFlagsToSessionData:  exit
 pageCalc: entering
-pageCalc: current page is H4
-pageCalc: used Default to calculate current/next page H4/H5
+pageCalc: current page is riskAssess2
+pageCalc: used Default to calculate current/next page riskAssess2/completion
 pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxAgeLastPer1Yr': u'Yes', u'pHxAgeLastPer': 65, u'pHxAgeMenarche': 15}
+pageCalc:  questionResults: {}
 getNextPageFromCalculation: enter
-Test condition: [(u'pHxAgeLastPer', 65), (u'pHxAgeLastPer1Yr', u'Yes'), (u'pHxAgeMenarche', 15)]
-Questionnaire record 1
-Page record 6
+Test condition: []
+Questionnaire record 2
+Page record 27
 Found no match
 getNextPageFromCalculation: exit
 pageCalc:  No match for a calculated next page
 getNextPageFromGlobalFlags:  enter
-pageTag:  H4
+pageTag:  riskAssess2
 No global flag applies to this page transition. (Normal)
 pageCalc: exit
-NEXT button clicked. thisPageTag: H4, next_page: H5
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H5
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 13, pHxBirths, How many live births have you had?, IntegerField, 2014-04-08 23:25:55.097998
->]
-Not a POST
-No page data in session tag: H5
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "13"
-aQuestion.questionTag1: "pHxBirths"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many live births have you had?"
-updatedQuestionText4: "How many live births have you had?"
-theQLabel5: "pHxBirths"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
+NEXT button clicked. thisPageTag: riskAssess2, next_page: completion
+In Completion.
+Completion:  cookie removed.
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H5
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H5
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 13, pHxBirths, How many live births have you had?, IntegerField, 2014-04-08 23:25:55.097998
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBirths': [u'0']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "13"
-aQuestion.questionTag1: "pHxBirths"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many live births have you had?"
-updatedQuestionText4: "How many live births have you had?"
-theQLabel5: "pHxBirths"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBirths': 0}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H5 Questionnaire: BRCA
-questionResponses "{u'pHxBirths': 0}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H5" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H5
-pageCalc: used Default to calculate current/next page H5/H5a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBirths': 0}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxBirths', 0)]
-Questionnaire record 1
-Page record 7
-Test condition (1) matches: "[(u'pHxBirths', 0)]"
-getNextPageFromCalculation: exit
-pageCalc:  Have a match for a calculated next page: H6
-getNextPageFromGlobalFlags:  enter
-pageTag:  H5
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H5, next_page: H6
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H6
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 26, pHxChestRad, Have you had chest radiation between ages 10 and 30, such as for cancer treatment?, YesNoField, 2014-04-08 23:25:55.107252
->]
-Not a POST
-No page data in session tag: H6
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "26"
-aQuestion.questionTag1: "pHxChestRad"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you had chest radiation between ages 10 and 30, such as for cancer treatment?"
-updatedQuestionText4: "Have you had chest radiation between ages 10 and 30, such as for cancer treatment?"
-theQLabel5: "pHxChestRad"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H6
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H6
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 26, pHxChestRad, Have you had chest radiation between ages 10 and 30, such as for cancer treatment?, YesNoField, 2014-04-08 23:25:55.107252
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxChestRad': [u'No']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "26"
-aQuestion.questionTag1: "pHxChestRad"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you had chest radiation between ages 10 and 30, such as for cancer treatment?"
-updatedQuestionText4: "Have you had chest radiation between ages 10 and 30, such as for cancer treatment?"
-theQLabel5: "pHxChestRad"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxChestRad': u'No'}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H6 Questionnaire: BRCA
-questionResponses "{u'pHxChestRad': u'No'}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H6" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H6
-pageCalc: used Default to calculate current/next page H6/H7
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxChestRad': u'No'}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxChestRad', u'No')]
-Questionnaire record 1
-Page record 9
-Found no match
-getNextPageFromCalculation: exit
-pageCalc:  No match for a calculated next page
-getNextPageFromGlobalFlags:  enter
-pageTag:  H6
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H6, next_page: H7
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H7
-pageType: sendQuestions
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 27, pHxHormUse, What hormones have you used? Check all that apply., MultipleChoiceField, 2014-04-08 23:25:55.107926
->]
-Not a POST
-No page data in session tag: H7
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "27"
-aQuestion.questionTag1: "pHxHormUse"
-aQuestion.responseType2: "MultipleChoiceField"
-aQuestion.questionText3: "What hormones have you used? Check all that apply."
-updatedQuestionText4: "What hormones have you used? Check all that apply."
-theQLabel5: "pHxHormUse"
-Choices follow:
-Choice tag: pHxHormUse_BC Choice Text: Birth control pills
-Choice label: Birth control pills
-Choice tag: pHxHormUse_Est Choice Text: Estrogen replacement
-Choice label: Estrogen replacement
-Choice tag: pHxHormUse_Pro Choice Text: Progesterone replacement
-Choice label: Progesterone replacement
-Choice tag: pHxHormUse_Tam Choice Text: Tamoxifen
-Choice label: Tamoxifen
-Choice tag: pHxHormUse_Ral Choice Text: Raloxifene
-Choice label: Raloxifene
-Choice tag: pHxHormUse_Ari Choice Text: Arimidex
-Choice label: Arimidex
-End Choices
-Choices end. Count: 6
-choiceList: [[u'Birth control pills', u'Birth control pills'], [u'Estrogen replacement', u'Estrogen replacement'], [u'Progesterone replacement', u'Progesterone replacement'], [u'Tamoxifen', u'Tamoxifen'], [u'Raloxifene', u'Raloxifene'], [u'Arimidex', u'Arimidex']]
-UserDynamicFormCreation:  exit
+In Completion.
+Completion:  cookie not removed.
+In POST.
+In submitButton.
+In Submit e-mail.
+questionnaireEmail: screener@screengenes.org
+Found summary information to send.
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H7
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H7
-pageType: sendQuestions
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 27, pHxHormUse, What hormones have you used? Check all that apply., MultipleChoiceField, 2014-04-08 23:25:55.107926
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxHormUse': [u'Estrogen replacement']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "27"
-aQuestion.questionTag1: "pHxHormUse"
-aQuestion.responseType2: "MultipleChoiceField"
-aQuestion.questionText3: "What hormones have you used? Check all that apply."
-updatedQuestionText4: "What hormones have you used? Check all that apply."
-theQLabel5: "pHxHormUse"
-Choices follow:
-Choice tag: pHxHormUse_BC Choice Text: Birth control pills
-Choice label: Birth control pills
-Choice tag: pHxHormUse_Est Choice Text: Estrogen replacement
-Choice label: Estrogen replacement
-Choice tag: pHxHormUse_Pro Choice Text: Progesterone replacement
-Choice label: Progesterone replacement
-Choice tag: pHxHormUse_Tam Choice Text: Tamoxifen
-Choice label: Tamoxifen
-Choice tag: pHxHormUse_Ral Choice Text: Raloxifene
-Choice label: Raloxifene
-Choice tag: pHxHormUse_Ari Choice Text: Arimidex
-Choice label: Arimidex
-End Choices
-Choices end. Count: 6
-choiceList: [[u'Birth control pills', u'Birth control pills'], [u'Estrogen replacement', u'Estrogen replacement'], [u'Progesterone replacement', u'Progesterone replacement'], [u'Tamoxifen', u'Tamoxifen'], [u'Raloxifene', u'Raloxifene'], [u'Arimidex', u'Arimidex']]
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxHormUse': [u'Estrogen replacement']}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H7 Questionnaire: BRCA
-questionResponses "{u'pHxHormUse': [u'Estrogen replacement']}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H7" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H7
-pageCalc: used Default to calculate current/next page H7/H7a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxHormUse': [u'Estrogen replacement']}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxHormUse', [u'Estrogen replacement'])]
-Questionnaire record 1
-Page record 10
-Found no match
-getNextPageFromCalculation: exit
-pageCalc:  No match for a calculated next page
-getNextPageFromGlobalFlags:  enter
-pageTag:  H7
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H7, next_page: H7a
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H7a
-pageType: singlePass
-previousPageQuestionResults
-{u'pHxHormUse': [u'Estrogen replacement']}
-YES sendQuestions entry questions:
-entering convertFormsDataToDict
-{u'Estrogen replacement': True}
-Exiting convertFormsDataToDict
-Tags from previous questions: {u'Estrogen replacement': True}
-Selected tags for followOn questions: ['pHxHormUseEstrogenAgeStart', 'pHxHormUseEstrogenAgeEnd']
-YES sendQuestions generated (pruned):
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+In Completion.
+Completion:  cookie not removed.
+In POST.
+In submitButton.
+In start.
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash:  exit
 userLanding: enter
 the user is: djsuser
+userLanding: exit
+userLanding: enter
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+the user is: djsuser
+userLanding: Cookies worked fine!
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+intro:  enter
+intro:  exit
+intro:  enter
+intro:  exit
+intro:  enter
+intro:  exit
+restartSession:  called when clicking Back to splash
+whichProject working_pages, whichQuestionnaire selectSponsorsQuestionnairesToExecute
+syserrmsg:  url "working_pages/" does not match current project "PAMF/"
+syserrmsg:  url "selectSponsorsQuestionnairesToExecute/" does not match current questionnaire "BRCA_F"/
+test [u'syserrmsg:  url "working_pages/" does not match current project "PAMF/"', u'syserrmsg:  url "selectSponsorsQuestionnairesToExecute/" does not match current questionnaire "BRCA_F"/']
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+restartSession:  called when clicking Back to splash
+whichProject working_pages, whichQuestionnaire selectSponsorsQuestionnairesToExecute
+syserrmsg:  url "working_pages/" does not match current project "PAMF/"
+syserrmsg:  url "selectSponsorsQuestionnairesToExecute/" does not match current questionnaire "BRCA_F"/
+test [u'syserrmsg:  url "working_pages/" does not match current project "PAMF/"', u'syserrmsg:  url "selectSponsorsQuestionnairesToExecute/" does not match current questionnaire "BRCA_F"/']
 selectProjectsQuestionnairesToExecute:  enter
 currentProjectDefault:  PAMF
 displayQuestionnairesAndProjects:  enter
@@ -819,23 +877,114 @@ selectProjectsQuestionnairesToExecute:  enter
 currentProjectDefault:  PAMF
 displayQuestionnairesAndProjects:  enter
 displayQuestionnairesAndProjects:  exit
-SelectQuestionnaire button
-Removed Response data from Session Data
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+currentProjectDefault:  PAMF
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
+Debug:  current Project is not specified for this Session.
+syserrmsg: current Questionnaire is not specified for this Session.
+test ['Debug:  current Project is not specified for this Session.', 'syserrmsg: current Questionnaire is not specified for this Session.']
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash:  exit
+selectProjectsQuestionnairesToExecute:  enter
+Current project not defined.
+displayQuestionnairesAndProjects:  enter
+selectProjectsQuestionnairesToExecute:  enter
+Current project not defined.
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+Current project not defined.
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectsQuestionnairesToExecute:  exit
+selectProjectsQuestionnairesToExecute:  enter
+Current project not defined.
+displayQuestionnairesAndProjects:  enter
+displayQuestionnairesAndProjects:  exit
+selectProjectDefault:  exit to /multiquest/registration/userLanding/
+userLanding: enter
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+userLanding: enter
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
 questionnaireEnvironmentPrep:  enter
 questionnaireEnvironmentPrep:  exit
 questionnaireEnvironmentPrep:  enter
 questionnaireEnvironmentPrep:  exit
 splash: enter
-whichProject PAMF, whichQuest BRCA
+whichProject PAMF, whichQuest BRCA_F
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
 splash:  exit
 splash: enter
-whichProject PAMF, whichQuest BRCA
+whichProject PAMF, whichQuest BRCA_F
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
+splash: Cookies worked fine!
 pageCalc: entering
 pageCalc: current page is splash
 pageCalc: used Default to calculate current/next page splash/respondentIdent
@@ -843,1397 +992,776 @@ getNextPageFromGlobalFlags:  enter
 pageTag:  splash
 No global flag applies to this page transition. (Normal)
 pageCalc: exit
-splash: theNextURL /multiquest/PAMF/BRCA/respondentIdent
+splash: theNextURL /multiquest/PAMF/BRCA_F/respondentIdent
 splash: exit to page respondentIdent
-In respondentIdent. whichProject: PAMF whichQuest: BRCA
+In respondentIdent. whichProject: PAMF whichQuest: BRCA_F
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
 respondentIdent: exit
-In respondentIdent. whichProject: PAMF whichQuest: BRCA
-form data: {'contactPhone': u'888 888 8888', 'firstName': u'Quan', 'middleName': u'Q', 'lastName': u'Quark', 'birthDate': datetime.date(1922, 2, 2), 'contactEmail': u'clewis222@me.com'}
+In respondentIdent. whichProject: PAMF whichQuest: BRCA_F
+form data: {'contactPhone': u'888-888-8888', 'firstName': u'a', 'middleName': u'b', 'lastName': u'c', 'birthDate': datetime.date(1922, 2, 2), 'contactEmail': u'clewis222@me.com'}
 pageCalc: entering
 pageCalc: current page is respondentIdent
-pageCalc: used Default to calculate current/next page respondentIdent/H1
+pageCalc: used Default to calculate current/next page respondentIdent/P1
 getNextPageFromGlobalFlags:  enter
 pageTag:  respondentIdent
 No global flag applies to this page transition. (Normal)
 pageCalc: exit
 respondentIdent: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H1
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P1
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 42, ptInfoHTFeet, Feet, IntegerField, 2014-04-08 23:25:55.118375
->, <Question: 43, ptInfoHTInches, Inches, IntegerField, 2014-04-08 23:25:55.118989
->, <Question: 44, ptInfoWT, What is your weight? (pounds), IntegerField, 2014-04-08 23:25:55.119650
+[<Question: 40, pHxOvarianCA, Have you ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.116791
 >]
 Not a POST
-No page data in session tag: H1
+No page data in session tag: P1
 UserDynamicFormCreation:  enter
 formData: ['']
 UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "42"
-aQuestion.questionTag1: "ptInfoHTFeet"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "Feet"
-updatedQuestionText4: "Feet"
-theQLabel5: "ptInfoHTFeet"
-aQuestion record number: "43"
-aQuestion.questionTag1: "ptInfoHTInches"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "Inches"
-updatedQuestionText4: "Inches"
-theQLabel5: "ptInfoHTInches"
-aQuestion record number: "44"
-aQuestion.questionTag1: "ptInfoWT"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "What is your weight? (pounds)"
-updatedQuestionText4: "What is your weight? (pounds)"
-theQLabel5: "ptInfoWT"
+aQuestion record number: "40"
+aQuestion.questionTag1: "pHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had ovarian cancer?"
+updatedQuestionText4: "Have you ever had ovarian cancer?"
+theQLabel5: "pHxOvarianCA"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H1
+rendering page P1
 QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H1
+getAllQuestionnaires:  enter
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P1
+Debug:  current Project is not specified for this Session.
+syserrmsg: current Questionnaire is not specified for this Session.
+userLanding: enter
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+selectQuestionnaireDefault:  enter
+selectQuestionnaireDefault:  exit
+selectQuestionnaireDefault:  enter
+userLanding: enter
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+Record deleted
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+userLanding: Cookies worked fine!
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash: Cookies worked fine!
+pageCalc: entering
+pageCalc: current page is splash
+pageCalc: used Default to calculate current/next page splash/respondentIdent
+getNextPageFromGlobalFlags:  enter
+pageTag:  splash
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+splash: theNextURL /multiquest/PAMF/BRCA_F/respondentIdent
+splash: exit to page respondentIdent
+In respondentIdent. whichProject: PAMF whichQuest: BRCA_F
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+respondentIdent: exit
+In respondentIdent. whichProject: PAMF whichQuest: BRCA_F
+form data: {'contactPhone': u'888-888-8888', 'firstName': u'a', 'middleName': u'b', 'lastName': u'c', 'birthDate': datetime.date(1922, 2, 2), 'contactEmail': u'clewis222@me.com'}
+pageCalc: entering
+pageCalc: current page is respondentIdent
+pageCalc: used Default to calculate current/next page respondentIdent/P1
+getNextPageFromGlobalFlags:  enter
+pageTag:  respondentIdent
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+respondentIdent: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P1
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 42, ptInfoHTFeet, Feet, IntegerField, 2014-04-08 23:25:55.118375
->, <Question: 43, ptInfoHTInches, Inches, IntegerField, 2014-04-08 23:25:55.118989
->, <Question: 44, ptInfoWT, What is your weight? (pounds), IntegerField, 2014-04-08 23:25:55.119650
+[<Question: 40, pHxOvarianCA, Have you ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.116791
+>]
+Not a POST
+No page data in session tag: P1
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "40"
+aQuestion.questionTag1: "pHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had ovarian cancer?"
+updatedQuestionText4: "Have you ever had ovarian cancer?"
+theQLabel5: "pHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P1
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P1
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 40, pHxOvarianCA, Have you ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.116791
 >]
 after POST
 UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'ptInfoWT': [u'200'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'ptInfoHTFeet': [u'6'], u'ptInfoHTInches': [u'10']}>
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'BKDJDf5kLBV02Eh8pxUoEYr8GvoqWntU'], u'pHxOvarianCA': [u'No']}>
 UserDynamicFormCreation: has forms data input
-aQuestion record number: "42"
-aQuestion.questionTag1: "ptInfoHTFeet"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "Feet"
-updatedQuestionText4: "Feet"
-theQLabel5: "ptInfoHTFeet"
-aQuestion record number: "43"
-aQuestion.questionTag1: "ptInfoHTInches"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "Inches"
-updatedQuestionText4: "Inches"
-theQLabel5: "ptInfoHTInches"
-aQuestion record number: "44"
-aQuestion.questionTag1: "ptInfoWT"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "What is your weight? (pounds)"
-updatedQuestionText4: "What is your weight? (pounds)"
-theQLabel5: "ptInfoWT"
+aQuestion record number: "40"
+aQuestion.questionTag1: "pHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had ovarian cancer?"
+updatedQuestionText4: "Have you ever had ovarian cancer?"
+theQLabel5: "pHxOvarianCA"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 Form is valid. Saving data.
 The cleaned data with question tags is:
-{u'ptInfoWT': 200, u'ptInfoHTInches': 10, u'ptInfoHTFeet': 6}
+{u'pHxOvarianCA': u'No'}
 savePageData:  enter
 Session list data updated in savePageData
 savePageData:  exiting
 saveGlobalFlagsToSessionData:  enter
-page H1 Questionnaire: BRCA
-questionResponses "{u'ptInfoWT': 200, u'ptInfoHTInches': 10, u'ptInfoHTFeet': 6}"
+page P1 Questionnaire: BRCA_F
+questionResponses "{u'pHxOvarianCA': u'No'}"
 questionResponses type "<type 'dict'>"
 successful query
-No analysis records found for page "H1" therefore no global flag added to Session Data.
+Test conditon: "[(u'pHxOvarianCA', u'Yes')]", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'pHxOvarianCA', u'No')]"
+Test condition type does not match any known type (ok).
 saveGlobalFlagsToSessionData:  exit
 pageCalc: entering
-pageCalc: current page is H1
-pageCalc: used Default to calculate current/next page H1/H2
+pageCalc: current page is P1
+pageCalc: used Default to calculate current/next page P1/P2
 pageCalc:  incoming question results
-pageCalc:  questionResults: {u'ptInfoWT': 200, u'ptInfoHTInches': 10, u'ptInfoHTFeet': 6}
+pageCalc:  questionResults: {u'pHxOvarianCA': u'No'}
 getNextPageFromCalculation: enter
-Test condition: [(u'ptInfoHTFeet', 6), (u'ptInfoHTInches', 10), (u'ptInfoWT', 200)]
-Questionnaire record 1
-Page record 1
+Test condition: [(u'pHxOvarianCA', u'No')]
+Questionnaire record 2
+Page record 12
 Found no match
 getNextPageFromCalculation: exit
 pageCalc:  No match for a calculated next page
 getNextPageFromGlobalFlags:  enter
-pageTag:  H1
-No global flag applies to this page transition. (Normal)
+pageTag:  P1
+globalFlagName "Referral" transitions to page "SummaryPage"
+Number of global flags (1) apply to page "P1"
+no global flags set yet
+getNextPageFromGlobalFlags: exit
 pageCalc: exit
-NEXT button clicked. thisPageTag: H1, next_page: H2
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H2
+NEXT button clicked. thisPageTag: P1, next_page: P2
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P2
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 41, ptEth, What is your race/ethnicity? Check all that apply., MultipleChoiceRequiredField, 2014-04-08 23:25:55.117674
+[<Question: 8, fHxOvarianCA, Have any of your close blood relatives ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.093858
 >]
 Not a POST
-No page data in session tag: H2
+No page data in session tag: P2
 UserDynamicFormCreation:  enter
 formData: ['']
 UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "41"
-aQuestion.questionTag1: "ptEth"
-aQuestion.responseType2: "MultipleChoiceRequiredField"
-aQuestion.questionText3: "What is your race/ethnicity? Check all that apply."
-updatedQuestionText4: "What is your race/ethnicity? Check all that apply."
-theQLabel5: "ptEth"
+aQuestion record number: "8"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P2
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P2
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 8, fHxOvarianCA, Have any of your close blood relatives ever had ovarian cancer?, YesNoField, 2014-04-08 23:25:55.093858
+>]
+after POST
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'fHxOvarianCA': [u'No'], u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'BKDJDf5kLBV02Eh8pxUoEYr8GvoqWntU']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "8"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+Form is valid. Saving data.
+The cleaned data with question tags is:
+{u'fHxOvarianCA': u'No'}
+savePageData:  enter
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P2 Questionnaire: BRCA_F
+questionResponses "{u'fHxOvarianCA': u'No'}"
+questionResponses type "<type 'dict'>"
+successful query
+Test conditon: "[(u'fHxOvarianCA', u'Yes')]", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'fHxOvarianCA', u'No')]"
+Test condition type does not match any known type (ok).
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P2
+pageCalc: used Default to calculate current/next page P2/P3
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'fHxOvarianCA': u'No'}
+getNextPageFromCalculation: enter
+Test condition: [(u'fHxOvarianCA', u'No')]
+Questionnaire record 2
+Page record 13
+Found no match
+getNextPageFromCalculation: exit
+pageCalc:  No match for a calculated next page
+getNextPageFromGlobalFlags:  enter
+pageTag:  P2
+globalFlagName "Referral" transitions to page "SummaryPage"
+Number of global flags (1) apply to page "P2"
+no global flags set yet
+getNextPageFromGlobalFlags: exit
+pageCalc: exit
+NEXT button clicked. thisPageTag: P2, next_page: P3
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 25, pHxBreastCA, Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>., YesNoField, 2014-04-08 23:25:55.106619
+>]
+Not a POST
+No page data in session tag: P3
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "25"
+aQuestion.questionTag1: "pHxBreastCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>."
+updatedQuestionText4: "Have you ever had <a title="Tap here for more information about breast cancer"href="/multiquest/explanations/moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>."
+theQLabel5: "pHxBreastCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P3
+QuestContinue: exit
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 25, pHxBreastCA, Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>., YesNoField, 2014-04-08 23:25:55.106619
+>]
+after POST
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'BKDJDf5kLBV02Eh8pxUoEYr8GvoqWntU'], u'pHxBreastCA': [u'Yes']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "25"
+aQuestion.questionTag1: "pHxBreastCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>."
+updatedQuestionText4: "Have you ever had <a title="Tap here for more information about breast cancer"href="/multiquest/explanations/moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>."
+theQLabel5: "pHxBreastCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+Form is valid. Saving data.
+The cleaned data with question tags is:
+{u'pHxBreastCA': u'Yes'}
+savePageData:  enter
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P3 Questionnaire: BRCA_F
+questionResponses "{u'pHxBreastCA': u'Yes'}"
+questionResponses type "<type 'dict'>"
+successful query
+No analysis records found for page "P3" therefore no global flag added to Session Data.
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P3
+pageCalc: used Default to calculate current/next page P3/P4
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'pHxBreastCA': u'Yes'}
+getNextPageFromCalculation: enter
+Test condition: [(u'pHxBreastCA', u'Yes')]
+Questionnaire record 2
+Page record 14
+Test condition (1) matches: "[(u'pHxBreastCA', u'Yes')]"
+getNextPageFromCalculation: exit
+pageCalc:  Have a match for a calculated next page: P3a
+getNextPageFromGlobalFlags:  enter
+pageTag:  P3
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+NEXT button clicked. thisPageTag: P3, next_page: P3a
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3a
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 21, pHxBrCALE50Yrs, What was your age when your breast cancer was <u>first</u> diagnosed?, SingleChoiceField, 2014-06-04 01:09:05.102697
+>, <Question: 16, pHxBrCA3Neg, Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?, YesNoField, 2014-06-04 01:09:05.115378
+>, <Question: 20, pHxBrCAGT1PrimarySame, Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?, YesNoField, 2014-06-04 01:09:05.120252
+>, <Question: 19, pHxBrCAGT1PrimaryBoth, Have you had cancer in <u>both</u> breasts?, YesNoField, 2014-06-04 01:09:05.124932
+>]
+Not a POST
+No page data in session tag: P3a
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "21"
+aQuestion.questionTag1: "pHxBrCALE50Yrs"
+aQuestion.responseType2: "SingleChoiceField"
+aQuestion.questionText3: "What was your age when your breast cancer was <u>first</u> diagnosed?"
+updatedQuestionText4: "What was your age when your breast cancer was <u>first</u> diagnosed?"
+theQLabel5: "pHxBrCALE50Yrs"
 Choices follow:
-Choice tag: ptEth_W Choice Text: White
-Choice label: White
-Choice tag: ptEth_AA Choice Text: African American
-Choice label: African American
-Choice tag: ptEth_H Choice Text: Hispanic
-Choice label: Hispanic
-Choice tag: ptEth_AI Choice Text: American Indian
-Choice label: American Indian
-Choice tag: ptEth_AN Choice Text: Alaskan Native
-Choice label: Alaskan Native
-Choice tag: ptEth_C Choice Text: Chinese
-Choice label: Chinese
-Choice tag: ptEth_J Choice Text: Japanese
-Choice label: Japanese
-Choice tag: ptEth_F Choice Text: Filipino
-Choice label: Filipino
-Choice tag: ptEth_Hii Choice Text: Hawaiian
-Choice label: Hawaiian
-Choice tag: ptEth_OPI Choice Text: Other Pacific Islander
-Choice label: Other Pacific Islander
-Choice tag: ptEth_OAA Choice Text: Other Asian American
-Choice label: Other Asian American
-Choice tag: ptEth_OU Choice Text: Other or unknown
-Choice label: Other or unknown
+Choice tag: Yes Choice Text: Age 50 or under
+Choice label: Age 50 or under
+Choice tag: No Choice Text: Age 51 or older
+Choice label: Age 51 or older
 End Choices
-Choices end. Count: 12
-choiceList: [[u'White', u'White'], [u'African American', u'African American'], [u'Hispanic', u'Hispanic'], [u'American Indian', u'American Indian'], [u'Alaskan Native', u'Alaskan Native'], [u'Chinese', u'Chinese'], [u'Japanese', u'Japanese'], [u'Filipino', u'Filipino'], [u'Hawaiian', u'Hawaiian'], [u'Other Pacific Islander', u'Other Pacific Islander'], [u'Other Asian American', u'Other Asian American'], [u'Other or unknown', u'Other or unknown']]
+aQuestion record number: "16"
+aQuestion.questionTag1: "pHxBrCA3Neg"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?"
+updatedQuestionText4: "Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?"
+theQLabel5: "pHxBrCA3Neg"
+aQuestion record number: "20"
+aQuestion.questionTag1: "pHxBrCAGT1PrimarySame"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?"
+updatedQuestionText4: "Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?"
+theQLabel5: "pHxBrCAGT1PrimarySame"
+aQuestion record number: "19"
+aQuestion.questionTag1: "pHxBrCAGT1PrimaryBoth"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you had cancer in <u>both</u> breasts?"
+updatedQuestionText4: "Have you had cancer in <u>both</u> breasts?"
+theQLabel5: "pHxBrCAGT1PrimaryBoth"
+Choices end. Count: 2
+choiceList: [[u'Age 50 or under', u'Age 50 or under'], [u'Age 51 or older', u'Age 51 or older']]
 UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H2
+rendering page P3a
 QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H2
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3a
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 41, ptEth, What is your race/ethnicity? Check all that apply., MultipleChoiceRequiredField, 2014-04-08 23:25:55.117674
+[<Question: 21, pHxBrCALE50Yrs, What was your age when your breast cancer was <u>first</u> diagnosed?, SingleChoiceField, 2014-06-04 01:09:05.102697
+>, <Question: 16, pHxBrCA3Neg, Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?, YesNoField, 2014-06-04 01:09:05.115378
+>, <Question: 20, pHxBrCAGT1PrimarySame, Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?, YesNoField, 2014-06-04 01:09:05.120252
+>, <Question: 19, pHxBrCAGT1PrimaryBoth, Have you had cancer in <u>both</u> breasts?, YesNoField, 2014-06-04 01:09:05.124932
 >]
 after POST
 UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'ptEth': [u'Hispanic'], u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t']}>
+formData: <QueryDict: {u'pHxBrCA3Neg': [u'No'], u'pHxBrCAGT1PrimarySame': [u'No'], u'pHxBrCAGT1PrimaryBoth': [u'No'], u'pHxBrCALE50Yrs': [u'Age 51 or older'], u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'BKDJDf5kLBV02Eh8pxUoEYr8GvoqWntU']}>
 UserDynamicFormCreation: has forms data input
-aQuestion record number: "41"
-aQuestion.questionTag1: "ptEth"
-aQuestion.responseType2: "MultipleChoiceRequiredField"
-aQuestion.questionText3: "What is your race/ethnicity? Check all that apply."
-updatedQuestionText4: "What is your race/ethnicity? Check all that apply."
-theQLabel5: "ptEth"
+aQuestion record number: "21"
+aQuestion.questionTag1: "pHxBrCALE50Yrs"
+aQuestion.responseType2: "SingleChoiceField"
+aQuestion.questionText3: "What was your age when your breast cancer was <u>first</u> diagnosed?"
+updatedQuestionText4: "What was your age when your breast cancer was <u>first</u> diagnosed?"
+theQLabel5: "pHxBrCALE50Yrs"
 Choices follow:
-Choice tag: ptEth_W Choice Text: White
-Choice label: White
-Choice tag: ptEth_AA Choice Text: African American
-Choice label: African American
-Choice tag: ptEth_H Choice Text: Hispanic
-Choice label: Hispanic
-Choice tag: ptEth_AI Choice Text: American Indian
-Choice label: American Indian
-Choice tag: ptEth_AN Choice Text: Alaskan Native
-Choice label: Alaskan Native
-Choice tag: ptEth_C Choice Text: Chinese
-Choice label: Chinese
-Choice tag: ptEth_J Choice Text: Japanese
-Choice label: Japanese
-Choice tag: ptEth_F Choice Text: Filipino
-Choice label: Filipino
-Choice tag: ptEth_Hii Choice Text: Hawaiian
-Choice label: Hawaiian
-Choice tag: ptEth_OPI Choice Text: Other Pacific Islander
-Choice label: Other Pacific Islander
-Choice tag: ptEth_OAA Choice Text: Other Asian American
-Choice label: Other Asian American
-Choice tag: ptEth_OU Choice Text: Other or unknown
-Choice label: Other or unknown
+Choice tag: Yes Choice Text: Age 50 or under
+Choice label: Age 50 or under
+Choice tag: No Choice Text: Age 51 or older
+Choice label: Age 51 or older
 End Choices
-Choices end. Count: 12
-choiceList: [[u'White', u'White'], [u'African American', u'African American'], [u'Hispanic', u'Hispanic'], [u'American Indian', u'American Indian'], [u'Alaskan Native', u'Alaskan Native'], [u'Chinese', u'Chinese'], [u'Japanese', u'Japanese'], [u'Filipino', u'Filipino'], [u'Hawaiian', u'Hawaiian'], [u'Other Pacific Islander', u'Other Pacific Islander'], [u'Other Asian American', u'Other Asian American'], [u'Other or unknown', u'Other or unknown']]
+aQuestion record number: "16"
+aQuestion.questionTag1: "pHxBrCA3Neg"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?"
+updatedQuestionText4: "Was your cancer <u>“triple negative”</u>, without receptors for estrogen, progesterone and HER2?"
+theQLabel5: "pHxBrCA3Neg"
+aQuestion record number: "20"
+aQuestion.questionTag1: "pHxBrCAGT1PrimarySame"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?"
+updatedQuestionText4: "Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?"
+theQLabel5: "pHxBrCAGT1PrimarySame"
+aQuestion record number: "19"
+aQuestion.questionTag1: "pHxBrCAGT1PrimaryBoth"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have you had cancer in <u>both</u> breasts?"
+updatedQuestionText4: "Have you had cancer in <u>both</u> breasts?"
+theQLabel5: "pHxBrCAGT1PrimaryBoth"
+Choices end. Count: 2
+choiceList: [[u'Age 50 or under', u'Age 50 or under'], [u'Age 51 or older', u'Age 51 or older']]
 UserDynamicFormCreation:  exit
 Form is valid. Saving data.
 The cleaned data with question tags is:
-{u'ptEth': [u'Hispanic']}
+{u'pHxBrCA3Neg': u'No', u'pHxBrCAGT1PrimaryBoth': u'No', u'pHxBrCAGT1PrimarySame': u'No', u'pHxBrCALE50Yrs': u'Age 51 or older'}
 savePageData:  enter
 Session list data updated in savePageData
 savePageData:  exiting
 saveGlobalFlagsToSessionData:  enter
-page H2 Questionnaire: BRCA
-questionResponses "{u'ptEth': [u'Hispanic']}"
+page P3a Questionnaire: BRCA_F
+questionResponses "{u'pHxBrCA3Neg': u'No', u'pHxBrCAGT1PrimaryBoth': u'No', u'pHxBrCAGT1PrimarySame': u'No', u'pHxBrCALE50Yrs': u'Age 51 or older'}"
 questionResponses type "<type 'dict'>"
 successful query
-No analysis records found for page "H2" therefore no global flag added to Session Data.
+Test conditon: "anyYesButton", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'pHxBrCA3Neg', u'No'), (u'pHxBrCAGT1PrimaryBoth', u'No'), (u'pHxBrCAGT1PrimarySame', u'No'), (u'pHxBrCALE50Yrs', u'Age 51 or older')]"
+testCondition4 "anyYesButton"
+globalFlagName "Referral"
+questionResponses.values() [u'No', u'No', u'No', u'Age 51 or older']
 saveGlobalFlagsToSessionData:  exit
 pageCalc: entering
-pageCalc: current page is H2
-pageCalc: used Default to calculate current/next page H2/H3
+pageCalc: current page is P3a
+pageCalc: used Default to calculate current/next page P3a/P3b
 pageCalc:  incoming question results
-pageCalc:  questionResults: {u'ptEth': [u'Hispanic']}
+pageCalc:  questionResults: {u'pHxBrCA3Neg': u'No', u'pHxBrCAGT1PrimaryBoth': u'No', u'pHxBrCAGT1PrimarySame': u'No', u'pHxBrCALE50Yrs': u'Age 51 or older'}
 getNextPageFromCalculation: enter
-Test condition: [(u'ptEth', [u'Hispanic'])]
-Questionnaire record 1
-Page record 2
+Test condition: [(u'pHxBrCA3Neg', u'No'), (u'pHxBrCAGT1PrimaryBoth', u'No'), (u'pHxBrCAGT1PrimarySame', u'No'), (u'pHxBrCALE50Yrs', u'Age 51 or older')]
+Questionnaire record 2
+Page record 15
 Found no match
 getNextPageFromCalculation: exit
 pageCalc:  No match for a calculated next page
 getNextPageFromGlobalFlags:  enter
-pageTag:  H2
-No global flag applies to this page transition. (Normal)
+pageTag:  P3a
+globalFlagName "Referral" transitions to page "SummaryPage"
+Number of global flags (1) apply to page "P3a"
+no global flags set yet
+getNextPageFromGlobalFlags: exit
 pageCalc: exit
-NEXT button clicked. thisPageTag: H2, next_page: H3
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
+NEXT button clicked. thisPageTag: P3a, next_page: P3b
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3b
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
+[<Question: 17, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?, YesNoField, 2014-04-08 23:25:55.101058
+>, <Question: 18, pHxBrCAGE2RelBrPancCA, Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?, YesNoField, 2014-06-11 00:46:45.038886
+>, <Question: 2, ashkenaziJewishOneRel, Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>., YesNoField, 2014-04-08 23:25:55.088067
 >]
 Not a POST
-No page data in session tag: H3
+No page data in session tag: P3b
 UserDynamicFormCreation:  enter
 formData: ['']
 UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
+aQuestion record number: "17"
+aQuestion.questionTag1: "pHxBrCAGE1RelBrCALE50Years"
 aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
+aQuestion.questionText3: "Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?"
+updatedQuestionText4: "Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?"
+theQLabel5: "pHxBrCAGE1RelBrCALE50Years"
+aQuestion record number: "18"
+aQuestion.questionTag1: "pHxBrCAGE2RelBrPancCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?"
+updatedQuestionText4: "Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?"
+theQLabel5: "pHxBrCAGE2RelBrPancCA"
+aQuestion record number: "2"
+aQuestion.questionTag1: "ashkenaziJewishOneRel"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>."
+updatedQuestionText4: "Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="/multiquest/explanations/ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="/multiquest/explanations/brcatesting">BRCA gene mutations</a></i>."
+theQLabel5: "ashkenaziJewishOneRel"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3
+rendering page P3b
 QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: P3b
 pageType: singlePass
 NO sendQuestions
 QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
+[<Question: 17, pHxBrCAGE1RelBrCALE50Years, Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?, YesNoField, 2014-04-08 23:25:55.101058
+>, <Question: 18, pHxBrCAGE2RelBrPancCA, Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?, YesNoField, 2014-06-11 00:46:45.038886
+>, <Question: 2, ashkenaziJewishOneRel, Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>., YesNoField, 2014-04-08 23:25:55.088067
 >]
 after POST
 UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsy': [u'Yes']}>
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'BKDJDf5kLBV02Eh8pxUoEYr8GvoqWntU'], u'pHxBrCAGE1RelBrCALE50Years': [u'No'], u'pHxBrCAGE2RelBrPancCA': [u'Yes'], u'ashkenaziJewishOneRel': [u'Yes']}>
 UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
+aQuestion record number: "17"
+aQuestion.questionTag1: "pHxBrCAGE1RelBrCALE50Years"
 aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
+aQuestion.questionText3: "Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?"
+updatedQuestionText4: "Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?"
+theQLabel5: "pHxBrCAGE1RelBrCALE50Years"
+aQuestion record number: "18"
+aQuestion.questionTag1: "pHxBrCAGE2RelBrPancCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?"
+updatedQuestionText4: "Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?"
+theQLabel5: "pHxBrCAGE2RelBrPancCA"
+aQuestion record number: "2"
+aQuestion.questionTag1: "ashkenaziJewishOneRel"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>."
+updatedQuestionText4: "Do you have at least one close blood relative who is 
+<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"
+href="/multiquest/explanations/ashkenazijewishrelatives">Ashkenazi Jewish?</a>  
+<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="/multiquest/explanations/brcatesting">BRCA gene mutations</a></i>."
+theQLabel5: "ashkenaziJewishOneRel"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 Form is valid. Saving data.
 The cleaned data with question tags is:
-{u'pHxBreastBiopsy': u'Yes'}
+{u'pHxBrCAGE2RelBrPancCA': u'Yes', u'pHxBrCAGE1RelBrCALE50Years': u'No', u'ashkenaziJewishOneRel': u'Yes'}
 savePageData:  enter
 Session list data updated in savePageData
 savePageData:  exiting
 saveGlobalFlagsToSessionData:  enter
-page H3 Questionnaire: BRCA
-questionResponses "{u'pHxBreastBiopsy': u'Yes'}"
+page P3b Questionnaire: BRCA_F
+questionResponses "{u'pHxBrCAGE2RelBrPancCA': u'Yes', u'pHxBrCAGE1RelBrCALE50Years': u'No', u'ashkenaziJewishOneRel': u'Yes'}"
 questionResponses type "<type 'dict'>"
 successful query
-No analysis records found for page "H3" therefore no global flag added to Session Data.
+Test conditon: "anyYesButton", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'ashkenaziJewishOneRel', u'Yes'), (u'pHxBrCAGE1RelBrCALE50Years', u'No'), (u'pHxBrCAGE2RelBrPancCA', u'Yes')]"
+testCondition4 "anyYesButton"
+globalFlagName "Referral"
+questionResponses.values() [u'Yes', u'No', u'Yes']
+anyYesButton: a "Yes" found, therefore flag is set
 saveGlobalFlagsToSessionData:  exit
 pageCalc: entering
-pageCalc: current page is H3
-pageCalc: used Default to calculate current/next page H3/H3a
+pageCalc: current page is P3b
+pageCalc: used Default to calculate current/next page P3b/P3c
 pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBreastBiopsy': u'Yes'}
+pageCalc:  questionResults: {u'pHxBrCAGE2RelBrPancCA': u'Yes', u'pHxBrCAGE1RelBrCALE50Years': u'No', u'ashkenaziJewishOneRel': u'Yes'}
 getNextPageFromCalculation: enter
-Test condition: [(u'pHxBreastBiopsy', u'Yes')]
-Questionnaire record 1
-Page record 3
-Test condition does not match 0: "[(u'pHxBreastBiopsy', u'No')]"
+Test condition: [(u'ashkenaziJewishOneRel', u'Yes'), (u'pHxBrCAGE1RelBrCALE50Years', u'No'), (u'pHxBrCAGE2RelBrPancCA', u'Yes')]
+Questionnaire record 2
+Page record 16
 Found no match
 getNextPageFromCalculation: exit
 pageCalc:  No match for a calculated next page
 getNextPageFromGlobalFlags:  enter
-pageTag:  H3
-No global flag applies to this page transition. (Normal)
+pageTag:  P3b
+globalFlagName "Referral" transitions to page "SummaryPage"
+Number of global flags (1) apply to page "P3b"
+Checking global flags in session data
+allGlobalFlagsInSession: [u'Referral']
+myFlagName: Referral
+myFlagNextPageobj: SummaryPage
+getGlobalFlagPriority:  enter
+getGlobalFlagPriority:  exit
+Got a hit for global flag "Referral" (priority a), the next page is SummaryPage
+got a hit! Select the highest priority flag
+getNextPageFromGlobalFlags: exit
+pageCalc:  Match for a global flag determined next page SummaryPage
 pageCalc: exit
-NEXT button clicked. thisPageTag: H3, next_page: H3a
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3a
+PageType appended to next_page url:  SummaryPage/questionnaireSummary
+questionnaireSummary:  enter
+Current page url: SummaryPage
+formatResponseforDisplay:  enter
+Have results data
+formatResponseforDisplay:  exit
+birthDate
+1922-02-02
+data type: <type 'unicode'>
+questionnaireSummary:  creating contextDict
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+questionnaireSummary:  inside GET
+this_page SummaryPage
+questionnaireSummary:  exit
+questionnaireSummary:  enter
+Current page url: SummaryPage
+formatResponseforDisplay:  enter
+Have results data
+formatResponseforDisplay:  exit
+birthDate
+1922-02-02
+data type: <type 'unicode'>
+questionnaireSummary:  creating contextDict
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+questionnaireSummary:  inside POST
+this_page SummaryPage
+Next button clicked
+savePtResponse: Enter
+Before calculate_ptAge_now( birthDate)
+After calculate_ptAge_now( birthDate)
+savePtResponse:  found respondent data
+respIDDict: {u'contactPhone': u'888-888-8888', u'firstName': u'A', u'middleName': u'B', u'lastName': u'C', u'birthDate': u'1922-02-02', u'contactEmail': u'clewis222@me.com'}
+Saved contactPhone to respIDDict
+savePtResponse:  updated respondent data
+before creating a submission record
+after creating a submission record
+aline: [u'No', u'Have you ever had ovarian cancer?', u'40', u'None', u'P1', 12, u'Question_40_', u'pHxOvarianCA']
+aline: [u'No', u'Have any of your close blood relatives ever had ovarian cancer?', u'8', u'None', u'P2', 13, u'Question_8_', u'fHxOvarianCA']
+aline: [u'Yes', u'Have you ever had <a title="Tap here for more information about breast cancer"href="{{explainURLprefix}}moreonbreastca"> breast cancer or ductal carcinoma in situ (DCIS)?</a>.', u'25', u'None', u'P3', 14, u'Question_25_', u'pHxBreastCA']
+aline: [u'No', u'Was your cancer <u>\u201ctriple negative\u201d</u>, without receptors for estrogen, progesterone and HER2?', u'16', u'None', u'P3a', 15, u'Question_16_', u'pHxBrCA3Neg']
+aline: [u'No', u'Have you had cancer in <u>both</u> breasts?', u'19', u'None', u'P3a', 15, u'Question_19_', u'pHxBrCAGT1PrimaryBoth']
+aline: [u'No', u'Was your cancer found in <u>more than one location</u> in the <u>same</u> breast?', u'20', u'None', u'P3a', 15, u'Question_20_', u'pHxBrCAGT1PrimarySame']
+aline: [u'Age 51 or older', u'What was your age when your breast cancer was <u>first</u> diagnosed?', u'21', u'None', u'P3a', 15, u'Question_21_', u'pHxBrCALE50Yrs']
+aline: [u'Yes', u'Did two or more close blood relatives from the <u>same side</u> of your family have breast or pancreatic cancer?', u'18', u'None', u'P3b', 16, u'Question_18_', u'pHxBrCAGE2RelBrPancCA']
+aline: [u'No', u'Do you have any close blood relatives with breast cancer who were diagnosed at age 50 years or younger?', u'17', u'None', u'P3b', 16, u'Question_17_', u'pHxBrCAGE1RelBrCALE50Years']
+aline: [u'Yes', u'Do you have at least one close blood relative who is \r\n<a title="Tap here to see what we mean by Ashkenazi Jewish for this survey"\r\nhref="{{explainURLprefix}}ashkenazijewishrelatives">Ashkenazi Jewish?</a>  \r\n<i>Ashkenazi Jewish people have a higher chance of <a title="Tap here to learn more about BRCA gene mutations" href="{{explainURLprefix}}brcatesting">BRCA gene mutations</a></i>.', u'2', u'None', u'P3b', 16, u'Question_2_', u'ashkenaziJewishOneRel']
+savePtResponse: Exit
+pageCalc: entering
+pageCalc: current page is SummaryPage
+pageCalc: used Default to calculate current/next page SummaryPage/avgRisk
+getNextPageFromGlobalFlags:  enter
+pageTag:  SummaryPage
+globalFlagName "Indeterminate" transitions to page "indetRisk"
+globalFlagName "Referral" transitions to page "riskAssess2"
+Number of global flags (2) apply to page "SummaryPage"
+Checking global flags in session data
+allGlobalFlagsInSession: [u'Referral']
+myFlagName: Indeterminate
+myFlagNextPageobj: indetRisk
+myFlagName: Referral
+myFlagNextPageobj: riskAssess2
+getGlobalFlagPriority:  enter
+getGlobalFlagPriority:  exit
+Got a hit for global flag "Referral" (priority a), the next page is riskAssess2
+got a hit! Select the highest priority flag
+getNextPageFromGlobalFlags: exit
+pageCalc:  Match for a global flag determined next page riskAssess2
+pageCalc: exit
+Edits to the summary done, so exit page "SummaryPage" to next page "riskAssess2"
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: riskAssess2
 pageType: singlePass
 NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 24, pHxBreastBiopsyNumber, How many breast biopsies did you have?, IntegerField, 2014-04-08 23:25:55.105991
->]
+#3No questions can be found for this page (riskAssess2).
 Not a POST
-No page data in session tag: H3a
+No page data in session tag: riskAssess2
 UserDynamicFormCreation:  enter
 formData: ['']
 UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "24"
-aQuestion.questionTag1: "pHxBreastBiopsyNumber"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many breast biopsies did you have?"
-updatedQuestionText4: "How many breast biopsies did you have?"
-theQLabel5: "pHxBreastBiopsyNumber"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3a
+rendering page riskAssess2
 QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3a
+In QuestContinue. whichProject: PAMF whichQuest: BRCA_F whichPage: riskAssess2
 pageType: singlePass
 NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 24, pHxBreastBiopsyNumber, How many breast biopsies did you have?, IntegerField, 2014-04-08 23:25:55.105991
->]
+#3No questions can be found for this page (riskAssess2).
 after POST
 UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Back'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsyNumber': [u'2']}>
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'BKDJDf5kLBV02Eh8pxUoEYr8GvoqWntU']}>
 UserDynamicFormCreation: has forms data input
-aQuestion record number: "24"
-aQuestion.questionTag1: "pHxBreastBiopsyNumber"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many breast biopsies did you have?"
-updatedQuestionText4: "How many breast biopsies did you have?"
-theQLabel5: "pHxBreastBiopsyNumber"
 UserDynamicFormCreation:  No choiceList for this question (ok)
 UserDynamicFormCreation:  exit
 Form is valid. Saving data.
 The cleaned data with question tags is:
-{u'pHxBreastBiopsyNumber': 2}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-not NEXT button clicked. thisPageTag: H3a, back_to: H3
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H3
-UserDynamicFormCreation:  enter
-formData: {u'pHxBreastBiopsy': u'Yes'}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBreastBiopsy': u'Yes'}
-session data dump end
-bound?: True
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H3
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsy': [u'Yes']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBreastBiopsy': u'Yes'}
+{}
 savePageData:  enter
 Session list data updated in savePageData
 savePageData:  exiting
 saveGlobalFlagsToSessionData:  enter
-page H3 Questionnaire: BRCA
-questionResponses "{u'pHxBreastBiopsy': u'Yes'}"
+page riskAssess2 Questionnaire: BRCA_F
+questionResponses "{}"
 questionResponses type "<type 'dict'>"
 successful query
-No analysis records found for page "H3" therefore no global flag added to Session Data.
+No analysis records found for page "riskAssess2" therefore no global flag added to Session Data.
 saveGlobalFlagsToSessionData:  exit
 pageCalc: entering
-pageCalc: current page is H3
-pageCalc: used Default to calculate current/next page H3/H3a
+pageCalc: current page is riskAssess2
+pageCalc: used Default to calculate current/next page riskAssess2/completion
 pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBreastBiopsy': u'Yes'}
+pageCalc:  questionResults: {}
 getNextPageFromCalculation: enter
-Test condition: [(u'pHxBreastBiopsy', u'Yes')]
-Questionnaire record 1
-Page record 3
-Test condition does not match 0: "[(u'pHxBreastBiopsy', u'No')]"
+Test condition: []
+Questionnaire record 2
+Page record 27
 Found no match
 getNextPageFromCalculation: exit
 pageCalc:  No match for a calculated next page
 getNextPageFromGlobalFlags:  enter
-pageTag:  H3
+pageTag:  riskAssess2
 No global flag applies to this page transition. (Normal)
 pageCalc: exit
-NEXT button clicked. thisPageTag: H3, next_page: H3a
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3a
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 24, pHxBreastBiopsyNumber, How many breast biopsies did you have?, IntegerField, 2014-04-08 23:25:55.105991
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H3a
-UserDynamicFormCreation:  enter
-formData: {u'pHxBreastBiopsyNumber': 2}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "24"
-aQuestion.questionTag1: "pHxBreastBiopsyNumber"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many breast biopsies did you have?"
-updatedQuestionText4: "How many breast biopsies did you have?"
-theQLabel5: "pHxBreastBiopsyNumber"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBreastBiopsyNumber': 2}
-session data dump end
-bound?: True
+NEXT button clicked. thisPageTag: riskAssess2, next_page: completion
+In Completion.
+Completion:  cookie removed.
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3a
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3a
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 24, pHxBreastBiopsyNumber, How many breast biopsies did you have?, IntegerField, 2014-04-08 23:25:55.105991
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Back'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsyNumber': [u'2']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "24"
-aQuestion.questionTag1: "pHxBreastBiopsyNumber"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many breast biopsies did you have?"
-updatedQuestionText4: "How many breast biopsies did you have?"
-theQLabel5: "pHxBreastBiopsyNumber"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBreastBiopsyNumber': 2}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-not NEXT button clicked. thisPageTag: H3a, back_to: H3
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H3
-UserDynamicFormCreation:  enter
-formData: {u'pHxBreastBiopsy': u'Yes'}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBreastBiopsy': u'Yes'}
-session data dump end
-bound?: True
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsy': [u'No']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBreastBiopsy': u'No'}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H3 Questionnaire: BRCA
-questionResponses "{u'pHxBreastBiopsy': u'No'}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H3" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H3
-pageCalc: used Default to calculate current/next page H3/H3a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBreastBiopsy': u'No'}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxBreastBiopsy', u'No')]
-Questionnaire record 1
-Page record 3
-Test condition (1) matches: "[(u'pHxBreastBiopsy', u'No')]"
-getNextPageFromCalculation: exit
-pageCalc:  Have a match for a calculated next page: H4
-getNextPageFromGlobalFlags:  enter
-pageTag:  H3
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H3, next_page: H4
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H4
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 12, pHxAgeMenarche, How old were you when you had your first period?, IntegerField, 2014-04-08 23:25:55.097173
->, <Question: 10, pHxAgeLastPer, How old were you when you had your most recent period?, IntegerField, 2014-04-08 23:25:55.095548
->, <Question: 11, pHxAgeLastPer1Yr, Was your last period more than 1 year ago?, YesNoField, 2014-04-08 23:25:55.096388
->]
-Not a POST
-No page data in session tag: H4
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "12"
-aQuestion.questionTag1: "pHxAgeMenarche"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first period?"
-updatedQuestionText4: "How old were you when you had your first period?"
-theQLabel5: "pHxAgeMenarche"
-aQuestion record number: "10"
-aQuestion.questionTag1: "pHxAgeLastPer"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your most recent period?"
-updatedQuestionText4: "How old were you when you had your most recent period?"
-theQLabel5: "pHxAgeLastPer"
-aQuestion record number: "11"
-aQuestion.questionTag1: "pHxAgeLastPer1Yr"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Was your last period more than 1 year ago?"
-updatedQuestionText4: "Was your last period more than 1 year ago?"
-theQLabel5: "pHxAgeLastPer1Yr"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
+In Completion.
+Completion:  cookie not removed.
+In POST.
+In submitButton.
+In Submit e-mail.
+questionnaireEmail: screener@screengenes.org
+Found summary information to send.
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H4
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H4
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 12, pHxAgeMenarche, How old were you when you had your first period?, IntegerField, 2014-04-08 23:25:55.097173
->, <Question: 10, pHxAgeLastPer, How old were you when you had your most recent period?, IntegerField, 2014-04-08 23:25:55.095548
->, <Question: 11, pHxAgeLastPer1Yr, Was your last period more than 1 year ago?, YesNoField, 2014-04-08 23:25:55.096388
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Back'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxAgeLastPer': [u''], u'pHxAgeMenarche': [u'']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "12"
-aQuestion.questionTag1: "pHxAgeMenarche"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first period?"
-updatedQuestionText4: "How old were you when you had your first period?"
-theQLabel5: "pHxAgeMenarche"
-aQuestion record number: "10"
-aQuestion.questionTag1: "pHxAgeLastPer"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your most recent period?"
-updatedQuestionText4: "How old were you when you had your most recent period?"
-theQLabel5: "pHxAgeLastPer"
-aQuestion record number: "11"
-aQuestion.questionTag1: "pHxAgeLastPer1Yr"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Was your last period more than 1 year ago?"
-updatedQuestionText4: "Was your last period more than 1 year ago?"
-theQLabel5: "pHxAgeLastPer1Yr"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-BACK button clicked
-next page H3
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H3
-UserDynamicFormCreation:  enter
-formData: {u'pHxBreastBiopsy': u'No'}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBreastBiopsy': u'No'}
-session data dump end
-bound?: True
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H4
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 12, pHxAgeMenarche, How old were you when you had your first period?, IntegerField, 2014-04-08 23:25:55.097173
->, <Question: 10, pHxAgeLastPer, How old were you when you had your most recent period?, IntegerField, 2014-04-08 23:25:55.095548
->, <Question: 11, pHxAgeLastPer1Yr, Was your last period more than 1 year ago?, YesNoField, 2014-04-08 23:25:55.096388
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Back'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxAgeLastPer': [u''], u'pHxAgeMenarche': [u'']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "12"
-aQuestion.questionTag1: "pHxAgeMenarche"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first period?"
-updatedQuestionText4: "How old were you when you had your first period?"
-theQLabel5: "pHxAgeMenarche"
-aQuestion record number: "10"
-aQuestion.questionTag1: "pHxAgeLastPer"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your most recent period?"
-updatedQuestionText4: "How old were you when you had your most recent period?"
-theQLabel5: "pHxAgeLastPer"
-aQuestion record number: "11"
-aQuestion.questionTag1: "pHxAgeLastPer1Yr"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Was your last period more than 1 year ago?"
-updatedQuestionText4: "Was your last period more than 1 year ago?"
-theQLabel5: "pHxAgeLastPer1Yr"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-BACK button clicked
-next page H3
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H3
-UserDynamicFormCreation:  enter
-formData: {u'pHxBreastBiopsy': u'No'}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBreastBiopsy': u'No'}
-session data dump end
-bound?: True
+In Completion.
+Completion:  cookie not removed.
+In POST.
+In submitButton.
+In start.
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+splash: enter
+whichProject PAMF, whichQuest BRCA_F
 pagePerComputer:  enter
 ct:  Macintosh
 pagePerComputer:  enter
-rendering page H3
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsy': [u'Yes']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBreastBiopsy': u'Yes'}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H3 Questionnaire: BRCA
-questionResponses "{u'pHxBreastBiopsy': u'Yes'}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H3" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H3
-pageCalc: used Default to calculate current/next page H3/H3a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBreastBiopsy': u'Yes'}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxBreastBiopsy', u'Yes')]
-Questionnaire record 1
-Page record 3
-Test condition does not match 0: "[(u'pHxBreastBiopsy', u'No')]"
-Found no match
-getNextPageFromCalculation: exit
-pageCalc:  No match for a calculated next page
-getNextPageFromGlobalFlags:  enter
-pageTag:  H3
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H3, next_page: H3a
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3a
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 24, pHxBreastBiopsyNumber, How many breast biopsies did you have?, IntegerField, 2014-04-08 23:25:55.105991
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H3a
-UserDynamicFormCreation:  enter
-formData: {u'pHxBreastBiopsyNumber': 2}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "24"
-aQuestion.questionTag1: "pHxBreastBiopsyNumber"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many breast biopsies did you have?"
-updatedQuestionText4: "How many breast biopsies did you have?"
-theQLabel5: "pHxBreastBiopsyNumber"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBreastBiopsyNumber': 2}
-session data dump end
-bound?: True
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H3a
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3a
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 24, pHxBreastBiopsyNumber, How many breast biopsies did you have?, IntegerField, 2014-04-08 23:25:55.105991
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Back'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsyNumber': [u'3']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "24"
-aQuestion.questionTag1: "pHxBreastBiopsyNumber"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many breast biopsies did you have?"
-updatedQuestionText4: "How many breast biopsies did you have?"
-theQLabel5: "pHxBreastBiopsyNumber"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBreastBiopsyNumber': 3}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-not NEXT button clicked. thisPageTag: H3a, back_to: H3
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H3
-UserDynamicFormCreation:  enter
-formData: {u'pHxBreastBiopsy': u'Yes'}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBreastBiopsy': u'Yes'}
-session data dump end
-bound?: True
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H3
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H3
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 23, pHxBreastBiopsy, Have you ever had a breast biopsy?, YesNoField, 2014-04-08 23:25:55.105318
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBreastBiopsy': [u'No']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "23"
-aQuestion.questionTag1: "pHxBreastBiopsy"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you ever had a breast biopsy?"
-updatedQuestionText4: "Have you ever had a breast biopsy?"
-theQLabel5: "pHxBreastBiopsy"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBreastBiopsy': u'No'}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H3 Questionnaire: BRCA
-questionResponses "{u'pHxBreastBiopsy': u'No'}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H3" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H3
-pageCalc: used Default to calculate current/next page H3/H3a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBreastBiopsy': u'No'}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxBreastBiopsy', u'No')]
-Questionnaire record 1
-Page record 3
-Test condition (1) matches: "[(u'pHxBreastBiopsy', u'No')]"
-getNextPageFromCalculation: exit
-pageCalc:  Have a match for a calculated next page: H4
-getNextPageFromGlobalFlags:  enter
-pageTag:  H3
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H3, next_page: H4
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H4
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 12, pHxAgeMenarche, How old were you when you had your first period?, IntegerField, 2014-04-08 23:25:55.097173
->, <Question: 10, pHxAgeLastPer, How old were you when you had your most recent period?, IntegerField, 2014-04-08 23:25:55.095548
->, <Question: 11, pHxAgeLastPer1Yr, Was your last period more than 1 year ago?, YesNoField, 2014-04-08 23:25:55.096388
->]
-Not a POST
-No page data in session tag: H4
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "12"
-aQuestion.questionTag1: "pHxAgeMenarche"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first period?"
-updatedQuestionText4: "How old were you when you had your first period?"
-theQLabel5: "pHxAgeMenarche"
-aQuestion record number: "10"
-aQuestion.questionTag1: "pHxAgeLastPer"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your most recent period?"
-updatedQuestionText4: "How old were you when you had your most recent period?"
-theQLabel5: "pHxAgeLastPer"
-aQuestion record number: "11"
-aQuestion.questionTag1: "pHxAgeLastPer1Yr"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Was your last period more than 1 year ago?"
-updatedQuestionText4: "Was your last period more than 1 year ago?"
-theQLabel5: "pHxAgeLastPer1Yr"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H4
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H4
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 12, pHxAgeMenarche, How old were you when you had your first period?, IntegerField, 2014-04-08 23:25:55.097173
->, <Question: 10, pHxAgeLastPer, How old were you when you had your most recent period?, IntegerField, 2014-04-08 23:25:55.095548
->, <Question: 11, pHxAgeLastPer1Yr, Was your last period more than 1 year ago?, YesNoField, 2014-04-08 23:25:55.096388
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxAgeLastPer': [u'90'], u'pHxAgeLastPer1Yr': [u'Yes'], u'pHxAgeMenarche': [u'9']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "12"
-aQuestion.questionTag1: "pHxAgeMenarche"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first period?"
-updatedQuestionText4: "How old were you when you had your first period?"
-theQLabel5: "pHxAgeMenarche"
-aQuestion record number: "10"
-aQuestion.questionTag1: "pHxAgeLastPer"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your most recent period?"
-updatedQuestionText4: "How old were you when you had your most recent period?"
-theQLabel5: "pHxAgeLastPer"
-aQuestion record number: "11"
-aQuestion.questionTag1: "pHxAgeLastPer1Yr"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Was your last period more than 1 year ago?"
-updatedQuestionText4: "Was your last period more than 1 year ago?"
-theQLabel5: "pHxAgeLastPer1Yr"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxAgeLastPer1Yr': u'Yes', u'pHxAgeLastPer': 90, u'pHxAgeMenarche': 9}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H4 Questionnaire: BRCA
-questionResponses "{u'pHxAgeLastPer1Yr': u'Yes', u'pHxAgeLastPer': 90, u'pHxAgeMenarche': 9}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H4" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H4
-pageCalc: used Default to calculate current/next page H4/H5
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxAgeLastPer1Yr': u'Yes', u'pHxAgeLastPer': 90, u'pHxAgeMenarche': 9}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxAgeLastPer', 90), (u'pHxAgeLastPer1Yr', u'Yes'), (u'pHxAgeMenarche', 9)]
-Questionnaire record 1
-Page record 6
-Found no match
-getNextPageFromCalculation: exit
-pageCalc:  No match for a calculated next page
-getNextPageFromGlobalFlags:  enter
-pageTag:  H4
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H4, next_page: H5
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H5
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 13, pHxBirths, How many live births have you had?, IntegerField, 2014-04-08 23:25:55.097998
->]
-Not a POST
-No page data in session tag: H5
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "13"
-aQuestion.questionTag1: "pHxBirths"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many live births have you had?"
-updatedQuestionText4: "How many live births have you had?"
-theQLabel5: "pHxBirths"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H5
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H5
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 13, pHxBirths, How many live births have you had?, IntegerField, 2014-04-08 23:25:55.097998
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBirths': [u'1']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "13"
-aQuestion.questionTag1: "pHxBirths"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many live births have you had?"
-updatedQuestionText4: "How many live births have you had?"
-theQLabel5: "pHxBirths"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBirths': 1}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H5 Questionnaire: BRCA
-questionResponses "{u'pHxBirths': 1}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H5" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H5
-pageCalc: used Default to calculate current/next page H5/H5a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBirths': 1}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxBirths', 1)]
-Questionnaire record 1
-Page record 7
-Test condition does not match 0: "[(u'pHxBirths', 0)]"
-Found no match
-getNextPageFromCalculation: exit
-pageCalc:  No match for a calculated next page
-getNextPageFromGlobalFlags:  enter
-pageTag:  H5
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H5, next_page: H5a
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H5a
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 14, pHxBirths_Age, How old were you when you had your first baby?, IntegerField, 2014-04-08 23:25:55.098795
->]
-Not a POST
-No page data in session tag: H5a
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "14"
-aQuestion.questionTag1: "pHxBirths_Age"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first baby?"
-updatedQuestionText4: "How old were you when you had your first baby?"
-theQLabel5: "pHxBirths_Age"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H5a
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H5a
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 14, pHxBirths_Age, How old were you when you had your first baby?, IntegerField, 2014-04-08 23:25:55.098795
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Back'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBirths_Age': [u'45']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "14"
-aQuestion.questionTag1: "pHxBirths_Age"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How old were you when you had your first baby?"
-updatedQuestionText4: "How old were you when you had your first baby?"
-theQLabel5: "pHxBirths_Age"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBirths_Age': 45}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-not NEXT button clicked. thisPageTag: H5a, back_to: H5
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H5
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 13, pHxBirths, How many live births have you had?, IntegerField, 2014-04-08 23:25:55.097998
->]
-Not a POST
-Page data is in session tag, so fill the form with previous data. Page: H5
-UserDynamicFormCreation:  enter
-formData: {u'pHxBirths': 1}
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "13"
-aQuestion.questionTag1: "pHxBirths"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many live births have you had?"
-updatedQuestionText4: "How many live births have you had?"
-theQLabel5: "pHxBirths"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-session data dump start:
-Session: {u'pHxBirths': 1}
-session data dump end
-bound?: True
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H5
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H5
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 13, pHxBirths, How many live births have you had?, IntegerField, 2014-04-08 23:25:55.097998
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxBirths': [u'0']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "13"
-aQuestion.questionTag1: "pHxBirths"
-aQuestion.responseType2: "IntegerField"
-aQuestion.questionText3: "How many live births have you had?"
-updatedQuestionText4: "How many live births have you had?"
-theQLabel5: "pHxBirths"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxBirths': 0}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H5 Questionnaire: BRCA
-questionResponses "{u'pHxBirths': 0}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H5" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H5
-pageCalc: used Default to calculate current/next page H5/H5a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxBirths': 0}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxBirths', 0)]
-Questionnaire record 1
-Page record 7
-Test condition (1) matches: "[(u'pHxBirths', 0)]"
-getNextPageFromCalculation: exit
-pageCalc:  Have a match for a calculated next page: H6
-getNextPageFromGlobalFlags:  enter
-pageTag:  H5
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H5, next_page: H6
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H6
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 26, pHxChestRad, Have you had chest radiation between ages 10 and 30, such as for cancer treatment?, YesNoField, 2014-04-08 23:25:55.107252
->]
-Not a POST
-No page data in session tag: H6
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "26"
-aQuestion.questionTag1: "pHxChestRad"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you had chest radiation between ages 10 and 30, such as for cancer treatment?"
-updatedQuestionText4: "Have you had chest radiation between ages 10 and 30, such as for cancer treatment?"
-theQLabel5: "pHxChestRad"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H6
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H6
-pageType: singlePass
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 26, pHxChestRad, Have you had chest radiation between ages 10 and 30, such as for cancer treatment?, YesNoField, 2014-04-08 23:25:55.107252
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxChestRad': [u'No']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "26"
-aQuestion.questionTag1: "pHxChestRad"
-aQuestion.responseType2: "YesNoField"
-aQuestion.questionText3: "Have you had chest radiation between ages 10 and 30, such as for cancer treatment?"
-updatedQuestionText4: "Have you had chest radiation between ages 10 and 30, such as for cancer treatment?"
-theQLabel5: "pHxChestRad"
-UserDynamicFormCreation:  No choiceList for this question (ok)
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxChestRad': u'No'}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H6 Questionnaire: BRCA
-questionResponses "{u'pHxChestRad': u'No'}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H6" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H6
-pageCalc: used Default to calculate current/next page H6/H7
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxChestRad': u'No'}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxChestRad', u'No')]
-Questionnaire record 1
-Page record 9
-Found no match
-getNextPageFromCalculation: exit
-pageCalc:  No match for a calculated next page
-getNextPageFromGlobalFlags:  enter
-pageTag:  H6
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H6, next_page: H7
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H7
-pageType: sendQuestions
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 27, pHxHormUse, What hormones have you used? Check all that apply., MultipleChoiceField, 2014-04-08 23:25:55.107926
->]
-Not a POST
-No page data in session tag: H7
-UserDynamicFormCreation:  enter
-formData: ['']
-UserDynamicFormCreation: no forms data input (ok)
-aQuestion record number: "27"
-aQuestion.questionTag1: "pHxHormUse"
-aQuestion.responseType2: "MultipleChoiceField"
-aQuestion.questionText3: "What hormones have you used? Check all that apply."
-updatedQuestionText4: "What hormones have you used? Check all that apply."
-theQLabel5: "pHxHormUse"
-Choices follow:
-Choice tag: pHxHormUse_BC Choice Text: Birth control pills
-Choice label: Birth control pills
-Choice tag: pHxHormUse_Est Choice Text: Estrogen replacement
-Choice label: Estrogen replacement
-Choice tag: pHxHormUse_Pro Choice Text: Progesterone replacement
-Choice label: Progesterone replacement
-Choice tag: pHxHormUse_Tam Choice Text: Tamoxifen
-Choice label: Tamoxifen
-Choice tag: pHxHormUse_Ral Choice Text: Raloxifene
-Choice label: Raloxifene
-Choice tag: pHxHormUse_Ari Choice Text: Arimidex
-Choice label: Arimidex
-End Choices
-Choices end. Count: 6
-choiceList: [[u'Birth control pills', u'Birth control pills'], [u'Estrogen replacement', u'Estrogen replacement'], [u'Progesterone replacement', u'Progesterone replacement'], [u'Tamoxifen', u'Tamoxifen'], [u'Raloxifene', u'Raloxifene'], [u'Arimidex', u'Arimidex']]
-UserDynamicFormCreation:  exit
-pagePerComputer:  enter
-ct:  Macintosh
-pagePerComputer:  enter
-rendering page H7
-QuestContinue: exit
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H7
-pageType: sendQuestions
-NO sendQuestions
-QuestContinue: Questions are: 
-[<Question: 27, pHxHormUse, What hormones have you used? Check all that apply., MultipleChoiceField, 2014-04-08 23:25:55.107926
->]
-after POST
-UserDynamicFormCreation:  enter
-formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'hLvOtjUZR6sn9NtaPsPkWq8TXPbo0a6t'], u'pHxHormUse': [u'Progesterone replacement']}>
-UserDynamicFormCreation: has forms data input
-aQuestion record number: "27"
-aQuestion.questionTag1: "pHxHormUse"
-aQuestion.responseType2: "MultipleChoiceField"
-aQuestion.questionText3: "What hormones have you used? Check all that apply."
-updatedQuestionText4: "What hormones have you used? Check all that apply."
-theQLabel5: "pHxHormUse"
-Choices follow:
-Choice tag: pHxHormUse_BC Choice Text: Birth control pills
-Choice label: Birth control pills
-Choice tag: pHxHormUse_Est Choice Text: Estrogen replacement
-Choice label: Estrogen replacement
-Choice tag: pHxHormUse_Pro Choice Text: Progesterone replacement
-Choice label: Progesterone replacement
-Choice tag: pHxHormUse_Tam Choice Text: Tamoxifen
-Choice label: Tamoxifen
-Choice tag: pHxHormUse_Ral Choice Text: Raloxifene
-Choice label: Raloxifene
-Choice tag: pHxHormUse_Ari Choice Text: Arimidex
-Choice label: Arimidex
-End Choices
-Choices end. Count: 6
-choiceList: [[u'Birth control pills', u'Birth control pills'], [u'Estrogen replacement', u'Estrogen replacement'], [u'Progesterone replacement', u'Progesterone replacement'], [u'Tamoxifen', u'Tamoxifen'], [u'Raloxifene', u'Raloxifene'], [u'Arimidex', u'Arimidex']]
-UserDynamicFormCreation:  exit
-Form is valid. Saving data.
-The cleaned data with question tags is:
-{u'pHxHormUse': [u'Progesterone replacement']}
-savePageData:  enter
-Session list data updated in savePageData
-savePageData:  exiting
-saveGlobalFlagsToSessionData:  enter
-page H7 Questionnaire: BRCA
-questionResponses "{u'pHxHormUse': [u'Progesterone replacement']}"
-questionResponses type "<type 'dict'>"
-successful query
-No analysis records found for page "H7" therefore no global flag added to Session Data.
-saveGlobalFlagsToSessionData:  exit
-pageCalc: entering
-pageCalc: current page is H7
-pageCalc: used Default to calculate current/next page H7/H7a
-pageCalc:  incoming question results
-pageCalc:  questionResults: {u'pHxHormUse': [u'Progesterone replacement']}
-getNextPageFromCalculation: enter
-Test condition: [(u'pHxHormUse', [u'Progesterone replacement'])]
-Questionnaire record 1
-Page record 10
-Found no match
-getNextPageFromCalculation: exit
-pageCalc:  No match for a calculated next page
-getNextPageFromGlobalFlags:  enter
-pageTag:  H7
-No global flag applies to this page transition. (Normal)
-pageCalc: exit
-NEXT button clicked. thisPageTag: H7, next_page: H7a
-In QuestContinue. whichProject: PAMF whichQuest: BRCA whichPage: H7a
-pageType: singlePass
-previousPageQuestionResults
-{u'pHxHormUse': [u'Progesterone replacement']}
-YES sendQuestions entry questions:
-entering convertFormsDataToDict
-{u'Progesterone replacement': True}
-Exiting convertFormsDataToDict
-Tags from previous questions: {u'Progesterone replacement': True}
-Selected tags for followOn questions: ['pHxHormUseProgesteroneAgeStart', 'pHxHormUseProgesteroneAgeEnd']
-YES sendQuestions generated (pruned):
+splash:  exit

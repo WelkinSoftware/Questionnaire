@@ -1,4 +1,4 @@
 ['shortTag', 'id', 'abbrev', 'name', 'email', 'contactPhone', 'internetLocation']
-Lavender,3,Lavender,A colorful project:  Lavender,,,
+Lavender,3,Lavender,A colorful project:  Lavender,test@out.com,888-888-8888,
 PAMF,1,PAMF,Palo Alto Medical Foundation,screener@screengenes.org,650-555-1212,http://www.pamf.org/cancercare/diagnosis/geneticcounseling.html
 test_project,2,my test project,Test Project “curly quotes”,,,

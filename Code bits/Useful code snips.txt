@@ -2,6 +2,9 @@ Useful code snips
 
 Code snips are separated by "============="
 
+Django tips and features
+http://stackoverflow.com/questions/550632/favorite-django-tips-features
+
 =============<h3>most common minimum environment</h3>
 from multiquest.adminUtilities import *
 from multiquest.forms import *
@@ -192,6 +195,29 @@ Explanation:
 The filter part takes each sublist's item and checks to see if it is in the source list c1.
 The list comprehension is executed for each sublist in c2.
 
+=============<h3>Handling pop-ups - comma separated</h3>
+
+	{% for Text, ShortTag, Explan, Descr, RType, PageTags, qRecNum in allQuestionInfo %}
+	<tr>
+		<td>{{Text}}</td>
+		<td><input type="text" name="ShortTag_Rec_{{qRecNum}}" value="{{ShortTag}}" size = "20"></td>
+		<td>{{Explan}}</td>
+		<td>{{Descr}}</td>
+		<td><input type="text" name="Descr_Rec_{{qRecNum}}" value="{{Descr}}" size = "20"></td>
+		<td><select name="RType_Rec_{{qRecNum}}">
+		<option selected="selected"
+		{% for aTypeKey, aTypeVal in field_types %}
+			{% if aTypeVal == RType %}
+				<option  value="{{aTypeVal}}" size = "25" selected>{{aTypeVal}}</option><
+			{% else %}
+				<option  value="{{aTypeVal}}" size = "25">{{aTypeVal}}</option>
+			{% endif %}
+		{% endfor %}
+		</select>
+		<td>{{PageTags}}</td>
+	</tr>
+	{% endfor %}
+
 =============<h3>create a character string from a list - comma separated</h3>
 	pageTagListStr = ', '.join(allTags)
 	
@@ -251,6 +277,102 @@ Another example
 			for aRec in allRecs[1:]:
 				queryOR = queryOR | Q(id=aRec)
 		allUniqueProjects = Project.objects.filter(queryOR)
+		
+=============<h3>How to get a list of all Models?</h3>
+# Provides a list of all models in all applications. Might be duplicate names!!
+from django.db.models import get_models
+for model in get_models():
+	print model.__name__, [x.name for x in model._meta.fields]
+=============<h3>How to get a model instance</h3>
+# get a model instance from the name
+# 		model_instance = ContentType.objects.get(app_label=u'multiquest', model=modelNameStr).model_class()
+# 		model_instance = ContentType.objects.get(app_label=u'multiquest', model=modelNameStr).model_class()(**{fieldNameStr: ForeignModelInstance})
+# page_type = ContentType.objects.get(app_label="multiquest",model="page")
+# thePage=page_type.get_all_objects_for_this_type(shortTag="P1")
+
+=============<h3>How to get info from an empty queryset?</h3>
+students = Students.objects.none()
+
+# The queryset's model class:
+>>> students.model
+project.app.models.Student
+
+# Name of the model class:
+>>> students.model.__name__
+'Student'
+
+# Import path of the models module:
+>>> students.model.__module__
+'project.app.models'
+
+# Django app name:
+>>> students.model._meta.app_label
+'app'
+=============<h3>How to get the name of current app within a template?</h3>
+There's a way to obtain an app name for a current request.
+First, in your project's urls.py, considering your app is called 'main':
+
+#urls.py
+url(r'^', include('main.urls', app_name="main")),
+Then, a context processsor:
+
+#main/contexts.py
+from django.core.urlresolvers import resolve
+def appname(request):
+    return {'appname': resolve(request.path).app_name}
+Don't forget to enable it in your settings:
+
+#settings.py
+TEMPLATE_CONTEXT_PROCESSORS = (
+"django.core.context_processors.request",
+"main.contexts.appname",)
+You can use it in your template like any other variable: {{ appname }}.
+=============<h3>Another way to see the app name</h3>
+# views.py
+from django.views.generic.base import View
+class MyView(View):
+     app_name = None
+
+# urls.py
+from django.conf.urls.defaults import *
+from some_app.views import MyView
+
+urlpatterns = patterns('',
+    (r'^myview/', MyView.as_view(app_name='app_name')),
+)
+=============<h3>Getting the name of the current view in a Django template</h3>
+
+from inspect import stack, getmodule
+
+def ContextWithView(request):
+    """Template context with current_view value,
+    a string with the full namespaced django view in use.
+    Attribution:
+    http://blog.isotoma.com/2009/12/getting-the-name-of-the-current-view-in-a-django-template/
+    """
+    # Frame 0 is the current frame
+    # So assuming normal usage the frame of the view
+    # calling this processor should be Frame 1
+    name = getmodule(stack()[1][0]).__name__
+    return {
+        'current_view': "%s.%s" % (name, stack()[1][3]),
+    }
+To use this in a view, just import it and then pass it as the context in your render_to_response() call:
+
+"""main/my_site/views/misc.py - misc views"""
+
+from main.my_site.context_processors import ContextWithView
+
+def my_view(request):
+    # Do some stuff
+    return render_to_response(
+        'my_template.html',
+        {},
+        context_instance=ContextWithView(request)
+    )
+
+From within a template you can then use current_view, which for the above should output something like “main.my_site.views.misc.my_view”
+
 
 =============<h3>build a "Q object" for a single query</h3>
 	# build a "Q object" for a single query

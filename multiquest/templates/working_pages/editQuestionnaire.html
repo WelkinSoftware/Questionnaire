@@ -6,11 +6,27 @@
 </head>
 <body>
 <h2>Edit Information about the Questionnaire</h2>
+	<form action="" method="post" >{% csrf_token %}
 
 {% if workingQuestionnaireTag %}
 <h4>The current Project/Questionnaire is "{{theProjectTag}}/{{workingQuestionnaireTag}}".</h4>
+{% if allProjectTags %}
 <p>
-The name of the Questionnaire is:  "{{questName}}"
+<label for="id_ProjectSelect">Change the Project associated with this Questionnaire here:</label></th><td><select id="id_ProjectSelect" name="ProjectSelect">
+	<option selected="selected">
+	{{theProjectTag}}
+	</option>
+	{% for aProjectChoice in allProjectTags %}
+		{% if aProjectTag == aProjectChoice %}
+			<option value="{{aProjectChoice}}" selected>{{aProjectChoice}}</option>
+		{% else %}
+			<option value="{{aProjectChoice}}">{{aProjectChoice}}</option>
+		{% endif %}
+	{% endfor %}
+</select></p>
+{% endif %}
+<p>
+The longer name of the Questionnaire is:  "{{questName}}"
 {% if firstPageInQuestTag %} with a first page of "{{firstPageInQuestTag}}"{% endif %}, written in {{language}}. The Questionnaire window bar title is:  "{{barTitle}}"
 </p>
 {% else %}
@@ -23,7 +39,6 @@ The list of questionnaires for the Project "{{theProjectTag}}" is:</p>
 
 	{{questTagsList}}
 
-	<form action="" method="post" >{% csrf_token %}
 		
 		<ul>
 		</ul>

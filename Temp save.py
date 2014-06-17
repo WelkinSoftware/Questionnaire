@@ -1,21 +1,15 @@
-	nextPageObjs = QuestionnairePage.objects.filter(
-		questionnaireID = theQuestionnaire,
-		pageID=thePageObj,
-		recordType = recordType,
-		)
-	# extract saved page conditions
-	for (ii, ap) in enumerate(nextPageObjs):
-		if sortedResults == ap.testCondition:
-			DebugOut('Test condition matches %s: "%s"'%(ii,ap.testCondition))
-			nextPageObj = ap # a match, so set the next page
-			success = True
-		else:
-			DebugOut('Test condition does not match %s: "%s"'%(ii,ap.testCondition))
-	if not success:
-		success = False
-		DebugOut('Found no match')
-		nextPageObj = Page()
-	
+tableName = 'Page'
+fileName = 'test dump/%s.txt' %tableName
+fileOut = codecs.open(fileName,'w', encoding='utf-8')
+ap=Page.objects.get(id=598)
+theText=ap.explanation
+theText = repTChar(theText)
+fileOut.write(theText+os.linesep)
+
+
+
+
+
 
 .latest('lastUpdate')
 xx = [

@@ -1,0 +1,464 @@
+setPageToPageTransitionCalculated:  entering
+allPageTags (only pages with questions): [u'P1', u'P2', u'P3', u'P3_1_new', u'P3a', u'P3b', u'P3c', u'P4', u'P4a', u'P4b', u'P5', u'SummaryPage', u'avgRisk', u'completion', u'indetRisk', u'respondentIdent', u'riskAssess2', u'splash']
+Current page session tag currentPageTag_admin: has the value: P2
+workingPageTag: P2
+Default values:
+workingQuestionnaireTag: BRCA_S_Hindi
+workingPageTag: P2
+"GET" posted - restore data if any
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "568"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+testConditionTransitionList: []
+getTestConditionTransitions:  enter
+getTestConditionTransitions:  exit
+setPageToPageTransitionCalculated:  exiting
+setPageToPageTransitionCalculated:  entering
+allPageTags (only pages with questions): [u'P1', u'P2', u'P3', u'P3_1_new', u'P3a', u'P3b', u'P3c', u'P4', u'P4a', u'P4b', u'P5', u'SummaryPage', u'avgRisk', u'completion', u'indetRisk', u'respondentIdent', u'riskAssess2', u'splash']
+Current page session tag currentPageTag_admin: has the value: P2
+workingPageTag: P2
+Default values:
+workingQuestionnaireTag: BRCA_S_Hindi
+workingPageTag: P2
+setPageToPageTransitionCalculated:  After POST
+request.POST <QueryDict: {u'fHxOvarianCA': [u'Yes'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy'], u'Save responses to questions': [u'Save responses to questions']}>
+In Save responses to questions
+Display questions and gather responses.
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'fHxOvarianCA': [u'Yes'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy'], u'Save responses to questions': [u'Save responses to questions']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "568"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+setPageToPageTransitionCalculated:  entering
+allPageTags (only pages with questions): [u'P1', u'P2', u'P3', u'P3_1_new', u'P3a', u'P3b', u'P3c', u'P4', u'P4a', u'P4b', u'P5', u'SummaryPage', u'avgRisk', u'completion', u'indetRisk', u'respondentIdent', u'riskAssess2', u'splash']
+Current page session tag currentPageTag_admin: has the value: P2
+workingPageTag: P2
+Default values:
+workingQuestionnaireTag: BRCA_S_Hindi
+workingPageTag: P2
+"GET" posted - restore data if any
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "568"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+testConditionTransitionList: []
+getTestConditionTransitions:  enter
+getTestConditionTransitions:  exit
+setPageToPageTransitionCalculated:  exiting
+setPageToPageTransitionCalculated:  entering
+allPageTags (only pages with questions): [u'P1', u'P2', u'P3', u'P3_1_new', u'P3a', u'P3b', u'P3c', u'P4', u'P4a', u'P4b', u'P5', u'SummaryPage', u'avgRisk', u'completion', u'indetRisk', u'respondentIdent', u'riskAssess2', u'splash']
+Current page session tag currentPageTag_admin: has the value: P2
+workingPageTag: P2
+Default values:
+workingQuestionnaireTag: BRCA_S_Hindi
+workingPageTag: P2
+"GET" posted - restore data if any
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "568"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+testConditionTransitionList: []
+getTestConditionTransitions:  enter
+getTestConditionTransitions:  exit
+setPageToPageTransitionCalculated:  exiting
+setPageToPageTransitionCalculated:  entering
+allPageTags (only pages with questions): [u'P1', u'P2', u'P3', u'P3_1_new', u'P3a', u'P3b', u'P3c', u'P4', u'P4a', u'P4b', u'P5', u'SummaryPage', u'avgRisk', u'completion', u'indetRisk', u'respondentIdent', u'riskAssess2', u'splash']
+Current page session tag currentPageTag_admin: has the value: P2
+workingPageTag: P2
+Default values:
+workingQuestionnaireTag: BRCA_S_Hindi
+workingPageTag: P2
+setPageToPageTransitionCalculated:  After POST
+request.POST <QueryDict: {u'fHxOvarianCA': [u'Yes'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy'], u'Save responses to questions': [u'Save responses to questions']}>
+In Save responses to questions
+Display questions and gather responses.
+test: thePageQuestions: [<Question: 568, fHxOvarianCA, Have any of your close blood relatives ever had ovarian cancer?, YesNoField, 2014-04-22 12:35:56.087330
+>]
+test: request.POST <QueryDict: {u'fHxOvarianCA': [u'Yes'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy'], u'Save responses to questions': [u'Save responses to questions']}>
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'fHxOvarianCA': [u'Yes'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy'], u'Save responses to questions': [u'Save responses to questions']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "568"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+Question response data is valid
+UserDynamicFormCreation:  enter
+formData: {u'fHxOvarianCA': u'Yes'}
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "568"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+testCondition: {u'fHxOvarianCA': u'Yes'}
+workingQuestionnaireTag: BRCA_S_Hindi
+workingPageTag: P2
+testConditionTransitionList: [[1030, u"[(u'fHxOvarianCA', u'Yes')]", u'P4a']]
+getTestConditionTransitions:  enter
+getTestConditionTransitions:  exit
+setPageToPageTransitionCalculated:  exiting
+setPageToPageTransitionCalculated:  entering
+allPageTags (only pages with questions): [u'P1', u'P2', u'P3', u'P3_1_new', u'P3a', u'P3b', u'P3c', u'P4', u'P4a', u'P4b', u'P5', u'SummaryPage', u'avgRisk', u'completion', u'indetRisk', u'respondentIdent', u'riskAssess2', u'splash']
+Current page session tag currentPageTag_admin: has the value: P2
+workingPageTag: P2
+Default values:
+workingQuestionnaireTag: BRCA_S_Hindi
+workingPageTag: P2
+setPageToPageTransitionCalculated:  After POST
+request.POST <QueryDict: {u'fHxOvarianCA': [u'Yes'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy'], u'returnToHome': [u'Return to the the Home Page']}>
+returnToHome button hit
+userLanding: enter
+the user is: djsuser
+userLanding: exit
+userLanding: enter
+the user is: djsuser
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+questionnaireEnvironmentPrep:  enter
+questionnaireEnvironmentPrep:  exit
+splash: enter
+whichProject Lavender, whichQuest BRCA_S_Hindi
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+splash:  exit
+splash: enter
+whichProject Lavender, whichQuest BRCA_S_Hindi
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+pageCalc: entering
+pageCalc: current page is splash
+pageCalc: used Default to calculate current/next page splash/respondentIdent
+getNextPageFromGlobalFlags:  enter
+pageTag:  splash
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+splash: theNextURL /multiquest/Lavender/BRCA_S_Hindi/respondentIdent
+splash: exit to page respondentIdent
+In respondentIdent. whichProject: Lavender whichQuest: BRCA_S_Hindi
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+respondentIdent: exit
+In respondentIdent. whichProject: Lavender whichQuest: BRCA_S_Hindi
+form data: {'contactPhone': u'888 888 8888', 'firstName': u'a', 'middleName': u'b', 'lastName': u'c', 'birthDate': datetime.date(1988, 8, 8), 'contactEmail': u'clewis222@me.com'}
+pageCalc: entering
+pageCalc: current page is respondentIdent
+pageCalc: used Default to calculate current/next page respondentIdent/P1
+getNextPageFromGlobalFlags:  enter
+pageTag:  respondentIdent
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+respondentIdent: exit
+In QuestContinue. whichProject: Lavender whichQuest: BRCA_S_Hindi whichPage: P1
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 567, pHxOvarianCA, Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?, YesNoField, 2014-05-08 09:18:02.779778
+>, <Question: 600, mct, Multiple choice test, MultipleChoiceField, 2014-05-15 16:29:46.541900
+>, <Question: 601, Quest004, testing for q 4, IntegerField, 2014-05-16 01:06:33.272373
+>]
+Not a POST
+No page data in session tag: P1
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "567"
+aQuestion.questionTag1: "pHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?"
+updatedQuestionText4: "Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?"
+theQLabel5: "pHxOvarianCA"
+aQuestion record number: "600"
+aQuestion.questionTag1: "mct"
+aQuestion.responseType2: "MultipleChoiceField"
+aQuestion.questionText3: "Multiple choice test"
+updatedQuestionText4: "Multiple choice test"
+theQLabel5: "mct"
+Choices follow:
+Choice tag: Choice_449 Choice Text: this is choice 1
+Choice label: this is choice 1
+Choice tag: Choice_450 Choice Text: this is choice 2
+Choice label: this is choice 2
+Choice tag: Choice_451 Choice Text: this is choice 3
+Choice label: this is choice 3
+End Choices
+aQuestion record number: "601"
+aQuestion.questionTag1: "Quest004"
+aQuestion.responseType2: "IntegerField"
+aQuestion.questionText3: "testing for q 4"
+updatedQuestionText4: "testing for q 4"
+theQLabel5: "Quest004"
+Choices end. Count: 3
+choiceList: [[u'this is choice 1', u'this is choice 1'], [u'this is choice 2', u'this is choice 2'], [u'this is choice 3', u'this is choice 3']]
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P1
+QuestContinue: exit
+In QuestContinue. whichProject: Lavender whichQuest: BRCA_S_Hindi whichPage: P1
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 567, pHxOvarianCA, Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?, YesNoField, 2014-05-08 09:18:02.779778
+>, <Question: 600, mct, Multiple choice test, MultipleChoiceField, 2014-05-15 16:29:46.541900
+>, <Question: 601, Quest004, testing for q 4, IntegerField, 2014-05-16 01:06:33.272373
+>]
+after POST
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy'], u'mct': [u'this is choice 2'], u'pHxOvarianCA': [u'No'], u'Quest004': [u'dfadf']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "567"
+aQuestion.questionTag1: "pHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?"
+updatedQuestionText4: "Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?"
+theQLabel5: "pHxOvarianCA"
+aQuestion record number: "600"
+aQuestion.questionTag1: "mct"
+aQuestion.responseType2: "MultipleChoiceField"
+aQuestion.questionText3: "Multiple choice test"
+updatedQuestionText4: "Multiple choice test"
+theQLabel5: "mct"
+Choices follow:
+Choice tag: Choice_449 Choice Text: this is choice 1
+Choice label: this is choice 1
+Choice tag: Choice_450 Choice Text: this is choice 2
+Choice label: this is choice 2
+Choice tag: Choice_451 Choice Text: this is choice 3
+Choice label: this is choice 3
+End Choices
+aQuestion record number: "601"
+aQuestion.questionTag1: "Quest004"
+aQuestion.responseType2: "IntegerField"
+aQuestion.questionText3: "testing for q 4"
+updatedQuestionText4: "testing for q 4"
+theQLabel5: "Quest004"
+Choices end. Count: 3
+choiceList: [[u'this is choice 1', u'this is choice 1'], [u'this is choice 2', u'this is choice 2'], [u'this is choice 3', u'this is choice 3']]
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P1
+QuestContinue: exit
+In QuestContinue. whichProject: Lavender whichQuest: BRCA_S_Hindi whichPage: P1
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 567, pHxOvarianCA, Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?, YesNoField, 2014-05-08 09:18:02.779778
+>, <Question: 600, mct, Multiple choice test, MultipleChoiceField, 2014-05-15 16:29:46.541900
+>, <Question: 601, Quest004, testing for q 4, IntegerField, 2014-05-16 01:06:33.272373
+>]
+after POST
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy'], u'mct': [u'this is choice 2'], u'pHxOvarianCA': [u'No'], u'Quest004': [u'1']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "567"
+aQuestion.questionTag1: "pHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?"
+updatedQuestionText4: "Hindi follows: क्या तुमने कभी डिम्बग्रंथि के कैंसर था?"
+theQLabel5: "pHxOvarianCA"
+aQuestion record number: "600"
+aQuestion.questionTag1: "mct"
+aQuestion.responseType2: "MultipleChoiceField"
+aQuestion.questionText3: "Multiple choice test"
+updatedQuestionText4: "Multiple choice test"
+theQLabel5: "mct"
+Choices follow:
+Choice tag: Choice_449 Choice Text: this is choice 1
+Choice label: this is choice 1
+Choice tag: Choice_450 Choice Text: this is choice 2
+Choice label: this is choice 2
+Choice tag: Choice_451 Choice Text: this is choice 3
+Choice label: this is choice 3
+End Choices
+aQuestion record number: "601"
+aQuestion.questionTag1: "Quest004"
+aQuestion.responseType2: "IntegerField"
+aQuestion.questionText3: "testing for q 4"
+updatedQuestionText4: "testing for q 4"
+theQLabel5: "Quest004"
+Choices end. Count: 3
+choiceList: [[u'this is choice 1', u'this is choice 1'], [u'this is choice 2', u'this is choice 2'], [u'this is choice 3', u'this is choice 3']]
+UserDynamicFormCreation:  exit
+Form is valid. Saving data.
+The cleaned data with question tags is:
+{u'pHxOvarianCA': u'No', u'mct': [u'this is choice 2'], u'Quest004': 1}
+savePageData:  enter
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P1 Questionnaire: BRCA_S_Hindi
+questionResponses "{u'pHxOvarianCA': u'No', u'mct': [u'this is choice 2'], u'Quest004': 1}"
+questionResponses type "<type 'dict'>"
+successful query
+Test conditon: "[(u'pHxOvarianCA', u'Yes')]", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'Quest004', 1), (u'mct', [u'this is choice 2']), (u'pHxOvarianCA', u'No')]"
+Test condition type does not match any known type (ok).
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P1
+pageCalc: used Default to calculate current/next page P1/P2
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'pHxOvarianCA': u'No', u'mct': [u'this is choice 2'], u'Quest004': 1}
+getNextPageFromCalculation: enter
+Test condition: [(u'Quest004', 1), (u'mct', [u'this is choice 2']), (u'pHxOvarianCA', u'No')]
+Questionnaire record 52
+Page record 598
+Found no match
+getNextPageFromCalculation: exit
+pageCalc:  No match for a calculated next page
+getNextPageFromGlobalFlags:  enter
+pageTag:  P1
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+NEXT button clicked. thisPageTag: P1, next_page: P2
+In QuestContinue. whichProject: Lavender whichQuest: BRCA_S_Hindi whichPage: P2
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 568, fHxOvarianCA, Have any of your close blood relatives ever had ovarian cancer?, YesNoField, 2014-04-22 12:35:56.087330
+>]
+Not a POST
+No page data in session tag: P2
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "568"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P2
+QuestContinue: exit
+In QuestContinue. whichProject: Lavender whichQuest: BRCA_S_Hindi whichPage: P2
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 568, fHxOvarianCA, Have any of your close blood relatives ever had ovarian cancer?, YesNoField, 2014-04-22 12:35:56.087330
+>]
+after POST
+UserDynamicFormCreation:  enter
+formData: <QueryDict: {u'fHxOvarianCA': [u'Yes'], u'submitButton': [u'Next'], u'csrfmiddlewaretoken': [u'IWfZNCEG3mkVDKo4OP78vwfdYDRToFAy']}>
+UserDynamicFormCreation: has forms data input
+aQuestion record number: "568"
+aQuestion.questionTag1: "fHxOvarianCA"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have any of your close blood relatives ever had ovarian cancer?"
+updatedQuestionText4: "Have any of your close blood relatives ever had ovarian cancer?"
+theQLabel5: "fHxOvarianCA"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+Form is valid. Saving data.
+The cleaned data with question tags is:
+{u'fHxOvarianCA': u'Yes'}
+savePageData:  enter
+Session list data updated in savePageData
+savePageData:  exiting
+saveGlobalFlagsToSessionData:  enter
+page P2 Questionnaire: BRCA_S_Hindi
+questionResponses "{u'fHxOvarianCA': u'Yes'}"
+questionResponses type "<type 'dict'>"
+successful query
+Test conditon: "[(u'fHxOvarianCA', u'Yes')]", Global Flag to set: Referral
+Obtained test condition and global flag
+TCInput "[(u'fHxOvarianCA', u'Yes')]"
+testCondition1 is in PageAnalysis for this page "[(u'fHxOvarianCA', u'Yes')]"
+globalFlagName "Referral"
+Global flag Referral first entry in session data
+saveGlobalFlagsToSessionData:  exit
+pageCalc: entering
+pageCalc: current page is P2
+pageCalc: used Default to calculate current/next page P2/P3
+pageCalc:  incoming question results
+pageCalc:  questionResults: {u'fHxOvarianCA': u'Yes'}
+getNextPageFromCalculation: enter
+Test condition: [(u'fHxOvarianCA', u'Yes')]
+Questionnaire record 52
+Page record 599
+Test condition (1) matches: "[(u'fHxOvarianCA', u'Yes')]"
+getNextPageFromCalculation: exit
+pageCalc:  Have a match for a calculated next page: P4a
+getNextPageFromGlobalFlags:  enter
+pageTag:  P2
+No global flag applies to this page transition. (Normal)
+pageCalc: exit
+NEXT button clicked. thisPageTag: P2, next_page: P4a
+In QuestContinue. whichProject: Lavender whichQuest: BRCA_S_Hindi whichPage: P4a
+pageType: singlePass
+NO sendQuestions
+QuestContinue: Questions are: 
+[<Question: 581, fHxBrCAMale, Has any <u>male</u> blood relative had breast cancer?, YesNoField, 2014-04-22 12:35:56.269343
+>, <Question: 582, fHxBrCASameSideGE2, Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?, YesNoField, 2014-04-22 12:35:56.274860
+>]
+Not a POST
+No page data in session tag: P4a
+UserDynamicFormCreation:  enter
+formData: ['']
+UserDynamicFormCreation: no forms data input (ok)
+aQuestion record number: "581"
+aQuestion.questionTag1: "fHxBrCAMale"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Has any <u>male</u> blood relative had breast cancer?"
+updatedQuestionText4: "Has any <u>male</u> blood relative had breast cancer?"
+theQLabel5: "fHxBrCAMale"
+aQuestion record number: "582"
+aQuestion.questionTag1: "fHxBrCASameSideGE2"
+aQuestion.responseType2: "YesNoField"
+aQuestion.questionText3: "Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?"
+updatedQuestionText4: "Have two or more close blood relatives from the <u>same side</u> of your family had breast cancer?"
+theQLabel5: "fHxBrCASameSideGE2"
+UserDynamicFormCreation:  No choiceList for this question (ok)
+UserDynamicFormCreation:  exit
+pagePerComputer:  enter
+ct:  Macintosh
+pagePerComputer:  enter
+rendering page P4a
+QuestContinue: exit

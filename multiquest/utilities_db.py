@@ -12,6 +12,137 @@ from collections import Counter
 	# save the value of global flags saved to session data
 # 	allGlobalFlags = listAllGlobalFlags(workingQuestionnaire)
 
+
+def testloadQSpecFromFile():
+	"""
+	"""
+	fileName = 'test load/Questionnaire specification PAMF_BRCA_F.csv'
+	fileIn = codecs.open(fileName,'r', encoding='utf-8')
+	recDecode = open('test load/RecordDecode.txt','w')
+	if not loadQSpecFromFile(fileIn, recDecode):
+		print "Wrong file type"
+	fileIn.close()
+	recDecode.close()
+	return
+
+def loadQSpecFromFile(fileIn, recDecode):
+	"""Load a Questionnaire specification from a file
+	"""
+	def getNewRec(oldRec, modelName):
+		"""Convert an old record number to a new record number
+			
+		"""
+		oldRecidTag = modelName+','+oldRec
+		try:
+			newRecid = oldNewRecDecode[oldRecidTag]
+		except KeyError:
+			print 'oldRecidTag not found: "%s"'%oldRecidTag
+			newRecid = oldRecidTag.split(',')[1]
+		return newRecid
+
+	recDecode.write('oldRecNum,newRecNum\n') # initialize old to new record decode
+	oldNewRecDecode = {}
+	ProjectSeparator = fileIn.readline()[:-1]
+	if ProjectSeparator != 'ProjectSeparator':
+		# exit quietly
+		return False
+	print 'Encountered a new Project'
+	aRec = fileIn.readline()[:-1]
+	recFieldsRaw = aRec.split(',')
+	recKeyword = recFieldsRaw[0]
+	if recKeyword != 'TableSeparator': # must have table name next
+		print 'Could not find a table name in the string "%s"'%aRec
+		return False
+	modelNameStr = recFieldsRaw[1] # name of the table
+	print 'Starting a new table of name: "%s"'%modelNameStr
+	lowerModelNameStr = modelNameStr.lower()
+	try:
+		model_type = ContentType.objects.get(app_label="multiquest",model=lowerModelNameStr)
+	except model_type.DoesNotExist:
+		print 'A table of name: "%s" does not exist.'%modelNameStr
+		return False
+	for aRec in fileIn:
+		aRec = aRec[:-1] # trim the line feed
+		# read the this line which should be field names starting with "HeaderLine"
+		fieldNameList = aRec.split(',')
+		recKeyword = fieldNameList[0]
+		if recKeyword != 'HeaderLine':
+			print 'No field names for table %s'%modelNameStr
+			return False
+# 		for aFieldName in fieldNameList[1:]:
+# 			print aFieldName
+		# read the next line which should be field values starting with "Record"
+		for aRecFields in fileIn:
+			fieldValues = aRecFields[:-1].split(',')
+			recKeyword = fieldValues[0]
+			if recKeyword != 'Record':
+				break # Not a list of field values
+			recKeyword = '' # not used in remainder of loop.
+# 			for aFieldValue in fieldValues[1:]:
+# 				print aFieldValue
+			# Create an empty query object of the proper type
+			theObject = model_type.model_class()() # creates an empty instance
+			# create a dictionary of values
+			valuesDict = {}
+			# update the fields
+			for ii,aFieldName in enumerate(fieldNameList):
+				theValue = fieldValues[ii]
+				if ii !=0:
+					valuesDict.update({aFieldName : theValue})
+					try:
+						setattr(theObject,aFieldName,theValue)
+					except ValueError:
+						# must be a foreign key
+						oldRecid = theValue
+						if aFieldName == 'pageID':
+							newRecid = getNewRec(oldRecid, 'Page')
+							thePage = Page.objects.get(id=int(newRecid)) # convert id to object
+							setattr(theObject,aFieldName,thePage)
+						elif aFieldName == 'questionID':
+							newRecid = getNewRec(oldRecid, 'Question')
+							theQuestion = Question.objects.get(id=int(newRecid)) # convert id to object
+							setattr(theObject,aFieldName,theQuestion)
+						elif aFieldName == 'questionnaireID':
+							newRecid = getNewRec(oldRecid, 'Questionnaire')
+							theQuestionnaire = Questionnaire.objects.get(id=int(newRecid)) # convert id to object
+							setattr(theObject,aFieldName,theQuestionnaire)
+						elif aFieldName == 'projectID':
+							newRecid = getNewRec(oldRecid, 'Project')
+							theProject = Project.objects.get(id=int(newRecid)) # convert id to object
+							setattr(theObject,aFieldName,theProject)
+						else:
+							print 'ValueError for Table "%s" field "%s" value "%s"'%(modelNameStr,aFieldName, theValue)
+			theObject.id = None
+			# save the object, then retrieve the object id
+# 			theObject.save()
+# 			newRecid = str(theObject.id)
+			oldRecid = valuesDict['id']
+			newRecid = oldRecid # delete this line
+			oldRecidTag = modelNameStr+','+oldRecid
+			recDecode.write('%s:%s\n'%(oldRecidTag,newRecid))
+			oldNewRecDecode.update({oldRecidTag:newRecid})
+# 			print 'oldRecid/newRecid: %s/%s'%(oldRecid,newRecid)
+# 			print theObject
+		# no longer a record. Therefore a new table
+		recFieldsRaw = fieldValues
+		if recKeyword == 'TableSeparator':
+			modelNameStr = recFieldsRaw[1]
+			print 'Starting a new table of name: "%s"'%modelNameStr
+			lowerModelNameStr = modelNameStr.lower()
+			try:
+				model_type = ContentType.objects.get(app_label="multiquest",model=lowerModelNameStr)
+			except model_type.DoesNotExist:
+				print 'A table of name: "%s" does not exist.'%modelNameStr
+				return False
+			recCount=model_type.get_all_objects_for_this_type().count()
+			print 'Total number of records for table "%s" is:  %s'%(modelNameStr,recCount)
+		elif recKeyword == '': # blank line at end of file
+			print 'Blank line at end of file'
+			return True
+		else:
+			print 'Unknown record type:  "%s"'%recKeyword
+	return True
+
 def getAllUsers():
 	"""Return User objects belonging to group "Student".
 	Args:
@@ -286,7 +417,20 @@ def getSessionProject(request):
 		theProject = None
 	return theProject
 
-
+def setProjectForQuestionnaire(theProject, theQuestionnaire):
+	""" Sets the project associated with the Questionnaire in the ProjectQuestionnaire table.
+	"""
+	# delete prior associations.
+	ProjectQuestionnaire.objects.filter(questionnaireID=theQuestionnaire).delete()
+	# add the current record.
+	ProjectQuestionnaire.objects.create(
+		questionnaireID=theQuestionnaire,
+		projectID=theProject,
+		recordType='connection',
+		questionnaireStatus='enabled',
+		)
+	return True
+	
 def setSessionQuestionnaireProject(request, theProject, theQuestionnaire):
 	"""Set Questionnaire and Project defaults.
 	Set non-null Questionnaire objects into Session data and set Project object defaults.
@@ -1240,10 +1384,10 @@ def updatePageQuestionSequence(thePage,theQuestion, seqText):
 		DebugOut('updatePageQuestionSequence:  deleteing additional records for page %s, question %s'%(thePage.shortTag,theQuestion.questionTag))
 		ii = 1
 		for thePQ in thePQs:
-			if ii == 1:
+			if ii == 1: # update the first one.
 				thePQ.questionSequence=seqText
 				thePQ.save()
-			else:
+			else: # delete the remaining
 				thePQ.delete()
 			ii+=1
 	return

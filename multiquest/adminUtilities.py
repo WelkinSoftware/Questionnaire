@@ -21,6 +21,7 @@ from django.db import connection
 import os
 import pickle
 import codecs
+from django.db.models import get_models
 
 import csv
 import unicodedata
@@ -30,6 +31,11 @@ tupd = '2014-02-15T15:00:00+07:00' # time zone aware time update
 
 # Functions which analyze the database and Questionnaires
 
+def listAllModels():
+	for model in get_models():
+		print model.__name__, [x.name for x in model._meta.fields]
+	return
+	
 def checkAllQuestionnaireSharing():
 	allQuestionnaires = Questionnaire.objects.all()
 	# viewed results
@@ -63,23 +69,59 @@ def checkPageSharing(quest1,quest2):
 def listTestConditons(theQuestionnaire):
 
 	return
+	
+def updateNullChoiceTags():
+	""" update question and responsechoice null short tags
+	"""
+	allQ = Question.objects.all()
+	for aq in allQ:
+		if aq.questionTag == '':
+			aq.questionTag = 'Quest_%s'%aq.id
+			print('new question tag: %s'%aq.questionTag )
+# 			aq.save()
+	allRC = ResponseChoice.objects.order_by('choiceSequence').all()
+	for rc in allRC:
+		if rc.choiceTag == '':
+			rc.choiceTag = 'Choice_%s'%rc.id
+			print('new choice tag: %s'%rc.choiceTag )
+# 			rc.save()
+	return
 
-def dumpTable(theTable, tableName):
-	# Dumps a table to a file
-	print('dumpTable:  enter')
-	print('table name:  %s'%tableName)
-	allRecs = theTable.objects.all()
+def updateChoiceSequenceAndTags():
+
+	allQ = Question.objects.all()
+	for aq in allQ:
+		print 'Question tag: "%s"'%aq.questionTag
+		rcOnPage = ResponseChoice.objects.order_by('choiceSequence').filter(questionID=aq)
+		for aChoice in rcOnPage:
+			print 'Choice tag/Seq/typ: "%s/%s/%s"'%(aChoice.choiceTag,aChoice.choiceSequence,aChoice.choiceType)
+# 			aChoice.choiceType = 'notUsed'
+# 			aChoice.save()
+			
+	return
+
+
+def choiceUniqueTagCheck():
+	allQ = Question.objects.all()
+	for aq in allQ:
+		# get all choices for a question
+		allChoices = ResponseChoice.objects.filter(id=aq.id)
+		allChoiceTags = [ac.choiceTag for ac in allChoices]
+		allChoiceTagsUnique = list(set(allChoiceTags))
+		numDups = len(allChoiceTags) - len(allChoiceTagsUnique)
+		if numDups != 0:
+			print 'Question "%s/%s" has duplicate choice tags.'%(aq.questionTag,aq.id)
+	return
+
+def dumpTableTest():
+	tableName = 'Page'
+	theTable = Page
 	fileName = 'test dump/%s.txt' %tableName
 	fileOut = codecs.open(fileName,'w', encoding='utf-8')
-	# write header field names
-	allFieldNames = getModelFieldList( theTable )
-	for aRec in allRecs:
-		print 'rec: %s' %aRec
-		for aFieldName in allFieldNames:
-			fieldValue = unicode(getattr(aRec, aFieldName)).encode('utf-8')
-			print '%s, %s'%(aFieldName, fieldValue)
+	dumpSelectedTable(fileOut, theTable)
 	fileOut.close()
 	return
+
 
 def doTestDumps():
 	theProjectTag='test_project'
@@ -169,8 +211,11 @@ def checkQuestionSequenceOnPage():
 		thePageQuestions=PageQuestion.objects.filter(pageID=aPage)
 		# check for redundancies in the sequence data
 		seqList = [aPQ.questionSequence for aPQ in thePageQuestions]
-		if thePageQuestions:
+		numRedundant = len(seqList) - len(list(set(seqList)))
+		if numRedundant:
 			print 'for page %s, the sequence list: %s'%(aPage.shortTag,str(seqList))
+		if len(seqList) != len(thePageQuestions):
+			print 'for page %s, sequence list does not list count: %s'%(aPage.shortTag,str(seqList))
 	return
 
 def dumpSubmissions():
@@ -841,7 +886,6 @@ def dumpQuestionnaire(quaire, fQuaire):
 	else:
 		projectShortTag = ""
 		spID = 0 # no Project
-	questshortTag = quaire.shortTag
 	fieldsToDumpRaw = [
 		quaire.shortTag, #0 Questionnaire shortTag
 		quaire.id, #1 Questionnaire id
@@ -1049,27 +1093,6 @@ def loadProjectQuestionnaire():
 	print 'loadProjectQuestionnaire:  exit'
 	return outMess
 	
-def repTChar( someText):
-	"""Replaces troublesome characters. Replace commas and line feeds.
-	"""
-	# make the input text a string
-	if type(someText) !=str:
-#		someTextRepl = str(someText) # safe for "replace" function
-		try: # Why is this required on a non-string??
-			someTextRepl = str(someText) # safe for "replace" function
-		except UnicodeEncodeError:
-			someTextRepl = someText # so don't do it
-	else:
-		someTextRepl = someText
-	pleasantText = someTextRepl.replace("\r","<lfeedr>").replace("\n","<lfeed>").replace(",","<aComma>")
-	return pleasantText
-
-def repPChar( someText):
-	"""replace commas and line feeds
-	"""
-	troubleText = someText.replace("<aComma>",",").replace("<lfeedr>","\r").replace("<lfeed>",'\n')
-	return troubleText
-
 def dumpPage():
 	"""Dumps Pages to a file
 	Dump only the Page records relating to Questionnaires dumped.

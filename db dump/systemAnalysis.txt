@@ -25,13 +25,13 @@ Lavender 3 SampleQ 51
 Lavender 3 BRCA_S 8
                  Page tag: P1 Rec num: 55
                                   Question tag: pHxOvarianCA Rec num: 63
-                                  Question tag:  Rec num: 596
+                                  Question tag: def1 Rec num: 596
                  Page tag: P2 Rec num: 56
                                   Question tag: fHxOvarianCA Rec num: 64
-                                  Question tag:  Rec num: 597
+                                  Question tag: mChoice Rec num: 597
                  Page tag: P3 Rec num: 57
                                   Question tag: pHxBreastCA Rec num: 65
-                                  Question tag:  Rec num: 598
+                                  Question tag: q2 Rec num: 598
                  Page tag: P3a Rec num: 58
                                   Question tag: pHxBrCALE50Yrs Rec num: 69
                                   Question tag: pHxBrCA3Neg Rec num: 66
@@ -63,10 +63,58 @@ Lavender 3 BRCA_S 8
                  Page tag: indetRisk Rec num: 68
                                   No Questions in this Page: indetRisk
                  Page tag: respondentIdent Rec num: 69
-                                  Question tag:  Rec num: 595
+                                  Question tag: q1aaqqq Rec num: 595
                  Page tag: riskAssess2 Rec num: 70
                                   No Questions in this Page: riskAssess2
                  Page tag: splash Rec num: 71
+                                  No Questions in this Page: splash
+Lavender 3 BRCA_S_Hindi 52
+                 Page tag: P1 Rec num: 598
+                                  Question tag: pHxOvarianCA Rec num: 567
+                                  Question tag: mct Rec num: 600
+                                  Question tag: Quest004 Rec num: 601
+                 Page tag: P2 Rec num: 599
+                                  Question tag: fHxOvarianCA Rec num: 568
+                 Page tag: P3 Rec num: 600
+                                  Question tag: pHxBreastCA Rec num: 569
+                 Page tag: P3_1_new Rec num: 615
+                                  Question tag: Quest001 Rec num: 602
+                 Page tag: P3a Rec num: 601
+                                  Question tag: pHxBrCALE50Yrs Rec num: 573
+                                  Question tag: pHxBrCA3Neg Rec num: 570
+                                  Question tag: pHxBrCAGT1PrimarySame Rec num: 572
+                                  Question tag: pHxBrCAGT1PrimaryBoth Rec num: 571
+                 Page tag: P3b Rec num: 602
+                                  Question tag: pHxBrCAGE1RelBrCALE50Years Rec num: 575
+                                  Question tag: test Rec num: 589
+                                  Question tag: charEnt Rec num: 590
+                                  Question tag: mc Rec num: 594
+                 Page tag: P3c Rec num: 603
+                                  Question tag: pHxBrCAOther Rec num: 577
+                 Page tag: P4 Rec num: 604
+                                  Question tag: fHxBrCASuscGene Rec num: 579
+                                  Question tag: fHxBreastCA Rec num: 580
+                                  Question tag: ashkenaziJewishCloseRels Rec num: 578
+                 Page tag: P4a Rec num: 605
+                                  Question tag: fHxBrCAMale Rec num: 581
+                                  Question tag: fHxBrCASameSideGE2 Rec num: 582
+                 Page tag: P4b Rec num: 606
+                                  Question tag: fHxBrCAOther Rec num: 583
+                 Page tag: P5 Rec num: 607
+                                  Question tag: fHxSufficient Rec num: 584
+                 Page tag: SummaryPage Rec num: 608
+                                  No Questions in this Page: SummaryPage
+                 Page tag: avgRisk Rec num: 609
+                                  No Questions in this Page: avgRisk
+                 Page tag: completion Rec num: 610
+                                  No Questions in this Page: completion
+                 Page tag: indetRisk Rec num: 611
+                                  No Questions in this Page: indetRisk
+                 Page tag: respondentIdent Rec num: 612
+                                  No Questions in this Page: respondentIdent
+                 Page tag: riskAssess2 Rec num: 613
+                                  No Questions in this Page: riskAssess2
+                 Page tag: splash Rec num: 614
                                   No Questions in this Page: splash
 PAMF 1 BRCA 1
                  Page tag: H1 Rec num: 1
@@ -233,50 +281,6 @@ PAMF 1 BRCA_S 3
                  Page tag: riskAssess2 Rec num: 27
                                   No Questions in this Page: riskAssess2
                  Page tag: splash Rec num: 28
-                                  No Questions in this Page: splash
-PAMF 1 BRCA_S_Hindi 52
-                 Page tag: P1 Rec num: 598
-                                  Question tag: pHxOvarianCA Rec num: 567
-                 Page tag: P2 Rec num: 599
-                                  Question tag: fHxOvarianCA Rec num: 568
-                 Page tag: P3 Rec num: 600
-                                  Question tag: pHxBreastCA Rec num: 569
-                 Page tag: P3a Rec num: 601
-                                  Question tag: pHxBrCALE50Yrs Rec num: 573
-                                  Question tag: pHxBrCA3Neg Rec num: 570
-                                  Question tag: pHxBrCAGT1PrimarySame Rec num: 572
-                                  Question tag: pHxBrCAGT1PrimaryBoth Rec num: 571
-                 Page tag: P3b Rec num: 602
-                                  Question tag: pHxBrCAGE1RelBrCALE50Years Rec num: 575
-                                  Question tag:  Rec num: 589
-                                  Question tag:  Rec num: 590
-                                  Question tag:  Rec num: 594
-                 Page tag: P3c Rec num: 603
-                                  Question tag: pHxBrCAOther Rec num: 577
-                 Page tag: P4 Rec num: 604
-                                  Question tag: fHxBrCASuscGene Rec num: 579
-                                  Question tag: fHxBreastCA Rec num: 580
-                                  Question tag: ashkenaziJewishCloseRels Rec num: 578
-                 Page tag: P4a Rec num: 605
-                                  Question tag: fHxBrCAMale Rec num: 581
-                                  Question tag: fHxBrCASameSideGE2 Rec num: 582
-                 Page tag: P4b Rec num: 606
-                                  Question tag: fHxBrCAOther Rec num: 583
-                 Page tag: P5 Rec num: 607
-                                  Question tag: fHxSufficient Rec num: 584
-                 Page tag: SummaryPage Rec num: 608
-                                  No Questions in this Page: SummaryPage
-                 Page tag: avgRisk Rec num: 609
-                                  No Questions in this Page: avgRisk
-                 Page tag: completion Rec num: 610
-                                  No Questions in this Page: completion
-                 Page tag: indetRisk Rec num: 611
-                                  No Questions in this Page: indetRisk
-                 Page tag: respondentIdent Rec num: 612
-                                  No Questions in this Page: respondentIdent
-                 Page tag: riskAssess2 Rec num: 613
-                                  No Questions in this Page: riskAssess2
-                 Page tag: splash Rec num: 614
                                   No Questions in this Page: splash
 test_project 2 TestQuest 5
                  Page tag: NewSummary Rec num: 33
